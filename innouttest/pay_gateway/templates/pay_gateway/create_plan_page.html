@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load static wagtailcore_tags wagtailimages_tags %}
+{% load static wagtailcore_tags wagtailimages_tags base_tags %}
 
 {% block body_class %}template-homepage{% endblock %}
 
@@ -18,10 +18,8 @@ Delete the line below if you're just getting started and want to remove the welc
 
 {% image page.bg_image original as bgimage %}
 
-<a href="{{ bgimage.url }}">Ссылка на картинку с alt {{ bgimage.alt }} </a>
 <div>
-    {% include_block page.streamfield_body %}
-    <!--{{ page.rtfbody|richtext }}-->
+    {% include_block page.body %}
 </div>
-
+    {% footer_tag %}
 {% endblock content %}

@@ -67,49 +67,8 @@ class Footer(models.Model):
 #         return context
 
 
-
-
 class CreatePlanPage(Page):
     """Старница формирования продукта."""
-
-    # class ChoicesPlan(models.TextChoices):
-    #     ESSENTIALS = "E", "INNOUT Project Essentials"
-    #     BUSINESS = "B", "INNOUT Project Business"
-    #     PLATFORM = "P", "INNOUT Project Platform"
-    #
-    # class ChoicesUserAmount(models.TextChoices):
-    #     USER5 = "5", "5"
-    #     USER10 = "10", "10"
-    #     USER15 = "15", "15"
-    #     USER20 = "20", "20"
-    #     USER25 = "25", "25"
-    #     USER30 = "30", "30"
-    #     USER35 = "35", "35"
-    #     USER40 = "40", "40"
-    #     USER45 = "45", "45"
-    #     USER50 = "50", "50"
-    #     USER55 = "55", "55"
-    #     USER60 = "60", "60"
-    #     USER65 = "65", "65"
-    #     USER70 = "70", "70"
-    #     USER75 = "75", "75"
-    #     USER80 = "80", "80"
-    #     USER85 = "85", "85"
-    #     USER90 = "90", "90"
-    #     USER95 = "95", "95"
-    #     USER100 = "100", "100"
-    #
-    # plan = models.TextField(
-    #     max_length=1,
-    #     choices=ChoicesPlan.choices,
-    #     default=ChoicesPlan.ESSENTIALS,
-    # )
-    #
-    # user_amount = models.TextField(
-    #     max_length=3,
-    #     choices=ChoicesUserAmount.choices,
-    #     default=ChoicesUserAmount.USER5,
-    # )
 
     body = StreamField([
 
@@ -171,36 +130,8 @@ class CreatePlanPage(Page):
         )),
     ], blank=True)
 
-    # categories = ParentalManyToManyField("blog.BlogCategory", blank=True)
     content_panels = Page.content_panels + [
-        # FieldPanel("plan", widget=forms.Select),
-        # FieldPanel("user_amount", widget=forms.Select),
         FieldPanel("body"),
-        # MultipleChooserPanel(
-        #     'gallery_images', label="Gallery images", chooser_field_name="caption"
-        # ),
-        # MultiFieldPanel([
-        #     MultipleChooserPanel(
-        #         'addons', label="Gallery images", chooser_field_name="caption"
-        #     )],
-        #     heading="Слайды",
-        # ),
-
-        # MultiFieldPanel(
-        #     [
-        #         FieldPanel("categories", widget=forms.CheckboxSelectMultiple)
-        #     ],
-        #     heading="Categories"
-        # ),
-        # MultiFieldPanel([
-        #     FieldPanel('add_on_1', widget=forms.CheckboxSelectMultiple, ),
-        #     FieldPanel('add_on_2', widget=forms.CheckboxSelectMultiple),
-        #     FieldPanel('add_on_3', widget=forms.CheckboxSelectMultiple),
-        #     FieldPanel('add_on_4', widget=forms.CheckboxSelectMultiple),
-        #     FieldPanel('add_on_5', widget=forms.CheckboxSelectMultiple),
-        #     FieldPanel('add_on_6', widget=forms.CheckboxSelectMultiple),
-        #     FieldPanel('add_on_7', widget=forms.CheckboxSelectMultiple),
-        # ])
 
     ]
 
@@ -210,22 +141,49 @@ class CreatePlanPage(Page):
         verbose_name = "Продукт"
         verbose_name_plural = "Продукт"
 
-# class AddOnn(models.Model):
-#     name = models.CharField(max_length=255)
-#     website = models.URLField(blank=True, null=True)
-#     panels = [
-#         MultiFieldPanel([
-#             FieldPanel('name'),
-#         ]),
-#         MultiFieldPanel([
-#             FieldPanel('website'),
-#         ])
-#     ]
-# class BlogPageGalleryImage(Orderable):
-#     page = ParentalKey(CreatePlanPage, on_delete=models.CASCADE, related_name='gallery_images')
-#
-#     caption = models.CharField(blank=True, max_length=250)
-#
-#     panels = [
-#         FieldPanel('caption'),
-#     ]
+
+class CreateUserPage(Page):
+    """Старница формирования информации о пользователе."""
+
+    body = StreamField([
+
+        ('domain', CharBlock()),
+        ('user_email', EmailBlock()),
+        ('user_organization', CharBlock()),
+        ('telephone_number', CharBlock()),
+        ('country', MultipleChoiceBlock(
+            choices=[
+                ('russia', 'Российская Федерация'),
+            ],
+        )),
+        ('city', CharBlock()),
+        ('address', CharBlock()),
+        ('inn', CharBlock()),
+
+
+        ('rules', MultipleChoiceBlock(
+            choices=[
+                ('agree_service', 'Я согласен с правилами использования сервиса'),
+                ('agree_userinfo', 'Я даю согласию на обработку моих персональных данных INNOUT project'),
+
+            ],
+        )),
+        ('payment_kind', MultipleChoiceBlock(
+            choices=[
+                ('credit_card', 'Credit card'),
+                ('invoice', 'Invoice/bank transfer'),
+
+            ],
+        )),
+    ], blank=True)
+
+    content_panels = Page.content_panels + [
+        FieldPanel("body"),
+
+    ]
+
+    # parent_page_types = ['innouttest.HomePage']
+
+    class Meta:
+        verbose_name = "Информация о пользователе"
+        verbose_name_plural = "Информация о пользователе"

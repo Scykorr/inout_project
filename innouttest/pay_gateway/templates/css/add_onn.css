@@ -227,6 +227,8 @@ section.main_section .road_map_img {
 
 }
 
+/*main section line 19*/
+
 section.main_section .line_19_img {
     width: 1198px;
     top: 169px;
@@ -235,6 +237,8 @@ section.main_section .line_19_img {
 
 
 }
+
+/*main section choose plan*/
 
 section.main_section .choose_plan {
     display: flex;
@@ -283,6 +287,8 @@ section.main_section .choose_plan .text_plan {
 
 }
 
+/*main section line 20*/
+
 section.main_section .line_20_img {
     width: 1198px;
     top: 200px;
@@ -292,6 +298,8 @@ section.main_section .line_20_img {
 
 
 }
+
+/*main section choose user amount*/
 
 section.main_section .choose_user_amount {
     display: flex;
@@ -339,13 +347,144 @@ section.main_section .choose_user_amount .text_user_amount {
 
 }
 
-/*border-image: linear-gradient(180deg, rgba(255, 255, 255, 0.28) 56.48%, rgba(255, 255, 255, 0) 100%);*/
-/*background: #FFFFFF url("data:image/svg+xml;utf8,<svg viewBox='0 0 140 140' width='24' height='24' xmlns='http://www.w3.org/2000/svg'><g><path d='m121.3,34.6c-1.6-1.6-4.2-1.6-5.8,0l-51,51.1-51.1-51.1c-1.6-1.6-4.2-1.6-5.8,0-1.6,1.6-1.6,4.2 0,5.8l53.9,53.9c0.8,0.8 1.8,1.2 2.9,1.2 1,0 2.1-0.4 2.9-1.2l53.9-53.9c1.7-1.6 1.7-4.2 0.1-5.8z' fill='white'/></g></svg>") no-repeat;*/
-/*background-position: right 5px top 50%;*/
-
-
 section.main_section .choose_plan .select_dropdown .label_select_plan select option {
     height: 57px;
+}
+
+
+/* range  */
+.range-input {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    cursor: pointer;
+    outline: none;
+    border-radius: 15px;
+    height: 1px;
+    background: #ccc;
+    /*text-align: center;*/
+    /*width: 50px;*/
+    /*font-size: 28px;*/
+    /*line-height: 40.6px;*/
+    /*background-color: black;*/
+    /*background-image: linear-gradient(90deg, #3274F9, #135BEB);*/
+    /*-webkit-background-clip: text;*/
+    /*-webkit-text-fill-color: transparent;*/
+    /*border-radius: 5px;*/
+    /*font-weight: 500;*/
+}
+
+.range-input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 30px;
+    width: 30px;
+    background-color: black;
+    background-image: linear-gradient(90deg, #3274F9, #135BEB);
+    border-radius: 50%;
+    border: none;
+    transition: .2s ease-in-out;
+}
+
+.range-input::-moz-range-thumb {
+    height: 15px;
+    width: 15px;
+    background-color: black;
+    background-image: linear-gradient(90deg, #3274F9, #135BEB);
+    border-radius: 50%;
+    border: none;
+    transition: .2s ease-in-out;
+}
+
+.range-input::-webkit-slider-thumb:hover {
+    box-shadow: 0 0 0 10px rgba(50, 116, 249, 0.34)
+}
+
+.range-input:active::-webkit-slider-thumb {
+    box-shadow: 0 0 0 20px rgba(19, 91, 235, 0.42)
+}
+
+.range-input:focus::-webkit-slider-thumb {
+    box-shadow: 0 0 0 20px rgba(19, 91, 235, 0.42)
+}
+
+.range-input::-moz-range-thumb:hover {
+    box-shadow: 0 0 0 10px rgba(50, 116, 249, 0.34)
+}
+
+.range-input:active::-moz-range-thumb {
+    box-shadow: 0 0 0 13px rgba(19, 91, 235, 0.42)
+}
+
+.range-input:focus::-moz-range-thumb {
+    box-shadow: 0 0 0 13px rgba(19, 91, 235, 0.42)
+}
+
+
+/* range 3 */
+.range-slider {
+    position: relative;
+    flex: 1;
+    margin-top: 30px;
+    width: 552px;
+
+}
+
+.sliderticks {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+}
+
+.sliderticks span {
+    display: flex;
+    justify-content: center;
+    width: 0px;
+    height: 0px;
+    background: black;
+    line-height: 20px;
+}
+
+/*=============
+Aesthetics
+=========================*/
+
+
+.range {
+
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    margin-left: 80px;
+
+}
+
+.value4 {
+    text-align: center;
+    width: 50px;
+    font-size: 28px;
+    line-height: 40.6px;
+    background-color: black;
+    background-image: linear-gradient(90deg, #3274F9, #135BEB);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    border-radius: 5px;
+    font-weight: 500;
+    margin-top: 15px;
+}
+
+
+/*main section line 21*/
+
+section.main_section .line_21_img {
+    width: 1198px;
+    top: 200px;
+    left: 120px;
+    gap: 0;
+    margin-top: 40px;
+
+
 }
 
 /*dropdown elements*/

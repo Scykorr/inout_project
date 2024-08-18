@@ -487,6 +487,50 @@ section.main_section .line_21_img {
 
 }
 
+/*main section addons*/
+
+section.main_section .addons_main {
+    display: flex;
+    flex-direction: row;
+    /*align-items: center;*/
+    width: 1169px;
+    height: 520px;
+    top: 60px;
+    left: 122px;
+    gap: 0;
+    border-radius: 8px 0 0 0;
+    background-color: black;
+    margin: 20px;
+
+
+}
+
+section.main_section .addons_main .addons_about {
+    width: 220px;
+    height: 44px;
+    top: 0;
+    left: 0;
+    gap: 0;
+    background-color: #FFFFFF;
+    background-image: linear-gradient(90deg, #FFFFFF, #FFFFFFA3);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+
+}
+
+section.main_section .addons_main .addons_about p {
+    font-size: 40px;
+    line-height: 44px;
+    background-color: black;
+    background-image: linear-gradient(90deg, white, #FFFFFFA3);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+
+}
+
+
 /*dropdown elements*/
 
 /* Dropdown Button header */

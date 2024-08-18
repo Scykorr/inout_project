@@ -1,0 +1,98 @@
+
+/* Dropdown Button section */
+
+.dropbtn {
+    background-color: #3498DB;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Dropdown button on hover & focus */
+.dropbtn:hover, .dropbtn:focus {
+    background-color: #2980B9;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    width: 557px;
+    height: 57px;
+    top: 216px;
+    left: 728px;
+    gap: 0px;
+    border-radius: 8px 0px 0px 0px;
+
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    /*position: absolute;*/
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+    background-color: #ddd
+}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {
+    /*display: block;*/
+}
+
+/*working selector*/
+
+section.main_section .choose_plan .select_dropdown .label_select_plan {
+    height: 57px;
+}
+
+section.main_section .choose_plan .select_dropdown select {
+    width: 557px;
+    height: 57px;
+    gap: 0;
+    /*border-radius: 8px;*/
+    padding: 15px;
+    color: #ffffff;
+    padding-right: 30px !important;
+    font-size: 18px !important;
+    line-height: 26.1px;
+
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    /*background-color: #FFFFFF0D;*/
+    border: 2px solid transparent;
+    border-radius: 8px;
+    background: linear-gradient(0, #121212, #121212),
+    linear-gradient(180deg, #FFFFFF47, #FFFFFF00);
+    background-clip: padding-box, border-box;
+    background-origin: padding-box, border-box;
+    /*border-width: 1px;*/
+    /*border-style: solid;*/
+
+    /*border-image: linear-gradient(180deg, #FFFFFF47 28%, #FFFFFF00 100%) 1;*/
+
+
+}
+
+section.main_section .choose_plan .select_dropdown select option {
+    margin: 40px;
+    background: #121212;
+    color: #fff;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
+    height: 50px;
+}

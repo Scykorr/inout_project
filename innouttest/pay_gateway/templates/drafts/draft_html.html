@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+выпадающая кнопка
+<button onclick="myFunction()" class="dropbtn">Dropdown</button>
+<div id="myDropdown" class="dropdown-content">
+    <a href="#">Link 1</a>
+    <a href="#">Link 2</a>
+    <a href="#">Link 3</a>
+</div>
+
+
+{#select 2#}
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet"/>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+</head>
+<select id="select2-demo">
+    <option class="first_option" value="Essentials">INNOUT Project Essentials</option>
+    <option value="Business">INNOUT Project Business</option>
+    <option value="Platform">INNOUT Project Platform</option>
+</select>
+
+<script>
+    $(document).ready(function () {
+        $('#select2-demo').select2();
+    })
+</script>
+
+
+{#working drop down#}
+<div class="select_dropdown" style="width:200px;">
+
+            <label>
+                <select class="">
+                    <option class="first_option" value="Essentials">INNOUT Project Essentials</option>
+                    <option value="Business">INNOUT Project Business</option>
+                    <option value="Platform">INNOUT Project Platform</option>
+
+                </select>
+            </label>
+
+
+        </div>
+
+
+</body>
+</html>
+
+
+

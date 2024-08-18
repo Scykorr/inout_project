@@ -258,7 +258,21 @@ section.main_section .choose_plan .about_choose_plan {
     top: 208px;
     left: 0;
     gap: 0;
-    margin-right: 700px;
+    margin-right: 450px;
+    background-color: #FFFFFF;
+    background-image: linear-gradient(90deg, #FFFFFF, #FFFFFFA3);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+
+}
+
+section.main_section .choose_plan .about_choose_plan p {
+
+    background-color: black;
+    background-image: linear-gradient(90deg, white, #FFFFFFA3);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 
 
 }
@@ -266,6 +280,72 @@ section.main_section .choose_plan .about_choose_plan {
 section.main_section .choose_plan .text_plan {
     font-size: 40px;
     line-height: 44px;
+
+}
+
+section.main_section .line_20_img {
+    width: 1198px;
+    top: 200px;
+    left: 120px;
+    gap: 0;
+    margin-top: 40px;
+
+
+}
+
+section.main_section .choose_user_amount {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 1169px;
+    height: 84px;
+    top: 60px;
+    left: 0px;
+    gap: 0;
+    border-radius: 8px 0 0 0;
+    background-color: black;
+    margin: 20px;
+
+
+}
+
+section.main_section .choose_user_amount .about_choose_user_amount {
+    width: 480px;
+    height: 44px;
+    top: 208px;
+    left: 0;
+    gap: 0;
+    background-color: #FFFFFF;
+    background-image: linear-gradient(90deg, #FFFFFF, #FFFFFFA3);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+
+}
+
+section.main_section .choose_user_amount .about_choose_user_amount p {
+
+    background-color: black;
+    background-image: linear-gradient(90deg, white, #FFFFFFA3);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+
+}
+
+section.main_section .choose_user_amount .text_user_amount {
+    font-size: 40px;
+    line-height: 44px;
+
+}
+
+/*border-image: linear-gradient(180deg, rgba(255, 255, 255, 0.28) 56.48%, rgba(255, 255, 255, 0) 100%);*/
+/*background: #FFFFFF url("data:image/svg+xml;utf8,<svg viewBox='0 0 140 140' width='24' height='24' xmlns='http://www.w3.org/2000/svg'><g><path d='m121.3,34.6c-1.6-1.6-4.2-1.6-5.8,0l-51,51.1-51.1-51.1c-1.6-1.6-4.2-1.6-5.8,0-1.6,1.6-1.6,4.2 0,5.8l53.9,53.9c0.8,0.8 1.8,1.2 2.9,1.2 1,0 2.1-0.4 2.9-1.2l53.9-53.9c1.7-1.6 1.7-4.2 0.1-5.8z' fill='white'/></g></svg>") no-repeat;*/
+/*background-position: right 5px top 50%;*/
+
+
+section.main_section .choose_plan .select_dropdown .label_select_plan select option {
+    height: 57px;
 }
 
 /*dropdown elements*/
@@ -318,59 +398,81 @@ section.main_section .choose_plan .text_plan {
     background-color: black;
 }
 
+/* The container must be positioned relative: */
+.custom-select {
+    position: relative;
+    width: 557px;
+    height: 25px;
+    gap: 0;
+    /*border-radius: 8px;*/
+    /*padding: 15px;*/
+    color: #ffffff;
+    padding-right: 30px !important;
+    font-size: 18px !important;
+    line-height: 26.1px;
 
-/* Dropdown Button section */
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    background: linear-gradient(0, #121212, #121212),
+    linear-gradient(180deg, #FFFFFF47, #FFFFFF00);
+    background-clip: padding-box, border-box;
+    background-origin: padding-box, border-box;
+}
 
-.dropbtn {
-    background-color: #3498DB;
-    color: white;
-    padding: 16px;
-    font-size: 16px;
-    border: none;
+.custom-select select {
+    display: none; /*hide original SELECT element: */
+}
+
+.select-selected {
+    background-color: #121212;
+}
+
+/* Style the arrow inside the select element: */
+.select-selected:after {
+    position: absolute;
+    content: "";
+    top: 14px;
+    right: 10px;
+    width: 0;
+    height: 0;
+    border: 6px solid transparent;
+    border-color: #fff transparent transparent transparent;
+}
+
+/* Point the arrow upwards when the select box is open (active): */
+.select-selected.select-arrow-active:after {
+    border-color: transparent transparent #fff transparent;
+    top: 7px;
+}
+
+/* style the items (options), including the selected item: */
+.select-items div, .select-selected {
+    color: #ffffff;
+    padding: 8px 16px;
+    border: 1px solid transparent;
+    border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
     cursor: pointer;
 }
 
-/* Dropdown button on hover & focus */
-.dropbtn:hover, .dropbtn:focus {
-    background-color: #2980B9;
-}
-
-/* The container <div> - needed to position the dropdown content */
-.dropdown {
-    width: 557px;
-    height: 57px;
-    top: 216px;
-    left: 728px;
-    gap: 0px;
-    border-radius: 8px 0px 0px 0px;
-
-}
-
-/* Dropdown Content (Hidden by Default) */
-.dropdown-content {
-    display: none;
+/* Style items (options): */
+.select-items {
     position: absolute;
-    background-color: #f1f1f1;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1;
+    background-color: black;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 99;
 }
 
-/* Links inside the dropdown */
-.dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
+/* Hide the items when the select box is closed: */
+.select-hide {
+    display: none;
 }
 
-/* Change color of dropdown links on hover */
-.dropdown-content a:hover {
-    background-color: #ddd
-}
-
-/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
-.show {
-    display: block;
+.select-items div:hover, .same-as-selected {
+    background-color: #222222;
 }
 

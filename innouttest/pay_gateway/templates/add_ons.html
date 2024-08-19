@@ -131,13 +131,14 @@
         </div>
 
         <div class="custom-select" style="height: 57px">
-            <select>
-                <option value="0">INNOUT Project Essentials</option>
-                <option value="1">INNOUT Project Business</option>
-                <option value="2">INNOUT Project Platform</option>
+            <select id="select_plan">
+                <option>INNOUT Project Essentials</option>
+                <option>INNOUT Project Business</option>
+                <option>INNOUT Project Platform</option>
             </select>
         </div>
-        <script src="scripts/selector.js"></script>
+        <div class="hidden_block" id="hidden_block_id" style="visibility: hidden;"></div>
+
     </div>
     <div class="line_20_img">
         <img class="" src="img/Line_19.png" alt="logo" srcset="img/Line_19x2.png 2x">
@@ -197,8 +198,59 @@
         <div class="addons_about">
             <p class="">Дополнения</p>
         </div>
-        <div class="addons_list"></div>
+        <div class="addons_list">
+            <div class="content-box">
+                <div class="show_1 show content__tittle">1</div>
+                <div class="show_1 show content__tittle">1</div>
+                <div class="show_1 show content__tittle">1</div>
+                <div class="show_2 show content__tittle">2</div>
+            </div>
+        </div>
     </div>
+    <script>
+        window.addEventListener('load', () => {
+            let blocks = document.querySelectorAll('.show');
+            // скрываем их
+            blocks.forEach(block => {
+                block.style.display = "none";
+            });
+        });
+        // выбираем кнопку
+        document.getElementById('btn1').addEventListener('click', function () {
+            // Выбираем все элементы класса show
+            let blocks = document.querySelectorAll('.show');
+            // скрываем их
+            blocks.forEach(block => {
+                block.style.display = "none";
+            });
+            // Выбираем все элементы нужного класса
+            blocks = document.querySelectorAll('.show_1');
+            // отображаем их
+            blocks.forEach(block => {
+                block.style.display = "block";
+            });
+        });
+
+        document.getElementById('btn2').addEventListener('click', function () {
+            let blocks = document.querySelectorAll('.show');
+            blocks.forEach(block => {
+                block.style.display = "none";
+            });
+            blocks = document.querySelectorAll('.show_2');
+            blocks.forEach(block => {
+                block.style.display = "block";
+            });
+        });
+
+        // кнопка all просто отображаем все элементы
+        document.getElementById('btnall').addEventListener('click', function () {
+            let blocks = document.querySelectorAll('.show');
+            blocks.forEach(block => {
+                block.style.display = "block";
+            });
+        });
+    </script>
+    <script src="scripts/selector.js"></script>
 </section>
 <footer>
 

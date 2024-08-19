@@ -530,6 +530,17 @@ section.main_section .addons_main .addons_about p {
 
 }
 
+.hidden_block {
+    height: 1px;
+    width: 1px;
+}
+
+.block {
+    display: none;
+    margin: 10px;
+    padding: 10px;
+    border: 2px solid orange;
+}
 
 /*dropdown elements*/
 

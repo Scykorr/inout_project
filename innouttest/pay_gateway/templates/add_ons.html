@@ -17,7 +17,11 @@
             <ul class="hr">
                 <li class="company_logo_li">
                     <a href="#" class="company_logo">
-                        <img src="img/Logo-INOUT-Project.png" alt="logo" srcset="img/Logo-INOUT-Project-x2.png 2x">
+                        <img
+                                sizes="(max-width: 320px) 280px,
+            (max-width: 480px) 440px,
+            800px" src="img/Logo-INOUT-Project.png" alt="logo"
+                                srcset="img/Logo-INOUT-Project-x2.png 2x">
                     </a>
                 </li>
                 <li>
@@ -93,7 +97,7 @@
                 <li class="price_payment_text">
                     <p>Хорошо известно, что «то, что не измеряется, не может быть улучшено».
                         Поэтому время отслеживания и регистрации важно для всех, кто хочет достичь лучших результатов.
-                        Easy Project позволяет отслеживать время, затрачиваемое на задачи и проекты,
+                        INOUT Проект позволяет отслеживать время, затрачиваемое на задачи и проекты,
                         несколькими способами, включая секундомер и ручной ввод времени для задач.</p>
                 </li>
 
@@ -117,10 +121,16 @@
 
 <section class="main_section">
     <div class="second_line_img">
-        <img src="img/Line_12.png" alt="logo" srcset="img/Line_12x2.png 2x">
+        <img class="second_line" src="img/Line_12.png" alt="logo" srcset="img/Line_12x2.png 2x">
     </div>
     <div class="div_road_map_img">
-        <img class="roadmap_img" src="img/roadmap.png" alt="logo" srcset="img/roadmap2x.png 2x">
+        <img class="roadmap_img"
+             srcset="img/roadmap2x.png 2x,
+             img/roadmap_05.png 0.5x,
+             img/roadmap_075.png 0.75x,
+             img/roadmap.png 1x"
+             src="img/roadmap_05.png"
+             alt="logo"/>
     </div>
     <div class="line_19_img">
         <img class="" src="img/Line_19.png" alt="logo" srcset="img/Line_19x2.png 2x">
@@ -351,13 +361,75 @@
     <div class="line_21_img">
         <img class="" src="img/Line_19.png" alt="logo" srcset="img/Line_19x2.png 2x">
     </div>
+    <div class="main_services">
+        <div class="services_about">
+            <p>Сервисы</p>
+        </div>
+        <div class="services_list">
+            <div class="content_box">
+                <div class="services">
+                    <input type="checkbox" class="custom-checkbox" id="private_cloud" name="private_cloud" value="yes">
+                    <label for="private_cloud"></label>
+                    <p class="text_for_checkbox">Private Cloud
+                        <img class="icon_info" src="img/icon_info_outline_.png" alt="logo"
+                             srcset="img/icon_info_outline_x2.png 2x"
+                             title="The private cloud provides own&#013;dedicates server while saving your&#013;internal IT resources. It is always&#013;deployed in closest geolocation for&#013;maximum connectivity and speed.">
+                    </p>
+                    <div class="text_price">
+                        <p>39.000 руб</p>
+                    </div>
+
+                    <label class="text_about_price">цена за одного пользователя / месяц,
+                        оплачивается ежегодно</label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="line_21_img">
+        <img class="" src="img/Line_19.png" alt="logo" srcset="img/Line_19x2.png 2x">
+    </div>
+    <div class="bill_services">
+        <div class="bill_about">
+            <p>Выставление счета</p>
+        </div>
+        <div class="bill_list">
+            <div class="content-box">
+                <div class="bill_one">
+                    <input class="custom-radio" name="billing" type="radio" id="in_year" value="in_year">
+                    <label for="in_year"></label>
+                    <p class="text_for_radio">Ежегодно (На 15% дешевле)
+                    </p>
+
+
+                </div>
+                <div class="bill_one">
+                    <input class="custom-radio" name="billing" type="radio" id="in_month" value="in_year">
+                    <label for="in_month"></label>
+                    <p class="text_for_radio">Ежемесячно
+                    </p>
+
+
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    <div class="price_panel">
+        <div class="result_panel">
+
+        </div>
+        <div class="result_bottom">
+
+        </div>
+    </div>
     <script src="scripts/range_box.js"></script>
     <script type="text/javascript" charset="utf-8" src="scripts/range_number.js"></script>
     <script src="scripts/on_open_addons.js"></script>
     <script src="scripts/selector.js"></script>
 </section>
-<footer>
-
+<footer class="footer-img">
+    <div></div>
 </footer>
 </body>
 

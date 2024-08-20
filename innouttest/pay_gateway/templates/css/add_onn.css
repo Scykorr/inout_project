@@ -32,7 +32,6 @@ header {
 }
 
 .upper_footer {
-
     height: 440px;
 
 }
@@ -193,6 +192,7 @@ header.upper_footer .layout_content .tabs_primary ul li a {
 /*main section*/
 
 .main_section {
+
     display: flex;
     align-items: center;
     justify-content: center;
@@ -202,17 +202,24 @@ header.upper_footer .layout_content .tabs_primary ul li a {
 }
 
 section.main_section .second_line_img {
+    width: 1198px;
     height: 81px;
     gap: 0;
 }
 
+.second_line {
+    width: 900px;
+}
+
 section.main_section .div_road_map_img {
-    max-width: 1109px;
-    max-height: 34px;
     top: 81px;
     left: 163px;
     gap: 0;
     margin-bottom: 40px;
+}
+
+.roadmap_img {
+    width: 900px;
 }
 
 /*main section line 19*/
@@ -632,6 +639,7 @@ section.main_section .addons_main .addons_list .additions .text_for_checkbox {
     gap: 0;
 
 }
+
 .text_price p {
     background-color: black;
     background-image: linear-gradient(90deg, #FFFFFF, #FFFFFFA3);
@@ -646,6 +654,280 @@ section.main_section .addons_main .addons_list .additions .text_about_price {
     color: #FFFFFF80;
     margin-left: 40px;
 }
+
+/*services*/
+
+section.main_section .main_services {
+    display: flex;
+    flex-direction: row;
+    /*align-items: center;*/
+    max-width: 1169px;
+    max-height: 520px;
+    top: 60px;
+    left: 0;
+    gap: 0;
+    border-radius: 8px 0 0 0;
+    background-color: black;
+    margin-top: 20px;
+    margin-right: 40px;
+}
+
+section.main_section .main_services .services_about {
+    max-width: 258px;
+    max-height: 44px;
+    top: 0;
+    left: 0;
+    gap: 0;
+    background-color: #FFFFFF;
+    background-image: linear-gradient(90deg, #FFFFFF, #FFFFFFA3);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-top: 20px;
+    margin-right: 60px;
+
+
+}
+
+section.main_section .main_services .services_about p {
+    font-size: 40px;
+    line-height: 44px;
+    background-color: black;
+    background-image: linear-gradient(90deg, white, #FFFFFFA3);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+
+}
+
+section.main_section .main_services .services_list {
+    max-width: 584px;
+    max-height: 501px;
+    top: 624px;
+    left: 597px;
+    gap: 0;
+    border-radius: 2px 0 0 0;
+    margin-left: 100px;
+}
+
+section.main_section .main_services .services_list .services {
+    display: flex;
+    flex-direction: row;
+    width: 584px;
+    height: 30px;
+    top: 624px;
+    left: 597px;
+    gap: 0;
+    border-radius: 2px 0 0 0;
+    margin-bottom: 32px;
+    margin-top: 33px;
+    background: black;
+}
+
+section.main_section .main_services .services_list .services .custom-checkbox {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+
+}
+
+section.main_section .main_services .services_list .services .icon_info {
+    max-width: 18px;
+    max-height: 18px;
+}
+
+section.main_section .main_services .services_list .services .text_for_checkbox {
+    width: 212px;
+    max-height: 30px;
+    font-size: 18px;
+    margin-top: 5px;
+}
+
+section.main_section .main_services .services_list .services .text_about_price {
+    width: 169px;
+    font-size: 10px;
+    line-height: 14px;
+    color: #FFFFFF80;
+
+}
+
+section.main_section .main_services .services_list .services .text_price {
+    width: 160px;
+    height: 30px;
+    font-size: 24px;
+    line-height: 26.4px;
+    gap: 0;
+
+}
+
+/*billing price*/
+
+section.main_section .bill_services {
+    display: flex;
+    flex-direction: row;
+    /*align-items: center;*/
+    /*max-width: 1064px;*/
+    width: 1199px;
+    max-height: 520px;
+    top: 60px;
+    left: 0;
+    gap: 0;
+    border-radius: 8px 0 0 0;
+    background-color: black;
+    margin-top: 20px;
+    margin-right: 40px;
+}
+
+section.main_section .bill_services .bill_about {
+    max-width: 340px;
+    max-height: 44px;
+    top: 0;
+    left: 0;
+    gap: 0;
+    background-color: #FFFFFF;
+    background-image: linear-gradient(90deg, #FFFFFF, #FFFFFFA3);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-top: 20px;
+    margin-left: 150px;
+    margin-right: 100px;
+
+
+}
+
+section.main_section .bill_services .bill_about p {
+    font-size: 40px;
+    line-height: 44px;
+    background-color: black;
+    background-image: linear-gradient(90deg, white, #FFFFFFA3);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+
+}
+
+section.main_section .bill_services .bill_list {
+    max-width: 584px;
+    max-height: 501px;
+    top: 624px;
+    left: 597px;
+    gap: 0;
+    border-radius: 2px 0 0 0;
+    margin-left: 100px;
+    margin-top: 40px;
+}
+
+section.main_section .bill_services .bill_list .bill_one {
+    display: flex;
+    flex-direction: row;
+    max-width: 584px;
+    height: 30px;
+    top: 624px;
+    left: 597px;
+    gap: 0;
+    border-radius: 2px 0 0 0;
+    background: black;
+}
+
+section.main_section .bill_services .bill_list .bill_one .custom-checkbox {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+
+}
+
+section.main_section .bill_services .bill_list .bill_one .icon_info {
+    max-width: 18px;
+    max-height: 18px;
+}
+
+section.main_section .bill_services .bill_list .bill_one .text_for_radio {
+    max-width: 228px;
+    max-height: 30px;
+    font-size: 18px;
+    margin-top: 5px;
+}
+
+
+/* для элемента input c type="radio" */
+.custom-radio {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+}
+
+/* для элемента label связанного с .custom-radio */
+.custom-radio + label {
+    display: inline-flex;
+    align-items: center;
+    user-select: none;
+}
+
+/* создание в label псевдоэлемента  before со следующими стилями */
+.custom-radio + label::before {
+    content: '';
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    flex-shrink: 0;
+    flex-grow: 0;
+    border: 1px solid #adb5bd;
+    border-radius: 50%;
+    margin-right: 0.5em;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 50% 50%;
+}
+
+/* стили при наведении курсора на радио */
+.custom-radio:not(:disabled):not(:checked) + label:hover::before {
+    border-color: #b3d7ff;
+}
+
+/* стили для активной радиокнопки (при нажатии на неё) */
+.custom-radio:not(:disabled):active + label::before {
+    background-color: #b3d7ff;
+    border-color: #b3d7ff;
+}
+
+/* стили для радиокнопки, находящейся в фокусе */
+.custom-radio:focus + label::before {
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+/* стили для радиокнопки, находящейся в фокусе и не находящейся в состоянии checked */
+.custom-radio:focus:not(:checked) + label::before {
+    border-color: #80bdff;
+}
+
+/* стили для радиокнопки, находящейся в состоянии checked */
+.custom-radio:checked + label::before {
+    border-color: #0b76ef;
+    background-color: #0b76ef;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23fff'/%3e%3c/svg%3e");
+}
+
+/* стили для радиокнопки, находящейся в состоянии disabled */
+.custom-radio:disabled + label::before {
+    background-color: #e9ecef;
+}
+
+/*result price panel*/
+
+section.main_section .price_panel {
+    width: 1199px;
+    height: 142px;
+    top: 1549px;
+    left: 117px;
+    gap: 0;
+    border-radius: 24px 0 0 0;
+    background-image: url("../img/banner_img_x1.png");
+    margin-top: 70px;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
 
 /*dropdown elements*/
 
@@ -775,4 +1057,21 @@ section.main_section .addons_main .addons_list .additions .text_about_price {
 .select-items div:hover, .same-as-selected {
     background-color: #222222;
 }
+
+
+/*footer*/
+footer {
+    width: 1440px;
+    height: 1338px;
+    gap: 0;
+    border-radius: 32px 32px 0 0;
+    background-image: url("../img/footer_img.png");
+    background-color: black;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    margin-top: -270px;
+}
+
 

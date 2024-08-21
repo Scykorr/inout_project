@@ -994,7 +994,11 @@ section.main_section .price_panel .result_panel .price_panel_prices .price_in_ye
 
 }
 
-section.main_section .price_panel .result_panel .price_panel_prices .price_in_month_label {
+section.main_section .price_panel .result_panel .price_panel_prices .price_in_month{
+    margin-top: 10px;
+}
+
+section.main_section .price_panel .result_panel .price_panel_prices .price_in_month .price_in_month_label {
     font-size: 16px;
     font-weight: 500;
     line-height: 17.6px;

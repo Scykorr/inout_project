@@ -196,7 +196,7 @@
                 </div>
             </div>
 
-            <div class="value4">5</div>
+            <div id="value_range" class="value4">5</div>
         </div>
     </div>
     <div class="line_21_img">
@@ -399,16 +399,12 @@
                     <label for="in_year"></label>
                     <p class="text_for_radio">Ежегодно (На 15% дешевле)
                     </p>
-
-
                 </div>
                 <div class="bill_one">
                     <input class="custom-radio" name="billing" type="radio" id="in_month" value="in_year">
                     <label for="in_month"></label>
                     <p class="text_for_radio">Ежемесячно
                     </p>
-
-
                 </div>
             </div>
 
@@ -418,7 +414,8 @@
     <div class="price_panel">
         <div class="result_panel">
             <div class="price_panel_text_about">
-                <label id="price_panel_about_label_id" class="price_panel_about_label">Итоговая цена за 5 пользователей</label>
+                <label id="price_panel_about_label_id" class="price_panel_about_label">Итоговая цена за 5
+                    пользователей</label>
             </div>
             <div class="price_panel_prices">
                 <div class="price_in_year">
@@ -431,16 +428,18 @@
         </div>
         <div class="div_div_result_bottom">
             <div class="div_result_bottom">
-            <a href="#" class="result_bottom">
-            Подтвердить и продолжить
-        </a>
-        </div>
+                <a href="#" class="result_bottom">
+                    Подтвердить и продолжить
+                </a>
+                <label id="hedden_label_plan"></label>
+            </div>
         </div>
 
 
     </div>
+    <script src="scripts/result_sum_write.js"></script>
+    <script src="scripts/get_result_sum.js"></script>
     <script src="scripts/range_box.js"></script>
-    <script type="text/javascript" charset="utf-8" src="scripts/range_number.js"></script>
     <script src="scripts/on_open_addons.js"></script>
     <script src="scripts/selector.js"></script>
 </section>

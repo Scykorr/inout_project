@@ -193,12 +193,12 @@ let myValue = document.querySelector('#myValue');
 let off = (myRange.offsetWidth - 30) / (parseInt(myRange.max) - parseInt(myRange.min));
 let px = ((myRange.valueAsNumber - parseInt(myRange.min)) * off) - (myValue.offsetParent.offsetWidth / 2);
 
-myValue.parentElement.style.left = px + 10 + 'px';
+myValue.parentElement.style.left = px + 11 + 'px';
 myValue.parentElement.style.top = myRange.offsetHeight + 'px';
 myValue.innerHTML = myRange.value;
 
 myRange.oninput = function () {
-    let px = ((myRange.valueAsNumber + 2 - parseInt(myRange.min)) * off) - (myValue.offsetWidth / 2);
+    let px = ((myRange.valueAsNumber + 2 - parseInt(myRange.min)) * off) - ((myValue.offsetWidth - 5) / 2);
     myValue.innerHTML = myRange.value;
     myValue.parentElement.style.left = px + 'px';
     getCheckedCheckBoxes()

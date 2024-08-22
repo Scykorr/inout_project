@@ -12,17 +12,13 @@ function getCheckedCheckBoxes() {
     let x11 = document.getElementsByClassName("hidden_block");
     let s11;
     s11 = x11.innerHTML.toString();
-    if (s11 == "INOUT Проект Essentials"){
+    if (s11 == "INOUT Проект Essentials") {
         planPrice = 590 * numUserAmount;
-    }
-    else if (s11 == "INOUT Проект Business"){
+    } else if (s11 == "INOUT Проект Business") {
         planPrice = 1190 * numUserAmount;
-    }
-    else if (s11 == "INOUT Проект Platform"){
+    } else if (s11 == "INOUT Проект Platform") {
         planPrice = 2390 * numUserAmount;
     }
-
-
 
 
     // let aboutPrice = document.getElementById("price_panel_about_label_id")
@@ -84,7 +80,6 @@ function getCheckedCheckBoxes() {
     // document.write(resultSumInYear)
     document.querySelector('#price_in_year_label_id').innerHTML = resultSumInYear + '  руб / год';
     document.querySelector('#price_in_year_month_id').innerHTML = '( ' + resultSumInMonth + ' руб / месяц )';
-
     return resultSum
 
 }
@@ -161,7 +156,7 @@ myRange.onmousemove = function () {
     let res_sum = getCheckedCheckBoxes();
 
     let resultSumYear = Math.round(res_sum);
-    let resultSumMonth = Math.round(res_sum/ 12);
+    let resultSumMonth = Math.round(res_sum / 12);
     let resultSumInYear = (resultSumYear + '').replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1.');
     let resultSumInMonth = (resultSumMonth + '').replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1.');
     document.querySelector('#price_in_year_label_id').innerHTML = resultSumInYear + '  руб / год';

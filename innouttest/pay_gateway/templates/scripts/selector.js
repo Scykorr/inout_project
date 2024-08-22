@@ -14,7 +14,7 @@ for (i = 0; i < l; i++) {
     a = document.createElement("DIV");
     a.setAttribute("class", "select-selected");
     a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
-    x1.innerHTML = a.innerHTML;
+    // x1.innerHTML = a.innerHTML;
     x[i].appendChild(a);
     /* For each element, create a new DIV that will contain the option list: */
     b = document.createElement("DIV");
@@ -48,20 +48,26 @@ for (i = 0; i < l; i++) {
                         blocks.forEach(block => {
                             block.style.display = "block";
                         });
-                    }
-                    else if (i == 1) {
+                    } else if (i == 1) {
                         blocks = document.querySelectorAll('.show_1');
                         blocks.forEach(block => {
                             block.style.display = "block";
                         });
-                    }
-                    else if (i == 2) {
+                    } else if (i == 2) {
                         blocks = document.querySelectorAll('.show_2');
                         blocks.forEach(block => {
                             block.style.display = "block";
                         });
                     }
-
+                    document.getElementById("help_desk").checked = false;
+                    document.getElementById("basic_dms").checked = false;
+                    document.getElementById("risk_management").checked = false;
+                    document.getElementById("custom_branding").checked = false;
+                    document.getElementById("gitlab_integration").checked = false;
+                    document.getElementById("b2b_crm").checked = false;
+                    document.getElementById("knowledge_base").checked = false;
+                    document.getElementById("asset_config").checked = false;
+                    document.getElementById("private_cloud").checked = false;
 
                     y = this.parentNode.getElementsByClassName("same-as-selected");
                     yl = y.length;

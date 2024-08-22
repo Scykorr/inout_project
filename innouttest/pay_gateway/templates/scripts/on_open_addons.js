@@ -8,5 +8,13 @@ window.addEventListener('load', () => {
     blocks = document.querySelectorAll('.show_0');
     blocks.forEach(block => {
         block.style.display = "block";
+
     });
+    // Check
+    document.getElementById("basic_dms").checked = true;
+
+// Uncheck
+    document.getElementById("basic_dms").checked = false;
+
+
 });

@@ -1,28 +1,33 @@
-var x, i, j, l, ll, selElmnt, a, b, c;
-/* ищем любой элемент с классом "custom-select" */
+let x, i, j, l, ll, selElmnt, a, b, c, l1;
+/* Look for any elements with the class "custom-select": */
 x = document.getElementsByClassName("custom-select");
 const x1 = document.getElementsByClassName("hidden_block");
+
 l = x.length;
+// essential_block = document.getElementsByClassName("ess_block")
+
 for (i = 0; i < l; i++) {
     selElmnt = x[i].getElementsByTagName("select")[0];
     ll = selElmnt.length;
-    /* для каждого элемента создаем новый элемент DIV, который будет работать как элемент выбора */
+    /* For each element, create a new DIV that will act as the selected item: */
     a = document.createElement("DIV");
     a.setAttribute("class", "select-selected");
     a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
+    // x1.innerHTML = a.innerHTML;
     x[i].appendChild(a);
-    /* для каждого элемента создаем новый элемент DIV, который будет содержать список опций */
+    /* For each element, create a new DIV that will contain the option list: */
     b = document.createElement("DIV");
     b.setAttribute("class", "select-items select-hide");
     for (j = 0; j < ll; j++) {
-        /* для каждой опции в оригинальном выпадающем списке
-        создаем новый элемент DIV, который будет работать как опция */
+        /* For each option in the original select element,
+        create a new DIV that will act as an option item: */
         c = document.createElement("DIV");
         c.innerHTML = selElmnt.options[j].innerHTML;
+        getCheckedCheckBoxes()
         c.addEventListener("click", function (e) {
-            /* когда на элемент кликают, обновляем оригинальный выпадающий список
-            и выбранный элемент */
-            var y, i, k, s, h, sl, yl;
+            /* When an item is clicked, update the original select box,
+            and the selected item: */
+            let y, i, k, s, h, sl, yl;
             s = this.parentNode.parentNode.getElementsByTagName("select")[0];
             sl = s.length;
             h = this.parentNode.previousSibling;
@@ -32,12 +37,11 @@ for (i = 0; i < l; i++) {
             blocks.forEach(block => {
                 block.style.display = "none";
             });
+
             for (i = 0; i < sl; i++) {
                 if (s.options[i].innerHTML == this.innerHTML) {
                     s.selectedIndex = i;
                     h.innerHTML = this.innerHTML;
-                    y = this.parentNode.getElementsByClassName("same-as-selected");
-                    yl = y.length;
                     x1.innerHTML = this.innerHTML;
                     if (i == 0) {
                         blocks = document.querySelectorAll('.show_0');
@@ -55,6 +59,18 @@ for (i = 0; i < l; i++) {
                             block.style.display = "block";
                         });
                     }
+                    document.getElementById("help_desk").checked = false;
+                    document.getElementById("basic_dms").checked = false;
+                    document.getElementById("risk_management").checked = false;
+                    document.getElementById("custom_branding").checked = false;
+                    document.getElementById("gitlab_integration").checked = false;
+                    document.getElementById("b2b_crm").checked = false;
+                    document.getElementById("knowledge_base").checked = false;
+                    document.getElementById("asset_config").checked = false;
+                    document.getElementById("private_cloud").checked = false;
+
+                    y = this.parentNode.getElementsByClassName("same-as-selected");
+                    yl = y.length;
                     for (k = 0; k < yl; k++) {
                         y[k].removeAttribute("class");
                     }
@@ -68,19 +84,21 @@ for (i = 0; i < l; i++) {
     }
     x[i].appendChild(b);
     a.addEventListener("click", function (e) {
-        /* когда на выпадающий список кликают, закрываем другие элементы выбора
-        и открываем/закрываем текущий элемент выбора */
+        /* When the select box is clicked, close any other select boxes,
+        and open/close the current select box: */
         e.stopPropagation();
         closeAllSelect(this);
         this.nextSibling.classList.toggle("select-hide");
         this.classList.toggle("select-arrow-active");
+        // essential_block.style.display = "essential_block";
+        x1.innerHTML = this.innerHTML;
     });
 }
 
 function closeAllSelect(elmnt) {
-    /* функция, которая закрывает все элементы выбора в документе
-    кроме текущего */
-    var x, y, i, xl, yl, arrNo = [];
+    /* A function that will close all select boxes in the document,
+    except the current select box: */
+    let x, y, i, xl, yl, arrNo = [];
     x = document.getElementsByClassName("select-items");
     y = document.getElementsByClassName("select-selected");
     xl = x.length;
@@ -99,6 +117,4 @@ function closeAllSelect(elmnt) {
     }
 }
 
-/* если пользователь кликает за пределами выпадающего списка,
-то все элементы выбора закрываются */
 document.addEventListener("click", closeAllSelect);

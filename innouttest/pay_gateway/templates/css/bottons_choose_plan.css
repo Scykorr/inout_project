@@ -1,0 +1,97 @@
+@import url("reset.css");
+
+@font-face {
+    font-weight: 400;
+    font-family: SF-Pro-Display;
+    src: url('../fonts/SF-Pro-Display-Regular.otf');
+    font-style: normal;
+
+}
+
+body {
+    font-family: "SF-Pro-Display", serif;
+    color: #FFFFFF;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 19.6px;
+    text-align: left;
+}
+
+.price_panel {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    max-height: 100%;
+    top: 20px;
+}
+
+
+.price_panel .div_div_result_bottom .div_result_bottom {
+    position: relative;
+
+}
+
+.price_panel .div_result_bottom {
+    position: absolute;
+    width: 193px;
+    height: 46px;
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+.price_panel .div_result_bottom .result_bottom {
+    font-size: 16px;
+    line-height: 17.6px;
+    display: inline-block;
+    padding: 10px 15px;
+    background: linear-gradient(0deg, rgba(50, 116, 249, 1), rgba(19, 91, 235, 1));
+    color: #fff;
+    border-radius: 35px;
+    text-decoration: none;
+    width: 193px;
+    height: 26px;
+    text-align: center;
+
+}
+
+
+.price_panel .div_div_result_bottom .div_result_bottom_business {
+    position: relative;
+
+}
+
+.price_panel .div_result_bottom_business {
+    width: 223px;
+    height: 46px;
+    margin-top: 10px;
+    margin-left: 20px;
+    position: relative;
+    background: linear-gradient(to right, rgba(92, 201, 255, 0.48), rgba(133, 214, 255, 0.12), rgba(173, 228, 255, 0.38));
+    padding: 3px;
+    border-radius: 35px;
+}
+
+.price_panel .div_result_bottom_business .result_bottom_business {
+    font-size: 16px;
+    line-height: 17.6px;
+    display: inline-block;
+    padding: 10px 15px;
+    background: white;
+    color: black;
+    border-radius: 35px;
+    text-decoration: none;
+    width: 193px;
+    height: 26px;
+    text-align: center;
+
+}
+
+
+.price_panel .div_result_bottom .result_bottom:hover {
+    background: linear-gradient(150deg, rgba(1, 60, 163, 1) 0%, rgba(35, 90, 191, 1) 50%, rgba(57, 114, 213, 1) 50%, rgba(51, 106, 206, 1) 100%);
+}
+
+.price_panel .div_result_bottom_business .result_bottom_business:hover {
+    background: linear-gradient(150deg, rgba(1, 60, 163, 1) 0%, rgba(35, 90, 191, 1) 50%, rgba(57, 114, 213, 1) 50%, rgba(51, 106, 206, 1) 100%);
+    color: #FFFFFF;
+}

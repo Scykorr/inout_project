@@ -7,11 +7,11 @@ function getCheckedCheckBoxes() {
     let peopleAmount = document.getElementById("value_range");
     s11 = x12.innerHTML.toString();
     peopleAmount = Number(peopleAmount.innerHTML.toString());
-    if (s11 == "INOUT Проект Essentials") {
+    if (s11 == "INOUT Проект База") {
         resultSum += 590 * peopleAmount;
-    } else if (s11 == "INOUT Проект Business") {
+    } else if (s11 == "INOUT Проект Бизнес") {
         resultSum += 1190 * peopleAmount;
-    } else if (s11 == "INOUT Проект Platform") {
+    } else if (s11 == "INOUT Проект Платформа") {
         resultSum += 2390 * peopleAmount;
     }
 

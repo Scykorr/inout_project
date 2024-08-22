@@ -76,7 +76,27 @@ function test_onload() {
     let plan_text = localStorage.getItem('test');
     let x12 = document.getElementsByClassName("hidden_block");
     x12.innerHTML = plan_text;
+    let blocks = document.querySelectorAll('.show');
     getCheckedCheckBoxes();
+    if (plan_text == "INOUT Проект База") {
+        blocks = document.querySelectorAll('.show_0');
+        blocks.forEach(block => {
+            block.style.display = "block";
+
+        });
+    } else if (plan_text == "INOUT Проект Бизнес") {
+        blocks = document.querySelectorAll('.show_1');
+        blocks.forEach(block => {
+            block.style.display = "block";
+
+        });
+    } else if (plan_text == "INOUT Проект Платформа") {
+        blocks = document.querySelectorAll('.show_2');
+        blocks.forEach(block => {
+            block.style.display = "block";
+
+        });
+    }
 }
 
 test_onload();
@@ -93,7 +113,8 @@ for (i = 0; i < l; i++) {
     /* для каждого элемента создаем новый элемент DIV, который будет работать как элемент выбора */
     a = document.createElement("DIV");
     a.setAttribute("class", "select-selected");
-    a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
+    // a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
+    a.innerHTML = localStorage.getItem('test');
     x[i].appendChild(a);
     /* для каждого элемента создаем новый элемент DIV, который будет содержать список опций */
     b = document.createElement("DIV");

@@ -350,10 +350,12 @@ section.main_section .choose_plan .select_dropdown .label_select_plan select opt
 
 section.main_section .choose_user_amount .range-with-question {
 }
-.question_over100{
+
+.question_over100 {
     margin-top: 40px;
     font-size: 10px;
 }
+
 /* range  */
 .range-input {
     -webkit-appearance: none;
@@ -528,6 +530,7 @@ section.main_section .addons_main .addons_about p {
 
 
 }
+
 .hidden_plan {
     height: 1px;
     width: 1px;
@@ -997,10 +1000,11 @@ section.main_section .price_panel .result_panel .price_panel_text_about .price_p
 
 }
 
-section.main_section .price_panel .result_panel .price_panel_prices{
+section.main_section .price_panel .result_panel .price_panel_prices {
     margin-top: 30px;
     margin-left: 300px;
 }
+
 section.main_section .price_panel .result_panel .price_panel_prices .price_in_year_label {
     font-size: 24px;
     font-weight: 500;
@@ -1010,7 +1014,7 @@ section.main_section .price_panel .result_panel .price_panel_prices .price_in_ye
 
 }
 
-section.main_section .price_panel .result_panel .price_panel_prices .price_in_month{
+section.main_section .price_panel .result_panel .price_panel_prices .price_in_month {
     margin-top: 10px;
 }
 

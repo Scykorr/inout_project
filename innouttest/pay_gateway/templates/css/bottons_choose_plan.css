@@ -86,6 +86,12 @@ body {
 
 }
 
+.hidden_plan_but_page {
+    height: 1px;
+    width: 1px;
+    visibility: hidden;
+}
+
 
 .price_panel .div_result_bottom .result_bottom:hover {
     background: linear-gradient(150deg, rgba(1, 60, 163, 1) 0%, rgba(35, 90, 191, 1) 50%, rgba(57, 114, 213, 1) 50%, rgba(51, 106, 206, 1) 100%);

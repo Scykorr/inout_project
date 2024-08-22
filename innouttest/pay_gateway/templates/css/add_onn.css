@@ -302,7 +302,7 @@ section.main_section .choose_user_amount {
     flex-direction: row;
     align-items: center;
     max-width: 1169px;
-    height: 84px;
+    height: 110px;
     top: 60px;
     left: 0px;
     gap: 0;
@@ -348,7 +348,12 @@ section.main_section .choose_plan .select_dropdown .label_select_plan select opt
     height: 57px;
 }
 
-
+section.main_section .choose_user_amount .range-with-question {
+}
+.question_over100{
+    margin-top: 40px;
+    font-size: 10px;
+}
 /* range  */
 .range-input {
     -webkit-appearance: none;
@@ -523,6 +528,11 @@ section.main_section .addons_main .addons_about p {
 
 
 }
+.hidden_plan {
+    height: 1px;
+    width: 1px;
+    visibility: hidden;
+}
 
 section.main_section .addons_main .addons_list {
     max-width: 600px;
@@ -689,7 +699,7 @@ section.main_section .main_services {
     border-radius: 8px 0 0 0;
     background-color: black;
     margin-top: 20px;
-    margin-right: 40px;
+    margin-right: 0px;
 }
 
 section.main_section .main_services .services_about {
@@ -703,7 +713,7 @@ section.main_section .main_services .services_about {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     margin-top: 20px;
-    margin-right: 60px;
+    margin-right: 30px;
 
 
 }

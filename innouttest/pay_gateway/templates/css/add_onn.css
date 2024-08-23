@@ -214,14 +214,150 @@ section.main_section .second_line_img {
 }
 
 section.main_section .div_road_map_img {
+    width: 1209px;
+    height: 34px;
     top: 81px;
     left: 163px;
     gap: 0;
-    margin-bottom: 40px;
+    margin-left: 100px;
 }
 
-.roadmap_img {
-    width: 900px;
+section.main_section .div_road_map_img .panel_roadmap {
+    display: flex;
+    flex-direction: row;
+    width: 1120px;
+    height: 30px;
+    top: 85px;
+    left: 163px;
+    gap: 0;
+    background: black;
+}
+
+section.main_section .div_road_map_img .panel_roadmap .finish_plan {
+    width: 15px;
+    height: 15px;
+    top: 85px;
+    left: 163px;
+    gap: 0;
+    border-radius: 50%;
+
+    border: 1px solid rgba(88, 119, 199, 0.6); /* Рамка придает изящность. Будет ошеломительно выглядеть! */
+    display: inline-block; /* Выстраивает все круги в линию. Прощай, дистанция! */
+    padding: 10px; /* Достаточно места вокруг текста. Каждому – свое пространство! */
+    color: silver; /* Цвет текста. Почему бы и нет? */
+    text-align: center; /* Горизонтальное центрирование текста. Само собой разумеющееся! */
+    line-height: 80px;
+}
+
+section.main_section .div_road_map_img .panel_roadmap .finish_div .finish_plan {
+
+}
+
+section.main_section .div_road_map_img .panel_roadmap .finish_div .img_check {
+    margin-right: -32px;
+    margin-top: -21px;
+}
+
+section.main_section .div_road_map_img .panel_roadmap .roadmap_text {
+    width: 93px;
+    height: 23px;
+    top: 87px;
+    left: 201px;
+    margin-left: 8px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 23.2px;
+    text-align: left;
+    margin-top: 5px;
+
+}
+
+section.main_section .div_road_map_img .panel_roadmap .create-line {
+    margin-left: 8px;
+    width: 96px;
+    border-top: 1px solid white;
+    margin-top: 17px;
+}
+
+section.main_section .div_road_map_img .panel_roadmap .active_plan {
+    position: relative;
+    width: 15px;
+    height: 15px;
+
+    gap: 0;
+    border-radius: 50%;
+    margin-left: 10px;
+    background: linear-gradient(rgba(50, 116, 249, 1), rgba(19, 91, 235, 1));
+    color: white;
+    border: 1px solid rgba(88, 119, 199, 0.6); /* Рамка придает изящность. Будет ошеломительно выглядеть! */
+    display: inline-block; /* Выстраивает все круги в линию. Прощай, дистанция! */
+    padding: 10px; /* Достаточно места вокруг текста. Каждому – свое пространство! */
+    text-align: center; /* Горизонтальное центрирование текста. Само собой разумеющееся! */
+    line-height: 80px;
+}
+
+section.main_section .div_road_map_img .panel_roadmap .common_plan {
+    position: relative;
+    width: 15px;
+    height: 15px;
+
+    gap: 0;
+    border-radius: 50%;
+    margin-left: 10px;
+    background: black;
+    color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.28); /* Рамка придает изящность. Будет ошеломительно выглядеть! */
+    display: inline-block; /* Выстраивает все круги в линию. Прощай, дистанция! */
+    padding: 10px; /* Достаточно места вокруг текста. Каждому – свое пространство! */
+    text-align: center; /* Горизонтальное центрирование текста. Само собой разумеющееся! */
+    line-height: 80px;
+}
+
+section.main_section .div_road_map_img .panel_roadmap .roadmap_text_second {
+    width: 173px;
+    height: 23px;
+    top: 87px;
+    left: 201px;
+    margin-left: 8px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 23.2px;
+    text-align: left;
+    margin-top: 5px;
+
+}
+
+section.main_section .div_road_map_img .panel_roadmap .roadmap_text_third {
+    width: 137px;
+    height: 23px;
+    top: 87px;
+    left: 201px;
+    margin-left: 8px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 23.2px;
+    text-align: left;
+    margin-top: 5px;
+
+}
+
+section.main_section .div_road_map_img .panel_roadmap .roadmap_text_fourth {
+    width: 53px;
+    height: 23px;
+    top: 87px;
+    left: 201px;
+    margin-left: 8px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 23.2px;
+    text-align: left;
+    margin-top: 5px;
+
+}
+
+.inout_pict {
+  width: 34px;
+    margin-left: 10px;
 }
 
 /*main section line 19*/
@@ -232,6 +368,7 @@ section.main_section .line_19_img {
     left: 0;
     gap: 0;
     align-items: center;
+    margin-top: 40px;
 }
 
 /*main section choose plan*/

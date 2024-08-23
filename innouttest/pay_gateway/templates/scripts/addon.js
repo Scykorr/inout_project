@@ -76,8 +76,11 @@ function test_onload() {
     let plan_text = localStorage.getItem('test');
     let x12 = document.getElementsByClassName("hidden_block");
     x12.innerHTML = plan_text;
-    let blocks = document.querySelectorAll('.show');
     getCheckedCheckBoxes();
+    let blocks = document.querySelectorAll('.show');
+    blocks.forEach(block => {
+        block.style.display = "none";
+    });
     if (plan_text == "INOUT Проект База") {
         blocks = document.querySelectorAll('.show_0');
         blocks.forEach(block => {
@@ -98,8 +101,6 @@ function test_onload() {
         });
     }
 }
-
-test_onload();
 
 
 var x, i, j, l, ll, selElmnt, a, b, c;
@@ -308,8 +309,6 @@ radioMonth.addEventListener('change', (event) => {
 })
 
 
-
-
-
+test_onload();
 
 

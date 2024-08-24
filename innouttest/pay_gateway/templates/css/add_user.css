@@ -436,12 +436,13 @@ section.main_section .main_info {
     max-width: 100%;
     flex-direction: row;
     margin-top: 40px;
-    background-color: black;
 }
 
 section.main_section .main_info .main_user_about {
     max-width: 743px;
 }
+
+/*line*/
 
 section.main_section .main_info .main_user_about .create-line {
     margin-left: 0;
@@ -449,6 +450,8 @@ section.main_section .main_info .main_user_about .create-line {
     border-top: 1px solid white;
 
 }
+
+/*main info block*/
 
 .about_billing {
     width: 445px;
@@ -458,4 +461,127 @@ section.main_section .main_info .main_user_about .create-line {
     gap: 0;
     border-radius: 27px 0 0 0;
 
+}
+
+/*input domain*/
+
+section.main_section .main_info .main_user_about .domain {
+    width: 645px;
+    height: 44px;
+    top: 222px;
+    left: 123px;
+    gap: 0;
+    border-radius: 5px 0 0 0;
+    display: flex;
+    flex-direction: row;
+    margin-top: 40px;
+    margin-bottom: 120px;
+}
+
+section.main_section .main_info .main_user_about .domain .domain_about {
+    width: 198.72px;
+    height: 44px;
+    top: 222px;
+    left: 123px;
+    gap: 0;
+    border: 1px;
+    background-color: black;
+    background-image: linear-gradient(90deg, #FFFFFF, #FFFFFFA3);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-right: 82.71px;
+}
+
+section.main_section .main_info .main_user_about .domain_about .text_domain {
+    font-size: 40px;
+    line-height: 44px;
+}
+
+section.main_section .main_info .main_user_about .domain .inp_domain {
+    height: 44px;
+}
+
+section.main_section .main_info .main_user_about .domain .inp_domain .input_label {
+    width: 227.57px;
+    height: 42px;
+    top: 224px;
+    left: 404.43px;
+    gap: 0;
+    border-radius: 5px 0 0 0;
+    border: 1px;
+
+}
+
+section.main_section .main_info .main_user_about .domain .inp_domain .input_label input {
+    font-size: 25px;
+    border-color: rgba(255, 255, 255, 0.3);
+
+}
+
+section.main_section .main_info .main_user_about .domain .inp_domain .input-title {
+    width: 132px;
+    height: 25px;
+    top: 232px;
+    left: 636px;
+    gap: 0;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 25.2px;
+    text-align: left;
+    color: rgba(255, 255, 255, 0.5);
+
+
+}
+
+/*info about user*/
+
+section.main_section .main_info .main_user_about .user_info {
+    width: 741px;
+    height: 671px;
+    gap: 0;
+    border: 1px;
+    display: flex;
+    flex-direction: row;
+    margin-top: 40px;
+}
+
+section.main_section .main_info .main_user_about .user_info .user_info_about {
+    width: 234px;
+    height: 44px;
+    gap: 0;
+    border: 1px;
+    background-color: black;
+    background-image: linear-gradient(90deg, #FFFFFF, #FFFFFFA3);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-right: 40px;
+
+}
+
+section.main_section .main_info .main_user_about .user_info .user_info_about .user_info_about_text {
+    font-size: 40px;
+    line-height: 44px;
+}
+
+
+
+/*footer*/
+footer {
+    max-width: 100%;
+    max-height: 100%;
+    gap: 0;
+    border-radius: 32px 32px 0 0;
+    background-color: black;
+}
+
+footer .footer-img {
+    max-width: 1700px;
+    height: 1500px;
+    background-image: url("../img/footer_img.png");
+    border-radius: 32px 32px 0 0;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    margin-top: -370px;
 }

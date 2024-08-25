@@ -807,6 +807,174 @@ section.main_section .main_info .main_user_about .bill_method_main .payment_kind
     background-color: #e9ecef;
 }
 
+section.main_section .main_info .about_billing {
+    width: 445px;
+    height: 299px;
+    gap: 0;
+    border-radius: 0 0 0 0;
+    margin-left: 40px;
+
+}
+
+section.main_section .main_info .about_billing .about_billing_panel {
+    width: 440px;
+    height: 299px;
+    gap: 0;
+    border-radius: 27px 27px 27px 27px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+
+section.main_section .main_info .about_billing .about_billing_panel .billing_title {
+    width: 258px;
+    height: 38px;
+    gap: 0;
+    border: 1px;
+    background-color: black;
+    background-image: linear-gradient(90deg, #FFFFFF, #FFFFFFA3);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-left: 18px;
+    margin-top: 14px;
+
+}
+
+section.main_section .main_info .about_billing .about_billing_panel .billing_title_text {
+    font-size: 30px;
+    line-height: 33px;
+}
+
+/*line*/
+
+section.main_section .main_info .about_billing .about_billing_panel .billing_line {
+    margin-left: 18px;
+    width: 405px;
+    border-top: 1px solid white;
+    margin-top: 17px;
+
+}
+
+/*billing plan*/
+
+section.main_section .main_info .about_billing .about_billing_panel .billing_plan {
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 18px;
+}
+
+section.main_section .main_info .about_billing .about_billing_panel .billing_plan .plan_and_users {
+    width: 260px;
+    height: 17px;
+    gap: 0;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 12px;
+    line-height: 16.8px;
+
+
+}
+
+
+section.main_section .main_info .about_billing .about_billing_panel .billing_plan .font_price_per_month {
+    background-color: rgba(255, 255, 255, 0.05);
+    background-image: linear-gradient(90deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.64));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+section.main_section .main_info .about_billing .about_billing_panel .billing_plan .font_price_per_month .price_per_month {
+    font-size: 16px;
+    line-height: 17.6px;
+    text-align: center;
+}
+
+
+section.main_section .main_info .about_billing .about_billing_panel .full_price {
+    height: 200px;
+    background-color: rgba(255, 255, 255, 0.05);
+    background-image: linear-gradient(90deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.64));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: flex;
+
+}
+
+section.main_section .main_info .about_billing .about_billing_panel .full_price .full_price_d {
+    width: 160px;
+    height: 30px;
+    gap: 0;
+    border: 1px;
+    margin-top: 15px;
+    margin-left: 25px;
+}
+
+section.main_section .main_info .about_billing .about_billing_panel .full_price .full_price_d .full_price_title {
+    font-size: 18px;
+    line-height: 19.8px;
+    text-align: center;
+
+
+}
+
+section.main_section .main_info .about_billing .about_billing_panel .full_price .full_prices_d {
+    width: 200px;
+    height: 30px;
+    gap: 0;
+    border: 1px;
+    margin-top: 15px;
+    margin-left: 25px;
+    text-align: right;
+}
+
+section.main_section .main_info .about_billing .about_billing_panel .full_price .full_prices_d .font_price_per_year {
+    margin-top: 10px;
+    font-size: 18px;
+    line-height: 19.8px;
+}
+
+section.main_section .main_info .about_billing .about_billing_panel .full_price .full_prices_d .font_price_per_month {
+    margin-top: 15px;
+    font-size: 16px;
+    line-height: 17.6px;
+}
+
+
+/*result button*/
+
+section.main_section .main_info .main_user_about .div_div_result_bottom .div_result_bottom {
+    position: relative;
+
+}
+
+section.main_section .main_info .main_user_about .div_result_bottom {
+    position: absolute;
+    width: 319px;
+    height: 43px;
+    top: 100px;
+    left: 480px;
+    gap: 0;
+    border-radius: 32px;
+
+}
+
+section.main_section .main_info .main_user_about .div_result_bottom .result_bottom {
+    font-size: 16px;
+    line-height: 17.6px;
+    display: inline-block;
+    padding: 10px 15px;
+    background: linear-gradient(0deg, rgba(50, 116, 249, 1), rgba(19, 91, 235, 1));
+    color: #fff;
+    border-radius: 35px;
+    text-decoration: none;
+
+}
+
+section.main_section .main_info .main_user_about .div_result_bottom .result_bottom:hover {
+    background: linear-gradient(150deg, rgba(1, 60, 163, 1) 0%, rgba(35, 90, 191, 1) 50%, rgba(57, 114, 213, 1) 50%, rgba(51, 106, 206, 1) 100%);
+}
+
 /*footer*/
 footer {
     max-width: 100%;
@@ -825,5 +993,5 @@ footer .footer-img {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    margin-top: -370px;
+    margin-top: -320px;
 }

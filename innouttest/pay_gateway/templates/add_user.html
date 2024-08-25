@@ -284,16 +284,15 @@
                     </form>
                     <div class="agreement_checkboxes">
                         <div class="checkbox_info">
-                            <input type="checkbox" class="custom-checkbox"
-                                   id="agreem_use_prog" name="agreem_1" value="yes">
+                            <input type="checkbox" class="custom-checkbox" id="agreem_1" name="agreem_1" value="yes">
                             <label for="agreem_1">
-                                <a href="#">Я согласен с условиями использования ПО</a>
+                                <a href="#">Я согласен с условиями использования ПО
+                                    данных </a>
                             </label>
                         </div>
-                        <div class="checkbox_info_second">
-                            <input type="checkbox" class="custom-checkbox"
-                                   id="agreem_user_info" name="agreem_2" value="yes">
-                            <label class="addit_for_label" for="agreem_2">
+                        <div class="checkbox_info">
+                            <input type="checkbox" class="custom-checkbox" id="agreem_2" name="agreem_2" value="yes">
+                            <label for="agreem_2">
                                 <a href="#">Я даю согласие на обработку моих персональных
                                     данных </a>
                             </label>
@@ -305,9 +304,38 @@
 
             </div>
             <div class="create-line"></div>
+            <div class="bill_method_main">
+                <div class="about_bill_method">
+                    <p class="bill_about_text">Метод оплаты</p>
+                </div>
+                <div class="payment_kind_main">
+                    <div class="bill_one">
+                        <input class="custom-radio" name="billing" type="radio" id="credit_card" value="credit_card"
+                               checked>
+                        <label for="credit_card"></label>
+                        <p class="text_for_radio">Банковская карта
+                        </p>
+                    </div>
+                    <div class="bill_one">
+                        <input class="custom-radio" name="billing" type="radio" id="pay_check" value="pay_check">
+                        <label for="pay_check"></label>
+                        <p class="text_for_radio">Счет на оплату
+                        </p>
+                    </div>
+                </div>
+                <div class="">
+                    <img class="" src="img/banks_card.png" alt="logo" srcset="img/banks_card_x2.png 2x">
+                </div>
+            </div>
         </div>
         <div class="about_billing">
-
+            <div class="about_billing_panel">
+                <div class="billing_title"></div>
+                <div class="billing_line"></div>
+                <div class="billing_plan"></div>
+                <div class="billing_line"></div>
+                <div class="full_price"></div>
+            </div>
         </div>
     </div>
 </section>

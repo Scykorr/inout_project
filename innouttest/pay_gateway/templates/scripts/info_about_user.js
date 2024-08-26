@@ -73,53 +73,55 @@ function onInputOrg() {
 input_org.addEventListener('input', onInputOrg);
 
 function onInputPhone() {
-	if (isNotNullValid(input_phone.value)) {
-		input_phone.style.borderColor = 'green';
-	} else {
-		input_phone.style.borderColor = 'red';
-	}
+    if (isNotNullValid(input_phone.value)) {
+        input_phone.style.borderColor = 'green';
+    } else {
+        input_phone.style.borderColor = 'red';
+    }
 }
 
 input_phone.addEventListener('input', onInputPhone);
 
 function onInputCountry() {
-	if (isNotNullValid(input_country.value)) {
-		input_country.style.borderColor = 'green';
-	} else {
-		input_country.style.borderColor = 'red';
-	}
+    if (isNotNullValid(input_country.value)) {
+        input_country.style.borderColor = 'green';
+    } else {
+        input_country.style.borderColor = 'red';
+    }
 }
 
 input_country.addEventListener('input', onInputCountry);
 
 function onInputCity() {
-	if (isNotNullValid(input_city.value)) {
-		input_city.style.borderColor = 'green';
-	} else {
-		input_city.style.borderColor = 'red';
-	}
+    if (isNotNullValid(input_city.value)) {
+        input_city.style.borderColor = 'green';
+    } else {
+        input_city.style.borderColor = 'red';
+    }
 }
 
 input_city.addEventListener('input', onInputCity);
 
 
 function onInputAddress() {
-	if (isNotNullValid(input_address.value)) {
-		input_address.style.borderColor = 'green';
-	} else {
-		input_address.style.borderColor = 'red';
-	}
+    if (isNotNullValid(input_address.value)) {
+        input_address.style.borderColor = 'green';
+    } else {
+        input_address.style.borderColor = 'red';
+    }
 }
 
 input_address.addEventListener('input', onInputAddress);
 
 
 function onInputInn() {
-	if (isNotNullValid(input_inn.value)) {
-		input_inn.style.borderColor = 'green';
-	} else {
-		input_inn.style.borderColor = 'red';
-	}
+    if (isNotNullValid(input_inn.value)) {
+        input_inn.style.borderColor = 'green';
+    } else {
+        input_inn.style.borderColor = 'red';
+    }
 }
 
 input_inn.addEventListener('input', onInputInn);
+
+

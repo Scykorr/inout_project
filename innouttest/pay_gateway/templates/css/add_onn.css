@@ -968,7 +968,7 @@ section.main_section .bill_services .bill_about {
     -webkit-text-fill-color: transparent;
     margin-top: 20px;
     margin-left: 0;
-    margin-right: 400px;
+    margin-right: 200px;
 
 
 }
@@ -991,7 +991,7 @@ section.main_section .bill_services .bill_list {
     left: 597px;
     gap: 0;
     border-radius: 2px 0 0 0;
-    margin-left: 100px;
+    margin-right: 300px;
     margin-top: 40px;
 }
 

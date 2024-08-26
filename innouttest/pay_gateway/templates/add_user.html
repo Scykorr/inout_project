@@ -160,13 +160,15 @@
                 <form class="inp_domain" method="get" action="../result">
                     <label class="input-label">
                         <input
-                                class="input"
+                                class="input_domain"
                                 type="text"
                                 name="one-line"
                                 style="width: 227.57px; height: 42px;
                                  background-color: rgba(255, 255, 255, 0.05);
                                   color: white; border-radius:5px;
                                    border-color: rgba(255, 255, 255, 0.3);"
+                                minlength="2"
+                                required
                         >
                         <span class="input-title">.inoutproject.ru</span>
                     </label>
@@ -182,13 +184,15 @@
                         <label class="curr_inp_field_label">
                             <span class="input-title">Почта</span>
                             <input
-                                    class="input"
-                                    type="text"
+                                    class="input_email"
+                                    type="email"
                                     name="one-line"
                                     style="width: 462px; height: 42px;
                                  background-color: rgba(255, 255, 255, 0.05);
                                   color: white; border-radius:5px;
                                    border-color: rgba(255, 255, 255, 0.3);"
+                                    required
+                                    id="email_input"
                             >
 
                         </label>
@@ -197,7 +201,7 @@
                         <label class="curr_inp_field_label">
                             <span class="input-title">Название организации</span>
                             <input
-                                    class="input"
+                                    class="input_org"
                                     type="text"
                                     name="one-line"
                                     style="width: 462px; height: 42px;
@@ -212,7 +216,7 @@
                         <label class="curr_inp_field_label">
                             <span class="input-title">Номер телефона</span>
                             <input
-                                    class="input"
+                                    class="input_phone"
                                     type="text"
                                     name="one-line"
                                     style="width: 462px; height: 42px;
@@ -227,7 +231,7 @@
                         <label class="curr_inp_field_label">
                             <span class="input-title">Страна</span>
                             <input
-                                    class="input"
+                                    class="input_country"
                                     type="text"
                                     name="one-line"
                                     style="width: 462px; height: 42px;
@@ -242,7 +246,7 @@
                         <label class="curr_inp_field_label">
                             <span class="input-title">Город</span>
                             <input
-                                    class="input"
+                                    class="input_city"
                                     type="text"
                                     name="one-line"
                                     style="width: 462px; height: 42px;
@@ -257,7 +261,7 @@
                         <label class="curr_inp_field_label">
                             <span class="input-title">Юридический адрес</span>
                             <input
-                                    class="input"
+                                    class="input_address"
                                     type="text"
                                     name="one-line"
                                     style="width: 462px; height: 42px;
@@ -272,7 +276,7 @@
                         <label class="curr_inp_field_label">
                             <span class="input-title">ИНН</span>
                             <input
-                                    class="input"
+                                    class="input_inn"
                                     type="text"
                                     name="one-line"
                                     style="width: 462px; height: 42px;
@@ -330,9 +334,9 @@
             </div>
             <div class="div_div_result_bottom">
                 <div class="div_result_bottom">
-                    <a href="#" class="result_bottom">
+                    <button type="submit" class="result_bottom">
                         Подтвердить и продолжить оплату
-                    </a>
+                    </button>
                     <label id="hedden_label_plan"></label>
                 </div>
             </div>

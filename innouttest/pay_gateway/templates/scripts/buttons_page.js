@@ -1,11 +1,11 @@
 function setPlanOne() {
-    localStorage.setItem('test', "INOUT Проект База");
+    localStorage.setItem('plan', "INOUT Проект База");
 }
 
 function setPlanTwo() {
-    localStorage.setItem('test', "INOUT Проект Бизнес");
+    localStorage.setItem('plan', "INOUT Проект Бизнес");
 }
 
 function setPlanThree() {
-    localStorage.setItem('test', "INOUT Проект Платформа");
+    localStorage.setItem('plan', "INOUT Проект Платформа");
 }

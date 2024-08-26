@@ -7,6 +7,9 @@ function getCheckedCheckBoxes() {
     let peopleAmount = document.getElementById("value_range");
     s11 = x12.innerHTML;
     peopleAmount = Number(peopleAmount.innerHTML.toString());
+
+    localStorage.setItem('userAmount', peopleAmount.toString());
+
     if (s11 == "INOUT Проект База") {
         resultSum += 590 * peopleAmount;
     } else if (s11 == "INOUT Проект Бизнес") {
@@ -64,6 +67,10 @@ function getCheckedCheckBoxes() {
 
     let resultSumYear = Math.round(resultSum);
     let resultSumMonth = Math.round(resultSum / 12);
+
+    localStorage.setItem('resultSumYear', resultSumYear.toString())
+    localStorage.setItem('resultSumMonth', resultSumMonth.toString())
+
     resultSumInYear = (resultSumYear + '').replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1.');
     resultSumInMonth = (resultSumMonth + '').replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1.');
     // document.write(resultSumInYear)
@@ -73,7 +80,7 @@ function getCheckedCheckBoxes() {
 
 
 function test_onload() {
-    let plan_text = localStorage.getItem('test');
+    let plan_text = localStorage.getItem('plan');
     let x12 = document.getElementsByClassName("hidden_block");
     x12.innerHTML = plan_text;
     getCheckedCheckBoxes();
@@ -115,7 +122,7 @@ for (i = 0; i < l; i++) {
     a = document.createElement("DIV");
     a.setAttribute("class", "select-selected");
     // a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
-    a.innerHTML = localStorage.getItem('test');
+    a.innerHTML = localStorage.getItem('plan');
     x[i].appendChild(a);
     /* для каждого элемента создаем новый элемент DIV, который будет содержать список опций */
     b = document.createElement("DIV");
@@ -252,6 +259,7 @@ sliderEl4.addEventListener("input", (event) => {
 
     sliderEl4.style.background = `linear-gradient(to right, #2066F1 ${progress}%, #ccc ${progress}%)`;
     document.querySelector('#price_panel_about_label_id').innerHTML = 'Итоговая цена за ' + progress.toString() + ' пользователей';
+    getCheckedCheckBoxes();
     // document.querySelector('#range_label').innerHTML = progress.toString();
 
 

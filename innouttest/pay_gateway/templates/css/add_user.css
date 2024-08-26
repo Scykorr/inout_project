@@ -891,6 +891,13 @@ section.main_section .main_info .about_billing .about_billing_panel .billing_pla
 }
 
 
+section.main_section .main_info .about_billing .about_billing_panel .full_price .price_per_month {
+    font-size: 16px;
+    line-height: 17.6px;
+    text-align: center;
+}
+
+
 section.main_section .main_info .about_billing .about_billing_panel .full_price {
     height: 200px;
     background-color: rgba(255, 255, 255, 0.05);

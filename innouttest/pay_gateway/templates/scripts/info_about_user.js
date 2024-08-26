@@ -40,10 +40,13 @@ function isDomainValid(value) {
 }
 
 function onInputDomain() {
+    const input_span = document.querySelector('#domain_span');
     if (isDomainValid(input_domain.value)) {
         input_domain.style.borderColor = 'green';
+        input_span.innerHTML = "";
     } else {
         input_domain.style.borderColor = 'red';
+        input_span.innerHTML = input_domain.title;
     }
 }
 

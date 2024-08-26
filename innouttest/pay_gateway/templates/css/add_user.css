@@ -1002,3 +1002,8 @@ footer .footer-img {
     background-size: cover;
     margin-top: -320px;
 }
+
+
+#domain_span {
+    color: red;
+}

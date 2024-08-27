@@ -309,7 +309,7 @@ section.main_section .div_road_map_img .panel_roadmap .finish_div .finish_plan {
 }
 
 section.main_section .div_road_map_img .panel_roadmap .finish_div .img_check {
-    margin-right: -32px;
+    margin-right: -34px;
     margin-top: -21px;
 }
 
@@ -542,8 +542,8 @@ section.main_section .main_info .main_user_about .domain .inp_domain .input-titl
 /*title*/
 
 section.main_section .main_info .main_user_about .user_info {
-    width: 741px;
-    height: 700px;
+    width: 841px;
+    height: 720px;
     gap: 0;
     border: 1px;
     display: flex;
@@ -572,7 +572,7 @@ section.main_section .main_info .main_user_about .user_info .user_info_about .us
 /*input block*/
 
 section.main_section .main_info .main_user_about .user_info .input_fields {
-    width: 462px;
+    width: 562px;
     height: 700px;
     gap: 0;
 
@@ -1005,9 +1005,41 @@ footer .footer-img {
 
 
 #domain_span {
-    color: red;
+    color: rgb(250, 0, 0, 70%);
 }
 
 #email_span {
-    color: red;
+    color: rgb(250, 0, 0, 70%);
+}
+
+#org_span {
+    color: rgb(250, 0, 0, 70%);
+}
+
+#phone_span {
+    color: rgb(250, 0, 0, 70%);
+}
+
+#country_span {
+    color: rgb(250, 0, 0, 70%);
+}
+
+#city_span {
+    color: rgb(250, 0, 0, 70%);
+}
+
+#address_span {
+    color: rgb(250, 0, 0, 70%);
+}
+
+#inn_span {
+    color: rgb(250, 0, 0, 70%);
+}
+
+.agreem_1_span {
+    color: rgb(250, 0, 0, 70%);
+}
+
+.agreem_2_span {
+    color: rgb(250, 0, 0, 70%);
 }

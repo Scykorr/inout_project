@@ -543,7 +543,7 @@ section.main_section .main_info .main_user_about .domain .inp_domain .input-titl
 
 section.main_section .main_info .main_user_about .user_info {
     width: 741px;
-    height: 671px;
+    height: 700px;
     gap: 0;
     border: 1px;
     display: flex;
@@ -573,7 +573,7 @@ section.main_section .main_info .main_user_about .user_info .user_info_about .us
 
 section.main_section .main_info .main_user_about .user_info .input_fields {
     width: 462px;
-    height: 666px;
+    height: 700px;
     gap: 0;
 
 }
@@ -583,7 +583,7 @@ section.main_section .main_info .main_user_about .user_info .input_fields .curr_
     height: 65px;
     gap: 0;
     border-radius: 5px 0 0 0;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 
 }
 
@@ -1005,5 +1005,9 @@ footer .footer-img {
 
 
 #domain_span {
+    color: red;
+}
+
+#email_span {
     color: red;
 }

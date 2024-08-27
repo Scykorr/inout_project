@@ -22,10 +22,13 @@ function isEmailValid(value) {
 }
 
 function onInputEmail() {
+    const input_span = document.querySelector('#email_span');
     if (isEmailValid(input_email.value)) {
         input_email.style.borderColor = 'green';
+         input_span.innerHTML = "";
     } else {
         input_email.style.borderColor = 'red';
+        input_span.innerHTML = "Неверный формат email" ;
     }
 }
 
@@ -46,7 +49,8 @@ function onInputDomain() {
         input_span.innerHTML = "";
     } else {
         input_domain.style.borderColor = 'red';
-        input_span.innerHTML = input_domain.title;
+        input_span.innerHTML = "<br>Неверное имя домена: " + input_domain.innerHTML.toString() + ".inoutproject.com.<br>" +
+            "Пожалуйста, используйте только буквы и цифры.<br>Имя не может начинаться с цифры.<br>Длина не менее двух символов." ;
     }
 }
 

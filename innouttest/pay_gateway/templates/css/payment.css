@@ -431,24 +431,31 @@ section.main_section .div_road_map_img .panel_roadmap .roadmap_text_fourth {
 section.main_section .main_payment_place {
     display: flex;
     flex-direction: row;
+    width: 1209px;
+    height: 400px;
 }
 
 section.main_section .main_payment_place .main_payment_place_about {
     width: 361px;
-    background-image: linear-gradient(90deg, #FFFFFF, #FFFFFFA3);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
     display: flex;
     flex-direction: column;
+    align-content: flex-start;
+    margin-top: 100px;
 
 }
 
-section.main_section .main_payment_place .main_payment_place_about .text_main_about {
+section.main_section .main_payment_place .main_payment_place_about .grad_about {
+    background-image: linear-gradient(90deg, #FFFFFF, #FFFFFFA3);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+section.main_section .main_payment_place .main_payment_place_about .grad_about .text_main_about {
     font-size: 40px;
     line-height: 44px;
 }
 
-section.main_section .main_payment_place .main_payment_place_about .gradient_text_result_price {
+section.main_section .main_payment_place .main_payment_place_about .grad_about .gradient_text_result_price {
     width: 109px;
     background-color: black;
     background-image: linear-gradient(90deg, #FFFFFF, #FFFFFFA3);
@@ -459,10 +466,37 @@ section.main_section .main_payment_place .main_payment_place_about .gradient_tex
 section.main_section .main_payment_place .main_payment_place_about .gradient_text_result_price .text_result_price {
     font-size: 24px;
     line-height: 26.4px;
-    margin-top: 20px;
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
 
 
+section.main_section .main_payment_place .main_payment_place_about .about_current_payment .payment_timer {
+    color: #FFFFFF80;
+    font-size: 16px;
+    line-height: 22.4px;
+    margin-bottom: 10px;
+}
+
+section.main_section .main_payment_place .main_payment_place_about .about_current_payment .about_payment {
+    color: #FFFFFF80;
+    font-size: 16px;
+    line-height: 22.4px;
+}
+
+section.main_section .main_payment_place .main_payment_place_about .about_current_payment .out_from_payment {
+    margin-top: 200px;
+}
+
+section.main_section .main_payment_place .main_payment_place_about .about_current_payment .out_from_payment .out_from_billing {
+    color: #FFFFFF80;
+    font-size: 16px;
+    text-decoration: none;
+    line-height: 22.4px;
+}
+
+
+/*payment module*/
 
 section.main_section .main_payment_place .payment_module {
     display: flex;

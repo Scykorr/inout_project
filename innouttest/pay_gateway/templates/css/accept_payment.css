@@ -491,7 +491,33 @@ section.main_section .authorization_section_main .authorization_block .sub_title
 }
 
 
-section.main_section .authorization_section_main .authorization_block
+section.main_section .authorization_section_main .authorization_block .authorization_link {
+    width: 152px;
+    height: 52px;
+    padding: 2px;
+    position: relative;
+    border-radius: 32px;
+    background: linear-gradient(to right, rgba(92, 201, 255, 0.48), rgba(133, 214, 255, 0.12), rgba(173, 228, 255, 0.38));
+    margin-left: 20px;
+    margin-top: 5px;
+}
+
+section.main_section .authorization_section_main .authorization_block .authorization_link .link_a {
+    background: white;
+
+    padding: 15px;
+    font-size: 16px;
+    line-height: 22.4px;
+    border-radius: 32px;
+    text-align: center;
+
+
+}
+
+section.main_section .authorization_section_main .authorization_block .authorization_link .link_a a{
+    text-decoration: none;
+    color: rgba(0, 0, 0, 1);
+}
 
 /*footer*/
 footer {

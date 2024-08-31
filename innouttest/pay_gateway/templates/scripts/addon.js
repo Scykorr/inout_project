@@ -256,8 +256,8 @@ sliderEl4.addEventListener("input", (event) => {
     sliderValue4.textContent = tempSliderValue;
 
     var progress = Math.round((tempSliderValue / sliderEl4.max) * 100);
-
-    sliderEl4.style.background = `linear-gradient(to right, #2066F1 ${progress}%, #ccc ${progress}%)`;
+    sliderEl4.style.background = `-webkit-linear-gradient(to right, #2066F1 ${progress}%, #ccc ${progress}%)`;
+    sliderEl4.style.background = `-moz-linear-gradient(to right, #2066F1 ${progress}%, #ccc ${progress}%)`;
     document.querySelector('#price_panel_about_label_id').innerHTML = 'Итоговая цена за ' + progress.toString() + ' пользователей';
     getCheckedCheckBoxes();
     // document.querySelector('#range_label').innerHTML = progress.toString();

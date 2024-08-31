@@ -241,7 +241,6 @@ header.upper_footer .layout_content .tabs_primary ul li a {
     background-color: black;
 }
 
-
 /*main section*/
 
 .main_section {
@@ -343,13 +342,12 @@ section.main_section .div_road_map_img .panel_roadmap .create-line_new {
     margin-right: 15px;
 
 }
-
 section.main_section .div_road_map_img .panel_roadmap .create-line_new2 {
     margin-left: 0px;
-    width: 96px;
+    width: 30px;
     border-top: 1px solid white;
     margin-top: 17px;
-    margin-right: 14px;
+    margin-right: 5px;
 
 }
 
@@ -435,116 +433,9 @@ section.main_section .div_road_map_img .panel_roadmap .roadmap_text_fourth {
     margin-left: 10px;
 }
 
-/* main place */
-
-section.main_section .main_payment_place {
-    display: flex;
-    flex-direction: row;
-    width: 1209px;
-    height: 600px;
-}
-
-section.main_section .main_payment_place .main_payment_place_about {
-    width: 361px;
-    display: flex;
-    flex-direction: column;
-    align-content: flex-start;
-    margin-top: 100px;
-
-}
-
-section.main_section .main_payment_place .main_payment_place_about .grad_about {
-    background-image: linear-gradient(90deg, #FFFFFF, #FFFFFFA3);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-section.main_section .main_payment_place .main_payment_place_about .grad_about .text_main_about {
-    font-size: 40px;
-    line-height: 44px;
-}
-
-section.main_section .main_payment_place .main_payment_place_about .grad_about .gradient_text_result_price {
-    width: 109px;
-    background-color: black;
-    background-image: linear-gradient(90deg, #FFFFFF, #FFFFFFA3);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-section.main_section .main_payment_place .main_payment_place_about .gradient_text_result_price .text_result_price {
-    font-size: 24px;
-    line-height: 26.4px;
-    margin-top: 30px;
-    margin-bottom: 30px;
-}
 
 
-section.main_section .main_payment_place .main_payment_place_about .about_current_payment .payment_timer {
-    color: #FFFFFF80;
-    font-size: 16px;
-    line-height: 22.4px;
-}
 
-section.main_section .main_payment_place .main_payment_place_about .about_current_payment .about_payment {
-    color: #FFFFFF80;
-    font-size: 16px;
-    line-height: 22.4px;
-}
-
-section.main_section .main_payment_place .main_payment_place_about .about_current_payment .out_from_payment {
-    margin-top: 200px;
-}
-
-section.main_section .main_payment_place .main_payment_place_about .about_current_payment .out_from_payment .out_from_billing {
-    color: #FFFFFF80;
-    font-size: 16px;
-    text-decoration: none;
-    line-height: 22.4px;
-}
-
-
-/*payment module*/
-
-section.main_section .main_payment_place .payment_module {
-    display: flex;
-    flex-direction: column;
-    width: 448px;
-    margin-left: 150px;
-}
-
-
-section.main_section .main_payment_place .payment_module .main_payment_module {
-    width: 448px;
-    height: 519px;
-    gap: 0;
-    background-color: rgba(44, 44, 44, 1);
-    margin-top: 100px;
-
-
-}
-
-section.main_section .main_payment_place .payment_module .text_about_service {
-    color: rgba(255, 255, 255, 0.5);
-    font-size: 16px;
-    line-height: 22.4px;
-}
-
-section.main_section .main_payment_place .payment_module .text_about_service .a:link {
-    color: white;
-}
-
-section.main_section .main_payment_place .payment_module .text_about_service .a:visited {
-    color: white;
-}
-
-section.main_section .main_payment_place .payment_module .text_about_service .a:active {
-    color: white;
-}
-
-section.main_section .main_payment_place .payment_module .text_about_service .link_service_rule {
-    color: white;
-}
 
 /*footer*/
 footer {

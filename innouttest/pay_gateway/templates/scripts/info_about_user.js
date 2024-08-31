@@ -9,10 +9,6 @@ function on_load() {
 
 on_load();
 
-function validate_fields() {
-    document.write("Hello!")
-}
-
 
 const EMAIL_REGEXP = /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/iu;
 const input_email = document.querySelector('.input_email');
@@ -191,6 +187,11 @@ function checkAll() {
     onInputInn();
     checkRadio_1();
     checkRadio_2();
+    if ((agreem_2.checked) && (agreem_1.checked) && (isNotNullValid(input_inn.value)) && (isNotNullValid(input_address.value)) && (isNotNullValid(input_city.value)) && (isNotNullValid(input_country.value)) && (isNotNullValid(input_phone.value)) && (isNotNullValid(input_org.value)) && (isEmailValid(input_email.value)) && (isDomainValid(input_domain.value))) {
+        window.open('http://localhost:63342/innout_project/pay_gateway/templates/payment.html?_ijt=7nem6b1094tksvtdl0ggb6coro');
+    }
+
+
 }
 
 

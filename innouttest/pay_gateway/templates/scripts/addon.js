@@ -55,13 +55,15 @@ function getCheckedCheckBoxes() {
         resultSum += 39000 * peopleAmount;
     }
 
-    let radioYear = document.getElementById("in_year")
+    let radioYear = document.getElementById("in_year");
     if (radioYear.checked) {
         resultSum *= 0.85;
+        localStorage.setItem('resSumPay', Math.round(resultSum).toString());
     }
-    let radioMonth = document.getElementById("in_month")
+    let radioMonth = document.getElementById("in_month");
     if (radioMonth.checked) {
         resultSum += 0;
+        localStorage.setItem('resSumPay', Math.round(resultSum / 12).toString());
     }
 
 

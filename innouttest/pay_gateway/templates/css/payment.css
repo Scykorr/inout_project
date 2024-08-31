@@ -432,7 +432,7 @@ section.main_section .main_payment_place {
     display: flex;
     flex-direction: row;
     width: 1209px;
-    height: 400px;
+    height: 600px;
 }
 
 section.main_section .main_payment_place .main_payment_place_about {
@@ -475,7 +475,6 @@ section.main_section .main_payment_place .main_payment_place_about .about_curren
     color: #FFFFFF80;
     font-size: 16px;
     line-height: 22.4px;
-    margin-bottom: 10px;
 }
 
 section.main_section .main_payment_place .main_payment_place_about .about_current_payment .about_payment {
@@ -502,6 +501,40 @@ section.main_section .main_payment_place .payment_module {
     display: flex;
     flex-direction: column;
     width: 448px;
+    margin-left: 150px;
+}
+
+
+section.main_section .main_payment_place .payment_module .main_payment_module {
+    width: 448px;
+    height: 519px;
+    gap: 0;
+    background-color: rgba(44, 44, 44, 1);
+    margin-top: 100px;
+
+
+}
+
+section.main_section .main_payment_place .payment_module .text_about_service {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 16px;
+    line-height: 22.4px;
+}
+
+section.main_section .main_payment_place .payment_module .text_about_service .a:link {
+    color: white;
+}
+
+section.main_section .main_payment_place .payment_module .text_about_service .a:visited {
+    color: white;
+}
+
+section.main_section .main_payment_place .payment_module .text_about_service .a:active {
+    color: white;
+}
+
+section.main_section .main_payment_place .payment_module .text_about_service .link_service_rule {
+    color: white;
 }
 
 /*footer*/

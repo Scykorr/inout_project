@@ -255,7 +255,7 @@ sliderEl4.addEventListener("input", (event) => {
     var tempSliderValue = event.target.value;
     sliderValue4.textContent = tempSliderValue;
 
-    var progress = (tempSliderValue / sliderEl4.max) * 100;
+    var progress = Math.round((tempSliderValue / sliderEl4.max) * 100);
 
     sliderEl4.style.background = `linear-gradient(to right, #2066F1 ${progress}%, #ccc ${progress}%)`;
     document.querySelector('#price_panel_about_label_id').innerHTML = 'Итоговая цена за ' + progress.toString() + ' пользователей';

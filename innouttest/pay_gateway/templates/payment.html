@@ -5,6 +5,8 @@
     <link rel="stylesheet" href="css/payment.css">
     <script src="scripts/payment.js"></script>
     <script src="scripts/add_user_dropbtn.js"></script>
+    <script src="scripts/payment.js"></script>
+    <script src="scripts/timer.js"></script>
     <title>Оплата</title>
 </head>
 <body>
@@ -156,19 +158,23 @@
         <div class="main_payment_place_about">
             <div class="grad_about">
                 <p class="text_main_about">Базовая платформа</p>
-            <div class="gradient_text_result_price">
-                <p class="text_result_price">599 руб</p>
-            </div>
+                <div class="gradient_text_result_price">
+                    <p class="text_result_price">599 руб</p>
+                </div>
             </div>
 
             <div class="about_current_payment">
                 <div class="payment_timer">
-                    <p class="text_about_timer">Завершите платеж в течение 9:39</p>
+                    <div class="text_about_timer">Завершите платеж в течение&nbsp;
+                    </div>
+                    <p id="demo">
+                    </p>
+
                 </div>
                 <div class="about_payment">
                     <p class="text_about_payment" id="text_about_payment_id">Детали платежа</p>
                 </div>
-                <div> <p class="hidden_text_about_payment" id="hidden_text_about_payment_id">Оплата заказа</p></div>
+                <div><p class="hidden_text_about_payment" id="hidden_text_about_payment_id">Оплата заказа</p></div>
                 <div class="out_from_payment">
                     <a href="#" class="out_from_billing">< Выйти из оплаты</a>
                 </div>
@@ -178,10 +184,12 @@
         <div class="payment_module">
             <div class="main_payment_module">
             </div>
-            <p class="text_about_service">Заплатив здесь, Вы принимаете<a href="https://yoomoney.ru/page?id=527708" class="link_service_rule"> условия сервиса</a></p>
+            <p class="text_about_service">Заплатив здесь, Вы принимаете<a href="https://yoomoney.ru/page?id=527708"
+                                                                          class="link_service_rule" target="_blank">
+                условия сервиса</a></p>
         </div>
     </div>
-    <script src="scripts/payment.js"></script>
+
 </section>
 <footer>
     <div class="footer-img"></div>

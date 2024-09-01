@@ -16,3 +16,6 @@ function setPrice() {
     document.querySelector('.text_result_price').innerHTML = localStorage.getItem('resSumPay') + '  руб';
 }
 setPrice();
+
+
+

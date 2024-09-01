@@ -484,7 +484,11 @@ section.main_section .main_payment_place .main_payment_place_about .about_curren
     color: #FFFFFF80;
     font-size: 16px;
     line-height: 22.4px;
+    display: flex;
+    flex-direction: row;
 }
+
+section.main_section .main_payment_place .main_payment_place_about .about_current_payment .payment_timer .
 
 section.main_section .main_payment_place .main_payment_place_about .about_current_payment .about_payment {
     color: #FFFFFF80;
@@ -566,3 +570,4 @@ footer .footer-img {
     background-size: cover;
     margin-top: -320px;
 }
+

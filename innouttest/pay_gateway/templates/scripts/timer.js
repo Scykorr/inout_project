@@ -22,10 +22,10 @@ const timer = setInterval(() => {
 }, 1000);
 
 
-document.addEventListener('visibilitychange', () => {
-    if (document.hidden) {
-        timer.pause();
-    } else {
-        timer.resume();
-    }
-});
+// document.addEventListener('visibilitychange', () => {
+//     if (document.hidden) {
+//         timer.pause();
+//     } else {
+//         timer.resume();
+//     }
+// });

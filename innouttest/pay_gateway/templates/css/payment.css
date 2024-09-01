@@ -488,7 +488,6 @@ section.main_section .main_payment_place .main_payment_place_about .about_curren
     flex-direction: row;
 }
 
-section.main_section .main_payment_place .main_payment_place_about .about_current_payment .payment_timer .
 
 section.main_section .main_payment_place .main_payment_place_about .about_current_payment .about_payment {
     color: #FFFFFF80;
@@ -505,6 +504,11 @@ section.main_section .main_payment_place .main_payment_place_about .about_curren
     font-size: 16px;
     text-decoration: none;
     line-height: 22.4px;
+}
+
+section.main_section .main_payment_place .main_payment_place_about .about_current_payment .hidden_text_about_payment {
+    color: #FFFFFF;
+    font-size: 20px;
 }
 
 

@@ -1276,6 +1276,7 @@ section.main_section .price_panel .div_result_bottom .result_bottom:hover {
 }
 
 .select-selected {
+    margin-top: 5px;
     background-color: #121212;
 }
 

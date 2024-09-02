@@ -17,7 +17,7 @@ const timer = setInterval(() => {
     if (remaining < 0) {
         clearInterval(timer);
         document.getElementById("demo").textContent = "Время истекло";
-        window.open("http://localhost:63342/innout_project/pay_gateway/templates/unsuccess_paymant.html?_ijt=83sb65rc7pupgchu5ov318rdfl", name='_self')
+        window.open("unsuccess_paymant.html", name='_self')
     }
 }, 1000);
 

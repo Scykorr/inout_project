@@ -1,5 +1,6 @@
 const curr_date = new Date();
 curr_date.setMinutes(curr_date.getMinutes() + 10);
+// curr_date.setSeconds(curr_date.getSeconds() + 10);
 
 // const endTime = new Date(`2024-11-16T04:25:03Z`).getTime();
 const endTime = curr_date;

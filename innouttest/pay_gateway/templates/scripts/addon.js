@@ -4,8 +4,10 @@ function getCheckedCheckBoxes() {
     let x12 = document.getElementsByClassName("hidden_block");
     let s11;
     let s14;
+    let day_coefficient;
     let peopleAmount = document.getElementById("value_range");
     s11 = x12.innerHTML;
+
     peopleAmount = Number(peopleAmount.innerHTML.toString());
 
     localStorage.setItem('userAmount', peopleAmount.toString());
@@ -56,19 +58,78 @@ function getCheckedCheckBoxes() {
     }
 
     let radioYear = document.getElementById("in_year");
+    let text_about_price_hd = document.getElementById("text_about_price_id_hd")
+    let text_about_price_dms = document.getElementById("text_about_price_id_dms")
+    let text_about_price_risk = document.getElementById("text_about_price_id_risk")
+    let text_about_price_brand = document.getElementById("text_about_price_id_brand")
+    let text_about_price_git = document.getElementById("text_about_price_id_git")
+    let text_about_price_b2b = document.getElementById("text_about_price_id_b2b")
+    let text_about_price_base = document.getElementById("text_about_price_id_base")
+    let text_about_price_manage = document.getElementById("text_about_price_id_manage")
+    let text_about_price_cloud = document.getElementById("text_about_price_id_cloud")
+
+    let price_hd = document.getElementById("price_hd")
+    let price_dms = document.getElementById("price_dms")
+    let price_risk = document.getElementById("price_risk")
+    let price_brand = document.getElementById("price_brand")
+    let price_git = document.getElementById("price_git")
+    let price_b2b = document.getElementById("price_b2b")
+    let price_base = document.getElementById("price_base")
+    let price_manage = document.getElementById("price_manage")
+    let price_cloud = document.getElementById("price_cloud")
+
     if (radioYear.checked) {
-        resultSum *= 0.85;
+        resultSum *= (0.85 * 12);
         localStorage.setItem('resSumPay', Math.round(resultSum).toString());
+        var resultSumYear = Math.round(resultSum);
+        var resultSumMonth = Math.round(resultSum / 12);
+        text_about_price_hd.innerHTML = "цена за одного пользователя в год";
+        text_about_price_dms.innerHTML = "цена за одного пользователя в год";
+        text_about_price_risk.innerHTML = "цена за одного пользователя в год";
+        text_about_price_brand.innerHTML = "цена за одного пользователя в год";
+        text_about_price_git.innerHTML = "цена за одного пользователя в год";
+        text_about_price_b2b.innerHTML = "цена за одного пользователя в год";
+        text_about_price_base.innerHTML = "цена за одного пользователя в год";
+        text_about_price_manage.innerHTML = "цена за одного пользователя в год";
+        text_about_price_cloud.innerHTML = "цена за одного пользователя в год";
+        price_hd.innerHTML = "5880 руб";
+        price_dms.innerHTML = "2280 руб";
+        price_risk.innerHTML = "2280 руб";
+        price_brand.innerHTML = "1080 руб";
+        price_git.innerHTML = "2280 руб";
+        price_b2b.innerHTML = "10680 руб";
+        price_base.innerHTML = "4680 руб";
+        price_manage.innerHTML = "3480 руб";
+        price_cloud.innerHTML = "468000 руб";
+
     }
     let radioMonth = document.getElementById("in_month");
     if (radioMonth.checked) {
         resultSum += 0;
-        localStorage.setItem('resSumPay', Math.round(resultSum / 12).toString());
+        localStorage.setItem('resSumPay', Math.round(resultSum).toString());
+        var resultSumYear = Math.round(resultSum * 12);
+        var resultSumMonth = Math.round(resultSum);
+        text_about_price_hd.innerHTML = "цена за одного пользователя в месяц";
+        text_about_price_dms.innerHTML = "цена за одного пользователя в месяц";
+        text_about_price_risk.innerHTML = "цена за одного пользователя в месяц";
+        text_about_price_brand.innerHTML = "цена за одного пользователя в месяц";
+        text_about_price_git.innerHTML = "цена за одного пользователя в месяц";
+        text_about_price_b2b.innerHTML = "цена за одного пользователя в месяц";
+        text_about_price_base.innerHTML = "цена за одного пользователя в месяц";
+        text_about_price_manage.innerHTML = "цена за одного пользователя в месяц";
+        text_about_price_cloud.innerHTML = "цена за одного пользователя в месяц";
+        price_hd.innerHTML = "490 руб";
+        price_dms.innerHTML = "190 руб";
+        price_risk.innerHTML = "190 руб";
+        price_brand.innerHTML = "90 руб";
+        price_git.innerHTML = "190 руб";
+        price_b2b.innerHTML = "890 руб";
+        price_base.innerHTML = "390 руб";
+        price_manage.innerHTML = "290 руб";
+        price_cloud.innerHTML = "39000 руб";
+
     }
 
-
-    let resultSumYear = Math.round(resultSum);
-    let resultSumMonth = Math.round(resultSum / 12);
 
     localStorage.setItem('resultSumYear', resultSumYear.toString())
     localStorage.setItem('resultSumMonth', resultSumMonth.toString())

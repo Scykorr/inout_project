@@ -465,7 +465,7 @@ section.main_section .main_payment_place .main_payment_place_about .grad_about .
 }
 
 section.main_section .main_payment_place .main_payment_place_about .grad_about .gradient_text_result_price {
-    width: 109px;
+    width: 209px;
     background-color: black;
     background-image: linear-gradient(90deg, #FFFFFF, #FFFFFFA3);
     -webkit-background-clip: text;

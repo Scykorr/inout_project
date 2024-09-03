@@ -802,12 +802,12 @@ section.main_section .addons_main .addons_list .additions .text_for_checkbox_cb 
 }
 
 .text_price {
-    width: 96px;
+    width: 126px;
     height: 30px;
     font-size: 24px;
     line-height: 26.4px;
     gap: 0;
-    margin-right: 20px;
+    margin-right: 0;
     margin-top: 15px;
 
 }

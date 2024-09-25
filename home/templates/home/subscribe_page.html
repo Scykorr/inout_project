@@ -1,0 +1,74 @@
+{% extends 'base/base.html' %}
+{% load static wagtailcore_tags %}
+
+{% block content %}
+    <section
+            class="w-full overflow-hidden flex flex-col flex-nowrap max-md:px-9 max-sm:px-4 box-border dark:bg-dark-primary-bg bg-primary-bg h-auto pb-20 max-md:pb-20 max-sm:pb-20"
+    >
+        <div class="container mx-auto">
+            <div class="flex items-center max-md:tracking-tight mt-[26px]">
+                <a href="/"
+                   class="font-normal text-[14px] max-sm:text-[12px] leading-[20px] max-sm:leading-[17px] opacity-90 hover:opacity-100">INOUT
+                    Проект</a>
+                <img src="{% static 'icons/arrow_right_light.svg' %}" alt="arrow_right_light"
+                     class="hidden dark:block">
+                <img src="{% static 'icons/arrow_right_dark.svg' %}" alt="arrow_right_dark" class="dark:hidden">
+                <a href="{{ page.get_parent.url }}"
+                   class="font-normal text-[14px] max-sm:text-[12px] leading-[20px] max-sm:leading-[17px] opacity-90 hover:opacity-100">
+                    {{ page.get_parent.title }}</a>
+                <img src="{% static 'icons/arrow_right_light.svg' %}" alt="arrow_right_light"
+                     class="hidden dark:block">
+                <img src="{% static 'icons/arrow_right_dark.svg' %}" alt="arrow_right_dark" class="dark:hidden">
+                <p
+                        class="font-normal text-[14px] max-sm:text-[12px] leading-[20px] max-sm:leading-[17px] text-text-tertiary dark:text-dark-text-tertiary">
+                    {{ page.title }}
+                </p>
+            </div>
+            <h2
+                    class="font-semibold text-[40px] leading-[44px] max-md:leading-[40px] max-sm:text-[32px] max-sm:leading-[32px] mt-20 max-md:mt-10 max-sm:mt-10"
+            >
+                Пишем только по делу
+            </h2>
+
+            <p class="text-base max-sm:text-sm mt-6 max-w-[760px]">
+                Подпишитесь на рассылку, чтобы не пропустить важные новости в мире управления проектами. Если честно, то
+                важных новостей в этом мире не так много, поэтому и писать будем редко, только по делу
+            </p>
+
+            <div class="mt-16 flex gap-4 mb-20 max-md:mb-10 max-sm:mb-10 max-sm:flex-col">
+                <div
+                        class="project_management_news_input_wrapper flex gap-2 items-center my-auto w-[303px] max-md:w-full max-sm:w-full rounded-xl bg-card-and-Sec-BT dark:bg-dark-card-and-Sec-BT p-4 box-border border dark:border-[rgba(255,255,255,0.08)] border-[rgba(0,0,0,0.08)] hover:cursor-pointer transition"
+                >
+                    <img src="{% static 'icons/mail_dark.svg' %}" alt="mail" class="hidden dark:block dark"/>
+                    <img src="{% static 'icons/mail_dark_hover.svg' %}" alt="mail"
+                         class="hidden dark:hidden dark-hover"/>
+                    <img src="{% static 'icons/mail_primary.svg' %}" alt="mail" class="dark:hidden primary"/>
+                    <img src="{% static 'icons/mail_primary_hover.svg' %}" alt="mail"
+                         class="dark:hidden hidden primary-hover"/>
+                    <input
+                            class="project_management_news_input w-full bg-[transparent] h-6 text-base dark:placeholder:text-dark-text-secondary placeholder:text-text-secondary focus:border-none focus:outline-none"
+                            type="text"
+                            placeholder="Введите свою эл. почту"
+                    />
+                </div>
+                <div
+                        class="h-[62px] max-md:w-[189px] max-sm:w-full shrink-0 p-1 dark:bg-[rgba(255,255,255,0.20)] bg-[rgba(0,0,0,0.10)] rounded-full z-50"
+                >
+                    <a
+                            href="#"
+                            onclick="ym(97332595, 'reachGoal', 'subscribe'); return true;"
+                            class="w-full text-center inline-block font-medium text-base leading-[22px] py-4 px-[22px] dark:bg-primary-bg bg-dark-primary-bg dark:text-text-primary text-dark-text-primary rounded-full dark:hover:shadow-[0px_-4px_12px_0px_rgba(0,_0,_0,_0.32)_inset] hover:shadow-[0px_-4px_12px_0px_rgba(255,255,255,0.32)_inset] transition"
+                    >Подписаться</a
+                    >
+                </div>
+            </div>
+
+            <div
+                    class="w-full h-[1px] bg-[linear-gradient(48deg,_rgba(44,51,62,0)_0%,_rgba(44,51,62,1)_15%,_rgba(44,51,62,1)_85%,_rgba(44,51,62,0)_100%)] dark:bg-[linear-gradient(48deg,_rgba(255,255,255,0)_0%,_rgba(255,255,255,1)_15%,_rgba(255,255,255,1)_85%,_rgba(255,255,255,0)_100%)] opacity-20"
+            ></div>
+        </div>
+    </section>
+    {% for block in page.page_block %}
+        {% include_block block %}
+    {% endfor %}
+{% endblock %}

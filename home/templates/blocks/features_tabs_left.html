@@ -1,0 +1,438 @@
+{% load wagtailimages_tags static %}
+<section
+        class="bg-primary-bg max-lg:hidden flex flex-col dark:bg-[radial-gradient(100%_100%_at_50%_100%,_#061637_0%,_#000_100%)] h-[6000px]"
+        id="sticky-container"
+>
+    <div id="sticky-block">
+        <div
+                class="container relative mx-auto max-md:py-[64px] pt-[70px] max-sm:py-6 max-md:px-[32px] max-sm:px-[16px]"
+                id="sticky-child"
+        >
+            <div class="flex flex-col items-center">
+                <h2
+                        class="font-semibold text-[64px] text-center leading-[68px] max-lg:text-[48px] max-sm:text-[24px] max-sm:leading-[26px] max-lg:leading-[48px] max-w-[900px] max-xl:max-w-[900px] max-lg:max-w-[700px] tracking-[-1.92px] max-sm:tracking-[-0.72px] dark:bg-[linear-gradient(91deg,_#FFF_52.03%,_rgba(255,_255,_255,_0.64)_83.59%)] bg-[#000] bg-clip-text"
+                        style="-webkit-text-fill-color: transparent"
+                >
+                    Столько функций, что можно управлять целой страной
+                </h2>
+                <div class="max-w-[448px]">
+                    <p
+                            class="font-normal text-base leading-[23px] colors-text-secondary text-center mt-6 max-sm:text-[14px] max-sm:leading-[18px]"
+                    >
+                        INOUT Проект — удобный, полезный и гибкий, как швейцарский нож: стабильно работает, легко
+                        адаптируется под
+                        новые условия и всегда приносит результат.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div
+                class="sticky container mx-auto max-md:py-[64px] pt-[70px] max-sm:py-6 max-md:px-[32px] max-sm:px-[16px] lg:overflow-hidden"
+        >
+            <div
+                    class="max-md:mt-8 flex justify-between gap-x-16 max-lg:justify-center mx-auto max-md:flex-col-reverse max-md:gap-10 max-sm:gap-8 max-md:pb-0"
+            >
+                <div class="max-h-[500px]">
+                    <div class="max-w-[420px] md:mt-6 pl-[24px] flex flex-col gap-y-[2px]">
+                        <div class="features-tableft-item group flex gap-x-6">
+                            <div
+                                    class="bg-[#101521] min-w-[3px] w-[3px] rounded-full opacity-0 scale-[0.8] translate-x-[10px] group-[.is-active]:opacity-100 group-[.is-active]:scale-[1] group-[.is-active]:translate-x-[0] relative transition ease-in-out"
+                            >
+                                <div class="absolute top-0 left-0 bg-[#3373fa] rounded-full w-full h-0"></div>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-[24px] leading-[30px] max-md:text-[16px] max-md:leading-[24px]">
+                                    Иерархическая структура работ (ИСР)
+                                </h3>
+                                <p
+                                        class="font-normal text-base mt-2 mb-4 leading-[23px] text-text-secondary dark:text-dark-text-secondary hidden group-[.is-active]:block max-md:text-[14px] max-md:leading-[20px]"
+                                >
+                                    Разделяйте большой проект как слона на маленькие кусочки: проекты, задачи и
+                                    подзадачи. Оценивайте
+                                    объем работ, определяйте бюджет и создавайте контрольные точки
+                                </p>
+                                <div class="group-[.is-active]:mb-[22px]">
+                                    <a
+                                            href="/project/baza/upravlenie-proektami/#block-edf87636-b761-44b4-ae2e-9de50c9e53bf"
+                                            class="block font-medium text-base max-sm:text-sm leading-[22px] max-sm:leading-[20px] text-text-link dark:text-dark-text-link hover:underline opacity-0 duration-500 -translate-x-[20px] group-[.is-active]:opacity-100 group-[.is-active]:translate-x-[0] relative transition ease-in-out"
+                                    >Попробовать</a
+                                    >
+                                </div>
+                            </div>
+                        </div>
+                        <div class="features-tableft-item group flex gap-x-6">
+                            <div
+                                    class="bg-[#101521] min-w-[3px] w-[3px] rounded-full opacity-0 scale-[0.8] translate-x-[10px] group-[.is-active]:opacity-100 group-[.is-active]:scale-[1] group-[.is-active]:translate-x-[0] relative transition ease-in-out"
+                            >
+                                <div class="absolute top-0 left-0 bg-[#3373fa] rounded-full w-full h-0"></div>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-[24px] leading-[30px] max-md:text-[16px] max-md:leading-[24px]">
+                                    Диаграмма Гантта
+                                </h3>
+                                <p
+                                        class="font-normal text-base mt-2 mb-4 leading-[23px] text-text-secondary dark:text-dark-text-secondary hidden group-[.is-active]:block max-md:text-[14px] max-md:leading-[20px]"
+                                >
+                                    Забудьте о просроченных задачах и громоздких таблицах: наглядно планируйте проект,
+                                    контролируйте
+                                    сроки и повышайте эффективность работы с детальной аналитикой по каждому проекту и
+                                    сотруднику
+                                </p>
+                                <div class="group-[.is-active]:mb-[22px]">
+                                    <a
+                                            href="/project/baza/upravlenie-proektami/#block-fcaed7a3-c763-4b8e-9c5e-2cc2b0df71e9"
+                                            class="block font-medium text-base max-sm:text-sm leading-[22px] max-sm:leading-[20px] text-text-link dark:text-dark-text-link hover:underline opacity-0 duration-500 -translate-x-[20px] group-[.is-active]:opacity-100 group-[.is-active]:translate-x-[0] relative transition ease-in-out"
+                                    >Попробовать</a
+                                    >
+                                </div>
+                            </div>
+                        </div>
+                        <div class="features-tableft-item group flex gap-x-6">
+                            <div
+                                    class="bg-[#101521] min-w-[3px] w-[3px] rounded-full opacity-0 scale-[0.8] translate-x-[10px] group-[.is-active]:opacity-100 group-[.is-active]:scale-[1] group-[.is-active]:translate-x-[0] relative transition ease-in-out"
+                            >
+                                <div class="absolute top-0 left-0 bg-[#3373fa] rounded-full w-full h-0"></div>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-[24px] leading-[30px] max-md:text-[16px] max-md:leading-[24px]">
+                                    Scrum
+                                </h3>
+                                <p
+                                        class="font-normal text-base mt-2 mb-4 leading-[23px] text-text-secondary dark:text-dark-text-secondary hidden group-[.is-active]:block max-md:text-[14px] max-md:leading-[20px]"
+                                >
+                                    Волшебное слово, которое превратит проект в эффективный локомотив с бэклогом и
+                                    понятными
+                                    процессами. Поставленные цели ещё никогда не были так близко
+                                </p>
+                                <div class="group-[.is-active]:mb-[22px]">
+                                    <a
+                                            href="/project/baza/gibkoe-upravlenie/#block-8d8184d1-58db-4be7-8bdc-24a8f1c23e9d"
+                                            class="block font-medium text-base max-sm:text-sm leading-[22px] max-sm:leading-[20px] text-text-link dark:text-dark-text-link hover:underline opacity-0 duration-500 -translate-x-[20px] group-[.is-active]:opacity-100 group-[.is-active]:translate-x-[0] relative transition ease-in-out"
+                                    >Попробовать</a
+                                    >
+                                </div>
+                            </div>
+                        </div>
+                        <div class="features-tableft-item group flex gap-x-6">
+                            <div
+                                    class="bg-[#101521] min-w-[3px] w-[3px] rounded-full opacity-0 scale-[0.8] translate-x-[10px] group-[.is-active]:opacity-100 group-[.is-active]:scale-[1] group-[.is-active]:translate-x-[0] relative transition ease-in-out"
+                            >
+                                <div class="absolute top-0 left-0 bg-[#3373fa] rounded-full w-full h-0"></div>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-[24px] leading-[30px] max-md:text-[16px] max-md:leading-[24px]">
+                                    Управление ресурсами
+                                </h3>
+                                <p
+                                        class="font-normal text-base mt-2 mb-4 leading-[23px] text-text-secondary dark:text-dark-text-secondary hidden group-[.is-active]:block max-md:text-[14px] max-md:leading-[20px]"
+                                >
+                                    Сделать бы так, чтобы все сотрудники были загружены оптимально для своего уровня и
+                                    компетенции…
+                                    Стоп, а мы уже сделали. Переключение с диаграммы Гантта в два клика, либо отдельным
+                                    модулем —
+                                    удобней, чем у конкурентов
+                                </p>
+                                <div class="group-[.is-active]:mb-[22px]">
+                                    <a
+                                            href="/project/biznes/upravlenie-resursami/"
+                                            class="block font-medium text-base max-sm:text-sm leading-[22px] max-sm:leading-[20px] text-text-link dark:text-dark-text-link hover:underline opacity-0 duration-500 -translate-x-[20px] group-[.is-active]:opacity-100 group-[.is-active]:translate-x-[0] relative transition ease-in-out"
+                                    >Попробовать</a
+                                    >
+                                </div>
+                            </div>
+                        </div>
+                        <div class="features-tableft-item group flex gap-x-6">
+                            <div
+                                    class="bg-[#101521] min-w-[3px] w-[3px] rounded-full opacity-0 scale-[0.8] translate-x-[10px] group-[.is-active]:opacity-100 group-[.is-active]:scale-[1] group-[.is-active]:translate-x-[0] relative transition ease-in-out"
+                            >
+                                <div class="absolute top-0 left-0 bg-[#3373fa] rounded-full w-full h-0"></div>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-[24px] leading-[30px] max-md:text-[16px] max-md:leading-[24px]">
+                                    И многое другое
+                                </h3>
+                                <p
+                                        class="font-normal text-base mt-2 mb-4 leading-[23px] text-text-secondary dark:text-dark-text-secondary hidden group-[.is-active]:block max-md:text-[14px] max-md:leading-[20px]"
+                                >
+                                    No-code, all-in-one, REST API и любые другие возможности, которые сделают вашу
+                                    работу проще и
+                                    удобнее (кнопка “Какие ещё функции?”)
+                                </p>
+                                <div class="group-[.is-active]:mb-[22px]">
+                                    <a
+                                            href="/project/"
+                                            class="block font-medium text-base max-sm:text-sm leading-[22px] max-sm:leading-[20px] text-text-link dark:text-dark-text-link hover:underline opacity-0 duration-500 -translate-x-[20px] group-[.is-active]:opacity-100 group-[.is-active]:translate-x-[0] relative transition ease-in-out"
+                                    >Попробовать</a
+                                    >
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="features-tableft-slides" class="max-md:w-full relative">
+                    <div class="group is-active">
+                        <div
+                                class="dark:bg-dark-card-and-Sec-BT py-14 pl-14 max-md:py-6 max-md:pl-6 max-lg:ml-0 max-md:rounded-[24px] rounded-[40px] transition duration-500 opacity-0 max-md:w-full -translate-x-[20px] group-[.is-active]:translate-x-[0] group-[:not(.is-active)]:opacity-0 group-[.is-active]:opacity-100"
+                        >
+                            <img
+                                    src="{% static 'animations/hierarchy/hierarchy-opt.gif' %}"
+                                    alt="features_tableft"
+                                    class="hidden dark:block ml-auto w-[660px] overflow-hidden rounded-l-[24px] max-md:rounded-l-[12px] max-md:w-full"
+                            />
+                            {#                            <lottie-player#}
+                            {#                                    src="{% static 'animations/hierarchy/hierarchy.json' %}"#}
+                            {#                                    background="transparent"#}
+                            {#                                    speed="1"#}
+                            {#                                    class="hidden dark:block ml-auto w-[660px] overflow-hidden rounded-l-[24px] max-md:rounded-l-[12px] max-md:w-full"#}
+                            {#                                    loop autoplay>#}
+                            {#                            </lottie-player>#}
+                        </div>
+                    </div>
+
+                    <div class="group absolute top-0 left-0">
+                        <div
+                                class="dark:bg-dark-card-and-Sec-BT py-14 pl-14 max-md:py-6 max-md:pl-6 max-lg:ml-0 max-md:rounded-[24px] rounded-[40px] transition duration-500 opacity-0 max-md:w-full -translate-x-[20px] group-[.is-active]:translate-x-[0] group-[:not(.is-active)]:opacity-0 group-[.is-active]:opacity-100"
+                        >
+                            <img
+                                    src="{% static 'animations/gantt/gantt-opt.gif' %}"
+                                    alt="features_tableft"
+                                    class="hidden dark:block ml-auto w-[660px] overflow-hidden rounded-l-[24px] max-md:rounded-l-[12px] max-md:w-full"
+                            />
+                            {#                            <lottie-player#}
+                            {#                                    src="{% static 'animations/gantt/gantt.json' %}"#}
+                            {#                                    background="transparent"#}
+                            {#                                    speed="1"#}
+                            {#                                    class="hidden dark:block ml-auto w-[660px] overflow-hidden rounded-l-[24px] max-md:rounded-l-[12px] max-md:w-full"#}
+                            {#                                    loop autoplay>#}
+                            {#                            </lottie-player>#}
+                        </div>
+                    </div>
+
+                    <div class="group absolute top-0 left-0">
+                        <div
+                                class="dark:bg-dark-card-and-Sec-BT py-14 pl-14 max-md:py-6 max-md:pl-6 max-lg:ml-0 max-md:rounded-[24px] rounded-[40px] transition duration-500 opacity-0 max-md:w-full -translate-x-[20px] group-[.is-active]:translate-x-[0] group-[:not(.is-active)]:opacity-0 group-[.is-active]:opacity-100"
+                        >
+                            <img
+                                    src="{% static 'animations/scrum/scrum-opt.gif' %}"
+                                    alt="features_tableft"
+                                    class="hidden dark:block ml-auto w-[660px] overflow-hidden rounded-l-[24px] max-md:rounded-l-[12px] max-md:w-full"
+                            />
+                            {#                            <lottie-player#}
+                            {#                                    src="{% static 'animations/scrum/scrum.json' %}"#}
+                            {#                                    background="transparent"#}
+                            {#                                    speed="1"#}
+                            {#                                    class="hidden dark:block ml-auto w-[660px] overflow-hidden rounded-l-[24px] max-md:rounded-l-[12px] max-md:w-full"#}
+                            {#                                    loop autoplay>#}
+                            {#                            </lottie-player>#}
+                        </div>
+                    </div>
+
+                    <div class="group absolute top-0 left-0">
+                        <div
+                                class="dark:bg-dark-card-and-Sec-BT py-14 pl-14 max-md:py-6 max-md:pl-6 max-lg:ml-0 max-md:rounded-[24px] rounded-[40px] transition duration-500 opacity-0 max-md:w-full -translate-x-[20px] group-[.is-active]:translate-x-[0] group-[:not(.is-active)]:opacity-0 group-[.is-active]:opacity-100"
+                        >
+                            <img
+                                    src="{% static 'animations/project_management/project_management-opt.gif' %}"
+                                    alt="features_tableft"
+                                    class="hidden dark:block ml-auto w-[660px] overflow-hidden rounded-l-[24px] max-md:rounded-l-[12px] max-md:w-full"
+                            />
+                            {#                            <lottie-player#}
+                            {#                                    src="{% static 'animations/project_management/project_management.json' %}"#}
+                            {#                                    background="transparent"#}
+                            {#                                    speed="1"#}
+                            {#                                    class="hidden dark:block ml-auto w-[660px] overflow-hidden rounded-l-[24px] max-md:rounded-l-[12px] max-md:w-full"#}
+                            {#                                    loop autoplay>#}
+                            {#                            </lottie-player>#}
+                        </div>
+                    </div>
+
+                    <div class="group absolute top-0 left-0 w-full">
+                        <div
+                                class="w-full py-14 pl-14 max-md:py-6 max-md:pl-6 max-lg:ml-0 max-md:rounded-[24px] rounded-[40px] transition duration-500 opacity-0 max-md:w-full -translate-x-[20px] group-[.is-active]:translate-x-[0] group-[:not(.is-active)]:opacity-0 group-[.is-active]:opacity-100"
+                        >
+                            <img
+                                    src="{% static 'image/circle_new.png' %}"
+                                    alt="features_tableft"
+                                    class="hidden dark:block ml-auto max-h-[364px] mx-auto overflow-hidden rounded-l-[24px] max-md:rounded-l-[12px] max-md:object-contain"
+                            />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section
+        class="bg-primary-bg lg:hidden flex flex-col dark:bg-[radial-gradient(100%_100%_at_50%_100%,_#061637_0%,_#000_100%)]"
+        id=""
+>
+    <div id="">
+        <div
+                class="container relative mx-auto max-md:py-[64px] pt-[70px] max-sm:py-6 max-md:px-[32px] max-sm:px-[16px]"
+
+        >
+            <div class="flex flex-col items-center">
+                <h2
+                        class="font-semibold text-[64px] text-center leading-[64px] max-lg:text-[48px] max-sm:text-[24px] max-sm:leading-[26px] max-lg:leading-[48px] max-w-[900px] max-xl:max-w-[900px] max-lg:max-w-[700px] tracking-[-1.92px] max-sm:tracking-[-0.72px] dark:bg-[linear-gradient(91deg,_#FFF_52.03%,_rgba(255,_255,_255,_0.64)_83.59%)] bg-[#000] bg-clip-text"
+                        style="-webkit-text-fill-color: transparent"
+                >
+                    Столько функций, что можно управлять целой страной
+                </h2>
+                <div class="max-w-[448px]">
+                    <p
+                            class="font-normal text-base leading-[23px] colors-text-secondary text-center mt-6 max-sm:text-[14px] max-sm:leading-[18px]"
+                    >
+                        INOUT Проект — удобный, полезный и гибкий, как швейцарский нож: стабильно работает, легко
+                        адаптируется под
+                        новые условия и всегда приносит результат.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class=" flex flex-col gap-10 max-sm:gap-8 mt-[64px]  px-[16px] pb-[32px]">
+            <div class="flex flex-col gap-8">
+                <div class="w-full">
+                    <div class="group is-active mb-[40px] lg:hidden">
+                        <div
+                                class="dark:bg-dark-card-and-Sec-BT py-14 pl-14 max-md:py-6 max-md:pl-6 max-lg:ml-0 max-md:rounded-[24px] rounded-[40px] transition duration-500 opacity-0 max-md:w-full -translate-x-[20px] group-[.is-active]:translate-x-[0] group-[:not(.is-active)]:opacity-0 group-[.is-active]:opacity-100"
+                        >
+                            <video autoplay loop muted playsinline
+                                   class="hidden dark:block ml-auto w-[660px] overflow-hidden rounded-l-[24px] max-md:rounded-l-[12px]">
+                                <source src="{% static 'animations/hierarchy/hierarchy.mp4' %}" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    </div>
+
+                    <h3 class="font-semibold text-[24px] leading-[26px] max-sm:text-xl max-sm:leading-[20px]">
+                        Иерархическая структура работ (ИСР)
+                    </h3>
+                    <p
+                            class="font-normal max-w-[304px] text-base max-sm:text-sm mt-2 mb-4 leading-[23px] max-sm:leading-[20px] text-text-secondary dark:text-dark-text-secondary"
+                    >
+                        Разделяйте большой проект как слона на маленькие кусочки: проекты, задачи и подзадачи.
+                        Оценивайте объем работ, определяйте бюджет и создавайте контрольные точки
+                    </p>
+                    <a
+                            href="/project/baza/upravlenie-proektami/#block-edf87636-b761-44b4-ae2e-9de50c9e53bf"
+                            class="font-medium text-base max-sm:text-sm leading-[22px] max-sm:leading-[20px] text-text-link dark:text-dark-text-link hover:underline"
+                    >Попробовать</a
+                    >
+                </div>
+                <div class="w-full">
+                    <div class="group is-active mb-[40px] lg:hidden">
+                        <div
+                                class="dark:bg-dark-card-and-Sec-BT py-14 pl-14 max-md:py-6 max-md:pl-6 max-lg:ml-0 max-md:rounded-[24px] rounded-[40px] transition duration-500 opacity-0 max-md:w-full -translate-x-[20px] group-[.is-active]:translate-x-[0] group-[:not(.is-active)]:opacity-0 group-[.is-active]:opacity-100"
+                        >
+                            <video autoplay loop muted playsinline
+                                   class="hidden dark:block ml-auto w-[660px] overflow-hidden rounded-l-[24px] max-md:rounded-l-[12px]">
+                                <source src="{% static 'animations/gantt/gantt.mp4' %}" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    </div>
+
+                    <h3 class="font-semibold text-[24px] leading-[26px] max-sm:text-xl max-sm:leading-[20px]">
+                        Диаграмма Гантта
+                    </h3>
+                    <p
+                            class="font-normal max-w-[304px] text-base max-sm:text-sm mt-2 mb-4 leading-[23px] max-sm:leading-[20px] text-text-secondary dark:text-dark-text-secondary"
+                    >
+                        Забудьте о просроченных задачах и громоздких таблицах: наглядно планируйте проект, контролируйте
+                        сроки и повышайте эффективность работы с детальной аналитикой по каждому проекту и сотруднику
+                    </p>
+                    <a
+                            href="http://s1.os-demo.tech/project/baza/upravlenie-proektami/#block-fcaed7a3-c763-4b8e-9c5e-2cc2b0df71e9"
+                            class="font-medium text-base max-sm:text-sm leading-[22px] max-sm:leading-[20px] text-text-link dark:text-dark-text-link hover:underline"
+                    >Попробовать</a
+                    >
+                </div>
+            </div>
+            <div class="flex flex-col gap-8">
+                <div class="w-full">
+                    <div class="group is-active mb-[40px] lg:hidden">
+                        <div
+                                class="dark:bg-dark-card-and-Sec-BT py-14 pl-14 max-md:py-6 max-md:pl-6 max-lg:ml-0 max-md:rounded-[24px] rounded-[40px] transition duration-500 opacity-0 max-md:w-full -translate-x-[20px] group-[.is-active]:translate-x-[0] group-[:not(.is-active)]:opacity-0 group-[.is-active]:opacity-100"
+                        >
+                            <video autoplay loop muted playsinline
+                                   class="hidden dark:block ml-auto w-[660px] overflow-hidden rounded-l-[24px] max-md:rounded-l-[12px]">
+                                <source src="{% static 'animations/scrum/scrum.mp4' %}" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    </div>
+
+                    <h3 class="font-semibold text-[24px] leading-[26px] max-sm:text-xl max-sm:leading-[20px]">Scrum</h3>
+                    <p
+                            class="font-normal max-w-[304px] text-base max-sm:text-sm mt-2 mb-4 leading-[23px] max-sm:leading-[20px] text-text-secondary dark:text-dark-text-secondary"
+                    >
+                        Волшебное слово, которое превратит проект в эффективный локомотив с бэклогом и понятными
+                        процессами. Поставленные цели ещё никогда не были так близко
+                    </p>
+                    <a
+                            href="http://s1.os-demo.tech/project/baza/gibkoe-upravlenie/#block-8d8184d1-58db-4be7-8bdc-24a8f1c23e9d"
+                            class="font-medium text-base max-sm:text-sm leading-[22px] max-sm:leading-[20px] text-text-link dark:text-dark-text-link hover:underline"
+                    >Попробовать</a
+                    >
+                </div>
+                <div class="w-full">
+                    <div class="group is-active mb-[40px] lg:hidden">
+                        <div
+                                class="dark:bg-dark-card-and-Sec-BT py-14 pl-14 max-md:py-6 max-md:pl-6 max-lg:ml-0 max-md:rounded-[24px] rounded-[40px] transition duration-500 opacity-0 max-md:w-full -translate-x-[20px] group-[.is-active]:translate-x-[0] group-[:not(.is-active)]:opacity-0 group-[.is-active]:opacity-100"
+                        >
+                            <video autoplay loop muted playsinline
+                                   class="hidden dark:block ml-auto w-[660px] overflow-hidden rounded-l-[24px] max-md:rounded-l-[12px]">
+                                <source src="{% static 'animations/project_management/project_management.mp4' %}"
+                                        type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    </div>
+                    <h3 class="font-semibold text-[24px] leading-[26px] max-sm:text-xl max-sm:leading-[20px]">
+                        Управление ресурсами
+                    </h3>
+                    <p
+                            class="font-normal max-w-[304px] text-base max-sm:text-sm mt-2 mb-4 leading-[23px] max-sm:leading-[20px] text-text-secondary dark:text-dark-text-secondary"
+                    >
+                        Сделать бы так, чтобы все сотрудники были загружены оптимально для своего уровня и компетенции…
+                        Стоп, а мы уже сделали. Переключение с диаграммы Гантта в два клика, либо отдельным модулем —
+                        удобней, чем у конкурентов
+                    </p>
+                    <a
+                            href="/project/biznes/upravlenie-resursami/"
+                            class="font-medium text-base max-sm:text-sm leading-[22px] max-sm:leading-[20px] text-text-link dark:text-dark-text-link hover:underline"
+                    >Попробовать</a
+                    >
+                </div>
+                <div class="w-full">
+                    <div class="group is-active mb-[40px] lg:hidden">
+                        <div
+                                class="dark:bg-dark-card-and-Sec-BT py-14 pl-14 max-md:py-6 max-md:pl-6 max-lg:ml-0 max-md:rounded-[24px] rounded-[40px] transition duration-500 opacity-0 max-md:w-full -translate-x-[20px] group-[.is-active]:translate-x-[0] group-[:not(.is-active)]:opacity-0 group-[.is-active]:opacity-100"
+                        >
+                            <img
+                                    src="{% static 'image/circle_new.png' %}"
+                                    alt="features_tableft"
+                                    class="hidden dark:block ml-auto max-h-[364px] mx-auto overflow-hidden rounded-l-[24px] max-md:rounded-l-[12px] max-md:object-contain"
+                            />
+                        </div>
+                    </div>
+
+                    <h3 class="font-semibold text-[24px] leading-[26px] max-sm:text-xl max-sm:leading-[20px]">
+                        И многое другое
+                    </h3>
+                    <p
+                            class="font-normal max-w-[304px] text-base max-sm:text-sm mt-2 mb-4 leading-[23px] max-sm:leading-[20px] text-text-secondary dark:text-dark-text-secondary"
+                    >
+                        No-code, all-in-one, REST API и любые другие возможности, которые сделают вашу работу проще и
+                        удобнее
+                    </p>
+                    <a
+                            href="/project/"
+                            class="font-medium text-base max-sm:text-sm leading-[22px] max-sm:leading-[20px] text-text-link dark:text-dark-text-link hover:underline"
+                    >Какие ешё функции</a
+                    >
+                </div>
+            </div>
+        </div>
+</section>

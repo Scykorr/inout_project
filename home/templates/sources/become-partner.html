@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en" class="dark h-full">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Test</title>
+    <link href="sass/main.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="tailwind.config.js"></script>
+  </head>
+
+  <body class="text-text-primary dark:text-dark-text-primary">
+    <section class="w-full flex flex-col flex-nowrap box-border">
+      <div class="w-full max-md:flex-col max-sm:flex-col box-border">
+        <div class="flex flex-col flex-nowrap gap-10 w-full">
+          <div class="flex flex-col flex-nowrap pb-10">
+            <h2
+              class="font-semibold text-[40px] leading-[44px] max-md:leading-[40px] max-sm:text-[32px] max-sm:leading-[32px] mb-6"
+            >
+              Стать Партнером
+            </h2>
+
+            <div class="flex flex-col gap-10 w-full">
+              <p class="text-base leading-[145%]">
+                Присоединяйтесь к нам, чтобы расширить свое портфолио и помогать своим клиентам быть более эффективными
+                и успешными с каждым днем.<br /><br />
+                Вы тоже не будете делать это бесплатно.
+              </p>
+              <a
+                href="#"
+                class="block text-base rounded-[32px] py-3 px-6 w-fit max-sm:w-full max-sm:text-center bg-[linear-gradient(180deg,_#3274F9_0%,_#135BEB_100%)] hover:shadow-[0px_-4px_12px_0px_rgba(255,_255,_255,_0.32)_inset] transition text-dark-text-primary"
+                >Стать партнером</a
+              >
+            </div>
+          </div>
+
+          <div class="flex flex-col flex-nowrap">
+            <h2
+              class="font-semibold text-[40px] leading-[44px] max-md:leading-[40px] max-sm:text-[32px] max-sm:leading-[32px] mb-6"
+            >
+              Станьте партнёром INOUT
+            </h2>
+
+            <div class="flex flex-col gap-5 w-full text-base leading-[145%]">
+              Нам нужны:<br /><br />
+              ПОСРЕДНИКИ: Вы – крупный системный интегратор и хотите расширить портфолио? Знаете потенциального клиента
+              Easy Project и рассчитываете на вознаграждение за внедрение корпоративной версии?<br /><br />
+              ПОСТАВЩИКИ ОБЛАЧНЫХ УСЛУГ: Оказываете облачные услуги и хотите расширить ассортимент полезных приложений?
+              Заполните форму, а потом обсудим варианты сотрудничества.<br /><br />
+              ЭКСПЕРТЫ В СФЕРЕ КОНСАЛТИНГА И УСЛУГ: Вы профессионально занимаетесь поставкой и внедрением прикладных
+              систем для бизнеса или оказываете консультационные услуги? Свяжитесь с нами для обсуждения возможного
+              сотрудничества.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      const swiper = new Swiper('.partners_swiper', {
+        slidesPerView: 1,
+        spaceBetween: 16,
+        navigation: {
+          prevEl: '.button-slide-prev',
+          nextEl: '.button-slide-next',
+        },
+        breakpoints: {
+          320: {
+            slidesPerView: 'auto',
+            spaceBetween: 16,
+          },
+          1200: {
+            slidesPerView: 4,
+            spaceBetween: 16,
+          },
+        },
+      })
+    </script>
+  </body>
+</html>

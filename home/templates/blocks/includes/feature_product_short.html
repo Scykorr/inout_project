@@ -1,0 +1,24 @@
+{% load wagtailimages_tags my_tags %}
+<div
+        class="dark:bg-[linear-gradient(98deg,_rgba(255,_255,_255,_0.12)_0%,_rgba(255,_255,_255,_0.07)_75.5%)] px-[2px] py-[2px] rounded-[24px] min-h-[512px] max-lg:min-h-[544px] max-sm:min-h-[415px] max-sm:max-w-[343px] max-sm:mx-auto">
+    <div
+            class="bg-card-and-Sec-BT {{ page.color }}-{{ page.color_way }} rounded-[23px] max-md:px-5 max-md:pt-6 md:pt-8 md:px-7 h-full">
+        <div class="flex flex-col h-full">
+            <div class="flex flex-col">
+                <h2
+                        class="font-semibold text-[32px] leading-[35px] max-lg:leading-[32px] max-sm:text-[24px] max-sm:leading-[26px]">
+                    {{ item.title }}</h2>
+                <p
+                        class="font-normal text-[16px] leading-[23px] text-text-secondary dark:text-dark-text-secondary mt-4 max-sm:text-[14px] max-sm:leading-[20px] max-sm:mt-2">
+                    {{ item.specific.description }}
+                </p>
+                <a href="{{ item.url }}"
+                   class="font-medium text-[16px] leading-[22px] text-text-link dark:text-dark-text-link hover:underline mt-8 max-sm:text-[14px] max-sm:leading-[20px] max-sm:mt-6">Подробнее</a>
+            </div>
+            {% image item.specific.image original as image %}
+            <img src="{{ image.url }}"
+                 alt="time_tracking"
+                 class="mt-auto max-sm:mt-6 pt-6">
+        </div>
+    </div>
+</div>

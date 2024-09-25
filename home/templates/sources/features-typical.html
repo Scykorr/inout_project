@@ -1,0 +1,64 @@
+{% load static %}
+<section class="dark:bg-[linear-gradient(0deg,_#000_0%,_#0E1C1C_100%)] bg-primary-bg">
+    <div
+            class="lg:container lg:mx-auto max-lg:px-[32px] max-sm:px-[16px] py-[100px] max-md:py-[64px] max-sm:py-[44px] flex max-lg:flex-col max-lg:gap-[64px] max-sm:gap-[40px] gap-[80px]">
+        <div class="max-w-[528px] max-lg:max-w-[584px]">
+            <h2
+                    class="font-semibold text-[40px] leading-[44px] max-md:leading-[40px] max-sm:text-[32px] max-sm:leading-[32px]">
+                Интеллект-карты</h2>
+            <p class="mt-6 font-normal text-[16px] leading-[23px] max-md:mt-4 max-sm:text-[14px] max-sm:leading-[20px]">
+                Критический путь - последовательность задач, влияющих на сроки завершения проекта. Задача критическая,
+                если ее
+                срок нельзя отложить.</p>
+            <div>
+                <div
+                        class="flex items-center gap-2 text-[14px] leading-[20px] mt-10 max-sm:mt-6 text-center features-typical-readmore hover:underline cursor-pointer">
+                    Подробнее
+                    <div class="transition">
+                        <img src="{% static 'icons/arrow_down_16.svg' %}" alt="arrow_down" class="hidden dark:block">
+                        <img src="{% static 'icons/arrow_down_16_light.svg' %}" alt="arrow_down" class="dark:hidden">
+                    </div>
+                </div>
+                <ul
+                        class="hidden flex flex-col gap-3 max-sm:gap-2 mt-4 text-text-secondary dark:text-dark-text-secondary font-normal text-[16px] leading-[23px] max-sm:text-[14px] max-sm:leading-[20px]">
+                    <li class="flex gap-2 items-start">
+                        <img src="{% static 'icons/circle.svg' %}" alt="circle" class="max-h-[24px]">
+                        Создание интеллект-карты в контексте проекта
+                    </li>
+                    <li class="flex gap-2">
+                        <img src="{% static 'icons/circle.svg' %}" alt="circle" class="max-h-[24px]">
+                        Создание до 250 узлов в одной интеллект-карте
+                    </li>
+                    <li class="flex gap-2">
+                        <img src="{% static 'icons/circle.svg' %}" alt="circle" class="max-h-[24px]">
+                        Ограничение доступа к интеллект-картам с помощью ролей и полномочий
+                    </li>
+                    <li class="flex gap-2">
+                        <img src="{% static 'icons/circle.svg' %}" alt="circle" class="max-h-[24px]">
+                        Добавление текстового описания, URL-адреса или связи с задачей к любому узлу
+                    </li>
+                    <li class="flex gap-2">
+                        <img src="{% static 'icons/circle.svg' %}" alt="circle" class="max-h-[24px]">
+                        Создание новых задач прямо из узла интеллект-карты
+                    </li>
+                    <li class="flex gap-2">
+                        <img src="{% static 'icons/circle.svg' %}" alt="circle" class="max-h-[24px]">
+                        Полноэкранное отображение
+                    </li>
+                    <li class="flex gap-2">
+                        <img src="{% static 'icons/circle.svg' %}" alt="circle" class="max-h-[24px]">
+                        Автоматическое сохранение интеллект-карты
+                    </li>
+                    <li class="flex gap-2">
+                        <img src="{% static 'icons/circle.svg' %}" alt="circle" class="max-h-[24px]">
+                        Блокировка: когда вы редактируете карту, другие пользователи не могут вносить изменения
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div
+                class="relative overflow-hidden py-[56px] pl-[56px] max-lg:py-[54px] max-lg:pl-[54px] max-sm:py-[32px] max-sm:pl-[32px] rounded-[40px] max-sm:rounded-[24px] bg-card-and-Sec-BT dark:bg-dark-card-and-Sec-BT lg:max-h-[500px] max-xl:max-h-[376px] max-lg:max-h-[594px] lg:max-w-[592px] mt-4 max-lg:mt-0">
+            <img src="{% static 'image/features-typical_img.svg' %}" alt="features-typical_img" class="h-full w-full">
+        </div>
+    </div>
+</section>

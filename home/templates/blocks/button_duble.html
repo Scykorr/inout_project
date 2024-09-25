@@ -1,0 +1,21 @@
+{% load my_tags %}
+<div class="flex flex-row">
+    <div class="">
+        <a
+                {% if value.link_blue == '#' or value.link_blue == '/' %}data-open-form{% elif value.link_blue == '#crm' %}data-open-partner-form{% elif value.link_blue == '#crm2' %}data-open-partner-form-2{% else %}href="{{ value.link_blue }}" {% endif %}
+                class="flex mt-6 cursor-pointer px-[24px] py-[16px] text-dark-text-primary text-[16px] max-sm:text-[14px] leading-[22px] max-sm:leading-[20px] text-center bg-[linear-gradient(180deg,_#3274F9_0%,_#135BEB_100%)] rounded-[32px] hover:shadow-[0px_-4px_12px_0px_rgba(255,_255,_255,_0.32)_inset] transition">
+                    {{ value.title_blue }}
+        </a>
+    </div>
+    <div class="pl-[12px]">
+        <a
+           {% if value.link_trans == '#' or value.link_trans == '/' %}data-open-form{% elif value.link_trans == '#crm' %}data-open-partner-form{% elif value.link_trans == '#crm2' %}data-open-partner-form-2{% else %}href="{{ value.link_trans }}" {% endif %}
+           class=" relative px-[1px] py-[1px] rounded-[32px] box-border before:absolute before:border before:border-[transparent] before:inset-0 before:z-10 before:rounded-3xl before:[-webkit-mask:linear-gradient(#fff_0_0)_padding-box,_linear-gradient(#fff_0_0)] before:[-webkit-mask-composite:destination-out] before:[mask-composite:exclude] before:[background:var(--colors-dark-stroke-tag-trans-button)_border-box]">
+
+        <span
+                class="flex items-center justify-center font-medium text-[16px] max-sm:text-[14px] leading-[22px] max-sm:leading-[20px] w-full px-[24px] py-[16px] rounded-[32px] bg-[#FFFFFF0D] hover:shadow-[0px_-4px_12px_0px_rgba(0,_0,_0,_0.32)_inset] dark:hover:shadow-[0px_-4px_12px_0px_rgba(255,_255,_255,_0.32)_inset]">
+            {{ value.title_trans }}
+        </span>
+        </a>
+    </div>
+</div>

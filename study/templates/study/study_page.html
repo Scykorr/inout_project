@@ -1,0 +1,133 @@
+{% extends 'base/base_lm.html' %}
+{% load wagtailcore_tags %}
+{% load wagtailimages_tags static %}
+{% load my_tags %}
+
+{% block left_menu %}
+    {% include 'study/includes/left_menu.html' %}
+    {% if page.description %}
+        <div
+                class="mt-8 rounded-[24px] p-5"
+                style="background: url('/static/image/education-center/right-card_img.svg') center center / cover no-repeat"
+        >
+            <div>
+                <h2 class="font-semibold text-2xl max-md:text-xl leading-[30px] max-md:leading-[20px]">
+                    Просто внедрить и легко научиться
+                </h2>
+                <p class="mt-2 font-normal text-base max-md:text-sm leading-[23px] colors-text-secondary">
+                    {{ page.description|richtext }}
+                </p>
+                <div
+                        class="mt-[110px] max-md:mt-[162px] h-[62px] w-[244px] max-md:inline-block max-md:flex max-md:mx-auto p-1"
+                        style="background: url('/static/icons/button_educational-center_right.svg') center no-repeat"
+                >
+                    <a
+                            data-open-form
+                            class="block cursor-pointer font-medium text-center w-full text-base leading-[22px] px-6 py-4 bg-primary-bg text-text-primary rounded-full hover:shadow-[0px_-4px_12px_0px_rgba(0,_0,_0,_0.32)_inset] transition"
+                    >
+                        Начать бесплатно
+                    </a>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+{% endblock %}
+
+{% block content %}
+    <section class="max-md:px-4 z-[4]">
+        <div>
+            <h2 class="font-semibold text-[40px] leading-[44px] max-md:text-[32px] max-md:leading-[32px]">
+                {% if study %}{{ study.title }}{% else %}{{ page.title }}{% endif %}</h2>
+            <p class="mt-6 font-normal text-base leading-[23px] max-md:text-sm">
+                {% if study %}{{ study.specific.description|richtext }}{% else %}
+                    {{ page.description|richtext }}{% endif %}
+            </p>
+            <a
+                    data-open-partner-form
+                    class="block cursor-pointer mt-10 px-6 py-3 max-w-[222px] whitespace-nowrap bg-[linear-gradient(180deg,_#3274F9_0%,_#135BEB_100%)] rounded-[32px] hover:shadow-[0px_-4px_12px_0px_rgba(255,_255,_255,_0.32)_inset] transition"
+            >
+                Получить предложение
+            </a>
+        </div>
+        <div class="mt-20 relative">
+            {% with path=request.path|split_path %}
+                <div class="tabheader__items_education-second overflow-x-auto ui-h-scroll flex">
+                    <a href="/resursy/uchebnyj-centr/">
+                        {#                    <a href="{% if slug %}/{{ slug }}/{% else %}/{{ page.slug }}/{% endif %}">#}
+                        <div
+                                class="cursor-pointer py-2 px-4 font-medium text-base leading-[22px] whitespace-nowrap transition
+                            {% if '/resursy/uchebnyj-centr/' == page.url %}border-b-primary-bg border-b-[1px]{% else %}colors-text-tertiary{% endif %}"
+                        >
+                            Всё
+                        </div>
+                    </a>
+                    {% if categories %}
+                        {% for category in categories %}
+                            <a href="{{ category.url }}">
+                                <div
+                                        class="cursor-pointer py-2 px-4 font-medium text-base leading-[22px] whitespace-nowrap transition
+                                         {% if category.slug == path %}border-b-primary-bg border-b-[1px]{% else %}colors-text-tertiary{% endif %}"
+                                >
+                                    {{ category.title }}
+                                </div>
+                            </a>
+                        {% endfor %}
+                    {% else %}
+                        {% for category in page.get_children %}
+                            <a href="{{ category.url }}">
+                                <div
+                                        class="cursor-pointer py-2 px-4 font-medium text-base leading-[22px] whitespace-nowrap transition colors-text-tertiary"
+                                >
+                                    {{ category.title }}
+                                </div>
+                            </a>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+            {% endwith %}
+            <div>
+                <button
+                        class="tabheader-pagination-prev-education-second absolute z-[1] p-2 left-1 top-[1px] backdrop-blur-sm rounded-lg hidden"
+                >
+                    <img src="{% static 'icons/arrow_down.svg' %}" alt="" class="rotate-90"/>
+                </button>
+                <button
+                        class="tabheader-pagination-next-education-second absolute z-[1] p-2 right-1 top-[1px] backdrop-blur-sm rounded-lg"
+                >
+                    <img src="{% static 'icons/arrow_down.svg' %}" alt="" class="-rotate-90"/>
+                </button>
+            </div>
+        </div>
+        <div class="mt-[24px] max-md:mt-[48px] flex flex-col max-md:mt-0">
+            {% for study in content %}
+                <a href="{{ study.url }}">
+                    <div class="flex max-md:flex-col justify-between py-10 max-md:py-6">
+                        <div class="bg-dark-card-and-Sec-BT rounded-[20px] max-w-[300px] h-full py-7 pr-7 mr-auto">
+                            {% image study.image original as image %}
+                            <img src="{{ image.url }}" alt="dashboard_img"/>
+                        </div>
+                        <div class="max-w-[408px]">
+                            <div
+                                    class="bg-[linear-gradient(98deg,_rgba(92,_201,_255,_0.48)_0%,_rgba(133,_214,_255,_0.12)_55.5%,_rgba(173,_228,_255,_0.38)_100%)] p-[1px] rounded-[32px] max-md:mt-8 inline-block"
+                            >
+                                <div
+                                        class="bg-[#10131C] text-center py-[5px] px-[15px] rounded-[32px] font-medium text-base leading-[22px] whitespace-nowrap"
+                                >
+                                    {{ study.label }}
+                                </div>
+                            </div>
+                            <div class="mt-10 max-md:mt-6 pb-10 max-md:pb-0">
+                                <h2 class="font-semibold text-[32px] leading-[35px] max-md:text-2xl max-md:leading-[26px]">
+                                    {{ study.title }}
+                                </h2>
+                                <p class="mt-6 max-md:mt-4 font-normal text-base leading-[23px] max-md:text-sm">
+                                    {{ study.description }}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            {% endfor %}
+        </div>
+    </section>
+{% endblock %}

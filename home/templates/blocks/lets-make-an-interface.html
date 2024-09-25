@@ -1,0 +1,60 @@
+{% load wagtailimages_tags %}
+{% load wagtailcore_tags %}
+{% load static %}
+
+<section class="relative colors-dark-gradient-blue-up">
+  <div class="container mx-auto py-[72px] max-sm:px-[16px]">
+    <div class="flex gap-1 items-center">
+      <a href="/"
+         class="font-normal text-sm max-sm:text-xs leading-5 max-sm:leading-[17px] opacity-90 hover:opacity-100">INOUT
+        Проект</a>
+      <img src="{% static 'icons/arrow_right_light.svg' %}" alt="arrow_right_light" class="hidden dark:block">
+      <img src="{% static 'icons/arrow_right_dark.svg' %}" alt="arrow_right_dark" class="dark:hidden">
+      <p
+        class="font-normal text-sm max-sm:text-xs leading-5 max-sm:leading-[17px] text-text-tertiary dark:text-dark-text-tertiary">
+        {{ page.title }}</p>
+    </div>
+    <h2
+      class="mt-10 max-sm:mt-[24px] font-semibold text-[64px] leading-[64px] max-lg:text-[48px] max-sm:text-[36px] max-sm:leading-[36px] max-lg:leading-[48px] max-w-[700px] max-xl:max-w-[500px] max-lg:max-w-[400px] tracking-[-1.92px] max-sm:tracking-[-0.72px] dark:bg-[linear-gradient(91deg,_#FFF_52.03%,_rgba(255,_255,_255,_0.64)_83.59%)] bg-[#000] bg-clip-text"
+      style="-webkit-text-fill-color: transparent;">{{ value.title }}</h2>
+    <p class="font-normal text-base leading-[23px] colors-text-secondary max-w-[592px] mt-6">
+      {{ value.text }}
+    </p>
+    <div class="flex gap-4 mt-10">
+        {% for button in value.buttons %}
+      <div class="colors-background-card rounded-[16px] p-4 flex flex-col gap-1">
+        <h2 class="font-medium text-xl leading-[25px]">
+          {{ button.value.title }}
+        </h2>
+        <p class="font-normal text-base leading-[23px] colors-text-secondary">
+          {{ button.value.text }}
+        </p>
+      </div>
+        {% endfor %}
+    </div>
+    <ul class="flex flex-col gap-3 mt-6 colors-text-secondary font-normal text-[16px] leading-[23px]">
+        {% for sentence in value.sentences %}
+      <li class="flex gap-2 items-start">
+        <img src="{% static 'icons/circle.svg' %}" alt="circle" class="max-h-[24px]">
+        {{ sentence.value.text }}
+      </li>
+        {% endfor %}
+    </ul>
+    <div
+      class="relative mt-10 inline-block p-1 rounded-full bg-[rgba(255,255,255,0.2)] before:absolute before:border before:border-[transparent] before:inset-0 before:rounded-full dark:before:[background:linear-gradient(98deg,_rgba(92,_201,_255,_0.48)_0%,_rgba(133,_214,_255,_0.12)_55.5%,_rgba(173,_228,_255,_0.38)_100%)] before:[background:linear-gradient(98deg,_rgba(0,0,0,0.08)_0%,_rgba(0,0,0,0.02)_75.5%)_border-box] before:[-webkit-mask:linear-gradient(#fff_0_0)_padding-box,_linear-gradient(#fff_0_0)] before:[-webkit-mask-composite:destination-out] before:[mask-composite:exclude]">
+      <a
+        {% if value.link == '#' or value.link == '/' %}data-open-form{% elif value.link == '#crm' %}data-open-partner-form{% elif value.link == '#crm2' %}data-open-partner-form-2{% else %}href="{{ value.link }}" {% endif %}
+        class="relative z-[1] block cursor-pointer font-medium text-center w-full text-base max-sm:text-sm leading-[22px] px-6 py-4 bg-primary-bg text-text-primary rounded-full hover:shadow-[0px_-4px_12px_0px_rgba(0,_0,_0,_0.32)_inset] transition">
+        Заказать дизайн
+      </a>
+    </div>
+  </div>
+  <div
+          class="absolute max-md:static max-sm:ml-auto max-md:flex max-md:justify-end h-full top-0 right-0 w-[560px] max-lg:w-[324px] max-sm:min-w-[343px] overflow-hidden max-sm:pl-4">
+  {% image value.image original as image %}
+    <img src="{{ image.url }}" alt="let's-make-an-interface_img"
+         class="absolute max-md:static right-0 max-lg:right-[-48px] max-md:right-0 max-md:h-full top-[80px] max-lg:top-[200px] max-md:top-0 hidden dark:block">
+   <img src="{{ image.url }}" alt="hero-products-img-light"
+        class="absolute max-md:static right-0 top-[80px] max-lg:right-[-48px] max-md:right-0 max-sm:h-full max-lg:top-[200px] max-md:top-0 dark:hidden">
+  </div>
+</section>

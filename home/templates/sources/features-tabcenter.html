@@ -1,0 +1,278 @@
+{% load static %}
+<section
+        class="dark:bg-[linear-gradient(0deg,_#0E1C1C_0%,_#000_100%)] bg-primary-bg py-[100px] max-md:py-[56px] max-sm:py-[44px] max-md:px-8 max-sm:px-4"
+>
+    <div class="container mx-auto">
+        <h2
+                class="text-center max-sm:text-left font-semibold text-[40px] leading-[44px] max-md:text-[32px] max-md:leading-[32px]"
+        >
+            Ключевые функции
+        </h2>
+        <div class="relative flex flex-col md:justify-center">
+            <div
+                    class="tabheader__items flex mx-auto md:justify-center mt-6 p-1 dark:bg-dark-card-and-Sec-BT bg-card-and-Sec-BT rounded-[10px] inline-flex overflow-x-auto max-md:w-full ui-h-scroll"
+            >
+                <div
+                        class="tabheader__item px-4 py-2 cursor-pointer font-medium text-base max-md:text-sm leading-[22px] max-sm:leading-5 dark:bg-dark-card-and-Sec-BT bg-sec-BT rounded-[8px] whitespace-nowrap transition"
+                >
+                    Диаграмма Гантта
+                </div>
+                <div
+                        class="tabheader__item px-4 py-2 cursor-pointer font-medium text-base max-md:text-sm leading-[22px] max-sm:leading-5 dark:text-dark-text-tertiary text-text-tertiary whitespace-nowrap transition"
+                >
+                    Документы по проекту
+                </div>
+                <div
+                        class="tabheader__item px-4 py-2 cursor-pointer font-medium text-base max-md:text-sm leading-[22px] max-sm:leading-5 dark:text-dark-text-tertiary text-text-tertiary whitespace-nowrap transition"
+                >
+                    Шаблоны проектов
+                </div>
+                <div
+                        class="tabheader__item px-4 py-2 cursor-pointer font-medium text-base max-md:text-sm leading-[22px] max-sm:leading-5 dark:text-dark-text-tertiary text-text-tertiary whitespace-nowrap transition"
+                >
+                    Планировщие проектов
+                </div>
+                <button
+                        class="tabheader-pagination-prev absolute z-[1] p-1.5 left-1 top-7 backdrop-blur-2xl rounded-lg hidden md:hidden">
+                    <img src="/{% static 'icons/arrow_down.svg' %}" alt="" class="rotate-90"/>
+                </button>
+                <button
+                        class="tabheader-pagination-next absolute z-[1] p-1.5 right-1 top-7 backdrop-blur-2xl rounded-lg md:hidden">
+                    <img src="/{% static 'icons/arrow_down.svg' %}" alt="" class="-rotate-90"/>
+                </button>
+            </div>
+            <div class="mt-[64px] max-lg:mt-10">
+                <div class="tabcontent flex max-lg:flex-col">
+                    <div class="hidden max-lg:block">
+                        <h3 class="font-semibold text-2xl leading-[26px]">Диаграмма Гантта</h3>
+                        <p class="font-normal text-sm mt-4">
+                            Устали от просроченных задач и громоздких экселевских таблиц? Диаграмма Гантта поможет
+                            визуализировать
+                            проект и упростить процесс планирования — вы сможете согласовать и представить все данные в
+                            наглядной
+                            форме, и дело пойдёт быстрее.
+                        </p>
+                    </div>
+                    <div
+                            class="dark:bg-dark-card-and-Sec-BT bg-card-and-Sec-BT flex w-full rounded-[40px] max-lg:rounded-[24px] gap-[56px] max-lg:mt-6 py-[32px] pl-[32px] max-md:py-7 max-md:pl-[26px]"
+                    >
+                        <div class="max-w-[420px] h-[432px] relative max-lg:hidden">
+                            <h3 class="font-semibold text-[32px] leading-[35px]">Диаграмма Гантта</h3>
+                            <p
+                                    class="font-normal text-base leading-[23px] dark:text-dark-text-secondary text-text-secondary mt-4"
+                            >
+                                Устали от просроченных задач и громоздких экселевских таблиц? Диаграмма Гантта поможет
+                                визуализировать проект и упростить процесс планирования — вы сможете согласовать и
+                                представить все
+                                данные в наглядной форме, и дело пойдёт быстрее.
+                            </p>
+                            <a
+                                    href="#"
+                                    class="absolute font-medium bottom-0 cursor-pointer px-[24px] text-dark-text-primary text-base leading-[22px] text-center py-[12px] max-w-[145px] bg-[linear-gradient(180deg,_#3274F9_0%,_#135BEB_100%)] rounded-[32px] hover:shadow-[0px_-4px_12px_0px_rgba(255,_255,_255,_0.32)_inset] transition"
+                            >
+                                Попробовать
+                            </a>
+                        </div>
+                        <div
+                                class="py-[22px] pl-[56px] max-lg:pl-[22px] max-md:py-0 max-md:pl-0 relative w-full overflow-hidden"
+                        >
+                            <img
+                                    src="{% static 'image/features-tabcenter.svg' %}"
+                                    alt="features-tabcenter"
+                                    class="max-xl:absolute ml-auto lg:h-[388px] max-lg:w-full max-w-[733px] max-xl:right-[-238px] max-lg:static max-lg:right-0"
+                            />
+                        </div>
+                    </div>
+                </div>
+                <div class="tabcontent flex max-lg:flex-col">
+                    <div class="hidden max-lg:block">
+                        <h3 class="font-semibold text-2xl leading-[26px]">Документы по проекту</h3>
+                        <p class="font-normal text-sm mt-4">
+                            Устали от просроченных задач и громоздких экселевских таблиц? Диаграмма Гантта поможет
+                            визуализировать
+                            проект и упростить процесс планирования — вы сможете согласовать и представить все данные в
+                            наглядной
+                            форме, и дело пойдёт быстрее.
+                        </p>
+                    </div>
+                    <div
+                            class="dark:bg-dark-card-and-Sec-BT bg-card-and-Sec-BT flex w-full rounded-[40px] max-lg:rounded-[24px] gap-[56px] max-lg:mt-6 py-[32px] pl-[32px] max-md:py-7 max-md:pl-[26px]"
+                    >
+                        <div class="max-w-[420px] h-[432px] relative max-lg:hidden">
+                            <h3 class="font-semibold text-[32px] leading-[35px]">Документы по проекту</h3>
+                            <p
+                                    class="font-normal text-base leading-[23px] dark:text-dark-text-secondary text-text-secondary mt-4"
+                            >
+                                Устали от просроченных задач и громоздких экселевских таблиц? Диаграмма Гантта поможет
+                                визуализировать проект и упростить процесс планирования — вы сможете согласовать и
+                                представить все
+                                данные в наглядной форме, и дело пойдёт быстрее.
+                            </p>
+                            <a
+                                    href="#"
+                                    class="absolute font-medium bottom-0 cursor-pointer px-[24px] text-dark-text-primary text-base leading-[22px] text-center py-[12px] max-w-[145px] bg-[linear-gradient(180deg,_#3274F9_0%,_#135BEB_100%)] rounded-[32px] hover:shadow-[0px_-4px_12px_0px_rgba(255,_255,_255,_0.32)_inset] transition"
+                            >
+                                Попробовать
+                            </a>
+                        </div>
+                        <div
+                                class="py-[22px] pl-[56px] max-lg:pl-[22px] max-md:py-0 max-md:pl-0 relative w-full overflow-hidden"
+                        >
+                            <img
+                                    src="{% static 'image/features-tabcenter.svg' %}"
+                                    alt="features-tabcenter"
+                                    class="max-xl:absolute ml-auto lg:h-[388px] max-lg:w-full max-w-[733px] max-xl:right-[-238px] max-lg:static max-lg:right-0"
+                            />
+                        </div>
+                    </div>
+                </div>
+                <div class="tabcontent flex max-lg:flex-col">
+                    <div class="hidden max-lg:block">
+                        <h3 class="font-semibold text-2xl leading-[26px]">Шаблоны проектов</h3>
+                        <p class="font-normal text-sm mt-4">
+                            Устали от просроченных задач и громоздких экселевских таблиц? Диаграмма Гантта поможет
+                            визуализировать
+                            проект и упростить процесс планирования — вы сможете согласовать и представить все данные в
+                            наглядной
+                            форме, и дело пойдёт быстрее.
+                        </p>
+                    </div>
+                    <div
+                            class="dark:bg-dark-card-and-Sec-BT bg-card-and-Sec-BT flex w-full rounded-[40px] max-lg:rounded-[24px] gap-[56px] max-lg:mt-6 py-[32px] pl-[32px] max-md:py-7 max-md:pl-[26px]"
+                    >
+                        <div class="max-w-[420px] h-[432px] relative max-lg:hidden">
+                            <h3 class="font-semibold text-[32px] leading-[35px]">Шаблоны проектов</h3>
+                            <p
+                                    class="font-normal text-base leading-[23px] dark:text-dark-text-secondary text-text-secondary mt-4"
+                            >
+                                Устали от просроченных задач и громоздких экселевских таблиц? Диаграмма Гантта поможет
+                                визуализировать проект и упростить процесс планирования — вы сможете согласовать и
+                                представить все
+                                данные в наглядной форме, и дело пойдёт быстрее.
+                            </p>
+                            <a
+                                    href="#"
+                                    class="absolute font-medium bottom-0 cursor-pointer px-[24px] text-dark-text-primary text-base leading-[22px] text-center py-[12px] max-w-[145px] bg-[linear-gradient(180deg,_#3274F9_0%,_#135BEB_100%)] rounded-[32px] hover:shadow-[0px_-4px_12px_0px_rgba(255,_255,_255,_0.32)_inset] transition"
+                            >
+                                Попробовать
+                            </a>
+                        </div>
+                        <div
+                                class="py-[22px] pl-[56px] max-lg:pl-[22px] max-md:py-0 max-md:pl-0 relative w-full overflow-hidden"
+                        >
+                            <img
+                                    src="{% static 'image/features-tabcenter.svg' %}"
+                                    alt="features-tabcenter"
+                                    class="max-xl:absolute ml-auto lg:h-[388px] max-lg:w-full max-w-[733px] max-xl:right-[-238px] max-lg:static max-lg:right-0"
+                            />
+                        </div>
+                    </div>
+                </div>
+                <div class="tabcontent flex max-lg:flex-col">
+                    <div class="hidden max-lg:block">
+                        <h3 class="font-semibold text-2xl leading-[26px]">Планировщие проектов</h3>
+                        <p class="font-normal text-sm mt-4">
+                            Устали от просроченных задач и громоздких экселевских таблиц? Диаграмма Гантта поможет
+                            визуализировать
+                            проект и упростить процесс планирования — вы сможете согласовать и представить все данные в
+                            наглядной
+                            форме, и дело пойдёт быстрее.
+                        </p>
+                    </div>
+                    <div
+                            class="dark:bg-dark-card-and-Sec-BT bg-card-and-Sec-BT flex w-full rounded-[40px] max-lg:rounded-[24px] gap-[56px] max-lg:mt-6 py-[32px] pl-[32px] max-md:py-7 max-md:pl-[26px]"
+                    >
+                        <div class="max-w-[420px] h-[432px] relative max-lg:hidden">
+                            <h3 class="font-semibold text-[32px] leading-[35px]">Планировщие проектов</h3>
+                            <p
+                                    class="font-normal text-base leading-[23px] dark:text-dark-text-secondary text-text-secondary mt-4"
+                            >
+                                Устали от просроченных задач и громоздких экселевских таблиц? Диаграмма Гантта поможет
+                                визуализировать проект и упростить процесс планирования — вы сможете согласовать и
+                                представить все
+                                данные в наглядной форме, и дело пойдёт быстрее.
+                            </p>
+                            <a
+                                    href="#"
+                                    class="absolute font-medium bottom-0 cursor-pointer px-[24px] text-dark-text-primary text-base leading-[22px] text-center py-[12px] max-w-[145px] bg-[linear-gradient(180deg,_#3274F9_0%,_#135BEB_100%)] rounded-[32px] hover:shadow-[0px_-4px_12px_0px_rgba(255,_255,_255,_0.32)_inset] transition"
+                            >
+                                Попробовать
+                            </a>
+                        </div>
+                        <div
+                                class="py-[22px] pl-[56px] max-lg:pl-[22px] max-md:py-0 max-md:pl-0 relative w-full overflow-hidden"
+                        >
+                            <img
+                                    src="{% static 'image/features-tabcenter.svg' %}"
+                                    alt="features-tabcenter"
+                                    class="max-xl:absolute ml-auto lg:h-[388px] max-lg:w-full max-w-[733px] max-xl:right-[-238px] max-lg:static max-lg:right-0"
+                            />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="flex gap-6 max-lg:gap-3 mt-[48px] max-lg:mt-6 max-lg:flex-col">
+            <div class="flex gap-2">
+                <img src="{% static 'icons/circle.svg' %}" alt="circle" class="hidden max-lg:block"/>
+                <div
+                        class="font-normal text-[16px] leading-[23px] w-full text-center max-lg:text-left max-lg:dark:text-dark-text-secondary max-lg:text-text-secondary"
+                >
+                    Визуализация проектных задач на план-графике
+                </div>
+            </div>
+            <div
+                    class="h-[69px] min-w-[1px] bg-[linear-gradient(0deg,_#ffffff00_0%,_#ffffff_15%,_#ffffff_85%,_#ffffff00_100%)] opacity-[0.16] max-lg:hidden"
+            ></div>
+            <div class="flex gap-2">
+                <img src="{% static 'icons/circle.svg' %}" alt="circle" class="hidden max-lg:block"/>
+                <div
+                        class="font-normal text-base leading-[23px] w-full text-center max-lg:text-left max-lg:dark:text-dark-text-secondary max-lg:text-text-secondary"
+                >
+                    Функция перетаскивания для планирования задач
+                </div>
+            </div>
+            <div
+                    class="h-[69px] min-w-[1px] bg-[linear-gradient(0deg,_#ffffff00_0%,_#ffffff_15%,_#ffffff_85%,_#ffffff00_100%)] opacity-[0.16] max-lg:hidden"
+            ></div>
+            <div class="flex gap-2">
+                <img src="{% static 'icons/circle.svg' %}" alt="circle" class="hidden max-lg:block"/>
+                <div
+                        class="font-normal text-base leading-[23px] w-full text-center max-lg:text-left max-lg:dark:text-dark-text-secondary max-lg:text-text-secondary"
+                >
+                    Редактор связей между задачами и подзадачами
+                </div>
+            </div>
+            <div
+                    class="h-[69px] min-w-[1px] bg-[linear-gradient(0deg,_#ffffff00_0%,_#ffffff_15%,_#ffffff_85%,_#ffffff00_100%)] opacity-[0.16] max-lg:hidden"
+            ></div>
+            <div class="flex gap-2">
+                <img src="{% static 'icons/circle.svg' %}" alt="circle" class="hidden max-lg:block"/>
+                <div
+                        class="font-normal text-base leading-[23px] w-full text-center max-lg:text-left max-lg:dark:text-dark-text-secondary max-lg:text-text-secondary"
+                >
+                    Создание новых задач и контрольных событий
+                </div>
+            </div>
+            <div
+                    class="h-[69px] min-w-[1px] bg-[linear-gradient(0deg,_#ffffff00_0%,_#ffffff_15%,_#ffffff_85%,_#ffffff00_100%)] opacity-[0.16] max-lg:hidden"
+            ></div>
+            <div class="flex gap-2">
+                <img src="{% static 'icons/circle.svg' %}" alt="circle" class="hidden max-lg:block"/>
+                <div
+                        class="font-normal text-base leading-[23px] w-full text-center max-lg:text-left max-lg:dark:text-dark-text-secondary max-lg:text-text-secondary"
+                >
+                    Создание базового плана в диаграмме Гантта
+                </div>
+            </div>
+        </div>
+        <div class="mt-[52px] hidden max-lg:block">
+            <a
+                    href="#"
+                    class="cursor-pointer font-medium px-[24px] text-dark-text-primary text-sm text-center py-[12px] max-w-[133px] bg-[linear-gradient(180deg,_#3274F9_0%,_#135BEB_100%)] rounded-[32px] hover:shadow-[0px_-4px_12px_0px_rgba(255,_255,_255,_0.32)_inset] transition"
+            >
+                Попробовать
+            </a>
+        </div>
+    </div>
+</section>

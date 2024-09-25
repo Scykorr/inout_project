@@ -1,0 +1,88 @@
+{% extends "base/base_lm.html" %}
+{% load static wagtailcore_tags %}
+
+{% block left_menu %}
+    {% include 'home/includes/partner_menu.html' %}
+{% endblock %}
+
+{% block content %}
+    <section class="w-full flex flex-col flex-nowrap box-border mb-[100px]">
+        <div class="w-full max-md:flex-col max-sm:flex-col box-border">
+            <div class="flex flex-col flex-nowrap gap-10 w-full">
+                <div class="flex flex-col flex-nowrap pb-10">
+                    <h2
+                            class="font-semibold text-[40px] leading-[44px] max-md:leading-[40px] max-sm:text-[32px] max-sm:leading-[32px] mb-6"
+                    >
+                        Станьте партнёром и работайте<br>с лидерами рынков и отраслей
+                    </h2>
+
+                    <div class="flex flex-col gap-10 w-full">
+                        <p class="text-base leading-[145%]">
+                            Мы хотим, чтобы российский бизнес был эффективным и продолжал обеспечивать стабильность и
+                            процветание экономики. Так ведь всем жить лучше будет.
+                        </p>
+                        <p class="text-base leading-[145%]">
+                            Со своей стороны — стараемся как можем. Но если найдём единомышленников — сможем вместе
+                            стать быстрее, выше, сильнее! И сделать в разы больше.
+                        </p>
+                        <p class="text-base leading-[145%]">
+                            Давайте дружить?
+                        </p>
+                        <a
+                                data-open-partner-form
+                                class="block text-base rounded-[32px] py-3 px-6 w-fit max-sm:w-full max-sm:text-center bg-[linear-gradient(180deg,_#3274F9_0%,_#135BEB_100%)] hover:shadow-[0px_-4px_12px_0px_rgba(255,_255,_255,_0.32)_inset] transition text-dark-text-primary"
+                        >Запланировать встречу</a
+                        >
+                    </div>
+                </div>
+
+                <div class="flex flex-col flex-nowrap">
+                    <h2
+                            class="font-semibold text-[40px] leading-[44px] max-md:leading-[40px] max-sm:text-[32px] max-sm:leading-[32px] mb-6"
+                    >
+                        Кто может стать партнёром?
+                    </h2>
+
+                    <div class="flex flex-col gap-5 w-full text-base leading-[145%]" id="become-partner-sub">
+                        <p>
+                        <strong>Дилеры, представители и дистрибьюторы</strong><br>
+                        Вы — крупный системный интегратор, агентство, ИТ-магазин, консалтинговая компания. Мы — поможем
+                        вам расширить портфолио услуг и продуктов.
+                        </p>
+                        Зарегистрируйте свою организацию в качестве партнёра, приведите заказчика, и мы поможем вам
+                        провести сделку. По мере повышения уровня партнёрства ваша прибыль будет расти.
+                        <p>
+                            <strong>Эксперты, консультанты и тренеры по проектному управлению</strong><br>
+                            Вы обучаете организации управлять проектами, а у нас есть ультимативное решение, которое
+                            убирает
+                            рутину и повышает эффективность. Давайте дружить?
+                        </p>
+                        Свяжитесь с нами для обсуждения возможного сотрудничества.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+{% block js_extends %}
+    <script>
+        const swiper = new Swiper('.partners_swiper', {
+            slidesPerView: 1,
+            spaceBetween: 16,
+            navigation: {
+                prevEl: '.button-slide-prev',
+                nextEl: '.button-slide-next',
+            },
+            breakpoints: {
+                320: {
+                    slidesPerView: 'auto',
+                    spaceBetween: 16,
+                },
+                1200: {
+                    slidesPerView: 4,
+                    spaceBetween: 16,
+                },
+            },
+        })
+    </script>
+{% endblock %}

@@ -1,0 +1,161 @@
+{% extends "base/base.html" %}
+{% load static wagtailcore_tags %}
+
+{% block content %}
+
+    <section
+            class="w-full overflow-hidden flex flex-col flex-nowrap max-md:px-9 max-sm:px-4 box-border pt-10 max-md:pt-[13px]  h-auto pb-20"
+    >
+        <div class="container mx-auto">
+            <div class="w-full flex items-center justify-between gap-3 max-sm:flex-col max-sm:items-start">
+                <!-- breadcrumbs -->
+                <div class="flex gap-1 items-center w-full max-sm:flex-wrap">
+                    <div class="flex gap-0.5 items-center shrink-0 box-border py-0.5">
+                        <a href="/" class="text-sm max-sm:text-xs">INOUT Проект</a>
+                        <img src="{% static 'icons/arrow_right_light.svg' %}" alt="arrow" class="hidden dark:block"/>
+                        <img src="{% static 'icons/arrow_right_dark.svg' %}" alt="arrow" class="dark:hidden"/>
+                    </div>
+                    <div class="flex gap-0.5 items-center box-border py-0.5">
+                        <a href="{{ page.get_parent.url }}" class="text-sm max-sm:text-xs">Ресурсы</a>
+                        <img src="{% static 'icons/arrow_right_light.svg' %}" alt="arrow" class="hidden dark:block"/>
+                        <img src="{% static 'icons/arrow_right_dark.svg' %}" alt="arrow" class="dark:hidden"/>
+                    </div>
+                    <div>
+                        <p class="text-sm max-sm:text-xs dark:text-dark-text-tertiary text-text-tertiary">
+                            Документация</p>
+                    </div>
+                </div>
+                <!-- breadcrumbs -->
+
+                <div
+                        class="theme-switcher min-w-[104px] w-[104px] flex h-9 rounded-[112px] dark:bg-dark-card-and-Sec-BT bg-card-and-Sec-BT p-1 border border-[transparent] dark:hover:border-[rgba(255,255,255,0.08)] hover:border-[rgba(0,0,0,0.08)] transition"
+                >
+                    <div
+                            class="dark-theme theme-control rounded-[56px] dark:bg-dark-card-and-Sec-BT bg-[transparent] flex items-center justify-center w-1/2 hover:cursor-pointer dark:hover:cursor-default"
+                    >
+                        <img src="{% static 'icons/moon_dark.svg' %}" alt="moon"
+                             class="w-4 h-4 hidden dark:block transition"/>
+                        <img src="{% static 'icons/moon_light.svg' %}" alt="moon"
+                             class="dark w-4 h-4 dark:hidden transition"/>
+                    </div>
+                    <div
+                            class="light-theme theme-control rounded-[56px] bg-[rgba(0,0,0,0.10)] dark:bg-[transparent] flex items-center justify-center w-1/2 dark:hover:cursor-pointer hover:cursor-default"
+                    >
+                        <img src="{% static 'icons/sun_dark.svg' %}" alt="sun"
+                             class="light w-4 h-4 hidden dark:block transition"/>
+                        <img src="{% static 'icons/sun_light.svg' %}" alt="sun" class="w-4 h-4 dark:hidden transition"/>
+                    </div>
+                </div>
+            </div>
+
+            <div class="w-full flex gap-[152px] mt-20 max-md:mt-10 max-sm:mt-10 max-md:flex-col max-md:gap-[50px]">
+                <!-- menu -->
+                <div class="w-[288px] shrink-0 max-md:w-full">
+                    <ul
+                            class="menu w-full text-base leading-[20px] max-sm:text-sm text-text-secondary dark:text-dark-text-secondary"
+                    >
+                        {% for i in page.get_children %}
+                            <li class="w-full box-border" data-clicked="false">
+                                <div
+                                        class="menu-item py-2 box-border w-full flex justify-between items-center focus:border-none focus:outline-none transition hover:cursor-pointer hover:text-text-primary dark:hover:text-dark-text-primary"
+                                >
+                                    <p class="transition">{{ i.title }}</p>
+                                    <img src="{% static 'icons/chevron_down.svg' %}" alt="arrow"
+                                         class="dark transition hidden dark:block"/>
+                                    <img src="{% static 'icons/chevron_down_hover.svg' %}" alt="arrow"
+                                         class="dark-active transition hidden dark:hidden"/>
+                                    <img src="{% static 'icons/chevron_down_primary.svg' %}" alt="arrow"
+                                         class="primary dark:hidden transition"/>
+                                    <img
+                                            src="{% static 'icons/chevron_down primary_hover.svg' %}"
+                                            alt="arrow"
+                                            class="primary-active dark:hidden hidden transition"
+                                    />
+                                </div>
+                                <!-- dropdown -->
+                                <ul
+                                        class="menu-list hidden text-sm leading-[20px] max-sm:text-xs dark:text-dark-text-secondary text-text-secondary pb-4 transition"
+                                >
+                                    {% for j in i.get_children %}
+                                        <li
+                                                class="py-2 px-4 box-border w-fit dark:hover:text-dark-text-primary hover:text-text-primary transition"
+                                        >
+                                            <a href="{{ j.url }}">{{ j.title }}</a>
+                                        </li>
+
+                                    {% endfor %}
+                                    <li
+                                            class="py-2 px-4 box-border w-fit dark:hover:text-dark-text-primary hover:text-text-primary transition"
+                                    >
+                                        <a href="{{ i.url }}"
+                                           class="inline-block flex gap-2 items-center dark:text-dark-text-link text-text-link"
+                                        >Смотреть всё <img src="{% static 'icons/link_arrow.svg' %}" alt="arrow"
+                                        /></a>
+                                    </li>
+                                </ul>
+                                <!-- dropdown -->
+                            </li>
+                        {% endfor %}
+
+                    </ul>
+                </div>
+                <!-- menu -->
+
+                <!-- content -->
+                <div class="w-full flex flex-col gap-2">
+                    <div
+                            class="pb-10 box-border flex justify-between items-center gap-4 pb-10 max-md:pb-0 max-sm:flex-col max-md:items-start"
+                    >
+                        <h2 class="heading font-semibold text-[40px] leading-[44px] max-md:leading-[40px]">
+                            Документация</h2>
+                        <!-- search -->
+                        <div
+                                class="search-wrapper hrink-0 flex gap-2 items-center px-4 py-[15px] w-[311px] max-sm:w-full box-border rounded-xl border dark:border-[rgba(255,255,255,0.08)] border-[rgba(0,0,0,0.08)] bg-card-and-Sec-BT dark:bg-dark-card-and-Sec-BT hover:cursor-pointer transition"
+                        >
+                            <img src="{% static 'icons/search_inactive.svg' %}" alt="search"
+                                 class="search-img-dark dark:block hidden transition"/>
+                            <img src="{% static 'icons/search.svg' %}" alt="search"
+                                 class="search-img-dark-active dark:hidden hidden transition"/>
+                            <img
+                                    src="{% static 'icons/search_dark.svg' %}"
+                                    alt="search"
+                                    class="search-img-primary-active hidden dark:hidden transition"
+                            />
+                            <img
+                                    src="{% static 'icons/search_dark_inactive.svg' %}"
+                                    alt="search"
+                                    class="search-img-primary dark:hidden transition"
+                            />
+                            <form action="{% url 'search' %}" method="get" class="w-full">
+                                <input
+                                        name="query"
+                                        type="text"
+                                        class="search w-full bg-[transparent] focus:border-none focus:outline-none dark:placeholder:text-dark-text-secondary placeholder:text-text-secondary"
+                                        placeholder="Поиск по документации"
+                                />
+                            </form>
+
+                        </div>
+                        <!-- search -->
+                    </div>
+                    <div class="grid grid-cols-3 gap-4 py-10 box-border max-md:grid-cols-2 max-sm:flex max-sm:flex-col">
+                        {% for i in page.get_children %}
+                            <div
+                                    class="flex flex-col justify-between h-36 box-border p-5 rounded-3xl dark:bg-dark-card-and-Sec-BT bg-card-and-Sec-BT relative z-20 before:absolute before:border before:border-[transparent] before:inset-0 before:z-10 before:rounded-3xl dark:before:[background:linear-gradient(98deg,_rgba(255,255,255,0.08)_0%,_rgba(255,255,255,0.02)_75.5%)_border-box] before:[background:linear-gradient(98deg,_rgba(0,0,0,0.08)_0%,_rgba(0,0,0,0.02)_75.5%)_border-box] before:[-webkit-mask:linear-gradient(#fff_0_0)_padding-box,_linear-gradient(#fff_0_0)] before:[-webkit-mask-composite:destination-out] before:[mask-composite:exclude]"
+                            >
+                                <h6 class="text-xl leading-[25px]">{{ i.title }}</h6>
+                                <a
+                                        href="{{ i.url }}"
+                                        class="text-base max-sm:text-sm leading-[22px] dark:text-dark-text-link text-text-link w-fit z-30"
+                                >Подробнее</a
+                                >
+                            </div>
+                        {% endfor %}
+
+                    </div>
+                </div>
+                <!-- content -->
+            </div>
+        </div>
+    </section>
+{% endblock %}

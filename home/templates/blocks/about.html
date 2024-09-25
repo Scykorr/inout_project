@@ -1,0 +1,139 @@
+{% load static %}
+{% load wagtailcore_tags %}
+{% load my_tags %}
+
+<section class="colors-dark-gradient-platform-up" style="margin-top: -55px; padding-top: 55px">
+    <div class="container mx-auto pt-20 pb-[72px] max-md:px-4">
+        <h2
+                class="font-semibold text-[64px] max-md:text-[48px] max-sm:text-[32px] max-md:leading-[48px] max-sm:leading-[32px] leading-[64px] max-w-[896px] text-center mx-auto dark:bg-[linear-gradient(91deg,_#FFF_52.03%,_rgba(255,_255,_255,_0.64)_83.59%)] bg-[#000] bg-clip-text max-md:tracking-tight"
+                style="-webkit-text-fill-color: transparent"
+        >
+            {{ value.title }}
+        </h2>
+        <div class="mt-6 text-center max-w-[896px] font-normal text-base leading-[23px] colors-text-secondary mx-auto prose">
+            {{ value.subtitle }}
+        </div>
+    </div>
+</section>
+<div class="mt-[60px] relative z-[2] max-sm:mt-[48px] w-full h-[1px] bg-[linear-gradient(48deg,_rgba(255,255,255,0)_0%,_rgba(255,255,255,1)_15%,_rgba(255,255,255,1)_85%,_rgba(255,255,255,0)_100%)] opacity-20"></div>
+{#<section class="dark:bg-dark-primary-bg bg-primary-bg">#}
+{#    <div class="container mx-auto py-[100px]">#}
+{#        <div class="flex gap-6">#}
+{#            {% with benefits=value.benefits|query_dict %}#}
+{#                {% for k, benefit in benefits.items %}#}
+{#                    {% if k != 0 %}#}
+{#                        <div#}
+{#                                class="h-[108px] max-lg:min-w-[1px] max-sm:min-h-[1px] bg-[linear-gradient(0deg,_#ffffff00_0%,_#ffffff_15%,_#ffffff_85%,_#ffffff00_100%)] opacity-[0.16]"#}
+{#                        ></div>#}
+{#                    {% endif %}#}
+{##}
+{#                    <div class="w-1/4">#}
+{#                        <h2 class="font-semibold text-2xl leading-[30px] text-center">{{ benefit.value.title }}</h2>#}
+{#                        <p class="font-normal text-base leading-[23px] text-center mt-2 colors-text-secondary">#}
+{#                            {{ benefit.value.text }}#}
+{#                        </p>#}
+{#                    </div>#}
+{#                {% endfor %}#}
+{#            {% endwith %}#}
+{#        </div>#}
+{#    </div>#}
+{#</section>#}
+<section class="">
+    <div class="container mx-auto">
+        <div class="max-w-[528px] mx-auto text-center"></div>
+        <div class="mt-[64px] flex items-start gap-6 max-sm:flex-col">
+            {% for item in value.benefits %}
+                <div class="w-1/2 flex flex-col max-sm:w-full justify-center items-center ">
+                    <h2 class="mt-6 font-semibold text-2xl leading-[30px] text-center">
+                        {{ item.value.title }}
+                    </h2>
+                    <p class="font-normal text-base leading-[23px] text-center mt-2 colors-text-secondary">
+                        {{ item.value.text }}
+                    </p>
+                    {% if item.value.link %}
+                        <a href="{{ item.value.link }}"
+                           class="mt-6 max-sm:mt-3 font-medium text-[16px] max-sm:text-[14px] leading-[22px] max-sm:leading-[20px] text-text-link dark:text-dark-text-link hover:underline">
+                            {{ item.value.link_label }}
+                        </a>
+                    {% endif %}
+                </div>
+                {% if not forloop.last %}
+                    <div
+                            class="max-sm:hidden h-[232px] min-w-[1px] bg-[linear-gradient(0deg,_#ffffff00_0%,_#ffffff_15%,_#ffffff_85%,_#ffffff00_100%)] opacity-[0.16]"></div>
+                {% endif %}
+            {% endfor %}
+
+        </div>
+    </div>
+</section>
+
+<section class="dark:bg-dark-primary-bg bg-primary-bg">
+    <div class="container mx-auto py-[100px]">
+        <div class="flex items-center gap-20 max-md:flex-col max-md:px-4">
+            <div>
+                <h2 class="font-semibold text-[40px] leading-[44px]">{{ value.about_title }}</h2>
+                <div class="mt-6 font-normal text-base leading-[23px] prose">
+                    {{ value.about_text|richtext }}
+                </div>
+            </div>
+            <div
+                    class="flex items-center bg-[linear-gradient(90deg,_rgba(13,13,13,1)_0%,_rgba(13,13,13,1)_75%,_rgba(12,36,87,1)_100%)] min-w-[592px] min-h-[500px] max-lg:min-w-[400px] max-md:min-h-[350px] max-md:min-w-full max-lg:min-h-auto rounded-[40px] py-14 pl-14">
+                <img src="{% static 'image/about-us/about-us_3_img.svg' %}" alt="about-us_3_img" class="ml-auto"/>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="colors-dark-gradient-platform-down">
+    {% include_block value.partners %}
+</div>
+{% include_block value.logos %}
+<h2
+        class="font-semibold text-[64px] mt-[64px] max-lg:pb-[64px] max-md:text-[48px] max-sm:text-[32px] max-md:leading-[48px] max-sm:leading-[32px] leading-[74px] max-w-[896px] text-center mx-auto dark:bg-[linear-gradient(91deg,_#FFF_52.03%,_rgba(255,_255,_255,_0.64)_83.59%)] bg-[#000] bg-clip-text max-md:tracking-tight"
+        style="-webkit-text-fill-color: transparent"
+>
+    {{ value.friend_title }}
+</h2>
+{% include_block value.features %}
+
+<section class="mt-[100px]">
+    <div
+            class="mt-[60px] relative z-[2] max-sm:mt-[48px] w-full h-[1px] bg-[linear-gradient(48deg,_rgba(255,255,255,0)_0%,_rgba(255,255,255,1)_15%,_rgba(255,255,255,1)_85%,_rgba(255,255,255,0)_100%)] opacity-20"></div>
+
+    <div class="container mx-auto pt-[100px]">
+        <div class="flex gap-20 max-md:flex-col max-md:px-4">
+            <div class="max-md:w-full w-[528px] flex flex-col justify-between">
+                <h2 class="font-semibold text-[40px] leading-[44px]">{{ value.contact_title }}</h2>
+                <div class="flex flex-col gap-6">
+                    <div class="flex flex-col gap-2">
+                        <p class="colors-text-secondary font-normal text-base leading-[23px]">Телефон</p>
+                        <a href="tel:{{ value.phone }}" class="font-semibold text-xl leading-5">{{ value.phone }}</a>
+                    </div>
+                    <div class="flex flex-col gap-2">
+                        <p class="colors-text-secondary font-normal text-base leading-[23px]">Эл. почта</p>
+                        {{ value.email|several_emails|safe }}
+                    </div>
+                    <div class="flex flex-col gap-2">
+                        <p class="colors-text-secondary font-normal text-base leading-[23px]">Адрес</p>
+                        <a href="#" class="font-semibold text-xl leading-5">{{ value.address }}</a>
+                    </div>
+                    <div class="flex flex-col gap-2">
+                        <p class="colors-text-secondary font-normal text-base leading-[23px]">Следите за нами</p>
+                        <div class="flex gap-[15px]">
+                            {% for social in value.social %}
+                                <a href="{{ social.value.link }}"
+                                   class=" rounded-[24px] pr-3">
+                                    <img src="{{ social.value.icon.url }}" alt=""/>
+                                </a>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div
+                    style="background-image: url({% static 'image/about-us/img.svg' %})"
+                    class="flex items-center min-w-[592px] min-h-[500px] max-lg:min-w-[400px] max-md:min-h-[350px] max-md:min-w-full max-lg:min-h-auto rounded-[40px] py-14 pl-14">
+                <img src="{% static 'image/about-us/about-us_5_img.svg' %}" alt="about-us_3_img" class="ml-auto"/>
+            </div>
+        </div>
+    </div>
+</section>

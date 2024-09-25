@@ -1,0 +1,83 @@
+{% load static my_tags %}
+<section
+        class="{% if page.color %}{{ page.color }}-{{ page.color_way|default:'up' }}{% else %}dark:bg-[linear-gradient(0deg,_#000_0%,_#0E1C1C_100%)]{% endif %} py-[72px] max-md:pt-[96px] max-md:pb-[64px] max-sm:pt-[88px] max-sm:pb-[56px] max-md:px-[32px] max-sm:px-[16px]" style="margin-top: -55px">
+    <div class="container mx-auto">
+        <div class="flex gap-1 items-center max-md:tracking-tight">
+            <a href="#"
+               class="font-normal text-[14px] max-sm:text-[12px] leading-[20px] max-sm:leading-[17px] opacity-90 hover:opacity-100">Продукт</a>
+            <img src="{% static 'icons/arrow_right_light.svg' %}" alt="arrow_right_light" class="hidden dark:block">
+            <img src="{% static 'icons/arrow_right_dark.svg' %}" alt="arrow_right_dark" class="dark:hidden">
+            <a href="{{ page.get_parent.url }}"
+               class="font-normal text-[14px] max-sm:text-[12px] leading-[20px] max-sm:leading-[17px] opacity-90 hover:opacity-100">
+                {{ page.get_parent.title }}</a>
+            <img src="{% static 'icons/arrow_right_light.svg' %}" alt="arrow_right_light" class="hidden dark:block">
+            <img src="{% static 'icons/arrow_right_dark.svg' %}" alt="arrow_right_dark" class="dark:hidden">
+            <p
+                    class="font-normal text-[14px] max-sm:text-[12px] leading-[20px] max-sm:leading-[17px] text-text-tertiary dark:text-dark-text-tertiary">
+                {{ page.title }}
+            </p>
+        </div>
+        <div class="flex mt-[80px] max-lg:mt-[64px] max-sm:mt-[40px] items-center justify-center">
+            {#            <div#}
+            {#                    class="relative px-[1px] py-[1px] rounded-[32px] bg-[linear-gradient(97deg,_rgba(48,_161,_161,_0.60)_-1.6%,_rgba(25,_51,_51,_0.00)_55.43%,_rgba(33,_152,_152,_0.60)_100%)]">#}
+            {#        <span#}
+            {#                class="flex items-center justify-center font-medium text-[16px] max-sm:text-[14px] leading-[22px] max-sm:leading-[20px] w-full px-[16px] py-[6px] rounded-[32px] bg-[#F3F6F9] dark:bg-[#192626]">#}
+            {#          {{ value.sub_title }}#}
+            {#        </span>#}
+            {#            </div>#}
+
+            <div
+                    class="relative px-[1px] py-[1px] rounded-[32px] box-border before:absolute before:border before:border-[transparent] before:inset-0 before:z-10 before:rounded-3xl before:[-webkit-mask:linear-gradient(#fff_0_0)_padding-box,_linear-gradient(#fff_0_0)] before:[-webkit-mask-composite:destination-out] before:[mask-composite:exclude] before:[background:var(--colors-dark-stroke-tag-{{ page.color|get_base }})_border-box]">
+
+        <span
+                class="flex items-center justify-center font-medium text-[16px] max-sm:text-[14px] leading-[22px] max-sm:leading-[20px] w-full px-[16px] py-[6px] rounded-[32px] bg-[#FFFFFF0D]">
+            {{ value.sub_title }}
+        </span>
+            </div>
+        </div>
+        <h2
+                class="mt-10 max-sm:mt-6 font-semibold text-[60px] max-md:text-[48px] max-sm:text-[32px] max-md:leading-[48px] max-sm:leading-[32px] max-sm:max-w-[460px] leading-[64px] max-w-[896px] tracking-[-1.92px] text-center mx-auto dark:bg-[linear-gradient(91deg,_#FFF_52.03%,_rgba(255,_255,_255,_0.64)_83.59%)] bg-[#000] bg-clip-text max-md:tracking-tight"
+                style="-webkit-text-fill-color: transparent;">{{ value.title|safe }}</h2>
+        <p
+                class="mt-6 max-sm:mt-4 mx-auto max-w-[896px] text-center font-normal text-[16px] max-sm:text-[14px] leading-[23px] max-sm:leading-[20px] max-sm:max-w-[460px] text-text-secondary dark:text-dark-text-secondary max-md:tracking-tight">
+            {{ value.text|safe }}
+        </p>
+        <div class="justify-center items-center hidden dark:flex">
+            <div class="mt-10 h-[62px] w-[153px] inline-block p-1 max-sm:hidden"
+                 style="background: url('/static/icons/button_hero-featureproduct.svg') center no-repeat;">
+                <a
+                        data-open-form
+                        class="block cursor-pointer text-center font-medium w-full text-[16px] leading-[22px] max-sm:text-[14px] max-sm:leading-[20px] px-[24px] py-[16px] dark:bg-primary-bg bg-dark-primary-bg dark:text-text-primary text-dark-text-primary rounded-full hover:shadow-[0px_-4px_12px_0px_rgba(0,_0,_0,_0.32)_inset] transition">
+                    Попробовать
+                </a>
+            </div>
+            <div class="mt-10 h-[62px] w-[139px] inline-block p-1 hidden max-sm:block"
+                 style="background: url('/static/icons/button.svg') center no-repeat;">
+                <a
+                        data-open-form
+                        class="block cursor-pointer text-center font-medium w-full h-full text-[16px] leading-[22px] max-sm:text-[14px] max-sm:leading-[20px] px-[24px] py-[16px] dark:bg-primary-bg bg-dark-primary-bg dark:text-text-primary text-dark-text-primary rounded-full hover:shadow-[0px_-4px_12px_0px_rgba(0,_0,_0,_0.32)_inset] transition">
+                    Попробовать
+                </a>
+            </div>
+        </div>
+        <div class="flex justify-center items-center dark:hidden">
+            <div class="mt-10 h-[62px] w-[153px] inline-block p-1 max-sm:hidden"
+                 style="background: url('/static/icons/button_hero-featureproduct_light.svg') center no-repeat;">
+                <a
+                        href="{{ value.link }}"
+                        class="block cursor-pointer text-center font-medium w-full text-[16px] leading-[22px] max-sm:text-[14px] max-sm:leading-[20px] px-[24px] py-[16px] dark:bg-primary-bg bg-dark-primary-bg dark:text-text-primary text-dark-text-primary rounded-full hover:shadow-[0px_-4px_12px_0px_rgba(0,_0,_0,_0.32)_inset] transition">
+                    Подробнее
+                </a>
+            </div>
+            <div class="mt-10 h-[62px] w-[139px] inline-block p-1 hidden max-sm:block"
+                 style="background: url('/static/icons/button_light.svg') center no-repeat;">
+                <a
+                        href="{{ value.link }}"
+                        class="block cursor-pointer text-center font-medium w-full h-full text-[16px] leading-[22px] max-sm:text-[14px] max-sm:leading-[20px] px-[24px] py-[16px] dark:bg-primary-bg bg-dark-primary-bg dark:text-text-primary text-dark-text-primary rounded-full hover:shadow-[0px_-4px_12px_0px_rgba(0,_0,_0,_0.32)_inset] transition">
+                    Подробнее
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="relative z-[2] max-sm:mt-[48px] w-full h-[1px] bg-[linear-gradient(48deg,_rgba(255,255,255,0)_0%,_rgba(255,255,255,1)_15%,_rgba(255,255,255,1)_85%,_rgba(255,255,255,0)_100%)] opacity-20"></div>

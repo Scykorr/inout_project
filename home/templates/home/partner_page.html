@@ -1,0 +1,32 @@
+{% extends "base/base_lm.html" %}
+{% load static wagtailcore_tags %}
+
+{% block left_menu %}
+    {% include 'home/includes/partner_menu.html' %}
+{% endblock %}
+
+{% block content %}
+    <section
+            class="w-full flex flex-col flex-nowrap box-border"
+    >
+        <div class="w-full box-border">
+            <div class="flex flex-col flex-nowrap gap-10">
+                <h2
+                        class="font-semibold text-[40px] leading-[44px] max-md:leading-[40px] max-sm:text-[32px] max-sm:leading-[32px]"
+                >
+                    Компании-партнёры INOUT
+                </h2>
+
+                <div
+                        class="pt-10 max-md:pt-5 box-border grid grid-cols-[repeat(2,1fr)] max-sm:flex max-sm:flex-col gap-4"
+                >
+                    <!-- partners cards start -->
+                    {% for block in page.page_block %}
+                        {% include_block block %}
+                    {% endfor %}
+                    <!-- partners cards end -->
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

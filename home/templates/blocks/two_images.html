@@ -1,0 +1,26 @@
+{% load wagtailimages_tags %}
+<section class="mb-[40px] mt-[40px]">
+    <div class="container mx-auto">
+        <div class="max-w-[528px] mx-auto text-center"></div>
+        <div class="flex items-start gap-6 max-sm:flex-col">
+            <div class="w-1/2 flex flex-col max-sm:w-full justify-center items-start ">
+                <p class="font-normal text-base leading-[23px] text-center mt-2 colors-dark-base-text-primary">
+                    {{ value.text_left }}
+                    {% image value.image_left original as image %}
+                    <img src="{{ image.url }}"
+                         alt="time_tracking"
+                         class="mt-auto max-sm:mt-6 pt-6">
+                </p>
+            </div>
+            <div class="w-1/2 flex flex-col max-sm:w-full justify-center items-start ms-5">
+                <p class="font-normal text-base leading-[23px] text-center mt-2 colors-dark-base-text-primary">
+                    {{ value.text_right }}
+                    {% image value.image_right original as image %}
+                    <img src="{{ image.url }}"
+                         alt="time_tracking"
+                         class="mt-auto max-sm:mt-6 pt-6">
+                </p>
+            </div>
+        </div>
+    </div>
+</section>

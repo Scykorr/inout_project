@@ -1,0 +1,24 @@
+{% load static %}
+{% load wagtailcore_tags %}
+
+<div class="flex py-10">
+    <div
+            class="flex relative w-full rounded-[24px] justify-between">
+        <img src="{% static 'image/individual_approach_bg.png' %}" alt="individual_approach_bg"
+             class="absolute top-0 left-0 w-full object-cover h-full rounded-[24px]">
+        <div
+                class="relative z-10 flex flex-col items-start px-[32px] max-md:px-[24px] max-sm:px-[20px] py-[32px] max-md:py-[24px] max-sm:py-[20px] w-full">
+            <h2
+                    class="font-semibold text-[32px] w-full max-lg:text-[24px] leading-[35px] max-lg:leading-[26px] tracking-[-0.64px] max-lg:tracking-[-0.48px]">
+                {{ value.title }}</h2>
+            <p
+                    class="font-normal text-[16px] max-sm:text-[14px] max-w-[448px] leading-[23px] max-sm:leading-[20px] dark:text-dark-text-secondary text-text-secondary mt-4">
+                {{ value.text|richtext }}
+            </p>
+            <a {% if value.link_left == '#' or value.link == '/' %}data-open-form{% elif value.link == '#crm' %}data-open-partner-form{% elif value.link == '#crm2' %}data-open-partner-form-2{% else %}href="{{ value.link_left }}" {% endif %}
+               class="block cursor-pointer px-6 text-dark-text-primary text-[16px] max-sm:text-[14px] leading-[22px] max-sm:leading-[20px] text-center py-3 mt-8 bg-[linear-gradient(180deg,_#3274F9_0%,_#135BEB_100%)] rounded-[32px] hover:shadow-[0px_-4px_12px_0px_rgba(255,_255,_255,_0.32)_inset] transition">
+                Запланировать звонок
+            </a>
+        </div>
+    </div>
+</div>

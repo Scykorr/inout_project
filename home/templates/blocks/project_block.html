@@ -1,0 +1,67 @@
+{% load wagtailimages_tags my_tags %}
+
+<section class="{% if value.color %}{{ value.color }}-{{ value.color_way|default:'up' }}{% else %}dark:bg-[linear-gradient(0deg,_#000_0%,_#0E1C1C_100%)]{% endif %} bg-[length:100%_100dvh] bg-no-repeat"
+
+>
+    <div class="container mx-auto py-[100px] max-md:py-[64px] max-sm:py-[56px] max-md:px-[32px] max-sm:px-[16px]">
+        <div class="flex items-center justify-center">
+            <div class="flex">
+                    <div
+                            class="relative px-[1px] py-[1px] rounded-[32px] box-border before:absolute before:border before:border-[transparent] before:inset-0 before:z-10 before:rounded-3xl before:[-webkit-mask:linear-gradient(#fff_0_0)_padding-box,_linear-gradient(#fff_0_0)] before:[-webkit-mask-composite:destination-out] before:[mask-composite:exclude] before:[background:var(--colors-dark-stroke-tag-{{ value.color|get_base }})_border-box]">
+
+                <span
+                        class="flex items-center justify-center font-medium text-[16px] max-sm:text-[14px] leading-[22px] max-sm:leading-[20px] w-full px-[16px] py-[6px] rounded-[32px] bg-[#FFFFFF0D]">
+            {{ value.head_title }}
+        </span>
+                </div>
+        </div>
+    </div>
+    <h2
+            class="mt-8 max-sm:mt-6 font-semibold text-[64px] max-md:text-[48px] max-sm:text-[32px] max-md:leading-[48px] max-sm:leading-[32px] max-md:max-w-[500px] max-sm:max-w-[360px] leading-[64px] max-w-[700px] text-center mx-auto dark:bg-[linear-gradient(91deg,_#FFF_52.03%,_rgba(255,_255,_255,_0.64)_83.59%)] bg-[#000] bg-clip-text"
+            style="-webkit-text-fill-color: transparent;">
+        {{ value.title }}
+    </h2>
+    <p
+            class="mt-6 max-sm:mt-4 mx-auto max-w-[448px] max-sm:max-w-[360px] text-center font-normal text-[16px] max-sm:text-[14px] leading-[24px] max-sm:leading-[20px] text-text-secondary dark:text-dark-text-secondary">
+        {{ value.description }}
+    </p>
+    <a href="{{ value.link }}"
+       class="block cursor-pointer mx-auto px-[24px] text-dark-text-primary text-[16px] max-sm:text-[14px] leading-[22px] max-sm:leading-[20px] text-center py-[12px] mt-8 max-sm:mt-6 max-w-[162px] max-sm:max-w-[120px] bg-[linear-gradient(180deg,_#3274F9_0%,_#135BEB_100%)] rounded-[32px] hover:shadow-[0px_-4px_12px_0px_rgba(255,_255,_255,_0.32)_inset] transition">
+        Узнать больше
+    </a>
+    {% if value.image %}
+        <div
+                class="flex items-center justify-center px-[50px] pt-[50px] max-md:pt-[30px] max-md:px-[30px] max-sm:pt-[14px] max-sm:px-[14px] mt-[64px] bg-card-and-Sec-BT dark:bg-dark-card-and-Sec-BT rounded-[40px] max-sm:rounded-[24px]">
+{#            {% image value.image original %}#}
+        {% image value.image original as image %}
+            <img src="{{ image.url }}"
+                 alt="time_tracking"
+                 class="w-full h-auto rounded-t-xl">
+        </div>
+    {% endif %}
+    <div
+            class="grid grid-cols-{% if value.feature_blocks|length > 2 %}3{% else %}{{ value.feature_blocks|length }}{% endif %} max-md:grid-cols-2 max-sm:grid-cols-1 gap-x-[49px] gap-y-[64px] max-sm:gap-y-[32px] mt-[48px] max-sm:mt-[40px]">
+        {% for feature in value.feature_blocks %}
+            <div class="relative max-sm:mx-auto justify-center">
+                <div class="flex flex-col text-center items-center justify-center max-w-[575px]">
+                    <h3
+                            class="font-semibold text-[24px] leading-[30px] max-md:leading-[26px] max-sm:text-[20px] max-sm:leading-[20px]">
+                        {{ feature.value.title }}
+                    </h3>
+                    <p
+                            class="mt-2 font-normal text-[16px] max-sm:text-[14px] leading-[24px] max-sm:leading-[20px] text-text-secondary dark:text-dark-text-secondary">
+                        {{ feature.value.description }}
+                    </p>
+                    <a href="{{ feature.value.link }}"
+                       class="mt-6 max-sm:mt-3 font-medium text-[16px] max-sm:text-[14px] leading-[22px] max-sm:leading-[20px] text-text-link dark:text-dark-text-link hover:underline">Подробнее</a>
+                    {% if forloop.counter != 3 and forloop.counter != 6 and not forloop.last %}
+                        <div
+                                class="absolute right-[-24px] top-0 h-full min-w-[1px] max-w-[1px] bg-[linear-gradient(0deg,_#ffffff00_0%,_#ffffff_15%,_#ffffff_85%,_#ffffff00_100%)] opacity-[0.16] max-sm:hidden"></div>
+                    {% endif %}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    </div>
+
+</section>

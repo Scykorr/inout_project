@@ -1,0 +1,32 @@
+{% load wagtailimages_tags %}
+{% load wagtailcore_tags %}
+{% load static %}
+
+<section class=" max-sm:px-[16px] py-[100px]">
+    <div class="container mx-auto">
+        <div class="grid grid-cols-3 max-sm:grid-cols-1 gap-4">
+            {% for item in value.blocks %}
+                <div
+                        class="dark:bg-[linear-gradient(90deg,_#202020_0%,_#111111_100%)] bg-card-and-Sec-BT px-[2px] py-[2px] rounded-[24px] min-h-[512px]">
+                    <div
+                            class="dark:bg-[linear-gradient(150deg,_rgba(13,13,13,1)_0%,_rgba(14,16,21,1)_100%)] bg-card-and-Sec-BT rounded-[23px] pt-8 px-8 h-full">
+                        <div class="flex flex-col h-full">
+                            <div class="flex flex-col">
+                                <h2
+                                        class="font-semibold text-[32px] leading-[35px]">
+                                    {{ item.value.title }}</h2>
+                                <p
+                                        class="font-normal text-base leading-[23px] text-text-secondary dark:text-dark-text-secondary mt-4">
+                                    {{ item.value.text }}</p>
+                                <a href="{{ item.value.link }}"
+                                   class="font-medium text-base leading-[22px] text-text-link dark:text-dark-text-link hover:underline mt-8">Подробнее</a>
+                            </div>
+                            <img src="{{ item.value.icon.url }}" alt="educational_center"
+                                 class="mt-auto">
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>

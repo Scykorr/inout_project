@@ -1,0 +1,60 @@
+{% load static %}
+<section class="splide bg-primary-bg dark:bg-dark-primary-bg">
+    <div class="py-[40px] max-sm:py-[24px] flex overflow-hidden splide__track">
+        <div class="splide__list">
+            <div class="swiper-slide flex items-center justify-center splide__slide">
+                <img src="{% static 'icons/logos/stripe.svg' %}" alt="stripe" class="dark:hidden"/>
+                <img src="{% static 'icons/logos/stripe_dark.svg' %}" alt="stripe" class="hidden dark:block"/>
+            </div>
+            <div class="swiper-slide flex items-center justify-center splide__slide">
+                <img src="{% static 'icons/logos/google.svg' %}" alt="google" class="dark:hidden"/>
+                <img src="{% static 'icons/logos/google_dark.svg' %}" alt="google" class="hidden dark:block"/>
+            </div>
+            <div class="swiper-slide flex items-center justify-center splide__slide">
+                <img src="{% static 'icons/logos/mashable.svg' %}" alt="mashable" class="dark:hidden"/>
+                <img src="{% static 'icons/logos/mashable_dark.svg' %}" alt="mashable" class="hidden dark:block"/>
+            </div>
+            <div class="swiper-slide flex items-center justify-center splide__slide">
+                <img src="{% static 'icons/logos/uber.svg' %}" alt="uber" class="dark:hidden"/>
+                <img src="{% static 'icons/logos/uber_dark.svg' %}" alt="uber" class="hidden dark:block"/>
+            </div>
+            <div class="swiper-slide flex items-center justify-center splide__slide">
+                <img src="{% static 'icons/logos/mashable.svg' %}" alt="mashable" class="dark:hidden"/>
+                <img src="{% static 'icons/logos/mashable_dark.svg' %}" alt="mashable" class="hidden dark:block"/>
+            </div>
+            <div class="swiper-slide flex items-center justify-center splide__slide">
+                <img src="{% static 'icons/logos/airbnb.svg' %}" alt="airbnb" class="dark:hidden"/>
+                <img src="{% static 'icons/logos/airbnb_dark.svg' %}" alt="airbnb" class="hidden dark:block"/>
+            </div>
+            <div class="swiper-slide flex items-center justify-center splide__slide">
+                <img src="{% static 'icons/logos/stripe.svg' %}" alt="stripe" class="dark:hidden"/>
+                <img src="{% static 'icons/logos/stripe_dark.svg' %}" alt="stripe" class="hidden dark:block"/>
+            </div>
+            <div class="swiper-slide flex items-center justify-center splide__slide">
+                <img src="{% static 'icons/logos/nike.svg' %}" alt="nike" class="dark:hidden"/>
+                <img src="{% static 'icons/logos/nike_dark.svg' %}" alt="nike" class="hidden dark:block"/>
+            </div>
+            <div class="swiper-slide flex items-center justify-center splide__slide">
+                <img src="{% static 'icons/logos/mastercard.svg' %}" alt="mastercard" class="dark:hidden"/>
+                <img src="{% static 'icons/logos/mastercard_dark.svg' %}" alt="mastercard" class="hidden dark:block"/>
+            </div>
+        </div>
+    </div>
+</section>
+<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide-extension-auto-scroll@0.5.3/dist/js/splide-extension-auto-scroll.min.js"></script>
+<script>
+    const splide = new Splide('.splide', {
+        type: 'loop',
+        drag: 'free',
+        arrows: false,
+        focus: 'center',
+        gap: '60px',
+        autoWidth: true,
+        autoScroll: {
+            speed: 1,
+        },
+    })
+
+    splide.mount(window.splide.Extensions)
+</script>

@@ -1,0 +1,67 @@
+{% extends "base/base.html" %}
+{% load static wagtailcore_tags %}
+
+{% block content %}
+    <section
+            class="w-full flex flex-col flex-nowrap box-border colors-dark-gradient-platform-up bg-[length:100%_100dvh] bg-no-repeat" style="margin-top: -55px; padding-top: 55px;" 
+    >
+        <div class="container mx-auto max-md:px-4">
+            <!-- breadcrumbs -->
+            <div class="flex gap-1 items-center w-full max-sm:flex-wrap mt-[40px]">
+                <div class="flex gap-0.5 items-center shrink-0 box-border py-0.5">
+                    <a href="/" class="text-sm max-sm:text-xs">INOUT Проект</a>
+                    <img src="{% static 'icons/arrow_right_light.svg' %}" alt="arrow" class="hidden dark:block"/>
+                    <img src="{% static 'icons/arrow_right_dark.svg' %}" alt="arrow" class="dark:hidden"/>
+                </div>
+                <div class="flex gap-0.5 items-center box-border py-0.5">
+                    <a href="{{ page.get_parent.url }}" class="text-sm max-sm:text-xs">{{ page.get_parent.title }}</a>
+                    <img src="{% static 'icons/arrow_right_light.svg' %}" alt="arrow" class="hidden dark:block"/>
+                    <img src="{% static 'icons/arrow_right_dark.svg' %}" alt="arrow" class="dark:hidden"/>
+                </div>
+                <div>
+                    <p class="text-sm max-sm:text-xs dark:text-dark-text-tertiary text-text-tertiary">{{ page.title }}</p>
+                </div>
+            </div>
+            <!-- breadcrumbs -->
+            <h2
+                    class="font-semibold text-[40px] leading-[44px] max-md:leading-[40px] max-sm:text-[32px] max-sm:leading-[32px] mt-[80px] max-md:mt-[40px] max-sm:mt-[40px]"
+            >
+                Вопросы и ответы
+            </h2>
+            <div class="w-[760px] max-md:w-full max-sm:w-full flex flex-col gap-y-[1px] mt-6 mb-[100px] max-sm:mb-0">
+                {% for item in page.get_children %}
+                    <div class="w-full py-[24px] hover:cursor-pointer faq-item">
+                        <div class="flex justify-between">
+                            <p class="text-[20px] leading-[25px]">{{ item.specific.question }}</p>
+                            <div class="dark:flex hidden flex items-center shrink-0">
+                                <img src="{% static 'icons/minus.svg' %}" alt="control"
+                                     class="minus control hover:cursor-pointer hidden"/>
+                                <img src="{% static 'icons/plus.svg' %}" alt="control"
+                                     class="plus control hover:cursor-pointer"/>
+                            </div>
+                            <div class="dark:hidden flex items-center shrink-0">
+                                <img src="{% static 'icons/minus-dark.svg' %}" alt="control"
+                                     class="minus control hover:cursor-pointer hidden"/>
+                                <img src="{% static 'icons/plus-dark.svg' %}" alt="control"
+                                     class="plus control hover:cursor-pointer"/>
+                            </div>
+                        </div>
+
+                        <div class="min-w-full hidden faq-description flex flex-col flex-nowrap mt-6 box-border container">
+                            <div class="prose dark:prose w-full">
+                                {{ item.specific.answer|richtext }}
+                            </div>
+                            {% for block in item.specific.page_block %}
+                                {% include_block block %}
+                            {% endfor %}
+                        </div>
+                    </div>
+
+                    <div
+                            class="w-full h-[1px] bg-[linear-gradient(48deg,_rgba(44,51,62,0)_0%,_rgba(44,51,62,1)_15%,_rgba(44,51,62,1)_85%,_rgba(44,51,62,0)_100%)] dark:bg-[linear-gradient(48deg,_rgba(255,255,255,0)_0%,_rgba(255,255,255,1)_15%,_rgba(255,255,255,1)_85%,_rgba(255,255,255,0)_100%)] opacity-20"
+                    ></div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+{% endblock %}

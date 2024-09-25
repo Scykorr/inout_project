@@ -1,0 +1,107 @@
+{% load static %}
+{% load wagtailcore_tags %}
+{% load wagtailimages_tags %}
+
+<section
+        class="w-full flex flex-col flex-nowrap max-md:px-[32px] max-sm:px-[16px] box-border pt-[40px] max-md:pt-[13px] max-sm:pt-[13px]  h-auto"
+>
+    <div class="container mx-auto">
+        <div class="flex gap-1 items-center w-full">
+            <div class="flex gap-0.5 items-center shrink-0 box-border py-0.5">
+                <a href="#" class="text-sm max-sm:text-xs">INOUT Проект</a>
+                <img src="{% static 'icons/arrow_right_light.svg' %}" alt="arrow" class="hidden dark:block"/>
+                <img src="{% static 'icons/arrow_right_dark.svg' %}" alt="arrow" class="dark:hidden"/>
+            </div>
+            <div class="flex gap-0.5 items-center box-border py-0.5">
+                <a href="{{ page.get_parent.url }}" class="text-sm max-sm:text-xs">{{ page.get_parent.title }}</a>
+                <img src="{% static 'icons/arrow_right_light.svg' %}" alt="arrow" class="hidden dark:block"/>
+                <img src="{% static 'icons/arrow_right_dark.svg' %}" alt="arrow" class="dark:hidden"/>
+            </div>
+            <div>
+                <p class="text-sm max-sm:text-xs dark:text-dark-text-tertiary text-text-tertiary">Техническая
+                    информация</p>
+            </div>
+        </div>
+
+        <h2
+                class="font-semibold text-[40px] leading-[44px] max-md:leading-[40px] max-sm:text-[32px] max-sm:leading-[32px] mt-[80px] max-md:mt-[40px] max-sm:mt-[40px]"
+        >
+            Техническая информация
+        </h2>
+        {% for version in value.versions %}
+            <div class="w-[760px] max-md:w-full max-sm:w-full flex flex-col gap-y-[1px] mt-[24px] mb-[100px] max-sm:mb-0">
+                <div class="w-full py-[24px] hover:cursor-pointer technical-information-item">
+                    <div class="flex justify-between">
+                        <p class="text-[24px] leading-[25px] max-sm:text-[20px]">{{ version.value.title }}</p>
+                        <div class="dark:block hidden flex items-center">
+                            <img src="{% static 'icons/minus.svg' %}" alt="control"
+                                 class="minus control hover:cursor-pointer hidden"/>
+                            <img src="{% static 'icons/plus.svg' %}" alt="control"
+                                 class="plus control hover:cursor-pointer"/>
+                        </div>
+                        <div class="dark:hidden flex items-center">
+                            <img src="{% static 'icons/minus-dark.svg' %}" alt="control"
+                                 class="minus control hover:cursor-pointer hidden"/>
+                            <img src="{% static 'icons/plus-dark.svg' %}" alt="control"
+                                 class="plus control hover:cursor-pointer"/>
+                        </div>
+                    </div>
+
+                    <div class="min-w-full hidden flex flex-col flex-nowrap mt-[40px] box-border container">
+                        <div
+                                class="w-full grid grid-cols-[92px_auto_92px_92px] max-md:grid-cols-[74px_auto_74px_74px] max-sm:grid-cols-[55.75px_auto_55.75px_55.75px] px-[16px] max-sm:px-0 py-[8px] box-border"
+                        >
+                <span
+                        class="dark:text-dark-text-secondary text-text-secondary text-[12px] leading-[14px] px-[8px] py-[13px] box-border"
+                >Тип</span
+                >
+                            <span
+                                    class="dark:text-dark-text-secondary text-text-secondary text-[12px] leading-[14px] px-[8px] py-[13px] box-border"
+                            >Тема</span
+                            >
+                            <span
+                                    class="dark:text-dark-text-secondary text-text-secondary text-[12px] leading-[14px] text-end px-[8px] py-[13px] box-border"
+                            >Билд</span
+                            >
+                            <span
+                                    class="dark:text-dark-text-secondary text-text-secondary text-[12px] leading-[14px] px-[8px] py-[13px] box-border"
+                            >Статус</span
+                            >
+                        </div>
+                        <ul class="w-full">
+                            {% for item in version.value.information %}
+                                <li
+                                        class="w-full dark:bg-dark-card-and-Sec-BT bg-[#EBEEF2] border-b-[rgba(255,255,255,0.08)] border-b-[1px] grid grid-cols-[92px_1fr_92px_92px] max-md:grid-cols-[74px_1fr_74px_74px] max-sm:grid-cols-[55.75px_1fr_55.75px_55.75px] items-center px-[16px] max-sm:px-0 py-[8px] box-border"
+                                >
+                  <span
+                          class="inline-block dark:text-dark-text-secondary text-text-secondary text-[12px] leading-[13px] px-[8px] py-[13px] box-border"
+                  >{{ item.value.version_type }}</span
+                  >
+                                    <span class="text-[16px] max-sm:text-[14px] leading-5 px-[8px] py-[8.5px] box-border"
+                                    >{{ item.value.subject }}</span
+                                    >
+                                    <span
+                                            class="dark:text-dark-text-secondary text-text-secondary text-[12px] leading-[13px] text-end px-[8px] py-[13px] box-border"
+                                    >{{ item.value.build }}</span
+                                    >
+                                    <span
+                                            class="dark:text-dark-text-secondary text-text-secondary text-[12px] leading-[13px] px-[8px] py-[13px] box-border"
+                                    >{{ item.value.status }}</span
+                                    >
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+
+                <div
+                        class="w-full h-[1px] bg-[linear-gradient(48deg,_rgba(44,51,62,0)_0%,_rgba(44,51,62,1)_15%,_rgba(44,51,62,1)_85%,_rgba(44,51,62,0)_100%)] dark:bg-[linear-gradient(48deg,_rgba(255,255,255,0)_0%,_rgba(255,255,255,1)_15%,_rgba(255,255,255,1)_85%,_rgba(255,255,255,0)_100%)] opacity-20"
+                ></div>
+
+            </div>
+        {% endfor %}
+    </div>
+</section>
+
+<script src="{% static 'scripts/script.js' %}"></script>
+

@@ -1,0 +1,6 @@
+<div class="flex">
+    <a {% if value.link == '#' or value.link == '/' %}data-open-form{% elif value.link == '#crm' %}data-open-partner-form{% elif value.link == '#crm2' %}data-open-partner-form-2{% else %}href="{{ value.link }}" {% endif %}
+       class="block cursor-pointer px-6 text-dark-text-primary text-[16px] max-sm:text-[14px] leading-[22px] max-sm:leading-[20px] text-center py-3 mb-[40px] bg-[linear-gradient(180deg,_#3274F9_0%,_#135BEB_100%)] rounded-[32px] hover:shadow-[0px_-4px_12px_0px_rgba(255,_255,_255,_0.32)_inset] transition">
+        {{ value.title }}
+    </a>
+</div>

@@ -1,0 +1,85 @@
+{% load static wagtailimages_tags %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+<section class="overflow-hidden py-[72px] max-lg:py-[64px] max-sm:py-[56px] max-sm:ml-4 max-lg:ml-8">
+    <section class="container mx-auto">
+        <div class="flex justify-between items-end">
+            <div class="font-semibold leading-10 text-[40px] max-sm:leading-[32px] max-sm:text-[32px]">
+                {{ value.title }}
+            </div>
+            <div
+                    class="dark:bg-[linear-gradient(130deg,_#1f1f1f_0%,_#121212_75%)] rounded-[24px] p-[1px] max-lg:mr-8 max-sm:hidden">
+                <a {% if value.link == '#' or value.link == '/' %}data-open-form{% elif value.link == '#crm' %}data-open-partner-form{% elif value.link == '#crm2' %}data-open-partner-form-2{% else %}href="{{ value.link }}" {% endif %}
+                   class="block cursor-pointer px-[20px] py-[12px] text-[16px] leading-[22px] font-medium rounded-[24px] bg-card-and-Sec-BT hover:shadow-[0px_-4px_12px_0px_rgba(0,_0,_0,_0.08)_inset] transition dark:bg-[#0d0d0d] dark:hover:shadow-[0px_-4px_12px_0px_rgba(255,_255,_255,_0.08)_inset]">
+                    Перейти в блог
+                </a>
+            </div>
+        </div>
+    </section>
+    <div class="container mx-auto">
+        <div class="swiper mySwiper mt-[48px] max-sm:mt-10 overflow-visible">
+            <div class="swiper-wrapper">
+                {% for article in blog_articles %}
+                    <div class="swiper-slide max-w-[288px] cursor-pointer" onclick="location.href='{{ article.url }}'">
+                        {% image article.image original as image %}
+                        <img src="{{ image.url }}" alt="slide_1"
+                             class="w-full h-[160px] object-cover rounded-[16px]">
+                        <p class="mb-2 mt-[16px] font-normal text-[20px] max-sm:text-[16px] leading-[26px] max-sm:leading-[23px]">
+                            {{ article.title }}
+                        </p>
+                        <a href="{{ article.url }}"
+                           class="font-medium text-[16px] max-sm:text-[14px] leading-[22px] max-sm:leading-[20px] text-text-link dark:text-dark-text-link hover:underline">
+                            Читать статью
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+            <div
+                    class="max-w-[120px] mt-6 p-[1px] dark:bg-[linear-gradient(98deg,_rgba(255,_255,_255,_0.12)_0%,_rgba(255,_255,_255,_0.07)_75.5%)] rounded-[24px] max-sm:hidden">
+                <div class="flex gap-[24px] px-6 py-3 rounded-[60px] bg-card-and-Sec-BT dark:bg-dark-card-and-Sec-BT">
+                    <div class="swiper-slide-prev">
+                        <img src="{% static 'image/slider/review/swiper_button_left.svg' %}" alt="swiper_button_left"
+                             class="hidden dark:block">
+                        <img src="{% static 'image/slider/review/swiper_button_left_dark.svg' %}"
+                             alt="swiper_button_left"
+                             class="dark:hidden">
+                    </div>
+                    <div class="swiper-slide-next">
+                        <img src="{% static 'image/slider/review/swiper_button_right.svg' %}" alt="swiper_button_right"
+                             class="hidden dark:block">
+                        <img src="{% static 'image/slider/review/swiper_button_right_dark.svg' %}"
+                             alt="swiper_button_right"
+                             class="dark:hidden">
+                    </div>
+                </div>
+            </div>
+            <a
+                    href="{{ value.link }}"
+                    class="hidden max-w-[120px] text-center cursor-pointer px-[20px] py-[12px] text-[14px] leading-[20px] mt-10 font-medium rounded-[24px] bg-card-and-Sec-BT hover:shadow-[0px_-4px_12px_0px_rgba(0,_0,_0,_0.08)_inset] transition dark:bg-[#0d0d0d] dark:hover:shadow-[0px_-4px_12px_0px_rgba(255,_255,_255,_0.08)_inset] max-sm:block">
+                Перейти в блог
+            </a>
+        </div>
+    </div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+  const swiper = new Swiper('.swiper', {
+    // Default parameters
+    slidesPerView: 1,
+    spaceBetween: 16,
+    navigation: {
+      prevEl: ".swiper-slide-prev",
+      nextEl: ".swiper-slide-next",
+    },
+    breakpoints: {
+      320: {
+        slidesPerView: 'auto',
+        spaceBetween: 16
+      },
+      1200: {
+        slidesPerView: 4,
+        spaceBetween: 16
+      }
+    }
+  })
+</script>

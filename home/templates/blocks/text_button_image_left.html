@@ -1,0 +1,9 @@
+{% load wagtailimages_tags %}
+<div>
+    <h3>{{ value.title }}</h3>
+    <p>{{ value.paragraph }}</p>
+    {% image value.image original as img %}
+    <img style="width: 150px; height: 150px; overflow: hidden;" src="{{ img.url }}" alt="{{ value.title }}"
+         class="">
+    <a href="{{ value.button.link }}">{{ value.button.text }}</a>
+</div>

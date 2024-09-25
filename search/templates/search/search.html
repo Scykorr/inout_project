@@ -1,0 +1,101 @@
+{% extends "base/base.html" %}
+{% load static wagtailcore_tags %}
+
+{% block body_class %}template-searchresults{% endblock %}
+
+{% block title %}Search{% endblock %}
+
+{% block content %}
+<section class="container mx-auto pb-20 max-md:pb-[100px]">
+    <div class="container max-sm:px-4 max-md:tracking-tight mx-auto pt-20 max-sm:pt-10 relative">
+        <div class="colors-stroke-table p-[1px] rounded-xl relative">
+            <form action="{% url 'search' %}" method="get">
+                <input
+                        name="query"{% if search_query %} value="{{ search_query }}"{% endif %}
+                        type="text"
+                        class="py-4 bg-[#0D0D0D] outline-none rounded-xl w-full px-12"
+                        id="inputSearch"
+                />
+                <img
+                        src="{% static 'icons/light_search.svg' %}"
+                        alt="search"
+                        class="absolute left-4 top-[18px] hidden dark:block"
+                />
+                <img
+                        src="{% static 'icons/search_dark.svg' %}"
+                        alt="search"
+                        class="absolute left-4 top-[24px] dark:hidden"
+                />
+                <div
+                        class="hidden absolute input-search-clear right-4 max-sm:right-4 top-[30px] transform -translate-y-1/2 cursor-pointer">
+                    <img
+                            src="{% static 'icons/cancel.svg' %}"
+                            alt="cancel"
+                    />
+                </div>
+                {#                    <input type="text" >#}
+                {#                    <input type="submit" value="Search" class="button">#}
+            </form>
+        </div>
+        <div class="relative mt-2">
+            <div class="absolute font-normal text-base leading-[23px] top-2 right-0">Результаты
+                поиска: <span>{{ search_results|length }}</span></div>
+        </div>
+    </div>
+    <div class="container max-sm:px-4 max-md:tracking-tight mx-auto pt-20 max-sm:pt-8 flex flex-col gap-4">
+        {% if search_results %}
+            {% for result in search_results %}
+                <div class="colors-dark-stroke-sec-bt-border p-[2px] rounded-3xl">
+                    <div
+                            class="flex flex-wrap flex-col rounded-3xl bg-[#0D0D0D] px-8 max-sm:px-6 py-8 max-sm:py-6"
+                    >
+                        <div class="flex gap-1 items-center">
+                            {% if result.get_parent.get_parent.title.lower != 'root' %}
+                            <p
+                                    class="font-normal text-base leading-[23px] colors-text-secondary"
+                            >
+                                {{ result.get_parent.get_parent }}
+                            </p>
+                            <img src="{% static 'icons/dot.svg' %}" alt="dot"/>
+                            {% endif %}
+                            <p
+                                    class="font-normal text-base leading-[23px] colors-text-secondary"
+                            >
+                                {{ result.get_parent }}
+                            </p>
+                        </div>
+                        <div class="flex flex-col">
+                            <p class="font-semibold leading-[30px] text-[24px] mt-4">
+                                {{ result }}
+                            </p>
+                            <p
+                                    class="font-normal text-base leading-[23px] colors-text-secondary mt-2"
+                            >
+                                {{ result.search_description }}
+                            </p>
+                        </div>
+                        <a
+                                href="{% pageurl result %}"
+                                class="font-medium text-base leading-[22px] colors-text-link hover:underline pt-6"
+                        >Смотреть</a
+                        >
+                    </div>
+                </div>
+            {% endfor %}
+        {% elif search_query %}
+            <p class="font-semibold leading-10 text-[32px] max-sm:leading-[32px] max-sm:text-[32px] pt-6">
+                По результату “{{ search_query }}” ничего не найдено :(
+            </p>
+        {% endif %}
+    </div>
+</section>
+
+
+{#        {% if search_results.has_previous %}#}
+{#            <a href="{% url 'search' %}?query={{ search_query|urlencode }}&amp;page={{ search_results.previous_page_number }}">Previous</a>#}
+{#        {% endif %}#}
+{##}
+{#        {% if search_results.has_next %}#}
+{#            <a href="{% url 'search' %}?query={{ search_query|urlencode }}&amp;page={{ search_results.next_page_number }}">Next</a>#}
+{#        {% endif %}#}
+{% endblock %}

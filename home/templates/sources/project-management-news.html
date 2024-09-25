@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" class="dark h-full">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Test</title>
+    <link href="sass/main.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="tailwind.config.js"></script>
+  </head>
+
+  <body class="text-text-primary dark:text-dark-text-primary h-full">
+    <section
+      class="w-full overflow-hidden flex flex-col flex-nowrap max-md:px-9 max-sm:px-4 box-border dark:bg-dark-primary-bg bg-primary-bg h-auto pb-20 max-md:pb-20 max-sm:pb-20"
+    >
+      <div class="container mx-auto">
+        <h2
+          class="font-semibold text-[40px] leading-[44px] max-md:leading-[40px] max-sm:text-[32px] max-sm:leading-[32px] mt-20 max-md:mt-10 max-sm:mt-10"
+        >
+          Новости управления проектами
+        </h2>
+
+        <p class="text-base max-sm:text-sm mt-6">
+          Советы, истории, новости — всё о том, как упростить управление проектами, в нашей рассылке.
+        </p>
+
+        <div class="mt-16 flex gap-4 mb-20 max-md:mb-10 max-sm:mb-10 max-sm:flex-col">
+          <div
+            class="project_management_news_input_wrapper flex gap-2 items-center my-auto w-[303px] max-md:w-full max-sm:w-full rounded-xl bg-card-and-Sec-BT dark:bg-dark-card-and-Sec-BT p-4 box-border border dark:border-[rgba(255,255,255,0.08)] border-[rgba(0,0,0,0.08)] hover:cursor-pointer transition"
+          >
+            <img src="{% static 'icons/mail_dark.svg' %}" alt="mail" class="hidden dark:block dark" />
+            <img src="{% static 'icons/mail_dark_hover.svg' %}" alt="mail" class="hidden dark:hidden dark-hover" />
+            <img src="{% static 'icons/mail_primary.svg' %}" alt="mail" class="dark:hidden primary" />
+            <img src="{% static 'icons/mail_primary_hover.svg' %}" alt="mail" class="dark:hidden hidden primary-hover" />
+            <input
+              class="project_management_news_input w-full bg-[transparent] h-6 text-base dark:placeholder:text-dark-text-secondary placeholder:text-text-secondary focus:border-none focus:outline-none"
+              type="text"
+              placeholder="Введите свою эл. почту"
+            />
+          </div>
+          <div
+            class="h-[62px] max-md:w-[189px] max-sm:w-full shrink-0 p-1 dark:bg-[rgba(255,255,255,0.20)] bg-[rgba(0,0,0,0.10)] rounded-full z-50"
+          >
+            <a
+              href="#"
+              class="w-full text-center inline-block font-medium text-base leading-[22px] py-4 px-[22px] dark:bg-primary-bg bg-dark-primary-bg dark:text-text-primary text-dark-text-primary rounded-full dark:hover:shadow-[0px_-4px_12px_0px_rgba(0,_0,_0,_0.32)_inset] hover:shadow-[0px_-4px_12px_0px_rgba(255,255,255,0.32)_inset] transition"
+              >Подписаться</a
+            >
+          </div>
+        </div>
+
+        <div
+          class="w-full h-[1px] bg-[linear-gradient(48deg,_rgba(44,51,62,0)_0%,_rgba(44,51,62,1)_15%,_rgba(44,51,62,1)_85%,_rgba(44,51,62,0)_100%)] dark:bg-[linear-gradient(48deg,_rgba(255,255,255,0)_0%,_rgba(255,255,255,1)_15%,_rgba(255,255,255,1)_85%,_rgba(255,255,255,0)_100%)] opacity-20"
+        ></div>
+      </div>
+    </section>
+    <script src="scripts/script.js"></script>
+  </body>
+</html>

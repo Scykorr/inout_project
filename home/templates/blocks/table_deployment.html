@@ -1,0 +1,90 @@
+{% load static wagtailcore_tags %}
+
+
+<section
+        class="w-full flex flex-col flex-nowrap max-md:px-9 max-sm:px-4 box-border h-auto pb-[72px] max-md:pb-11"
+>
+    <div class="container mx-auto">
+        <!-- prices table -->
+        <div class="pt-[72px] max-md:pt-11 flex flex-col gap-10 max-md:gap-6">
+            <h3
+                    class="font-semibold text-start w-[672px] max-md:w-full text-[40px] leading-[44px] max-sm:text-[32px] max-sm:leading-[100%] dark:bg-[linear-gradient(91deg,_#FFF_52.03%,_rgba(255,_255,_255,_0.64)_83.59%)] bg-[#000] bg-clip-text max-md:hidden"
+                    style="-webkit-text-fill-color: transparent"
+            >
+                Возможности и услуги
+            </h3>
+            <h3
+                    class="font-semibold text-start w-[672px] max-md:w-full text-[40px] leading-[44px] max-sm:text-[32px] max-sm:leading-[100%] hidden max-md:inline"
+            >
+                Возможности и услуги
+            </h3>
+            <div class="w-full h-full">
+
+                <!-- devider -->
+                {% for functions_list in value.functions_list %}
+                    <div
+                            class="w-full py-2 px-4 box-border max-md:px-0 max-md:py-0 grid grid-cols-[450px_repeat(2,_1fr)] max-md:hidden"
+                    >
+                        <p class="py-2 pl-2 text-base max-md:hidden"></p>
+                        <p class="py-2 text-center text-text-tertiary max-sm:text-sm max-sm:leading-[20px] max-sm:py-[10px]">
+                            Глобальное<br/>облако
+                        </p>
+                        <p class="py-2 text-center text-text-tertiary max-sm:text-sm max-sm:leading-[20px] max-sm:py-[10px]">
+                            Частное<br/>облако
+                        </p>
+                    </div>
+
+                    <h5 class="hidden max-md:inline-block font-semibold text-[20px] leading-[20px] max-md:mt-12">
+                    </h5>
+
+                    <table class="w-full max-md:mt-6">
+                        {% for item in functions_list.value.text_list %}
+                            <tr
+                                    class="pt-2 pb-[7px] px-4 box-border max-md:px-0 max-md:py-0 grid grid-cols-[450px_repeat(2,_1fr)] max-md:grid-cols-6 max-md:grid-rows-[fit-content_64px] {% if forloop.counter|divisibleby:2 == 0 %}dark:bg-dark-card-and-Sec-BT bg-[#F3F6F9]{% endif %} box-border border-[rgba(255,255,255,0.08)] border-b max-md:border-none"
+                            >
+                                <td class="py-2 pl-2 max-md:ml-0 max-md:px-4 max-md:flex max-md:items-center max-sm:text-sm max-md:leading-[20px] max-md:pt-3.5 max-md:pb-[13px] text-base max-md:col-span-6 border-[rgba(255,255,255,0.08)] max-md:border max-md:border-b-[0]"
+                                >
+                                    {{ item.value.text }}
+                                </td>
+                                {% if item.value.essentials %}
+                                    <td class="py-2 max-md:py-[19px] flex justify-center border-[rgba(255,255,255,0.08)] max-md:border">
+                                        <img src="{% static 'icons/check.svg' %}" alt="check"
+                                             class="hidden dark:block"/>
+                                        <img src="{% static 'icons/check_dark.svg' %}" alt="check" class="dark:hidden"/>
+                                    </td>
+                                {% else %}
+                                    <td class="py-2 max-md:py-[19px] flex justify-center border-[rgba(255,255,255,0.08)] max-md:border">
+                                        <img src="{% static 'icons/check.svg' %}" alt="check"
+                                             class="hidden dark:hidden"/>
+                                        <img src="{% static 'icons/check_dark.svg' %}" alt="check"
+                                             class="dark:hidden hidden"/>
+                                    </td>
+                                {% endif %}
+                                {% if item.value.business %}
+                                    <td class="py-2 max-md:py-[19px] flex justify-center border-[rgba(255,255,255,0.08)] max-md:border">
+                                        <img src="{% static 'icons/check.svg' %}" alt="check"
+                                             class="hidden dark:block"/>
+                                        <img src="{% static 'icons/check_dark.svg' %}" alt="check" class="dark:hidden"/>
+                                    </td>
+                                {% else %}
+                                    <td class="py-2 max-md:py-[19px] flex justify-center border-[rgba(255,255,255,0.08)] max-md:border">
+                                        <img src="{% static 'icons/check.svg' %}" alt="check"
+                                             class="hidden dark:hidden"/>
+                                        <img src="{% static 'icons/check_dark.svg' %}" alt="check"
+                                             class="dark:hidden hidden"/>
+                                    </td>
+                                {% endif %}
+                            </tr>
+                        {% endfor %}
+
+
+                    </table>
+                {% endfor %}
+
+                <!-- devider -->
+
+            </div>
+        </div>
+        <!-- prices table -->
+    </div>
+</section>

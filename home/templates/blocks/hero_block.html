@@ -1,0 +1,55 @@
+{% load static wagtailimages_tags %}
+<section class="relative" style="margin-top: -55px; padding-top: 55px">
+    <img
+        src="{% static 'image/best_way_bg.png' %}"
+        alt="footer"
+        class="absolute top-0 left-0 w-full z-[1] object-cover h-full hidden dark:block"
+    />
+    <img
+        src="{% static 'image/bg/footer_bg_light.svg' %}"
+        alt="footer"
+        class="absolute top-0 left-0 w-full z-[1] object-cover h-full dark:hidden"
+    />
+    <div
+        class="container mx-auto relative z-[2] max-sm:px-4 max-md:px-8 flex justify-between flex-col items-center"
+    >
+        <div
+            class="mt-[72px] max-md:mt-12 max-sm:mt-7 max-w-[992px] flex flex-col items-center"
+        >
+            <h2
+                class="text-center font-semibold text-[64px] leading max-md:text-[56px] max-md:leading-[56px] leading-[80px] max-sm:text-[40px] max-sm:leading-[40px] tracking-[-1.92px] max-sm:tracking-[-0.72px] dark:bg-[linear-gradient(91deg,_#FFF_52.03%,_rgba(255,_255,_255,_0.64)_83.59%)] bg-[#000] bg-clip-text"
+                style="-webkit-text-fill-color: transparent"
+            >
+                {{ value.title|safe }}
+            </h2>
+            <p
+                class="block max-sm:hidden font-normal text-xl leading-[26px] max-sm:text-base max-sm:leading-[23px] colors-dark-base-text-primary mt-5 max-md:mt-6 max-sm:mt-4 max-w-[700px] text-center mx-auto"
+            >
+                {{ value.text|safe }}
+            </p>
+            <p
+                class="block lg:hidden font-normal text-xl leading-[26px] max-sm:text-base max-sm:leading-[23px] colors-dark-base-text-primary mt-5 max-md:mt-6 max-sm:mt-4 max-w-[700px] text-center mx-auto"
+            >
+                {{ value.text|safe }}
+            </p>
+            <div
+                class="relative mt-10 max-sm:mt-6 inline-block max-sm:flex max-sm:mx-auto p-1 rounded-full bg-[rgba(255,255,255,0.2)] before:absolute before:border before:border-[transparent] before:inset-0 before:rounded-full dark:before:[background:linear-gradient(98deg,_rgba(92,_201,_255,_0.48)_0%,_rgba(133,_214,_255,_0.12)_55.5%,_rgba(173,_228,_255,_0.38)_100%)] before:[background:linear-gradient(98deg,_rgba(0,0,0,0.08)_0%,_rgba(0,0,0,0.02)_75.5%)_border-box] before:[-webkit-mask:linear-gradient(#fff_0_0)_padding-box,_linear-gradient(#fff_0_0)] before:[-webkit-mask-composite:destination-out] before:[mask-composite:exclude]"
+            >
+                <a
+                        {% if value.link_left == '#' or value.link == '/' %}data-open-form{% elif value.link == '#crm' %}data-open-partner-form{% elif value.link == '#crm2' %}data-open-partner-form-2{% else %}href="{{ value.link_left }}" {% endif %}
+                        class="block cursor-pointer relative z-[1] font-medium text-center w-full text-base max-sm:text-sm leading-[22px] max-sm:leading-[20px] px-6 py-4 bg-primary-bg text-text-primary rounded-full hover:shadow-[0px_-4px_12px_0px_rgba(0,_0,_0,_0.32)_inset] transition"
+                >
+                    Попробовать в браузере
+                </a>
+            </div>
+            <div class="mt-[84px] max-md:mt-16 max-sm:mt-12">
+                {% image value.image original as image %}
+                <img
+                    src="{{ image.url }}"
+                    alt="best_way_img"
+                    class="max-sm:rounded-t-[4px] rounded-t-xl"
+                />
+            </div>
+        </div>
+    </div>
+</section>

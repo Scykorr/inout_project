@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Test</title>
+  <link href="sass/main.css" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="tailwind.config.js"></script>
+</head>
+
+<body class="dark:text-dark-text-primary text-text-primary">
+<section class="dark:bg-[linear-gradient(0deg,_#000_0%,_#061637_100%)] pt-7">
+  <div class="container mx-auto">
+    <div class="flex gap-1 items-center">
+      <a href="#"
+         class="font-normal text-sm max-sm:text-xs leading-5 max-sm:leading-[17px] opacity-90 hover:opacity-100">INOUT
+        Project</a>
+      <img src="{% static 'icons/arrow_right_light.svg' %}" alt="arrow_right_light" class="hidden dark:block">
+      <img src="{% static 'icons/arrow_right_dark.svg' %}" alt="arrow_right_dark" class="dark:hidden">
+      <p
+        class="font-normal text-sm max-sm:text-xs leading-5 max-sm:leading-[17px] text-text-tertiary dark:text-dark-text-tertiary">
+        База</p>
+    </div>
+    <div class="mt-20 max-w-[592px]">
+      <h2
+        class="font-semibold text-[64px] leading-[64px] tracking-tight colors-dark-base-text-accent bg-clip-text"
+        style="">Ресурсы INOUT</h2>
+      <p class="mt-6 font-normal text-base leading-[23px] dark:text-dark-text-tertiary text-text-tertiary">
+        Новая версия самого гибкого на рынке решения для управления проектами теперь оснащен новыми функциями и инструментами.
+      </p>
+    </div>
+  </div>
+  <div
+    class="mt-[72px] w-full h-[1px] bg-[linear-gradient(48deg,_rgba(255,255,255,0)_0%,_rgba(255,255,255,1)_15%,_rgba(255,255,255,1)_85%,_rgba(255,255,255,0)_100%)] opacity-20 max-md:hidden"></div>
+</section>
+</body>

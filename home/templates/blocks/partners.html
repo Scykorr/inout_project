@@ -1,0 +1,31 @@
+{% load static %}
+{% load wagtailcore_tags %}
+{% load wagtailimages_tags %}
+
+{% for partner in value.partners %}
+    <div
+            class="flex flex-col flex-nowrap justify-between gap-16 p-8 max-md:p-4 box-border rounded-[24px] dark:bg-dark-card-and-Sec-BT bg-card-and-Sec-BT relative z-20 before:absolute before:border before:border-[transparent] before:inset-0 before:z-10 before:rounded-[24px] dark:before:[background:linear-gradient(98deg,_rgba(255,255,255,0.08)_0%,_rgba(255,255,255,0.02)_75.5%)_border-box] before:[background:linear-gradient(98deg,_rgba(0,0,0,0.08)_0%,_rgba(0,0,0,0.02)_75.5%)_border-box] before:[-webkit-mask:linear-gradient(#fff_0_0)_padding-box,_linear-gradient(#fff_0_0)] before:[-webkit-mask-composite:destination-out] before:[mask-composite:exclude]"
+    >
+        <div class="z-30">
+            <a href="{{ partner.value.link }}" class="flex items-center">
+                <img src="{{ partner.value.logo_dark.url }}" alt="logo" class="hidden dark:block"/>
+                <img src="{{ partner.value.logo.url }}" alt="logo_dark" class="dark:hidden"/>
+            </a>
+            <h3 class="text-[24px] leading-[125%] mt-4">{{ partner.value.title }}</h3>
+            <p class="text-base leading-[23px] dark:text-dark-text-secondary text-text-secondary mt-8">
+                {{ partner.value.text }}
+            </p>
+        </div>
+        <div class="flex flex-col flex-nowrap gap-3 z-30">
+            <div class="flex gap-2 items-center">
+                <img src="{% static 'icons/phone.svg' %}" alt="phone"/>
+                <a href="tel:#" class="dark:text-dark-text-link text-text-link text-base">{{ partner.value.phone }}</a>
+            </div>
+            <div class="flex gap-2 items-center">
+                <img src="{% static 'icons/mail.svg' %}" alt="mail"/>
+                <a href="mailto:#"
+                   class="dark:text-dark-text-link text-text-link text-base">{{ partner.value.email }}</a>
+            </div>
+        </div>
+    </div>
+{% endfor %}

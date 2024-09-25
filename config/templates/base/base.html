@@ -1,0 +1,41 @@
+{% load static wagtailcore_tags wagtailuserbar %}
+
+<!DOCTYPE html>
+<html lang="ru" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <title>
+        {% block title %}{% if page.seo_title %}{{ page.seo_title }}{% else %}{{ page.title }}{% endif %}{% endblock %}{% block title_suffix %}{% wagtail_site as current_site %}{% if current_site and current_site.site_name %}- {{ current_site.site_name }}{% endif %}{% endblock %}
+    </title>
+    {% if page.search_description %}
+        <meta name="description" content="{{ page.search_description }}"/>
+    {% endif %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% if request.in_preview_panel %}
+        <base target="_blank">
+    {% endif %}
+    {% include 'includes/gtm.html' %}
+    {% include 'includes/css.html' %}
+    <link rel="icon" href="/static/icons/logos/favicon_dark.ico" sizes="any">
+    <link rel="apple-touch-icon" href="/static/icons/logos/favicon_dark.png" type="image/png">
+    <link rel="mask-icon" href="/static/icons/logos/favicon_dark.png" type="image/png">
+    {% block extra_css %}
+    {% endblock %}
+</head>
+<body class="text-text-primary dark:text-dark-text-primary h-full ">
+{#<body class="bg-primary-bg dark:bg-dark-primary-bg text-text-primary dark:text-dark-text-primary">#}
+{% include 'includes/gtm_ns.html' %}
+{#{% include 'includes/loader_start.html' %}#}
+{% include 'includes/header.html' %}
+<div class="z-[2] relative" {# style="margin-top: -55px; padding-top: 110px;" #}>
+    {% block content %}
+    {% endblock %}
+</div>
+{% include 'includes/footer.html' %}
+{% include 'includes/js.html' %}
+{% block js_extends %}
+
+{% endblock %}
+<script src="{% static 'scripts/script.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+{% load static wagtailimages_tags %}
+
+<section class="relative" style="margin-top: -55px;">
+    <img src="{% static 'image/best_way_bg.png' %}" alt="footer"
+         class="absolute top-0 left-0 w-full z-[1] object-cover h-full hidden dark:block">
+    <img src="{% static 'image/bg/footer_bg_light.svg' %}" alt="footer"
+         class="absolute top-0 left-0 w-full z-[1] object-cover h-full dark:hidden">
+
+    <div class="container mx-auto py-[72px] max-lg:pt-[96px] max-lg:pb-[64px] max-sm:pt-[88px] max-sm:pb-[56px] z-[4]">
+{#    <div class="container mx-auto relative z-[2] py-[72px] max-lg:pt-[96px] max-lg:pb-[64px] max-sm:pt-[88px] max-sm:pb-[56px]">#}
+        <div class="flex min-h-[552px] max-sm:min-h-[408px] max-sm:pb-[40px] max-sm:px-[16px] relative z-[1]">
+            <div class="flex flex-col">
+                <h2
+                        class="mt-10 max-sm:mt-[24px] font-semibold text-[60px] leading-[64px] max-lg:text-[48px] max-sm:text-[36px] max-sm:leading-[36px] max-lg:leading-[48px] max-w-[628px] max-xl:max-w-[428px] max-lg:max-w-[344px] tracking-[-1.92px] max-sm:tracking-[-0.72px] dark:bg-[linear-gradient(91deg,_#FFF_52.03%,_rgba(255,_255,_255,_0.64)_83.59%)] bg-[#000] bg-clip-text"
+                        style="-webkit-text-fill-color: transparent;">{{ value.title|safe }}</h2>
+                <p
+                        class="mt-6 max-sm:mt-4 max-w-[628px] max-xl:max-w-[428px] max-lg:max-w-[344px] font-normal text-[16px] max-sm:text-[14px] leading-[23px] max-sm:leading-[20px] text-text-tertiary dark:text-dark-text-primary">
+                    {{ value.text }}
+                </p>
+                {% if value.link %}
+                    <div
+                            class="relative mt-12 max-md:mt-10 max-sm:mt-6 inline-block max-sm:flex max-sm:mx-auto p-1 rounded-full bg-[rgba(255,255,255,0.2)] before:absolute before:border before:border-[transparent] before:inset-0 before:rounded-full dark:before:[background:linear-gradient(98deg,_rgba(92,_201,_255,_0.48)_0%,_rgba(133,_214,_255,_0.12)_55.5%,_rgba(173,_228,_255,_0.38)_100%)] before:[background:linear-gradient(98deg,_rgba(0,0,0,0.08)_0%,_rgba(0,0,0,0.02)_75.5%)_border-box] before:[-webkit-mask:linear-gradient(#fff_0_0)_padding-box,_linear-gradient(#fff_0_0)] before:[-webkit-mask-composite:destination-out] before:[mask-composite:exclude] max-w-[190px]">
+                        <a
+                                {% if value.link_left == '#' %}href="{{ value.link_left }}" {% else %}data-open-form {% endif %}
+                                class="block cursor-pointer font-medium text-center w-auto text-base max-sm:text-sm leading-[22px] max-sm:leading-[20px] px-6 py-4 bg-primary-bg text-text-primary rounded-full hover:shadow-[0px_-4px_12px_0px_rgba(0,_0,_0,_0.32)_inset] transition relative z-[1]">
+                            Получить доступ
+                        </a>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+        <div
+                class="absolute z-[1] max-sm:static max-sm:ml-auto max-sm:flex max-sm:justify-end max-sm:justify-end h-full top-0 right-0 w-[560px] max-lg:w-[324px] max-sm:min-w-[343px] overflow-hidden max-sm:pl-4">
+            {% image value.logo_dark original as image %}
+            <img src="{{ image.url }}" alt="hero-products-img"
+                 class="absolute z-[4] max-sm:static right-0 max-lg:right-[-48px] max-sm:right-0 max-sm:h-full top-[80px] max-lg:top-[200px] max-sm:top-0 hidden dark:block">
+            <img src="{{ image.url }}" alt="hero-products-img-light"
+                 class="absolute z-[4] max-sm:static right-0 top-[80px] max-lg:right-[-48px] max-sm:right-0 max-sm:h-full max-lg:top-[200px] max-sm:top-0 dark:hidden">
+        </div>
+    </div>
+</section>

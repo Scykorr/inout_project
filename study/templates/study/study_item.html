@@ -1,0 +1,39 @@
+{% extends 'base/base_lm.html' %}
+{% load wagtailcore_tags %}
+
+{% block left_menu %}
+    {% include 'study/includes/left_menu.html' %}
+    {% if page.description %}
+        <div
+                class="mt-8 rounded-[24px] p-5"
+                style="background: url('/static/image/education-center/right-card_img.svg') center center / cover no-repeat"
+        >
+            <div>
+                <h2 class="font-semibold text-2xl max-md:text-xl leading-[30px] max-md:leading-[20px]">
+                    Просто внедрить и легко научиться
+                </h2>
+                <p class="mt-2 font-normal text-base max-md:text-sm leading-[23px] colors-text-secondary">
+                    {{ page.description|richtext }}
+                </p>
+                <div
+                        class="mt-[110px] max-md:mt-[162px] h-[62px] w-[244px] max-md:inline-block max-md:flex max-md:mx-auto p-1"
+                        style="background: url('/static/icons/button_educational-center_right.svg') center no-repeat"
+                >
+                    <a
+                            data-open-form
+                            class="block cursor-pointer font-medium text-center w-full text-base leading-[22px] px-6 py-4 bg-primary-bg text-text-primary rounded-full hover:shadow-[0px_-4px_12px_0px_rgba(0,_0,_0,_0.32)_inset] transition"
+                    >
+                        Начать бесплатно
+                    </a>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+{% endblock %}
+
+{% block content %}
+    <h1>{{ page.title }}</h1>
+    <div class="prose dark:prose">
+        {{ page.description|richtext }}
+    </div>
+{% endblock %}

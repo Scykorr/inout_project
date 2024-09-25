@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+  <title>Test</title>
+  <link href="sass/main.css" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="tailwind.config.js"></script>
+</head>
+
+<body class="text-text-primary dark:text-dark-text-primary">
+<section class="container mx-auto pb-20">
+  <div class="container max-md:px-4 max-md:tracking-tight mx-auto pt-20 relative">
+    <div class="colors-stroke-table p-[1px] rounded-xl relative">
+      <input
+        type="text"
+        class="py-4 bg-[#0D0D0D] outline-none rounded-xl w-full px-12"
+        id="inputSearch"
+      />
+      <img
+        src="{% static 'icons/light_search.svg' %}"
+        alt="search"
+        class="absolute left-4 top-[18px] hidden dark:block"
+      />
+      <img
+        src="{% static 'icons/search_dark.svg' %}"
+        alt="search"
+        class="absolute left-4 top-[24px] dark:hidden"
+      />
+      <div
+        class="hidden absolute input-search-clear right-4 max-sm:right-4 top-[30px] transform -translate-y-1/2 cursor-pointer">
+        <img
+          src="{% static 'icons/cancel.svg' %}"
+          alt="cancel"
+        />
+      </div>
+    </div>
+    <div class="relative mt-2">
+      <div class="absolute font-normal text-base colors-text-tertiary leading-[23px] top-2 right-0">Результаты
+        поиска: <span>0</span></div>
+    </div>
+  </div>
+  <div class="container max-sm:px-4 max-md:tracking-tight mx-auto pt-20">
+    <p class="font-semibold leading-10 text-[32px] max-sm:leading-[32px] max-sm:text-[32px] pt-6">
+      По результату “молоко” ничего не найдено :(
+    </p>
+  </div>
+</section>
+</body>
+<script src="scripts/script.js"></script>
+</html>

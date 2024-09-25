@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Test</title>
+    <link href="sass/main.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="tailwind.config.js"></script>
+  </head>
+
+  <body class="text-text-primary dark:text-dark-text-primary">
+    <section class="dark:bg-dark-primary-bg bg-primary-bg">
+      <div class="container mx-auto py-[100px]">
+        <div class="flex gap-20 max-md:flex-col max-md:px-4">
+          <div class="w-[528px] flex flex-col justify-between">
+            <h2 class="font-semibold text-[40px] leading-[44px]">Наши контакты</h2>
+            <div class="flex flex-col gap-6">
+              <div class="flex flex-col gap-2">
+                <p class="colors-text-secondary font-normal text-base leading-[23px]">Телефон</p>
+                <a href="tel:+442031290618" class="font-semibold text-xl leading-5">+44 203 129 0618</a>
+              </div>
+              <div class="flex flex-col gap-2">
+                <p class="colors-text-secondary font-normal text-base leading-[23px]">Эл. почта</p>
+                <a href="mailto:info@easysoftware.com" class="font-semibold text-xl leading-5">info@easysoftware.com</a>
+              </div>
+              <div class="flex flex-col gap-2">
+                <p class="colors-text-secondary font-normal text-base leading-[23px]">Адрес</p>
+                <a href="#" class="font-semibold text-xl leading-5">Kemp House, 152-160 City Road</a>
+              </div>
+              <div class="flex flex-col gap-2">
+                <p class="colors-text-secondary font-normal text-base leading-[23px]">Следите за нами</p>
+                <div class="flex gap-[15px]">
+                  <a href="#" class="colors-background-card rounded-[24px] p-3 colors-dark-icon-bg">
+                    <img src="{% static 'icons/about-us/about-us_4_icon_google.svg' %}" alt="" />
+                  </a>
+                  <a href="#" class="colors-background-card rounded-[24px] p-3 colors-dark-icon-bg">
+                    <img src="{% static 'icons/about-us/about-us_4_icon_twitter.svg' %}" alt="" />
+                  </a>
+                  <a href="#" class="colors-background-card rounded-[24px] p-3 colors-dark-icon-bg">
+                    <img src="{% static 'icons/about-us/about-us_4_icon_IN.svg' %}" alt="" />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="flex items-center bg-[linear-gradient(90deg,_rgba(13,13,13,1)_0%,_rgba(13,13,13,1)_75%,_rgba(12,36,87,1)_100%)] min-w-[592px] min-h-[500px] max-lg:min-w-[400px] max-md:min-h-[350px] max-md:min-w-full max-lg:min-h-auto rounded-[40px] py-14 pl-14">
+            <img src="image/about-us/about-us_5_img.svg' %}" alt="about-us_3_img" class="ml-auto" />
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

@@ -1,0 +1,45 @@
+{% load static %}
+
+<div class="overflow-x-auto ui-h-scroll max-md:flex dark:max-md:bg-dark-card-and-Sec-BT max-md:bg-card-and-Sec-BT max-md:rounded-[10px] max-md:p-1">
+    {% for item in page.get_parent.get_children %}
+        {% if 'партнер' in item.title|lower %}
+            <a href="{{ item.url }}"
+               class="block font-medium text-base max-md:text-sm leading-[22px] mt-[2px] py-2 max-md:px-3 max-md:py-2 max-md:mt-0 max-md:rounded-[8px] transition cursor-pointer whitespace-nowrap {% if item.url == page.url %}text-text-primary dark:text-dark-text-primary max-sm:dark:bg-dark-card-and-Sec-BT max-sm:bg-sec-BT{% else %}colors-text-secondary max-md:text-text-tertiary dark:max-md:text-dark-text-tertiary{% endif %}">
+                {{ item.title }}
+            </a>
+        {% endif %}
+    {% endfor %}
+    <div class="hidden max-md:block">
+        <button class="tabheader-pagination-prev-education absolute z-[2] p-2 left-1 top-1 backdrop-blur-sm rounded-lg hidden">
+            <img src="{% static 'icons/arrow_down.svg' %}" alt="" class="rotate-90"/>
+        </button>
+        <button class="tabheader-pagination-next-education absolute z-[2] p-2 right-1 top-1 backdrop-blur-sm rounded-lg">
+            <img src="{% static 'icons/arrow_down.svg' %}" alt="" class="-rotate-90"/>
+        </button>
+    </div>
+</div>
+
+<div
+        class="mt-8 rounded-[24px] p-5"
+        style="background: url('/static/image/education-center/right-card_img.svg') center center / cover no-repeat"
+>
+    <div>
+        <h2 class="font-semibold text-2xl max-md:text-xl leading-[30px] max-md:leading-[20px]">
+            Мы ищем партнеров
+        </h2>
+        <p class="mt-2 font-normal text-base max-md:text-sm leading-[23px] colors-text-secondary">
+            Мы ищем консультантов, профессионалов в области проектного менеджмента и системных интеграторов.
+        </p>
+        <div
+                class="mt-[110px] max-md:mt-[162px] h-[62px] w-[244px] max-md:inline-block max-md:flex max-md:mx-auto p-1"
+                style="background: url('/static/icons/button_educational-center_right.svg') center no-repeat"
+        >
+            <a
+                    data-open-partner-form
+                    class="block cursor-pointer font-medium text-center w-full text-base leading-[22px] px-6 py-4 bg-primary-bg text-text-primary rounded-full hover:shadow-[0px_-4px_12px_0px_rgba(0,_0,_0,_0.32)_inset] transition"
+            >
+                Начать бесплатно
+            </a>
+        </div>
+    </div>
+</div>

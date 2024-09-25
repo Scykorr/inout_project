@@ -1,0 +1,878 @@
+{% load static wagtailcore_tags %}
+
+
+<section
+        class="w-full flex flex-col flex-nowrap max-md:px-9 max-sm:px-4 box-border h-auto pb-[72px] max-md:pb-11 max-md:min-h-[100dvh]"
+>
+    <div class="container mx-auto">
+        <div class="mt-6 max-sm:mt-7 flex flex-col items-center">
+            <h2 class="mt-20 text-[64px] leading-[64px] max-md:text-5xl max-sm:text-4xl max-sm:leading-9">{{ value.title }}</h2>
+            <div
+                    class="mt-10 w-fit max-sm:w-full max-sm:grid max-sm:grid-cols-2 flex bg-card-and-Sec-BT dark:bg-dark-card-and-Sec-BT rounded-[10px] p-1 box-border border border-[transparent] dark:hover:border-[rgba(255,255,255,0.08)] hover:border-[rgba(0,0,0,0.08)] transition"
+            >
+                <div
+                        class="prices-switcher rounded-lg text-base leading-[22px] max-sm:text-center max-sm:text-sm leading-[20px] px-4 py-2 bg-card-and-Sec-BT dark:bg-dark-card-and-Sec-BT hover:cursor-pointer"
+                >
+                    В облаке
+                </div>
+                <a href="#cloud-detail"
+                   class="rounded-lg text-base leading-[22px] max-sm:text-center max-sm:text-sm leading-[20px] px-4 py-2 text-text-secondary dark:text-dark-text-secondary hover:cursor-pointer"
+                >
+                    На сервере
+                </a>
+            </div>
+        </div>
+
+        <!-- prices cards -->
+        <div
+                class="grid grid-cols-[233px_repeat(4,_1fr)] max-md:flex max-md:flex-col max-md:gap-4 items-start gap-2 justify-center flex-nowrap max-sm:flex-col max-sm:gap-4 mt-[72px] mt-14"
+        >
+            <ul class="max-md:hidden flex flex-col max-sm:gap-1 mt-[215px]">
+                <div
+                        class="max-sm:hidden w-full h-[1px] bg-[linear-gradient(48deg,_rgba(44,51,62,0)_0%,_rgba(44,51,62,1)_15%,_rgba(44,51,62,1)_85%,_rgba(44,51,62,0)_100%)] dark:bg-[linear-gradient(48deg,_rgba(255,255,255,0)_0%,_rgba(255,255,255,1)_15%,_rgba(255,255,255,1)_85%,_rgba(255,255,255,0)_100%)] opacity-20"
+                ></div>
+                <li class="flex flex-col">
+                    <div class="flex justify-between py-[9px] box-border">
+                        <div class="flex gap-2 items-center">
+                            <p class="text-sm leading-[20px]">Управление проектами</p>
+                            <div class="relative">
+                                <img src="{% static 'icons/info.svg' %}" alt="info" class="cursor-pointer info"/>
+                                <div
+                                        class="hidden transition absolute bottom-[28px] left-[50%] translate-x-[-50%] background-[transparent] z-50"
+                                >
+                                    <div
+                                            class="relative text-text-secondary dark:text-dark-text-secondary rounded-2xl text-xs leading-[14px] backdrop-blur-2xl bg-[rgba(255,255,255,0.05)] border border-[var(--colors-stroke-table)] p-4 box-border w-[232px]"
+                                    >
+                                        Всё необходимое для управления проектами: диаграмма Гантта, трекеры задач и
+                                        времени, календари,
+                                        отчётность и многое другое. Комплексное решение для всех этапов проекта.
+
+                                        <img
+                                                src="{% static 'icons/info_arrow.svg' %}"
+                                                alt="arrow"
+                                                class="absolute bottom-[-8px] left-[50%] translate-x-[-50%]"
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                            class="w-full h-[1px] bg-[linear-gradient(48deg,_rgba(44,51,62,0)_0%,_rgba(44,51,62,1)_15%,_rgba(44,51,62,1)_85%,_rgba(44,51,62,0)_100%)] dark:bg-[linear-gradient(48deg,_rgba(255,255,255,0)_0%,_rgba(255,255,255,1)_15%,_rgba(255,255,255,1)_85%,_rgba(255,255,255,0)_100%)] opacity-20"
+                    ></div>
+                </li>
+                <li class="flex flex-col relative">
+                    <div class="flex justify-between py-[9px] box-border">
+                        <div class="flex gap-2 items-center">
+                            <p class="text-sm leading-[20px]">Инструменты Agile</p>
+                            <div class="relative">
+                                <img src="{% static 'icons/info.svg' %}" alt="info" class="cursor-pointer info"/>
+                                <div
+                                        class="hidden transition absolute bottom-[28px] left-[50%] translate-x-[-50%] background-[transparent] z-50"
+                                >
+                                    <div
+                                            class="relative text-text-secondary dark:text-dark-text-secondary rounded-2xl text-xs leading-[14px] backdrop-blur-2xl bg-[rgba(255,255,255,0.05)] border border-[var(--colors-stroke-table)] p-4 box-border w-[232px]"
+                                    >
+                                        Доска Agile для гибкой разработки по методам Scrum и Kanban: спринты, журналы
+                                        пожеланий, задачи
+                                        и статусы. Классическое и гибкое управление в одном решении.
+
+                                        <img
+                                                src="{% static 'icons/info_arrow.svg' %}"
+                                                alt="arrow"
+                                                class="absolute bottom-[-8px] left-[50%] translate-x-[-50%]"
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                            class="w-full h-[1px] bg-[linear-gradient(48deg,_rgba(44,51,62,0)_0%,_rgba(44,51,62,1)_15%,_rgba(44,51,62,1)_85%,_rgba(44,51,62,0)_100%)] dark:bg-[linear-gradient(48deg,_rgba(255,255,255,0)_0%,_rgba(255,255,255,1)_15%,_rgba(255,255,255,1)_85%,_rgba(255,255,255,0)_100%)] opacity-20"
+                    ></div>
+                </li>
+                <li class="flex flex-col relative">
+                    <div class="flex justify-between py-[9px] box-border">
+                        <div class="flex gap-2 items-center">
+                            <p class="text-sm leading-[20px]">ИСР и интеллект-карты</p>
+                            <div class="relative">
+                                <img src="{% static 'icons/info.svg' %}" alt="info" class="cursor-pointer info"/>
+                                <div
+                                        class="hidden transition absolute bottom-[28px] left-[50%] translate-x-[-50%] background-[transparent] z-50"
+                                >
+                                    <div
+                                            class="relative text-text-secondary dark:text-dark-text-secondary rounded-2xl text-xs leading-[14px] backdrop-blur-2xl bg-[rgba(255,255,255,0.05)] border border-[var(--colors-stroke-table)] p-4 box-border w-[232px]"
+                                    >
+                                        Структура декомпозии работ (ИСР) позволяет разбить проект на небольшие
+                                        управляемые части (их
+                                        удобно распределять между исполнителями), точно оценить необходимые ресурсы и
+                                        проконтролировать
+                                        ход выполнения. В отличие от ИСР, интеллект-карты больше подходят для начальных
+                                        и аналитических
+                                        этапов, когда надо не создавать задачи, а анализировать все части проекта или
+                                        процесса в целом.
+
+                                        <img
+                                                src="{% static 'icons/info_arrow.svg' %}"
+                                                alt="arrow"
+                                                class="absolute bottom-[-8px] left-[50%] translate-x-[-50%]"
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                            class="w-full h-[1px] bg-[linear-gradient(48deg,_rgba(44,51,62,0)_0%,_rgba(44,51,62,1)_15%,_rgba(44,51,62,1)_85%,_rgba(44,51,62,0)_100%)] dark:bg-[linear-gradient(48deg,_rgba(255,255,255,0)_0%,_rgba(255,255,255,1)_15%,_rgba(255,255,255,1)_85%,_rgba(255,255,255,0)_100%)] opacity-20"
+                    ></div>
+                </li>
+                <li class="flex flex-col relative">
+                    <div class="flex justify-between py-[9px] box-border">
+                        <div class="flex gap-2 items-center">
+                            <p class="text-sm leading-[20px]">Управление ресурсами</p>
+                            <div class="relative">
+                                <img src="{% static 'icons/info.svg' %}" alt="info" class="cursor-pointer info"/>
+                                <div
+                                        class="hidden transition absolute bottom-[28px] left-[50%] translate-x-[-50%] background-[transparent] z-50"
+                                >
+                                    <div
+                                            class="relative text-text-secondary dark:text-dark-text-secondary rounded-2xl text-xs leading-[14px] backdrop-blur-2xl bg-[rgba(255,255,255,0.05)] border border-[var(--colors-stroke-table)] p-4 box-border w-[232px]"
+                                    >
+                                        Наглядное планирование с учётом реальных возможностей и квалификации участников
+                                        каждого проекта.
+                                        Экономьте время благодаря простому и удобному интерфейсу.
+
+                                        <img
+                                                src="{% static 'icons/info_arrow.svg' %}"
+                                                alt="arrow"
+                                                class="absolute bottom-[-8px] left-[50%] translate-x-[-50%]"
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                            class="w-full h-[1px] bg-[linear-gradient(48deg,_rgba(44,51,62,0)_0%,_rgba(44,51,62,1)_15%,_rgba(44,51,62,1)_85%,_rgba(44,51,62,0)_100%)] dark:bg-[linear-gradient(48deg,_rgba(255,255,255,0)_0%,_rgba(255,255,255,1)_15%,_rgba(255,255,255,1)_85%,_rgba(255,255,255,0)_100%)] opacity-20"
+                    ></div>
+                </li>
+                <li class="flex flex-col relative">
+                    <div class="flex justify-between py-[9px] box-border">
+                        <div class="flex gap-2 items-center">
+                            <p class="text-sm leading-[20px]">Бюджет проекта</p>
+                            <div class="relative">
+                                <img src="{% static 'icons/info.svg' %}" alt="info" class="cursor-pointer info"/>
+                                <div
+                                        class="hidden transition absolute bottom-[28px] left-[50%] translate-x-[-50%] background-[transparent] z-50"
+                                >
+                                    <div
+                                            class="relative text-text-secondary dark:text-dark-text-secondary rounded-2xl text-xs leading-[14px] backdrop-blur-2xl bg-[rgba(255,255,255,0.05)] border border-[var(--colors-stroke-table)] p-4 box-border w-[232px]"
+                                    >
+                                        Отслеживайте выручку, издержки, расходы на зарплату и чистую прибыль. Вы можете
+                                        сравнивать
+                                        фактические траты с планом, генерировать отчёты о прибылях и убытках по
+                                        проектам.
+
+                                        <img
+                                                src="{% static 'icons/info_arrow.svg' %}"
+                                                alt="arrow"
+                                                class="absolute bottom-[-8px] left-[50%] translate-x-[-50%]"
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                            class="w-full h-[1px] bg-[linear-gradient(48deg,_rgba(44,51,62,0)_0%,_rgba(44,51,62,1)_15%,_rgba(44,51,62,1)_85%,_rgba(44,51,62,0)_100%)] dark:bg-[linear-gradient(48deg,_rgba(255,255,255,0)_0%,_rgba(255,255,255,1)_15%,_rgba(255,255,255,1)_85%,_rgba(255,255,255,0)_100%)] opacity-20"
+                    ></div>
+                </li>
+                <li class="flex flex-col relative">
+                    <div class="flex justify-between py-[9px] box-border">
+                        <div class="flex gap-2 items-center">
+                            <p class="text-sm leading-[20px]">Инструменты для управления</p>
+                            <div class="relative">
+                                <img src="{% static 'icons/info.svg' %}" alt="info" class="cursor-pointer info"/>
+                                <div
+                                        class="hidden transition absolute bottom-[28px] left-[50%] translate-x-[-50%] background-[transparent] z-50"
+                                >
+                                    <div
+                                            class="relative text-text-secondary dark:text-dark-text-secondary rounded-2xl text-xs leading-[14px] backdrop-blur-2xl bg-[rgba(255,255,255,0.05)] border border-[var(--colors-stroke-table)] p-4 box-border w-[232px]"
+                                    >
+                                        Инструменты для профессионального управления проектами. Управление рисками,
+                                        диаграмма Гантта,
+                                        освоенный объём и тестовые сценарии — всё необходимое для настоящих профи.
+
+                                        <img
+                                                src="{% static 'icons/info_arrow.svg' %}"
+                                                alt="arrow"
+                                                class="absolute bottom-[-8px] left-[50%] translate-x-[-50%]"
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                            class="w-full h-[1px] bg-[linear-gradient(48deg,_rgba(44,51,62,0)_0%,_rgba(44,51,62,1)_15%,_rgba(44,51,62,1)_85%,_rgba(44,51,62,0)_100%)] dark:bg-[linear-gradient(48deg,_rgba(255,255,255,0)_0%,_rgba(255,255,255,1)_15%,_rgba(255,255,255,1)_85%,_rgba(255,255,255,0)_100%)] opacity-20"
+                    ></div>
+                </li>
+                <li class="flex flex-col relative">
+                    <div class="flex justify-between py-[9px] box-border">
+                        <div class="flex gap-2 items-center">
+                            <p class="text-sm leading-[20px]">HelpDesk и система заявок</p>
+                            <div class="relative">
+                                <img src="{% static 'icons/info.svg' %}" alt="info" class="cursor-pointer info"/>
+                                <div
+                                        class="hidden transition absolute bottom-[28px] left-[50%] translate-x-[-50%] background-[transparent] z-50"
+                                >
+                                    <div
+                                            class="relative text-text-secondary dark:text-dark-text-secondary rounded-2xl text-xs leading-[14px] backdrop-blur-2xl bg-[rgba(255,255,255,0.05)] border border-[var(--colors-stroke-table)] p-4 box-border w-[232px]"
+                                    >
+                                        Оптимизируйте процессы взаимодействия с клиентами. Настраивайте уровни
+                                        обслуживания и повышайте
+                                        качество поддержки с помощью Help Desk — заказчики будут довольны.
+
+                                        <img
+                                                src="{% static 'icons/info_arrow.svg' %}"
+                                                alt="arrow"
+                                                class="absolute bottom-[-8px] left-[50%] translate-x-[-50%]"
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                            class="w-full h-[1px] bg-[linear-gradient(48deg,_rgba(44,51,62,0)_0%,_rgba(44,51,62,1)_15%,_rgba(44,51,62,1)_85%,_rgba(44,51,62,0)_100%)] dark:bg-[linear-gradient(48deg,_rgba(255,255,255,0)_0%,_rgba(255,255,255,1)_15%,_rgba(255,255,255,1)_85%,_rgba(255,255,255,0)_100%)] opacity-20"
+                    ></div>
+                </li>
+                <li class="flex flex-col relative">
+                    <div class="flex justify-between py-[9px] box-border">
+                        <div class="flex gap-2 items-center">
+                            <p class="text-sm leading-[20px]">B2B CRM</p>
+                            <div class="relative">
+                                <img src="{% static 'icons/info.svg' %}" alt="info" class="cursor-pointer info"/>
+                                <div
+                                        class="hidden transition absolute bottom-[28px] left-[50%] translate-x-[-50%] background-[transparent] z-50"
+                                >
+                                    <div
+                                            class="relative text-text-secondary dark:text-dark-text-secondary rounded-2xl text-xs leading-[14px] backdrop-blur-2xl bg-[rgba(255,255,255,0.05)] border border-[var(--colors-stroke-table)] p-4 box-border w-[232px]"
+                                    >
+                                        Управляйте продажами и доводите проекты до конца. B2B CRM позволяет отследить
+                                        путь клиента от
+                                        лида до контракта, посмотреть статистику и повысить общую эффективность продаж.
+
+                                        <img
+                                                src="{% static 'icons/info_arrow.svg' %}"
+                                                alt="arrow"
+                                                class="absolute bottom-[-8px] left-[50%] translate-x-[-50%]"
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                            class="w-full h-[1px] bg-[linear-gradient(48deg,_rgba(44,51,62,0)_0%,_rgba(44,51,62,1)_15%,_rgba(44,51,62,1)_85%,_rgba(44,51,62,0)_100%)] dark:bg-[linear-gradient(48deg,_rgba(255,255,255,0)_0%,_rgba(255,255,255,1)_15%,_rgba(255,255,255,1)_85%,_rgba(255,255,255,0)_100%)] opacity-20"
+                    ></div>
+                </li>
+                <li class="flex flex-col relative">
+                    <div class="flex justify-between py-[9px] box-border">
+                        <div class="flex gap-2 items-center">
+                            <p class="text-sm leading-[20px]">Расширения</p>
+                            <div class="relative">
+                                <img src="{% static 'icons/info.svg' %}" alt="info" class="cursor-pointer info"/>
+                                <div
+                                        class="hidden transition absolute bottom-[28px] left-[50%] translate-x-[-50%] background-[transparent] z-50"
+                                >
+                                    <div
+                                            class="relative text-text-secondary dark:text-dark-text-secondary rounded-2xl text-xs leading-[14px] backdrop-blur-2xl bg-[rgba(255,255,255,0.05)] border border-[var(--colors-stroke-table)] p-4 box-border w-[232px]"
+                                    >
+                                        Всё необходимое для управления проектами: диаграмма Гантта, трекеры задач и
+                                        времени, календари,
+                                        отчётность и многое другое. Комплексное решение для всех этапов проекта.
+
+                                        <img
+                                                src="{% static 'icons/info_arrow.svg' %}"
+                                                alt="arrow"
+                                                class="absolute bottom-[-8px] left-[50%] translate-x-[-50%]"
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                            class="w-full h-[1px] bg-[linear-gradient(48deg,_rgba(44,51,62,0)_0%,_rgba(44,51,62,1)_15%,_rgba(44,51,62,1)_85%,_rgba(44,51,62,0)_100%)] dark:bg-[linear-gradient(48deg,_rgba(255,255,255,0)_0%,_rgba(255,255,255,1)_15%,_rgba(255,255,255,1)_85%,_rgba(255,255,255,0)_100%)] opacity-20"
+                    ></div>
+                </li>
+            </ul>
+            {% for price in value.prices %}
+                <div
+                        style="{% if price.value.popular %}background-image: url(/static/image/banner/price.svg);{% endif %}"
+                        class="{% if price.value.popular %}flex flex-col gap-[54px] max-md:w-full max-md:gap-10 bg-[url('/static/image/banner/price.svg')] max-md:bg-[url('/static/image/banner/price_md.svg')] bg-cover rounded-3xl p-5 box-border{% else %}flex flex-col gap-[54px] max-md:w-full max-md:gap-10 bg-card-and-Sec-BT dark:bg-dark-card-and-Sec-BT rounded-3xl p-5 box-border{% endif %}"
+                >
+                    <div class="flex flex-col">
+                        <h6 class="text-xl leading-[25px] max-md:leading-[20px] max-w-[180px]">{{ price.value.title|safe }}</h6>
+                        <h4 class="text-[32px] leading-[35px] max-sm:text-2xl max-sm:leading-[26px] mt-8 max-sm:mt-5">{{ price.value.price }}₽</h4>
+                        <p class="mt-1 text-text-secondary dark:text-dark-text-secondary text-sm leading-[20px] max-sm:text-xs">
+                            {% if price.value.for_user %}пользователь/месяц{% else %}&nbsp;{% endif %}
+                        </p>
+                    </div>
+
+                    <ul class="max-md:hidden flex flex-col max-sm:hidden">
+                        <div
+                                class="max-sm:hidden w-full h-[1px] bg-[linear-gradient(48deg,_rgba(44,51,62,0)_0%,_rgba(44,51,62,1)_15%,_rgba(44,51,62,1)_85%,_rgba(44,51,62,0)_100%)] dark:bg-[linear-gradient(48deg,_rgba(255,255,255,0)_0%,_rgba(255,255,255,1)_15%,_rgba(255,255,255,1)_85%,_rgba(255,255,255,0)_100%)] opacity-20"
+                        ></div>
+                        <li class="flex flex-col items-center">
+                            {% if price.value.project_management %}
+                                <img src="{% static 'icons/check.svg' %}" alt="check"
+                                     class="py-[7px] hidden dark:block"/>
+                                <img src="{% static 'icons/check_dark.svg' %}" alt="check"
+                                     class="py-[7px] dark:hidden"/>
+                            {% else %}
+                                <img src="{% static 'icons/long_dash.svg' %}" alt="dash"
+                                     class="py-[7px] hidden dark:block"/>
+                                <img src="{% static 'icons/long_dash_dark.svg' %}" alt="dash"
+                                     class="py-[7px] dark:hidden"/>
+                            {% endif %}
+                            <div
+                                    class="w-full h-[1px] bg-[linear-gradient(48deg,_rgba(44,51,62,0)_0%,_rgba(44,51,62,1)_15%,_rgba(44,51,62,1)_85%,_rgba(44,51,62,0)_100%)] dark:bg-[linear-gradient(48deg,_rgba(255,255,255,0)_0%,_rgba(255,255,255,1)_15%,_rgba(255,255,255,1)_85%,_rgba(255,255,255,0)_100%)] opacity-20"
+                            ></div>
+                        </li>
+                        <li class="flex flex-col items-center">
+                            {% if price.value.agile %}
+                                <img src="{% static 'icons/check.svg' %}" alt="check"
+                                     class="py-[7px] hidden dark:block"/>
+                                <img src="{% static 'icons/check_dark.svg' %}" alt="check"
+                                     class="py-[7px] dark:hidden"/>
+                            {% else %}
+                                <img src="{% static 'icons/long_dash.svg' %}" alt="dash"
+                                     class="py-[7px] hidden dark:block"/>
+                                <img src="{% static 'icons/long_dash_dark.svg' %}" alt="dash"
+                                     class="py-[7px] dark:hidden"/>
+                            {% endif %}
+                            <div
+                                    class="w-full h-[1px] bg-[linear-gradient(48deg,_rgba(44,51,62,0)_0%,_rgba(44,51,62,1)_15%,_rgba(44,51,62,1)_85%,_rgba(44,51,62,0)_100%)] dark:bg-[linear-gradient(48deg,_rgba(255,255,255,0)_0%,_rgba(255,255,255,1)_15%,_rgba(255,255,255,1)_85%,_rgba(255,255,255,0)_100%)] opacity-20"
+                            ></div>
+                        </li>
+                        <li class="flex flex-col items-center">
+                            {% if price.value.wbs %}
+                                <img src="{% static 'icons/check.svg' %}" alt="check"
+                                     class="py-[7px] hidden dark:block"/>
+                                <img src="{% static 'icons/check_dark.svg' %}" alt="check"
+                                     class="py-[7px] dark:hidden"/>
+                            {% else %}
+                                <img src="{% static 'icons/long_dash.svg' %}" alt="dash"
+                                     class="py-[7px] hidden dark:block"/>
+                                <img src="{% static 'icons/long_dash_dark.svg' %}" alt="dash"
+                                     class="py-[7px] dark:hidden"/>
+                            {% endif %}
+                            <div
+                                    class="w-full h-[1px] bg-[linear-gradient(48deg,_rgba(44,51,62,0)_0%,_rgba(44,51,62,1)_15%,_rgba(44,51,62,1)_85%,_rgba(44,51,62,0)_100%)] dark:bg-[linear-gradient(48deg,_rgba(255,255,255,0)_0%,_rgba(255,255,255,1)_15%,_rgba(255,255,255,1)_85%,_rgba(255,255,255,0)_100%)] opacity-20"
+                            ></div>
+                        </li>
+                        <li class="flex flex-col items-center">
+                            {% if price.value.resource_management %}
+                                <img src="{% static 'icons/check.svg' %}" alt="check"
+                                     class="py-[7px] hidden dark:block"/>
+                                <img src="{% static 'icons/check_dark.svg' %}" alt="check"
+                                     class="py-[7px] dark:hidden"/>
+                            {% else %}
+                                <img src="{% static 'icons/long_dash.svg' %}" alt="dash"
+                                     class="py-[7px] hidden dark:block"/>
+                                <img src="{% static 'icons/long_dash_dark.svg' %}" alt="dash"
+                                     class="py-[7px] dark:hidden"/>
+                            {% endif %}
+                            <div
+                                    class="w-full h-[1px] bg-[linear-gradient(48deg,_rgba(44,51,62,0)_0%,_rgba(44,51,62,1)_15%,_rgba(44,51,62,1)_85%,_rgba(44,51,62,0)_100%)] dark:bg-[linear-gradient(48deg,_rgba(255,255,255,0)_0%,_rgba(255,255,255,1)_15%,_rgba(255,255,255,1)_85%,_rgba(255,255,255,0)_100%)] opacity-20"
+                            ></div>
+                        </li>
+                        <li class="flex flex-col items-center">
+                            {% if price.value.budget %}
+                                <img src="{% static 'icons/check.svg' %}" alt="check"
+                                     class="py-[7px] hidden dark:block"/>
+                                <img src="{% static 'icons/check_dark.svg' %}" alt="check"
+                                     class="py-[7px] dark:hidden"/>
+                            {% else %}
+                                <img src="{% static 'icons/long_dash.svg' %}" alt="dash"
+                                     class="py-[7px] hidden dark:block"/>
+                                <img src="{% static 'icons/long_dash_dark.svg' %}" alt="dash"
+                                     class="py-[7px] dark:hidden"/>
+                            {% endif %}
+                            <div
+                                    class="w-full h-[1px] bg-[linear-gradient(48deg,_rgba(44,51,62,0)_0%,_rgba(44,51,62,1)_15%,_rgba(44,51,62,1)_85%,_rgba(44,51,62,0)_100%)] dark:bg-[linear-gradient(48deg,_rgba(255,255,255,0)_0%,_rgba(255,255,255,1)_15%,_rgba(255,255,255,1)_85%,_rgba(255,255,255,0)_100%)] opacity-20"
+                            ></div>
+                        </li>
+                        <li class="flex flex-col items-center">
+                            {% if price.value.management_tools %}
+                                <img src="{% static 'icons/check.svg' %}" alt="check"
+                                     class="py-[7px] hidden dark:block"/>
+                                <img src="{% static 'icons/check_dark.svg' %}" alt="check"
+                                     class="py-[7px] dark:hidden"/>
+                            {% else %}
+                                <img src="{% static 'icons/long_dash.svg' %}" alt="dash"
+                                     class="py-[7px] hidden dark:block"/>
+                                <img src="{% static 'icons/long_dash_dark.svg' %}" alt="dash"
+                                     class="py-[7px] dark:hidden"/>
+                            {% endif %}
+                            <div
+                                    class="w-full h-[1px] bg-[linear-gradient(48deg,_rgba(44,51,62,0)_0%,_rgba(44,51,62,1)_15%,_rgba(44,51,62,1)_85%,_rgba(44,51,62,0)_100%)] dark:bg-[linear-gradient(48deg,_rgba(255,255,255,0)_0%,_rgba(255,255,255,1)_15%,_rgba(255,255,255,1)_85%,_rgba(255,255,255,0)_100%)] opacity-20"
+                            ></div>
+                        </li>
+                        <li class="flex flex-col items-center">
+                            {% if price.value.help_desk %}
+                                <img src="{% static 'icons/check.svg' %}" alt="check"
+                                     class="py-[7px] hidden dark:block"/>
+                                <img src="{% static 'icons/check_dark.svg' %}" alt="check"
+                                     class="py-[7px] dark:hidden"/>
+                            {% else %}
+                                <img src="{% static 'icons/long_dash.svg' %}" alt="dash"
+                                     class="py-[7px] hidden dark:block"/>
+                                <img src="{% static 'icons/long_dash_dark.svg' %}" alt="dash"
+                                     class="py-[7px] dark:hidden"/>
+                            {% endif %}
+                            <div
+                                    class="w-full h-[1px] bg-[linear-gradient(48deg,_rgba(44,51,62,0)_0%,_rgba(44,51,62,1)_15%,_rgba(44,51,62,1)_85%,_rgba(44,51,62,0)_100%)] dark:bg-[linear-gradient(48deg,_rgba(255,255,255,0)_0%,_rgba(255,255,255,1)_15%,_rgba(255,255,255,1)_85%,_rgba(255,255,255,0)_100%)] opacity-20"
+                            ></div>
+                        </li>
+                        <li class="flex flex-col items-center">
+                            {% if price.value.b2b_crm %}
+                                <img src="{% static 'icons/check.svg' %}" alt="check"
+                                     class="py-[7px] hidden dark:block"/>
+                                <img src="{% static 'icons/check_dark.svg' %}" alt="check"
+                                     class="py-[7px] dark:hidden"/>
+                            {% else %}
+                                <img src="{% static 'icons/long_dash.svg' %}" alt="dash"
+                                     class="py-[7px] hidden dark:block"/>
+                                <img src="{% static 'icons/long_dash_dark.svg' %}" alt="dash"
+                                     class="py-[7px] dark:hidden"/>
+                            {% endif %}
+                            <div
+                                    class="w-full h-[1px] bg-[linear-gradient(48deg,_rgba(44,51,62,0)_0%,_rgba(44,51,62,1)_15%,_rgba(44,51,62,1)_85%,_rgba(44,51,62,0)_100%)] dark:bg-[linear-gradient(48deg,_rgba(255,255,255,0)_0%,_rgba(255,255,255,1)_15%,_rgba(255,255,255,1)_85%,_rgba(255,255,255,0)_100%)] opacity-20"
+                            ></div>
+                        </li>
+                        <li class="flex flex-col items-center">
+                            <p class="text-sm leading-[20px] pt-[10px] pb-2">{{ price.value.extensions }}</p>
+                            <div
+                                    class="w-full h-[1px] bg-[linear-gradient(48deg,_rgba(44,51,62,0)_0%,_rgba(44,51,62,1)_15%,_rgba(44,51,62,1)_85%,_rgba(44,51,62,0)_100%)] dark:bg-[linear-gradient(48deg,_rgba(255,255,255,0)_0%,_rgba(255,255,255,1)_15%,_rgba(255,255,255,1)_85%,_rgba(255,255,255,0)_100%)] opacity-20"
+                            ></div>
+                        </li>
+                    </ul>
+                    <ul class="max-md:block hidden flex flex-col">
+                        <li class="flex flex-col relative">
+                            <div class="flex justify-between box-border">
+                                <div class="flex gap-2 items-center py-[9px]">
+                                    <p class="text-sm leading-[20px] max-sm:leading-[20px]">Управление проектами</p>
+                                    <div class="relative">
+                                        <img src="{% static 'icons/info.svg' %}" alt="info"
+                                             class="cursor-pointer info"/>
+                                        <div
+                                                class="hidden transition absolute bottom-[28px] left-[50%] translate-x-[-50%] background-[transparent] z-50 w-[232px] max-sm:w-[172px]"
+                                        >
+                                            <div
+                                                    class="relative text-text-secondary dark:text-dark-text-secondary rounded-2xl text-xs leading-[14px] backdrop-blur-2xl bg-[rgba(255,255,255,0.05)] border border-[var(--colors-stroke-table)] p-4 box-border"
+                                            >
+                                                Всё необходимое для управления проектами: диаграмма Гантта, трекеры
+                                                задач и времени,
+                                                календари, отчётность и многое другое. Комплексное решение для всех
+                                                этапов проекта.
+
+                                                <img
+                                                        src="{% static 'icons/info_arrow.svg' %}"
+                                                        alt="arrow"
+                                                        class="absolute bottom-[-8px] left-[50%] translate-x-[-50%]"
+                                                />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <img src="{% static 'icons/check.svg' %}" alt="check" class="hidden dark:block"/>
+                                <img src="{% static 'icons/check_dark.svg' %}" alt="check" class="dark:hidden"/>
+                            </div>
+                            <div
+                                    class="w-full h-[1px] my-1 bg-[linear-gradient(48deg,_rgba(44,51,62,0)_0%,_rgba(44,51,62,1)_15%,_rgba(44,51,62,1)_85%,_rgba(44,51,62,0)_100%)] dark:bg-[linear-gradient(48deg,_rgba(255,255,255,0)_0%,_rgba(255,255,255,1)_15%,_rgba(255,255,255,1)_85%,_rgba(255,255,255,0)_100%)] opacity-20"
+                            ></div>
+                        </li>
+                        <li class="flex flex-col relative">
+                            <div class="flex justify-between box-border">
+                                <div class="flex gap-2 items-center py-[9px]">
+                                    <p class="text-sm leading-[20px] max-sm:leading-[20px]">Инструменты Agile</p>
+                                    <div class="relative">
+                                        <img src="{% static 'icons/info.svg' %}" alt="info"
+                                             class="cursor-pointer info"/>
+                                        <div
+                                                class="hidden transition absolute bottom-[28px] left-[50%] translate-x-[-50%] background-[transparent] z-50 w-[232px] max-sm:w-[172px]"
+                                        >
+                                            <div
+                                                    class="relative text-text-secondary dark:text-dark-text-secondary rounded-2xl text-xs leading-[14px] backdrop-blur-2xl bg-[rgba(255,255,255,0.05)] border border-[var(--colors-stroke-table)] p-4 box-border"
+                                            >
+                                                Доска Agile для гибкой разработки по методам Scrum и Kanban: спринты,
+                                                журналы пожеланий,
+                                                задачи и статусы. Классическое и гибкое управление в одном решении.
+
+                                                <img
+                                                        src="{% static 'icons/info_arrow.svg' %}"
+                                                        alt="arrow"
+                                                        class="absolute bottom-[-8px] left-[50%] translate-x-[-50%]"
+                                                />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <img src="{% static 'icons/check.svg' %}" alt="check" class="hidden dark:block"/>
+                                <img src="{% static 'icons/check_dark.svg' %}" alt="check" class="dark:hidden"/>
+                            </div>
+                            <div
+                                    class="w-full h-[1px] my-1 bg-[linear-gradient(48deg,_rgba(44,51,62,0)_0%,_rgba(44,51,62,1)_15%,_rgba(44,51,62,1)_85%,_rgba(44,51,62,0)_100%)] dark:bg-[linear-gradient(48deg,_rgba(255,255,255,0)_0%,_rgba(255,255,255,1)_15%,_rgba(255,255,255,1)_85%,_rgba(255,255,255,0)_100%)] opacity-20"
+                            ></div>
+                        </li>
+                        <li class="flex flex-col relative">
+                            <div class="flex justify-between box-border">
+                                <div class="flex gap-2 items-center py-[9px]">
+                                    <p class="text-sm leading-[20px] max-sm:leading-[20px]">WBS и интеллект-карты</p>
+                                    <div class="relative">
+                                        <img src="{% static 'icons/info.svg' %}" alt="info"
+                                             class="cursor-pointer info"/>
+                                        <div
+                                                class="hidden transition absolute bottom-[28px] left-[50%] translate-x-[-50%] background-[transparent] z-50 w-[232px] max-sm:w-[172px]"
+                                        >
+                                            <div
+                                                    class="relative text-text-secondary dark:text-dark-text-secondary rounded-2xl text-xs leading-[14px] backdrop-blur-2xl bg-[rgba(255,255,255,0.05)] border border-[var(--colors-stroke-table)] p-4 box-border"
+                                            >
+                                                Структура декомпозии работ (WBS) позволяет разбить проект на небольшие
+                                                управляемые части (их
+                                                удобно распределять между исполнителями), точно оценить необходимые
+                                                ресурсы и
+                                                проконтролировать ход выполнения. В отличие от WBS, интеллект-карты
+                                                больше подходят для
+                                                начальных и аналитических этапов, когда надо не создавать задачи, а
+                                                анализировать все части
+                                                проекта или процесса в целом.
+
+                                                <img
+                                                        src="{% static 'icons/info_arrow.svg' %}"
+                                                        alt="arrow"
+                                                        class="absolute bottom-[-8px] left-[50%] translate-x-[-50%]"
+                                                />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <img src="{% static 'icons/check.svg' %}" alt="check" class="hidden dark:block"/>
+                                <img src="{% static 'icons/check_dark.svg' %}" alt="check" class="dark:hidden"/>
+                            </div>
+                            <div
+                                    class="w-full h-[1px] my-1 bg-[linear-gradient(48deg,_rgba(44,51,62,0)_0%,_rgba(44,51,62,1)_15%,_rgba(44,51,62,1)_85%,_rgba(44,51,62,0)_100%)] dark:bg-[linear-gradient(48deg,_rgba(255,255,255,0)_0%,_rgba(255,255,255,1)_15%,_rgba(255,255,255,1)_85%,_rgba(255,255,255,0)_100%)] opacity-20"
+                            ></div>
+                        </li>
+
+                        <li class="flex flex-col relative">
+                            <div class="flex justify-between box-border">
+                                <div class="flex gap-2 items-center py-[9px]">
+                                    <p class="text-sm leading-[20px] max-sm:leading-[20px]">Расширения: Доступно до
+                                        32</p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="flex flex-col gap-4 items-center">
+                        {% if price.value.popular %}
+                            <div
+                                    class="rounded-[500px] flex items-center justify-center h-[46px] max-sm:h-[44px] w-full p-px dark:bg-[rgba(255,255,255,0.20)] bg-[rgba(0,0,0,0.10)] relative z-20 before:absolute before:border before:border-[transparent] before:inset-0 before:z-10 before:rounded-[24px] dark:before:[background:linear-gradient(98deg,_rgba(92,201,255,0.48)_0%,_rgba(133,214,255,0.12)_55.5%,_rgba(173,228,255,0.38)_100%)border-box] before:[background:linear-gradient(98deg,_rgba(92,201,255,0.48)_0%,_rgba(133,214,255,0.12)_55.5%,_rgba(173,228,255,0.38)_100%)border-box] before:[-webkit-mask:linear-gradient(#fff_0_0)_padding-box,_linear-gradient(#fff_0_0)] before:[-webkit-mask-composite:destination-out] before:[mask-composite:exclude]"
+                            >
+                                <a
+                                        data-open-form
+                                        class="inline-block z-30 dark:text-invert-bg text-dark-invert-bg w-[calc(100%-8px)] h-[calc(100%-8px)] dark:bg-dark-invert-bg bg-invert-bg rounded-[32px] text-base leading-[22px] max-sm:text-sm flex items-center justify-center dark:hover:shadow-[0px_-4px_12px_0px_rgba(0,_0,_0,_0.32)_inset] hover:shadow-[0px_-4px_12px_0px_rgba(255,_255,_255,_0.32)_inset] transition"
+                                >Попробовать</a>
+                            </div>
+                        {% else %}
+
+                            <a
+                                    data-open-form
+                                    class="inline-block text-dark-text-primary w-full bg-[linear-gradient(180deg,_#3274F9_0%,_#135BEB_100%)] rounded-[32px] text-base leading-[22px] max-sm:text-sm text-center py-3 hover:shadow-[0px_-4px_12px_0px_rgba(255,_255,_255,_0.32)_inset] transition"
+                            >Попробовать</a>
+                        {% endif %}
+                    </div>
+                </div>
+            {% endfor %}
+
+
+            <div
+                    class="flex flex-col gap-[54px] max-md:w-full max-md:gap-10 h-full max-sm:gap-10 bg-card-and-Sec-BT dark:bg-dark-card-and-Sec-BT rounded-3xl p-5 box-border"
+            >
+                <div class="flex flex-col">
+                    <h6 class="text-xl leading-[25px] max-md:leading-[20px]">INOUT Проект Enterprise</h6>
+                    <h4 class="text-[32px] leading-[35px] max-sm:text-2xl max-sm:leading-[26px] mt-8 max-sm:mt-5">
+                        Лично</h4>
+                    <p class="mt-1 text-text-secondary dark:text-dark-text-secondary text-sm leading-[20px] max-sm:text-xs">
+                        &nbsp;
+                    </p>
+                </div>
+
+                <ul class="flex flex-col">
+                    <div
+                            class="max-md:hidden w-full h-[1px] bg-[linear-gradient(48deg,_rgba(44,51,62,0)_0%,_rgba(44,51,62,1)_15%,_rgba(44,51,62,1)_85%,_rgba(44,51,62,0)_100%)] dark:bg-[linear-gradient(48deg,_rgba(255,255,255,0)_0%,_rgba(255,255,255,1)_15%,_rgba(255,255,255,1)_85%,_rgba(255,255,255,0)_100%)] opacity-20"
+                    ></div>
+                    <li class="flex flex-col items-start">
+                        <div
+                                class="flex gap-2 w-full p-2 max-md:p-0 box-border items-start max-md:items-center max-md:justify-between max-md:gap-[35px]"
+                        >
+                            <img src="{% static 'icons/check.svg' %}" alt="check"
+                                 class="hidden dark:block max-md:order-2"/>
+                            <img src="{% static 'icons/check_dark.svg' %}" alt="check"
+                                 class="dark:hidden max-md:order-2"/>
+                            <p class="text-sm leading-[20px] max-md:py-2 max-md:leading-[20px] max-md:order-1">
+                                Индивидуальные условия SLA и личный менеджер-консультант
+                            </p>
+                        </div>
+                        <div
+                                class="w-full h-[1px] max-md:my-1 bg-[linear-gradient(48deg,_rgba(44,51,62,0)_0%,_rgba(44,51,62,1)_15%,_rgba(44,51,62,1)_85%,_rgba(44,51,62,0)_100%)] dark:bg-[linear-gradient(48deg,_rgba(255,255,255,0)_0%,_rgba(255,255,255,1)_15%,_rgba(255,255,255,1)_85%,_rgba(255,255,255,0)_100%)] opacity-20"
+                        ></div>
+                    </li>
+                    <li class="flex flex-col items-start">
+                        <div
+                                class="flex gap-2 w-full px-2 max-md:px-0 box-border items-center max-md:gap-[35px] max-md:justify-between"
+                        >
+                            <img src="{% static 'icons/check.svg' %}" alt="check"
+                                 class="hidden dark:block max-md:order-2"/>
+                            <img src="{% static 'icons/check_dark.svg' %}" alt="check"
+                                 class="dark:hidden max-md:order-2"/>
+                            <p class="text-sm leading-[20px] py-2.5 max-md:py-[9px] max-md:leading-[20px] max-md:order-1">
+                                Услуги по внедрению
+                            </p>
+                        </div>
+                        <div
+                                class="w-full h-[1px] max-md:my-1 bg-[linear-gradient(48deg,_rgba(44,51,62,0)_0%,_rgba(44,51,62,1)_15%,_rgba(44,51,62,1)_85%,_rgba(44,51,62,0)_100%)] dark:bg-[linear-gradient(48deg,_rgba(255,255,255,0)_0%,_rgba(255,255,255,1)_15%,_rgba(255,255,255,1)_85%,_rgba(255,255,255,0)_100%)] opacity-20"
+                        ></div>
+                    </li>
+                    <li class="flex flex-col items-start">
+                        <div
+                                class="flex gap-2 w-full px-2 max-md:px-0 box-border items-center max-md:gap-[35px] max-md:justify-between"
+                        >
+                            <img src="{% static 'icons/check.svg' %}" alt="check"
+                                 class="hidden dark:block max-md:order-2"/>
+                            <img src="{% static 'icons/check_dark.svg' %}" alt="check"
+                                 class="dark:hidden max-md:order-2"/>
+                            <p class="text-sm leading-[20px] py-2.5 max-md:py-[9px] max-md:leading-[20px] max-md:order-1">
+                                Модификации ПО
+                            </p>
+                        </div>
+                        <div
+                                class="w-full h-[1px] max-md:my-1 bg-[linear-gradient(48deg,_rgba(44,51,62,0)_0%,_rgba(44,51,62,1)_15%,_rgba(44,51,62,1)_85%,_rgba(44,51,62,0)_100%)] dark:bg-[linear-gradient(48deg,_rgba(255,255,255,0)_0%,_rgba(255,255,255,1)_15%,_rgba(255,255,255,1)_85%,_rgba(255,255,255,0)_100%)] opacity-20"
+                        ></div>
+                    </li>
+                    <li class="flex flex-col items-start">
+                        <div
+                                class="flex gap-2 w-full px-2 max-md:px-0 box-border items-center max-md:gap-[35px] max-md:justify-between"
+                        >
+                            <img src="{% static 'icons/check.svg' %}" alt="check"
+                                 class="hidden dark:block max-md:order-2"/>
+                            <img src="{% static 'icons/check_dark.svg' %}" alt="check"
+                                 class="dark:hidden max-md:order-2"/>
+                            <p class="text-sm leading-[20px] py-2.5 max-md:py-[9px] max-md:leading-[20px] max-md:order-1">
+                                Отказоустойчивые облачные решения
+                            </p>
+                        </div>
+                    </li>
+                </ul>
+                <div class="flex flex-col gap-4 mt-auto items-center">
+                    <a
+                            {% if value.request_call == '#' or value.link == '/' %}data-open-form{% elif value.request_call == '#crm' %}data-open-partner-form{% elif value.request_call == '#crm2' %}data-open-partner-form-2{% else %}href="{{ value.request_call }}" {% endif %}
+                            class="inline-block dark:text-dark-text-primary max-sm:h-[44px] hover:shadow-[0px_-4px_12px_0px_rgba(255,255,255,0.08)_inset] text-text-primary w-full rounded-[32px] text-base leading-[22px] max-sm:text-sm text-center py-3 transition dark:bg-dark-card-and-Sec-BT bg-[rgba(0,0,0,0.10)] relative z-20 before:absolute before:border before:border-[transparent] before:inset-0 before:z-10 before:rounded-[24px] dark:before:[background:linear-gradient(98deg,_rgba(255,255,255,0.08)_0%,_rgba(255,255,255,0.02)_75.5%)_border-box] before:[background:linear-gradient(98deg,_rgba(0,0,0,0.08)_0%,_rgba(0,0,0,0.02)_75.5%)_border-box] before:[-webkit-mask:linear-gradient(#fff_0_0)_padding-box,_linear-gradient(#fff_0_0)] before:[-webkit-mask-composite:destination-out] before:[mask-composite:exclude]"
+                    >Заказать звонок</a
+                    >
+                </div>
+            </div>
+        </div>
+        <!-- prices cards -->
+
+        <!-- hero -->
+        <div id="cloud-detail"
+             class="mt-[100px] max-md:mt-11 py-[100px] max-md:py-11 box-border flex items-center gap-20 max-md:flex-col max-md:gap-10 transition"
+        >
+            <div class="flex flex-col max-w-[528px] max-md:max-w-full">
+                <div class="flex flex-col gap-6 max-sm:gap-4">
+                    <h3
+                            class="font-semibold w-[463px] max-sm:w-full text-[40px] leading-[44px] max-sm:text-[32px] max-sm:leading-[100%]"
+                    >
+                        {{ value.hero_title }}
+                    </h3>
+                    <p class="text-base leading-[23px] max-sm:text-sm max-sm:leading-[20px]">
+                        {{ value.hero_text }}
+                    </p>
+                </div>
+                <div class="mt-10 max-md:mt-6 transition">
+                    <div class="flex gap-2 text-sm leading-[20px] cursor-pointer prices-more-switcher"
+                         data-clicked="false">
+                        Подробнее
+                        <img
+                                src="{% static 'icons/chevron_down primary_hover.svg' %}"
+                                alt="chevron"
+                                class="dark:hidden prices-more-image transition"
+                        />
+                        <img
+                                src="{% static 'icons/chevron_down_hover.svg' %}"
+                                alt="chevron"
+                                class="dark:block hidden prices-more-image transition"
+                        />
+                    </div>
+                    <ul class="hidden prices-more-info list-disc flex flex-col gap-3 max-md:gap-2">
+                        {% for detail in value.hero_detail %}
+                            <li
+                                    class="ml-4 text-md max-sm:text-sm text-text-secondary dark:text-dark-text-secondary marker:text-text-primary dark:marker:text-dark-text-primary"
+                            >
+                                {{ detail.value.text }}
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            <img src="{% static 'image/price_img.svg' %}" alt="img" class="max-md:w-full max-md:h-auto transition"/>
+        </div>
+        <!-- hero -->
+    </div>
+
+    {% include_block value.logos %}
+
+    <div class="container mx-auto">
+        <!-- prices table -->
+        <div class="pt-[72px] max-md:pt-11 flex flex-col items-center gap-20 max-md:gap-6">
+            <h3
+                    class="font-semibold text-center w-[672px] max-md:w-full text-[40px] leading-[44px] max-sm:text-[32px] max-sm:leading-[100%] max-md:inline"
+            >
+                Полный список функций
+            </h3>
+            <div class="w-full h-full">
+                <div
+                        class="lg:hidden w-full mt-[54px] justify-center grid grid-cols-[450px_repeat(4,_1fr)] max-md:grid-cols-4 max-md:grid-rows-[fit-content_64px]"
+                >
+                    <p class="flex py-2 text-center text-[12px]">
+                        База</p>
+                    <p class="flex py-2 text-center text-[12px]">
+                        Бизнес</p>
+                    <p class="flex py-2 text-center text-[12px]">
+                        Платформа</p>
+                    <p class="flex py-2 text-center text-[12px]">
+                        Корпоративный</p>
+                </div>
+                <!-- devider -->
+                {% for functions_list in value.functions_list %}
+                    <div
+                            class="w-full mt-[54px] py-2 px-4 box-border max-md:px-0 max-md:py-0 grid grid-cols-[450px_repeat(4,_1fr)] max-md:hidden"
+                    >
+                        <p class="py-2 pl-2 text-base max-md:hidden">{{ functions_list.value.title }}</p>
+                        <p class="py-2 text-center text-base max-sm:text-sm max-sm:leading-[20px] max-sm:py-[10px]">
+                            База</p>
+                        <p class="py-2 text-center text-base max-sm:text-sm max-sm:leading-[20px] max-sm:py-[10px]">
+                            Бизнес</p>
+                        <p class="py-2 text-center text-base max-sm:text-sm max-sm:leading-[20px] max-sm:py-[10px]">
+                            Платформа</p>
+                        <p class="py-2 text-center text-base max-sm:text-sm max-sm:leading-[20px] max-sm:py-[10px]">
+                            Корпоративный</p>
+                    </div>
+
+                    <h5 class="hidden max-md:inline-block font-semibold text-[20px] leading-[20px] max-md:mt-12">
+                        {{ functions_list.value.title }}
+                    </h5>
+
+                    <table class="w-full max-md:mt-6">
+
+                        {% for item in functions_list.value.text_list %}
+                            <tr
+                                    class="pt-2 pb-[7px] px-4 box-border max-md:px-0 max-md:py-0 grid grid-cols-[450px_repeat(4,_1fr)] max-md:grid-cols-4 max-md:grid-rows-[fit-content_64px] {% if forloop.counter|divisibleby:2 == 0 %}dark:bg-dark-card-and-Sec-BT bg-[#F3F6F9]{% endif %} border-[rgba(255,255,255,0.08)] border-b max-md:border-none"
+                            >
+                                <td class="py-2 pl-2 max-md:ml-0 max-md:px-4 max-md:flex max-md:items-center max-sm:text-sm max-md:leading-[20px] max-md:pt-3.5 max-md:pb-[13px] text-base max-md:col-span-4 border-[rgba(255,255,255,0.08)] max-md:border max-md:border-b-[0]"
+                                >
+                                    {{ item.value.text }}
+                                </td>
+                                {% if item.value.essentials %}
+                                    <td class="py-2 max-md:py-[19px] flex justify-center border-[rgba(255,255,255,0.08)] max-md:border">
+                                        <img src="{% static 'icons/check.svg' %}" alt="check"
+                                             class="hidden dark:block"/>
+                                        <img src="{% static 'icons/check_dark.svg' %}" alt="check" class="dark:hidden"/>
+                                    </td>
+                                {% else %}
+                                    <td class="py-2 max-md:py-[19px] flex justify-center border-[rgba(255,255,255,0.08)] max-md:border">
+                                        <img src="{% static 'icons/check.svg' %}" alt="check"
+                                             class="hidden dark:hidden"/>
+                                        <img src="{% static 'icons/check_dark.svg' %}" alt="check"
+                                             class="dark:hidden hidden"/>
+                                    </td>
+                                {% endif %}
+                                {% if item.value.business %}
+                                    <td class="py-2 max-md:py-[19px] flex justify-center border-[rgba(255,255,255,0.08)] max-md:border">
+                                        <img src="{% static 'icons/check.svg' %}" alt="check"
+                                             class="hidden dark:block"/>
+                                        <img src="{% static 'icons/check_dark.svg' %}" alt="check" class="dark:hidden"/>
+                                    </td>
+                                {% else %}
+                                    <td class="py-2 max-md:py-[19px] flex justify-center border-[rgba(255,255,255,0.08)] max-md:border">
+                                        <img src="{% static 'icons/check.svg' %}" alt="check"
+                                             class="hidden dark:hidden"/>
+                                        <img src="{% static 'icons/check_dark.svg' %}" alt="check"
+                                             class="dark:hidden hidden"/>
+                                    </td>
+                                {% endif %}
+                                {% if item.value.platform %}
+                                    <td class="py-2 max-md:py-[19px] flex justify-center border-[rgba(255,255,255,0.08)] max-md:border">
+                                        <img src="{% static 'icons/check.svg' %}" alt="check"
+                                             class="hidden dark:block"/>
+                                        <img src="{% static 'icons/check_dark.svg' %}" alt="check" class="dark:hidden"/>
+                                    </td>
+                                {% else %}
+                                    <td class="py-2 max-md:py-[19px] flex justify-center border-[rgba(255,255,255,0.08)] max-md:border">
+                                        <img src="{% static 'icons/check.svg' %}" alt="check"
+                                             class="hidden dark:hidden"/>
+                                        <img src="{% static 'icons/check_dark.svg' %}" alt="check"
+                                             class="dark:hidden hidden"/>
+                                    </td>
+                                {% endif %}
+                                {% if item.value.enterprise %}
+                                    <td class="py-2 max-md:py-[19px] flex justify-center border-[rgba(255,255,255,0.08)] max-md:border">
+                                        <img src="{% static 'icons/check.svg' %}" alt="check"
+                                             class="hidden dark:block"/>
+                                        <img src="{% static 'icons/check_dark.svg' %}" alt="check" class="dark:hidden"/>
+                                    </td>
+                                {% else %}
+                                    <td class="py-2 max-md:py-[19px] flex justify-center border-[rgba(255,255,255,0.08)] max-md:border">
+                                        <img src="{% static 'icons/check.svg' %}" alt="check"
+                                             class="hidden dark:hidden"/>
+                                        <img src="{% static 'icons/check_dark.svg' %}" alt="check"
+                                             class="dark:hidden hidden"/>
+                                    </td>
+                                {% endif %}
+                            </tr>
+                        {% endfor %}
+
+
+                    </table>
+                {% endfor %}
+
+                <!-- devider -->
+
+            </div>
+        </div>
+        <!-- prices table -->
+    </div>
+</section>
+
+{{ block.super }}
+<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide-extension-auto-scroll@0.5.3/dist/js/splide-extension-auto-scroll.min.js"></script>
+<script>
+    const splide = new Splide('.splide', {
+        type: 'loop',
+        drag: 'free',
+        arrows: false,
+        focus: 'center',
+        gap: '60px',
+        autoWidth: true,
+        autoScroll: {
+            speed: 1,
+        },
+    })
+
+    splide.mount(window.splide.Extensions)
+</script>

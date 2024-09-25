@@ -1,0 +1,11 @@
+{% load wagtailcore_tags %}
+{% if value.title %}
+<h2
+        class="{% if value.is_page_starter %}mb-[16px]{% else %}my-8 mt-[40px]{% endif %} max-sm:my-[24px] font-semibold text-[40px] leading-[40px] max-lg:text-[40px] max-sm:text-[32px] max-sm:leading-[32px] max-lg:leading-[40px] w-full tracking-[-1.92px] max-sm:tracking-[-0.72px] dark:bg-[linear-gradient(91deg,_#FFF_52.03%,_rgba(255,_255,_255,_0.64)_83.59%)] bg-[#000] bg-clip-text"
+        style="-webkit-text-fill-color: transparent;">
+    {{ value.title }}
+</h2>
+{% endif %}
+<div class="prose dark:prose pb-[40px]">
+    {{ value.text|richtext }}
+</div>

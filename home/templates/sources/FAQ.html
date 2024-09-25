@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en" class="dark h-full">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Test</title>
+    <link href="sass/main.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="tailwind.config.js"></script>
+  </head>
+
+  <body class="text-text-primary dark:text-dark-text-primary h-full">
+    <section
+      class="w-full flex flex-col flex-nowrap box-border colors-dark-gradient-platform-up"
+    >
+      <div class="container mx-auto max-md:px-4">
+        <h2
+          class="font-semibold text-[40px] leading-[44px] max-md:leading-[40px] max-sm:text-[32px] max-sm:leading-[32px] mt-[80px] max-md:mt-[40px] max-sm:mt-[40px]"
+        >
+          Вопросы и ответы
+        </h2>
+        <div class="w-[760px] max-md:w-full max-sm:w-full flex flex-col gap-y-[1px] mt-6 mb-[100px] max-sm:mb-0">
+          <div class="w-full py-[24px] hover:cursor-pointer faq-item">
+            <div class="flex justify-between">
+              <p class="text-[20px] leading-[25px]">Вы оказываете услуги по внедрению?</p>
+              <div class="dark:flex hidden flex items-center shrink-0">
+                <img src="{% static 'icons/minus.svg' %}" alt="control" class="minus control hover:cursor-pointer hidden" />
+                <img src="{% static 'icons/plus.svg' %}" alt="control" class="plus control hover:cursor-pointer" />
+              </div>
+              <div class="dark:hidden flex items-center shrink-0">
+                <img src="{% static 'icons/minus-dark.svg' %}" alt="control" class="minus control hover:cursor-pointer hidden" />
+                <img src="{% static 'icons/plus-dark.svg' %}" alt="control" class="plus control hover:cursor-pointer" />
+              </div>
+            </div>
+
+            <div class="min-w-full hidden flex flex-col flex-nowrap mt-6 box-border container">
+              <p class="text-base max-sm:text-sm leading-[23px]">
+                Для того, чтобы наш оператор смог наиболее эффективно разрешить вашу проблему, ваш отчет должен содержать
+                технические данные (регистрационный журнал, спецификации рабочей структуры, версия Easy Project и т.д.),
+                сообщения об ошибках и системную информацию. Позвонив нам после онлайн отправки запроса и сообщив
+                идентификационный номер тикета, вы сократите время ответа и исключите потенциальные ошибки в обработке
+                информации.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="w-full h-[1px] bg-[linear-gradient(48deg,_rgba(44,51,62,0)_0%,_rgba(44,51,62,1)_15%,_rgba(44,51,62,1)_85%,_rgba(44,51,62,0)_100%)] dark:bg-[linear-gradient(48deg,_rgba(255,255,255,0)_0%,_rgba(255,255,255,1)_15%,_rgba(255,255,255,1)_85%,_rgba(255,255,255,0)_100%)] opacity-20"
+          ></div>
+
+          <div class="w-full py-[24px] hover:cursor-pointer faq-item">
+            <div class="flex justify-between">
+              <p class="text-[20px] leading-[25px]">У вас есть инструкция по работе с Easy Project?</p>
+              <div class="dark:flex hidden flex items-center shrink-0">
+                <img src="{% static 'icons/minus.svg' %}" alt="control" class="minus control hover:cursor-pointer hidden" />
+                <img src="{% static 'icons/plus.svg' %}" alt="control" class="plus control hover:cursor-pointer" />
+              </div>
+              <div class="dark:hidden flex items-center shrink-0">
+                <img src="{% static 'icons/minus-dark.svg' %}" alt="control" class="minus control hover:cursor-pointer hidden" />
+                <img src="{% static 'icons/plus-dark.svg' %}" alt="control" class="plus control hover:cursor-pointer" />
+              </div>
+            </div>
+
+            <div class="min-w-full hidden flex flex-col flex-nowrap mt-6 box-border container">
+              <p class="text-base max-sm:text-sm leading-[23px]">
+                Все руководства и учебные пособия Easy Project можно найти в
+                <a href="#" class="text-text-link dark:text-dark-text-link">Учебный центр.</a>
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="w-full h-[1px] bg-[linear-gradient(48deg,_rgba(44,51,62,0)_0%,_rgba(44,51,62,1)_15%,_rgba(44,51,62,1)_85%,_rgba(44,51,62,0)_100%)] dark:bg-[linear-gradient(48deg,_rgba(255,255,255,0)_0%,_rgba(255,255,255,1)_15%,_rgba(255,255,255,1)_85%,_rgba(255,255,255,0)_100%)] opacity-20"
+          ></div>
+
+          <div class="w-full py-[24px] hover:cursor-pointer faq-item">
+            <div class="flex justify-between">
+              <p class="text-[20px] leading-[25px]">Вы оказываете услуги по внедрению?</p>
+              <div class="dark:flex hidden flex items-center shrink-0">
+                <img src="{% static 'icons/minus.svg' %}" alt="control" class="minus control hover:cursor-pointer hidden" />
+                <img src="{% static 'icons/plus.svg' %}" alt="control" class="plus control hover:cursor-pointer" />
+              </div>
+              <div class="dark:hidden flex items-center shrink-0">
+                <img src="{% static 'icons/minus-dark.svg' %}" alt="control" class="minus control hover:cursor-pointer hidden" />
+                <img src="{% static 'icons/plus-dark.svg' %}" alt="control" class="plus control hover:cursor-pointer" />
+              </div>
+            </div>
+
+            <div class="min-w-full hidden flex flex-col flex-nowrap mt-6 box-border container">
+              <p class="text-base max-sm:text-sm leading-[23px]">
+                Да, услуга профессионального внедрения доступна для тарифных планов «Профессиональный», «Командный»,
+                «Бизнес» и «Корпоративный». Процессом внедрения руководят опытные, сертифицированные менеджеры.
+                <a href="#" class="text-text-link dark:text-dark-text-link">Знакомьтесь с нашей командой по внедрению.</a>
+                Мы будем рады вам помочь!
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="w-full h-[1px] bg-[linear-gradient(48deg,_rgba(44,51,62,0)_0%,_rgba(44,51,62,1)_15%,_rgba(44,51,62,1)_85%,_rgba(44,51,62,0)_100%)] dark:bg-[linear-gradient(48deg,_rgba(255,255,255,0)_0%,_rgba(255,255,255,1)_15%,_rgba(255,255,255,1)_85%,_rgba(255,255,255,0)_100%)] opacity-20"
+          ></div>
+
+          <div class="w-full py-[24px] hover:cursor-pointer faq-item">
+            <div class="flex justify-between">
+              <p class="text-[20px] leading-[25px]">
+                Какие методологии проектного менеджмента лежат в основе Easy Project?
+              </p>
+              <div class="dark:flex hidden flex items-center shrink-0">
+                <img src="{% static 'icons/minus.svg' %}" alt="control" class="minus control hover:cursor-pointer hidden" />
+                <img src="{% static 'icons/plus.svg' %}" alt="control" class="plus control hover:cursor-pointer" />
+              </div>
+              <div class="dark:hidden flex items-center shrink-0">
+                <img src="{% static 'icons/minus-dark.svg' %}" alt="control" class="minus control hover:cursor-pointer hidden" />
+                <img src="{% static 'icons/plus-dark.svg' %}" alt="control" class="plus control hover:cursor-pointer" />
+              </div>
+            </div>
+
+            <div class="min-w-full hidden flex flex-col flex-nowrap mt-6 box-border container">
+              <p class="text-base max-sm:text-sm leading-[23px]">
+                В основе Easy Project лежит принцип тройственной ограниченности. Для управления содержанием применяется
+                иерархическая структура работ (WBS), графики создаются в диаграмме Гантта, а генеральный план помогает
+                распределять ресурсы. Ход выполнения проекта оценивается по кривым освоенного объёма, для анализа риска
+                используется иерархическая структура рисков, а панели Kanban позволяют контролировать ежедневную работу.
+                Кроме того, в Easy Project предусмотрены модули службы поддержки, управления финансами и CRM. В скором
+                времени добавится возможность интеграции разработки и эксплуатации, а также интеллектуальный анализ
+                данных.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="w-full h-[1px] bg-[linear-gradient(48deg,_rgba(44,51,62,0)_0%,_rgba(44,51,62,1)_15%,_rgba(44,51,62,1)_85%,_rgba(44,51,62,0)_100%)] dark:bg-[linear-gradient(48deg,_rgba(255,255,255,0)_0%,_rgba(255,255,255,1)_15%,_rgba(255,255,255,1)_85%,_rgba(255,255,255,0)_100%)] opacity-20"
+          ></div>
+
+          <div class="w-full py-[24px] hover:cursor-pointer faq-item">
+            <div class="flex justify-between">
+              <p class="text-[20px] leading-[25px]">Какие тарифные планы предлагает Easy Project?</p>
+              <div class="dark:flex hidden flex items-center shrink-0">
+                <img src="{% static 'icons/minus.svg' %}" alt="control" class="minus control hover:cursor-pointer hidden" />
+                <img src="{% static 'icons/plus.svg' %}" alt="control" class="plus control hover:cursor-pointer" />
+              </div>
+              <div class="dark:hidden flex items-center shrink-0">
+                <img src="{% static 'icons/minus-dark.svg' %}" alt="control" class="minus control hover:cursor-pointer hidden" />
+                <img src="{% static 'icons/plus-dark.svg' %}" alt="control" class="plus control hover:cursor-pointer" />
+              </div>
+            </div>
+
+            <div class="min-w-full hidden flex flex-col flex-nowrap mt-6 box-border container">
+              <ul
+                class="text-base max-sm:text-sm leading-[23px] list-disc list-outside marker:text-text-primary dark:marker:text-dark-text-primary space-y-3"
+              >
+                <li class="text-text-secondary dark:text-dark-text-secondary ml-4">
+                  <span class="text-text-primary dark:text-dark-text-primary">База</span> - включает в себя все
+                  классические инструменты управления проектами, такие как управление работой, гибкое управление,
+                  отслеживание времени, управление портфелем, контроль проекта и отчетность
+                </li>
+                <li class="text-text-secondary dark:text-dark-text-secondary ml-4">
+                  <span class="text-text-primary dark:text-dark-text-primary">Бизнес</span> - включает в себя все основные
+                  инструменты PM плюс управление ресурсами и финансами
+                </li>
+                <li class="text-text-secondary dark:text-dark-text-secondary ml-4">
+                  <span class="text-text-primary dark:text-dark-text-primary">Платформа</span> - включает все инструменты
+                  База и Бизнес PM, а также CRM и службу поддержки
+                </li>
+              </ul>
+              <p class="text-base max-sm:text-sm leading-[23px] mt-6">
+                В основе Easy Project лежит принцип тройственной ограниченности. Для управления содержанием применяется
+                иерархическая структура работ (WBS), графики создаются в диаграмме Гантта, а генеральный план помогает
+                распределять ресурсы. Ход выполнения проекта оценивается по кривым освоенного объёма, для анализа риска
+                используется иерархическая структура рисков, а панели Kanban позволяют контролировать ежедневную работу.
+                Кроме того, в Easy Project предусмотрены модули службы поддержки, управления финансами и CRM. В скором
+                времени добавится возможность интеграции разработки и эксплуатации, а также интеллектуальный анализ
+                данных.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="w-full h-[1px] bg-[linear-gradient(48deg,_rgba(44,51,62,0)_0%,_rgba(44,51,62,1)_15%,_rgba(44,51,62,1)_85%,_rgba(44,51,62,0)_100%)] dark:bg-[linear-gradient(48deg,_rgba(255,255,255,0)_0%,_rgba(255,255,255,1)_15%,_rgba(255,255,255,1)_85%,_rgba(255,255,255,0)_100%)] opacity-20"
+          ></div>
+
+          <div class="w-full py-[24px] hover:cursor-pointer faq-item">
+            <div class="flex justify-between">
+              <p class="text-[20px] leading-[25px]">А что входит в бесплатный тарифный план Easy Project?</p>
+              <div class="dark:flex hidden flex items-center shrink-0">
+                <img src="{% static 'icons/minus.svg' %}" alt="control" class="minus control hover:cursor-pointer hidden" />
+                <img src="{% static 'icons/plus.svg' %}" alt="control" class="plus control hover:cursor-pointer" />
+              </div>
+              <div class="dark:hidden flex items-center shrink-0">
+                <img src="{% static 'icons/minus-dark.svg' %}" alt="control" class="minus control hover:cursor-pointer hidden" />
+                <img src="{% static 'icons/plus-dark.svg' %}" alt="control" class="plus control hover:cursor-pointer" />
+              </div>
+            </div>
+
+            <div class="min-w-full hidden flex flex-col flex-nowrap mt-6 box-border container">
+              <p class="text-base max-sm:text-sm leading-[23px] mb-6">
+                Бесплатный тарифный план Easy Project — это полный набор функций «в миниатюре»:
+              </p>
+              <ul
+                class="text-base max-sm:text-sm leading-[23px] list-disc list-inside marker:text-text-primary dark:marker:text-dark-text-primary space-y-3"
+              >
+                <li class="text-text-secondary dark:text-dark-text-secondary">1 пользователь</li>
+                <li class="text-text-secondary dark:text-dark-text-secondary">1 проект</li>
+                <li class="text-text-secondary dark:text-dark-text-secondary">2 Гбайт</li>
+              </ul>
+            </div>
+          </div>
+
+          <div
+            class="w-full h-[1px] bg-[linear-gradient(48deg,_rgba(44,51,62,0)_0%,_rgba(44,51,62,1)_15%,_rgba(44,51,62,1)_85%,_rgba(44,51,62,0)_100%)] dark:bg-[linear-gradient(48deg,_rgba(255,255,255,0)_0%,_rgba(255,255,255,1)_15%,_rgba(255,255,255,1)_85%,_rgba(255,255,255,0)_100%)] opacity-20"
+          ></div>
+
+          <div class="w-full py-[24px] hover:cursor-pointer faq-item">
+            <div class="flex justify-between">
+              <p class="text-[20px] leading-[25px]">Для каких сфер управления подходит Easy Project?</p>
+              <div class="dark:flex hidden flex items-center shrink-0">
+                <img src="{% static 'icons/minus.svg' %}" alt="control" class="minus control hover:cursor-pointer hidden" />
+                <img src="{% static 'icons/plus.svg' %}" alt="control" class="plus control hover:cursor-pointer" />
+              </div>
+              <div class="dark:hidden flex items-center shrink-0">
+                <img src="{% static 'icons/minus-dark.svg' %}" alt="control" class="minus control hover:cursor-pointer hidden" />
+                <img src="{% static 'icons/plus-dark.svg' %}" alt="control" class="plus control hover:cursor-pointer" />
+              </div>
+            </div>
+
+            <div class="min-w-full hidden flex flex-col flex-nowrap mt-6 box-border container">
+              <p class="text-base max-sm:text-sm leading-[23px]">
+                Управление проектами, портфелями проектов и программами, гибкие команды, стратегические проекты,
+                разработка продуктов, инновации, большие и маленькие команды, корпоративные проекты, интеграция разработки
+                и эксплуатации, ИТ-проекты, управление взаимоотношениями с заказчиками, управление финансами и не только.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="w-full h-[1px] bg-[linear-gradient(48deg,_rgba(44,51,62,0)_0%,_rgba(44,51,62,1)_15%,_rgba(44,51,62,1)_85%,_rgba(44,51,62,0)_100%)] dark:bg-[linear-gradient(48deg,_rgba(255,255,255,0)_0%,_rgba(255,255,255,1)_15%,_rgba(255,255,255,1)_85%,_rgba(255,255,255,0)_100%)] opacity-20"
+          ></div>
+
+          <div class="w-full py-[24px] hover:cursor-pointer faq-item">
+            <div class="flex justify-between">
+              <p class="text-[20px] leading-[25px]">В чём разница между консультированием и клиентской поддержкой?</p>
+              <div class="dark:flex hidden flex items-center shrink-0">
+                <img src="{% static 'icons/minus.svg' %}" alt="control" class="minus control hover:cursor-pointer hidden" />
+                <img src="{% static 'icons/plus.svg' %}" alt="control" class="plus control hover:cursor-pointer" />
+              </div>
+              <div class="dark:hidden flex items-center shrink-0">
+                <img src="{% static 'icons/minus-dark.svg' %}" alt="control" class="minus control hover:cursor-pointer hidden" />
+                <img src="{% static 'icons/plus-dark.svg' %}" alt="control" class="plus control hover:cursor-pointer" />
+              </div>
+            </div>
+
+            <div class="min-w-full hidden flex flex-col flex-nowrap mt-6 box-border container">
+              <div class="flex flex-col gap-6">
+                <p class="text-base max-sm:text-sm leading-[23px]">Функции отдела консультирования/внедрения:</p>
+                <ul
+                  class="text-base max-sm:text-sm leading-[23px] list-disc list-outside marker:text-text-primary dark:marker:text-dark-text-primary space-y-3"
+                >
+                  <li class="text-text-secondary dark:text-dark-text-secondary ml-[16px]">Платные услуги</li>
+                  <li class="text-text-secondary dark:text-dark-text-secondary ml-[16px]">
+                    Анализ и настройка приложения консультантом с учетом требований клиента; пересмотр и реконфигурация
+                    настроек для существующих клиентов по мере необходимости
+                  </li>
+                  <li class="text-text-secondary dark:text-dark-text-secondary ml-[16px]">
+                    Обучение администраторов и конечных пользователей
+                  </li>
+                  <li class="text-text-secondary dark:text-dark-text-secondary ml-[16px]">
+                    Интеграция/импорт данных/миграция данных: анализ, тестирование, внутренняя координация проекта,
+                    управление
+                  </li>
+                  <li class="text-text-secondary dark:text-dark-text-secondary ml-[16px]">
+                    Запрос на индивидуальную разработку: анализ, тестирование, внутренняя координация проекта разработки,
+                    управление
+                  </li>
+                </ul>
+                <p class="text-base max-sm:text-sm leading-[23px]">Функции отдела клиентской поддержки:</p>
+                <ul
+                  class="text-base max-sm:text-sm leading-[23px] list-disc list-outside marker:text-text-primary dark:marker:text-dark-text-primary space-y-3"
+                >
+                  <li class="text-text-secondary dark:text-dark-text-secondary ml-[16px]">
+                    Первичное техническое обслуживание клиентов:
+                  </li>
+                  <li class="text-text-secondary dark:text-dark-text-secondary ml-[16px]">
+                    Решение базовых технических проблем (поддержка 1-го уровня)
+                  </li>
+                  <li class="text-text-secondary dark:text-dark-text-secondary ml-[16px]">
+                    Онлайн-чат: базовая техническая поддержка
+                  </li>
+                  <li class="text-text-secondary dark:text-dark-text-secondary ml-[16px]">
+                    Решение проблем, связанных с простоем приложения
+                  </li>
+                  <li class="text-text-secondary dark:text-dark-text-secondary ml-[16px]">
+                    Устранение неполадок в клиентской зоне и проблем с доступом
+                  </li>
+                  <li class="text-text-secondary dark:text-dark-text-secondary ml-[16px]">
+                    Устранение сообщений об ошибках (ошибка 500, 403 и так далее)
+                  </li>
+                  <li class="text-text-secondary dark:text-dark-text-secondary ml-[16px]">
+                    Ответы на вопросы из серии «где найти» или запросы, связанные с общими настройками приложения
+                  </li>
+                  <li class="text-text-secondary dark:text-dark-text-secondary ml-[16px]">
+                    Передача клиента в отдел консультирования для решения вопросов, связанных с пользовательской
+                    настройкой или сложными настройками, требующими больше времени и анализа (клиенты на этапе внедрения)
+                  </li>
+                  <li class="text-text-secondary dark:text-dark-text-secondary ml-[16px]">
+                    Передача клиента в отдел продаж для обработки коммерческих запросов или оплаты услуг по
+                    консультированию (клиенты на этапе после запуска приложения в работу)
+                  </li>
+                  <li class="text-text-secondary dark:text-dark-text-secondary ml-[16px]">
+                    Предоставление ссылки на доступную документацию с подробными инструкциями о работе приложения
+                  </li>
+                  <li class="text-text-secondary dark:text-dark-text-secondary ml-[16px]">
+                    Помощь клиентам, сообщившим об ошибке или отправившим запрос на индивидуальную разработку
+                  </li>
+                  <li class="text-text-secondary dark:text-dark-text-secondary ml-[16px]">
+                    Помощь в решении проблем с клиентским сервером (платная услуга, если требуется привлечение
+                    специалистов поддержки 2-го уровня)
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="w-full h-[1px] bg-[linear-gradient(48deg,_rgba(44,51,62,0)_0%,_rgba(44,51,62,1)_15%,_rgba(44,51,62,1)_85%,_rgba(44,51,62,0)_100%)] dark:bg-[linear-gradient(48deg,_rgba(255,255,255,0)_0%,_rgba(255,255,255,1)_15%,_rgba(255,255,255,1)_85%,_rgba(255,255,255,0)_100%)] opacity-20"
+          ></div>
+
+          <div class="w-full py-[24px] hover:cursor-pointer faq-item">
+            <div class="flex justify-between">
+              <p class="text-[20px] leading-[25px]">Что подразумевается под «сервером» и «облаком»?</p>
+              <div class="dark:flex hidden flex items-center shrink-0">
+                <img src="{% static 'icons/minus.svg' %}" alt="control" class="minus control hover:cursor-pointer hidden" />
+                <img src="{% static 'icons/plus.svg' %}" alt="control" class="plus control hover:cursor-pointer" />
+              </div>
+              <div class="dark:hidden flex items-center shrink-0">
+                <img src="{% static 'icons/minus-dark.svg' %}" alt="control" class="minus control hover:cursor-pointer hidden" />
+                <img src="{% static 'icons/plus-dark.svg' %}" alt="control" class="plus control hover:cursor-pointer" />
+              </div>
+            </div>
+
+            <div class="min-w-full hidden flex flex-col flex-nowrap mt-6 box-border container">
+              <div class="flex flex-col gap-6">
+                <p class="text-base max-sm:text-sm leading-[23px]">
+                  Серверное решение <br /><br />
+                  Серверное решение разработано для вашего собственного сервера (то есть программное обеспечение размещено
+                  на ваших ресурсах). Покупая это решение, вы получаете комплект ПО для установки и исходный код.
+                </p>
+
+                <p class="text-base max-sm:text-sm leading-[23px]">
+                  Облачное решение <br /><br />
+                  Облачное решение предусматривает хранение данных на удалённых серверах Easy Software Ltd. Для клиентов
+                  из США мы используем хранилище Amazon Cloud в Орегоне. При покупке данного решения вы получаете право
+                  использовать программное обеспечение в облаке в течение установленного срока. Облачное решение Easy
+                  Project включает:
+                </p>
+                <ul
+                  class="text-base max-sm:text-sm leading-[23px] list-disc list-outside marker:text-text-primary dark:marker:text-dark-text-primary space-y-3"
+                >
+                  <li class="text-text-secondary dark:text-dark-text-secondary ml-[16px]">
+                    EP 2019 + отдельные модули и расширения
+                  </li>
+                  <li class="text-text-secondary dark:text-dark-text-secondary ml-[16px]">
+                    Обновления ПО — актуальная версия Easy Project всегда в вашем распоряжении
+                  </li>
+                  <li class="text-text-secondary dark:text-dark-text-secondary ml-[16px]">
+                    Ежедневное резервирование, хранение 14 резервных копий
+                  </li>
+                  <li class="text-text-secondary dark:text-dark-text-secondary ml-[16px]">Защита по SSL</li>
+                  <li class="text-text-secondary dark:text-dark-text-secondary ml-[16px]">
+                    Гарантия восстановления после сбоя в течение 1 часа
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="w-full h-[1px] bg-[linear-gradient(48deg,_rgba(44,51,62,0)_0%,_rgba(44,51,62,1)_15%,_rgba(44,51,62,1)_85%,_rgba(44,51,62,0)_100%)] dark:bg-[linear-gradient(48deg,_rgba(255,255,255,0)_0%,_rgba(255,255,255,1)_15%,_rgba(255,255,255,1)_85%,_rgba(255,255,255,0)_100%)] opacity-20"
+          ></div>
+
+          <div class="w-full py-[24px] hover:cursor-pointer faq-item">
+            <div class="flex justify-between">
+              <p class="text-[20px] leading-[25px]">Что подразумевается под «сервером» и «облаком»?</p>
+              <div class="dark:flex hidden flex items-center shrink-0">
+                <img src="{% static 'icons/minus.svg' %}" alt="control" class="minus control hover:cursor-pointer hidden" />
+                <img src="{% static 'icons/plus.svg' %}" alt="control" class="plus control hover:cursor-pointer" />
+              </div>
+              <div class="dark:hidden flex items-center shrink-0">
+                <img src="{% static 'icons/minus-dark.svg' %}" alt="control" class="minus control hover:cursor-pointer hidden" />
+                <img src="{% static 'icons/plus-dark.svg' %}" alt="control" class="plus control hover:cursor-pointer" />
+              </div>
+            </div>
+
+            <div class="min-w-full hidden flex flex-col flex-nowrap mt-6 box-border container">
+              <div class="flex flex-col gap-6">
+                <p class="text-base max-sm:text-sm leading-[23px]">
+                  Облачное хранилище Easy Cloud — это высокая скорость работы и надёжное хранение данных. <br /><br />
+                  Центры хранения и обработки данных по всему миру обеспечивают высокую скорость работы и исключительный
+                  уровень безопасности.
+                </p>
+                <div class="grid grid-cols-2 gap-6">
+                  <div class="flex flex-col">
+                    <p class="text-base max-sm:text-sm leading-[23px]">Amazon AWS in Asia & South America</p>
+                    <img src="{% static 'icons/amazon.svg' %}" alt="amazon" class="w-20 h-24" />
+                  </div>
+                  <div class="flex flex-col">
+                    <p class="text-base max-sm:text-sm leading-[23px]">Хостинг OVH в Европе и Канаде</p>
+                    <img src="{% static 'icons/ovh.svg' %}" alt="ovh" class="w-20 h-24" />
+                  </div>
+                </div>
+                <p class="text-base max-sm:text-sm leading-[23px]">Центры хранения и обработки данных по всему миру</p>
+              </div>
+              <div class="mt-10 flex flex-col gap-10">
+                <img src="{% static 'icons/map.svg' %}" alt="card" class="rounded-[40px]" />
+                <div class="flex flex-col gap-6">
+                  <p class="text-base max-sm:text-sm leading-[23px]">Защита данных</p>
+                  <ul
+                    class="text-base max-sm:text-sm leading-[23px] list-disc list-outside marker:text-text-primary dark:marker:text-dark-text-primary space-y-3"
+                  >
+                    <li class="text-text-secondary dark:text-dark-text-secondary ml-[16px]">
+                      Хранение данных на серверах в простом формате с возможностью локального шифрования.
+                    </li>
+                    <li class="text-text-secondary dark:text-dark-text-secondary ml-[16px]">
+                      Данные хранятся только на сервере со строго ограниченным доступом
+                    </li>
+                    <li class="text-text-secondary dark:text-dark-text-secondary ml-[16px]">
+                      Соглашение о конфиденциальности и полное стирание данных администраторами сервера
+                    </li>
+                  </ul>
+                </div>
+                <div class="flex flex-col gap-6">
+                  <p class="text-base max-sm:text-sm leading-[23px]">План восстановления</p>
+                  <div class="flex flex-col gap-4">
+                    <p class="text-base max-sm:text-sm leading-[23px]">
+                      В хранилище Easy Cloud предусмотрено несколько планов восстановления, которые регулярно тестируются
+                      и обновляются. Планы восстановления охватывают следующие проблемы:
+                    </p>
+                    <ul
+                      class="text-base max-sm:text-sm leading-[23px] list-disc list-outside marker:text-text-primary dark:marker:text-dark-text-primary space-y-3"
+                    >
+                      <li class="text-text-secondary dark:text-dark-text-secondary ml-[16px]">Неисправность сервера</li>
+                      <li class="text-text-secondary dark:text-dark-text-secondary ml-[16px]">Сбой приложения</li>
+                      <li class="text-text-secondary dark:text-dark-text-secondary ml-[16px]">
+                        Сбой центра хранения и обработки данных
+                      </li>
+                      <li class="text-text-secondary dark:text-dark-text-secondary ml-[16px]">Утечка учётных данных</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="flex flex-col gap-6">
+                  <p class="text-base max-sm:text-sm leading-[23px]">Резервирование</p>
+                  <div class="flex flex-col gap-4">
+                    <p class="text-base max-sm:text-sm leading-[23px]">
+                      Резервные копии хранятся в разных точках мира для обеспечения безопасности в случае стихийного
+                      бедствия или серверного сбоя. <br /><br />
+                      Резервные копии создаются ежедневно и хранятся не менее 3 месяцев.
+                    </p>
+                    <ul
+                      class="text-base max-sm:text-sm leading-[23px] list-disc list-outside marker:text-text-primary dark:marker:text-dark-text-primary space-y-3"
+                    >
+                      <li class="text-text-secondary dark:text-dark-text-secondary ml-[16px]">
+                        Зашифрованная передача данных
+                      </li>
+                      <li class="text-text-secondary dark:text-dark-text-secondary ml-[16px]">
+                        Хранение данных в разных местах
+                      </li>
+                      <li class="text-text-secondary dark:text-dark-text-secondary ml-[16px]">
+                        Доступ к процессу резервирования и зарезервированным данным через сервер невозможен по
+                        соображениям безопасности
+                      </li>
+                      <li class="text-text-secondary dark:text-dark-text-secondary ml-[16px]">Утечка учётных данных</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="w-full h-[1px] bg-[linear-gradient(48deg,_rgba(44,51,62,0)_0%,_rgba(44,51,62,1)_15%,_rgba(44,51,62,1)_85%,_rgba(44,51,62,0)_100%)] dark:bg-[linear-gradient(48deg,_rgba(255,255,255,0)_0%,_rgba(255,255,255,1)_15%,_rgba(255,255,255,1)_85%,_rgba(255,255,255,0)_100%)] opacity-20"
+          ></div>
+
+          <div class="w-full py-[24px] hover:cursor-pointer faq-item">
+            <div class="flex justify-between">
+              <p class="text-[20px] leading-[25px]">
+                Чем же Easy Project так отличается от других инструментов проектного менеджмента?
+              </p>
+              <div class="dark:flex hidden flex items-center shrink-0">
+                <img src="{% static 'icons/minus.svg' %}" alt="control" class="minus control hover:cursor-pointer hidden" />
+                <img src="{% static 'icons/plus.svg' %}" alt="control" class="plus control hover:cursor-pointer" />
+              </div>
+              <div class="dark:hidden flex items-center shrink-0">
+                <img src="{% static 'icons/minus-dark.svg' %}" alt="control" class="minus control hover:cursor-pointer hidden" />
+                <img src="{% static 'icons/plus-dark.svg' %}" alt="control" class="plus control hover:cursor-pointer" />
+              </div>
+            </div>
+
+            <div class="min-w-full hidden flex flex-col flex-nowrap mt-6 box-border container">
+              <p class="text-base max-sm:text-sm leading-[23px]">
+                Ниже представлено сравнение основных возможностей Easy Project с другими популярными решениями для
+                управления проектами.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="w-full h-[1px] bg-[linear-gradient(48deg,_rgba(44,51,62,0)_0%,_rgba(44,51,62,1)_15%,_rgba(44,51,62,1)_85%,_rgba(44,51,62,0)_100%)] dark:bg-[linear-gradient(48deg,_rgba(255,255,255,0)_0%,_rgba(255,255,255,1)_15%,_rgba(255,255,255,1)_85%,_rgba(255,255,255,0)_100%)] opacity-20"
+          ></div>
+        </div>
+      </div>
+    </section>
+
+    <script src="scripts/script.js"></script>
+  </body>
+</html>

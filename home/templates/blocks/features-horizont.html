@@ -1,0 +1,47 @@
+{% load static %}
+<section class="mt-[40px] mb-[40px]">
+    <div class="container mx-auto">
+        <div class="max-w-[528px] mx-auto text-center"></div>
+        <div class="mt-[64px] flex items-start gap-6 max-sm:flex-col">
+            {% for item in value.sub_blocks %}
+                <div class="w-1/2 flex flex-col max-sm:w-full justify-center items-center ">
+                    <div class="p-4 rounded-[64px] colors-dark-icon-bg-shadow">
+                        {% if forloop.counter == 1 %}
+                            <img src="{% static 'icons/features-horizont/features-horizont_1.svg' %}"
+                                 alt="about-us_4_icon_1">
+                        {% elif forloop.counter == 2 %}
+                            <img src="{% static 'icons/features-horizont/features_horizont_2.svg' %}"
+                                 alt="about-us_4_icon_1">
+                        {% elif forloop.counter == 3 %}
+                            <img src="{% static 'icons/features-horizont/features-horizont_3.svg' %}"
+                                 alt="about-us_4_icon_1">
+                        {% elif forloop.counter == 3 %}
+                            <img src="{% static 'icons/features-horizont/features-horizont_4.svg' %}"
+                                 alt="about-us_4_icon_1">
+                        {% else %}
+                            <img src="{% static 'icons/features-horizont/features-horizont_1.svg' %}"
+                                 alt="about-us_4_icon_1">
+                        {% endif %}
+                    </div>
+                    <h2 class="mt-6 font-semibold text-2xl leading-[30px] text-center">
+                        {{ item.value.title }}
+                    </h2>
+                    <p class="font-normal text-base leading-[23px] text-center mt-2 colors-text-secondary">
+                        {{ item.value.text }}
+                    </p>
+                    {% if item.value.link %}
+                        <a href="{{ item.value.link }}"
+                           class="mt-6 max-sm:mt-3 font-medium text-[16px] max-sm:text-[14px] leading-[22px] max-sm:leading-[20px] text-text-link dark:text-dark-text-link hover:underline">
+                            {{ item.value.link_label }}
+                        </a>
+                    {% endif %}
+                </div>
+                {% if not forloop.last %}
+                    <div
+                            class="max-sm:hidden h-[232px] min-w-[1px] bg-[linear-gradient(0deg,_#ffffff00_0%,_#ffffff_15%,_#ffffff_85%,_#ffffff00_100%)] opacity-[0.16]"></div>
+                {% endif %}
+            {% endfor %}
+
+        </div>
+    </div>
+</section>

@@ -1,0 +1,31 @@
+{% load static %}
+{% load wagtailcore_tags %}
+{% load wagtailimages_tags %}
+
+<section class="colors-dark-gradient-integration-down">
+    <div class="container mx-auto py-[100px] max-md:py-16 max-sm:py-14 max-md:px-8 max-sm:px-4">
+        <div class="flex">
+            <div
+                    class="flex max-sm:flex-col gap-[56px] relative w-full rounded-[40px] max-md:rounded-[24px] mx-auto min-h-full justify-between">
+                <img src="{% static 'image/integration.png' %}" alt="integration"
+                     class="absolute top-0 left-0 w-full object-cover h-full rounded-[40px] max-md:rounded-[24px]">
+                <div
+                        class="relative z-10 flex flex-col items-start pl-[32px] max-md:pl-[24px] max-sm:pl-[20px] py-[32px] max-md:py-[24px] max-sm:py-[20px] max-w-[427px]">
+                    <h2
+                            class="font-semibold text-[32px] max-lg:text-[24px] leading-[35px] max-lg:leading-[26px] tracking-[-0.64px] max-lg:tracking-[-0.48px]">
+                        {{ value.title }}</h2>
+                    <p
+                            class="font-normal text-[16px] max-sm:text-[14px] leading-[23px] max-sm:leading-[20px] dark:text-dark-text-secondary text-text-secondary mt-4">
+                        {{ value.text|richtext }}</p>
+                    <a {% if value.link_left == '#' or value.link == '/' %}data-open-form{% elif value.link == '#crm' %}data-open-partner-form{% elif value.link == '#crm2' %}data-open-partner-form-2{% else %}href="{{ value.link_left }}" {% endif %}
+                       class="block cursor-pointer px-6 text-dark-text-primary max-sm:mt-8 text-[16px] max-sm:text-[14px] leading-[22px] max-sm:leading-[20px] text-center py-3 mt-auto bg-[linear-gradient(180deg,_#3274F9_0%,_#135BEB_100%)] rounded-[32px] hover:shadow-[0px_-4px_12px_0px_rgba(255,_255,_255,_0.32)_inset] transition">
+                        Запросить интеграцию
+                    </a>
+                </div>
+                {% image value.image original as image %}
+                <img src="{{ image.url }}" alt="integration_img"
+                     class="flex max-sm:m-auto max-sm:flex-col relative py-[54px] pl-[56px] rounded-[40px] max-md:rounded-[24px] w-full">
+            </div>
+        </div>
+    </div>
+</section>

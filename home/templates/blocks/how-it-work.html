@@ -1,0 +1,37 @@
+{% load wagtailimages_tags %}
+{% load wagtailcore_tags %}
+{% load static %}
+
+<div class="py-10">
+    <h2 class="font-semibold text-[40px] leading-[44px]">
+        {{ value.title }}
+    </h2>
+    <div class="mt-10 flex gap-4 items-start max-sm:flex-col">
+        {% for block_item in value.blocks %}
+            <div class="flex flex-col colors-background-card rounded-[24px] p-5 w-1/2 max-sm:w-full">
+                <div class="flex justify-between">
+                    <h2 class="text-xl leading-[25px] max-w-[112px] font-medium">
+                        {{ block_item.value.title }}
+                    </h2>
+                    <div class="flex max-h-6">
+                        <img src="{% static 'icons/how-it-work_img.png' %}" alt="how-it-work_img">
+                        <p class="colors-text-tertiary text-base leading-[23px]">{{ block_item.value.number_users }}</p>
+                    </div>
+                </div>
+                <p class="mt-2 font-normal text-sm colors-text-secondary">{{ block_item.value.subtitle }}</p>
+                <div
+                        class="mt-6 relative w-full h-[1px] bg-[linear-gradient(48deg,_rgba(255,255,255,0)_0%,_rgba(255,255,255,1)_15%,_rgba(255,255,255,1)_85%,_rgba(255,255,255,0)_100%)] opacity-20"></div>
+                <ul
+                        class="flex flex-col gap-3 mt-6 font-normal text-base leading-[23px]">
+                    {% for sentence in block_item.value.sentences %}
+                        <li class="flex gap-2 items-start">
+                            <img src="{% static 'icons/check_how_it_work.png' %}" alt="check_how_it_work"
+                                 class="px-[3px] py-[5px] max-h-5">
+                            {{ sentence.value.text }}
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endfor %}
+    </div>
+</div>

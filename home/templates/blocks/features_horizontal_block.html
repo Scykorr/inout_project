@@ -1,0 +1,41 @@
+{% load static %}
+<section class="">
+    <div
+            class="container mx-auto py-[100px] max-md:py-[64px] max-sm:py-[56px] max-md:px-[32px] max-sm:px-[16px]"
+    >
+        <h2
+                class="font-semibold text-[40px] leading-[44px] max-md:leading-[40px] max-sm:text-[32px] max-sm:leading-[32px] text-center mx-auto max-w-[592px]"
+        >
+            {{ value.title }}
+        </h2>
+        <div class="max-w-[763px]">
+
+            <p class="font-normal text-base leading-[23px] colors-text-secondary text-center mt-6">
+                {{ value.description }}
+            </p>
+        </div>
+        <div
+                class="mt-16 max-sm:mt-10 flex max-lg:flex-col max-sm:items-center gap-[24px] max-sm:gap-[32px]"
+        >
+            <div class="flex gap-[24px] max-sm:gap-[32px] w-full max-sm:flex-col">
+                {% for item in value.sub_blocks %}
+                    <div class="flex flex-col w-full">
+              <span
+                      class="font-semibold text-[40px] max-md:text-[32px] max-md:leading-[32px] leading-[40px] max-sm:text-[28px] max-sm:leading-[28px] text-center"
+              >{{ item.value.title }}</span>
+                        <p
+                                class="mt-2 font-normal text-[16px] leading-[23px] max-sm:text-[14px] max-sm:leading-[20px] text-text-secondary dark:text-dark-text-secondary text-center"
+                        >
+                            {{ item.value.text }}
+                        </p>
+                    </div>
+                    {% if not forloop.last %}
+                        <div
+                                class="min-w-[1px] max-sm:w-full max-sm:min-h-[1px] dark:max-sm:bg-[linear-gradient(90deg,_rgba(255,_255,_255,_0.00)_0%,_rgba(255,_255,_255,_0.16)_16.07%,_rgba(255,_255,_255,_0.16)_80.56%,_rgba(255,_255,_255,_0.00)_100%)] bg-[linear-gradient(0deg,_#00000000_0%,_#000000_15%,_#000000_85%,_#00000000_100%)] max-sm:bg-[linear-gradient(90deg,_rgba(0,_0,_0,_0.00)_0%,_rgba(0,_0,_0,_0.16)_16.07%,_rgba(0,_0,_0,_0.16)_80.56%,_rgba(255,_255,_255,_0.00)_100%,_rgba(0,_0,_0,_0.00)_100%)] sm:opacity-[0.16] dark:bg-[linear-gradient(0deg,_#ffffff00_0%,_#ffffff_15%,_#ffffff_85%,_#ffffff00_100%)]"
+                        ></div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>

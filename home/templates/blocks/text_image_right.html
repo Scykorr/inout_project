@@ -1,0 +1,38 @@
+{% load wagtailimages_tags wagtailcore_tags static my_tags %}
+<section class="{% if value.color %}{{ value.color }}-{{ value.color_way|default:'up' }}{% else %}dark:bg-[linear-gradient(0deg,_#000_0%,_#0E1C1C_100%)]{% endif %}">
+  <div
+          id="block-{{ block.id }}"
+          class="lg:container items-start lg:mx-auto max-lg:px-[32px] max-sm:px-[16px] py-[100px] max-md:py-[64px] max-sm:py-[44px] flex max-lg:flex-col max-lg:gap-[64px] max-sm:gap-[40px] gap-[80px]">
+    <div class="max-w-[528px] max-lg:max-w-[584px]">
+      <h2
+        class="font-semibold text-[40px] leading-[44px] max-md:leading-[40px] max-sm:text-[32px] max-sm:leading-[32px]">
+        {{ value.title }}</h2>
+      <p class="mt-6 font-normal text-[16px] leading-[23px] max-md:mt-4 max-sm:text-[14px] max-sm:leading-[20px]">
+          {{ value.text }}
+      </p>
+      <div>
+        <div
+          class="flex items-center gap-2 text-[14px] leading-[20px] mt-10 max-sm:mt-6 text-center features-typical-readmore hover:underline cursor-pointer">
+          Подробнее
+          <div class="transition">
+              <img src="{% static 'icons/arrow_down_16.svg' %}" alt="arrow_down" class="hidden dark:block">
+              <img src="{% static 'icons/arrow_down_16_light.svg' %}" alt="arrow_down" class="dark:hidden">
+          </div>
+        </div>
+        <ul
+          class="hidden flex flex-col gap-3 max-sm:gap-2 mt-4 text-text-secondary dark:text-dark-text-secondary font-normal text-[16px] leading-[23px] max-sm:text-[14px] max-sm:leading-[20px]">
+          <li class="flex gap-2 items-start">
+              <div class="prose dark:prose">
+                  {{ value.hidden_text|richtext }}
+              </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div
+      class="relative overflow-hidden py-[56px] pl-[56px] max-lg:py-[54px] max-lg:pl-[54px] max-sm:py-[32px] max-sm:pl-[32px] rounded-[40px] max-sm:rounded-[24px] bg-card-and-Sec-BT dark:bg-dark-card-and-Sec-BT mt-4 max-lg:mt-0">
+      {% image value.image original as image %}
+        <img src="{{ image.url }}" alt="dashboard_panel_img" class="inline-block align-bottom w-full rounded-s-xl" >
+    </div>
+  </div>
+</section>

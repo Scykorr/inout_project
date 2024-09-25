@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en" class="dark h-full">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Test</title>
+    <link href="sass/main.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="tailwind.config.js"></script>
+  </head>
+
+  <body class="text-text-primary dark:text-dark-text-primary">
+    <section
+      class="w-full overflow-hidden flex flex-col flex-nowrap max-md:px-9 max-sm:px-4 box-border pt-10 max-md:pt-[13px] dark:bg-dark-primary-bg bg-primary-bg h-auto pb-20"
+    >
+      <div class="container mx-auto">
+        <div class="w-full flex items-center justify-between gap-3 max-sm:flex-col max-sm:items-start">
+          <!-- breadcrumbs -->
+          <div class="flex gap-1 items-center w-full max-md:flex-wrap">
+            <div class="flex gap-0.5 items-center shrink-0 box-border py-0.5">
+              <a href="#" class="text-sm max-sm:text-xs">INOUT Проект</a>
+              <img src="{% static 'icons/arrow_right_light.svg' %}" alt="arrow" class="hidden dark:block" />
+              <img src="{% static 'icons/arrow_right_dark.svg' %}" alt="arrow" class="dark:hidden" />
+            </div>
+            <div class="flex gap-0.5 items-center box-border py-0.5">
+              <a href="#" class="text-sm max-sm:text-xs">Ресурсы</a>
+              <img src="{% static 'icons/arrow_right_light.svg' %}" alt="arrow" class="hidden dark:block" />
+              <img src="{% static 'icons/arrow_right_dark.svg' %}" alt="arrow" class="dark:hidden" />
+            </div>
+            <div class="flex gap-0.5 items-center box-border py-0.5">
+              <a href="#" class="text-sm max-sm:text-xs">Документация</a>
+              <img src="{% static 'icons/arrow_right_light.svg' %}" alt="arrow" class="hidden dark:block" />
+              <img src="{% static 'icons/arrow_right_dark.svg' %}" alt="arrow" class="dark:hidden" />
+            </div>
+            <div class="flex gap-0.5 items-center box-border py-0.5">
+              <a href="#" class="category text-sm max-sm:text-xs">Project management</a>
+              <img src="{% static 'icons/arrow_right_light.svg' %}" alt="arrow" class="hidden dark:block" />
+              <img src="{% static 'icons/arrow_right_dark.svg' %}" alt="arrow" class="dark:hidden" />
+            </div>
+            <div>
+              <p class="text-sm max-sm:text-xs dark:text-dark-text-tertiary text-text-tertiary">
+                Allow access to anonymous users
+              </p>
+            </div>
+          </div>
+          <!-- breadcrumbs -->
+
+          <div
+            class="theme-switcher min-w-[104px] w-[104px] flex h-9 rounded-[112px] dark:bg-dark-card-and-Sec-BT bg-card-and-Sec-BT p-1 border border-[transparent] dark:hover:border-[rgba(255,255,255,0.08)] hover:border-[rgba(0,0,0,0.08)] transition"
+          >
+            <div
+              class="dark-theme theme-control rounded-[56px] dark:bg-dark-card-and-Sec-BT bg-[transparent] flex items-center justify-center w-1/2 hover:cursor-pointer dark:hover:cursor-default"
+            >
+              <img src="{% static 'icons/moon_dark.svg' %}" alt="moon" class="w-4 h-4 hidden dark:block transition" />
+              <img src="{% static 'icons/moon_light.svg' %}" alt="moon" class="dark w-4 h-4 dark:hidden transition" />
+            </div>
+            <div
+              class="light-theme theme-control rounded-[56px] bg-[rgba(0,0,0,0.10)] dark:bg-[transparent] flex items-center justify-center w-1/2 dark:hover:cursor-pointer hover:cursor-default"
+            >
+              <img src="{% static 'icons/sun_dark.svg' %}" alt="sun" class="light w-4 h-4 hidden dark:block transition" />
+              <img src="{% static 'icons/sun_light.svg' %}" alt="sun" class="w-4 h-4 dark:hidden transition" />
+            </div>
+          </div>
+        </div>
+
+        <div class="w-full flex gap-[152px] mt-20 max-md:mt-10 max-sm:mt-10 max-md:flex-col max-md:gap-[50px]">
+          <!-- menu -->
+          <div class="w-[288px] shrink-0 max-md:w-full">
+            <ul
+              class="menu w-full text-base leading-[20px] max-sm:text-sm text-text-secondary dark:text-dark-text-secondary"
+            >
+              <li class="w-full box-border" data-clicked="true">
+                <div
+                  class="menu-item text-text-primary dark:text-dark-text-primary py-2 box-border w-full flex justify-between items-center focus:border-none focus:outline-none transition hover:cursor-pointer hover:text-text-primary dark:hover:text-dark-text-primary"
+                >
+                  <p class="transition">Project management</p>
+                  <img src="{% static 'icons/chevron_down.svg' %}" alt="arrow" class="dark transition hidden dark:hidden" />
+                  <img src="{% static 'icons/chevron_down_hover.svg' %}" alt="arrow" class="dark-active transition hidden dark:block" />
+                  <img src="{% static 'icons/chevron_down_primary.svg' %}" alt="arrow" class="primary hidden dark:hidden transition" />
+                  <img
+                    src="{% static 'icons/chevron_down primary_hover.svg' %}"
+                    alt="arrow"
+                    class="primary-active dark:hidden transition"
+                  />
+                </div>
+                <!-- dropdown -->
+                <ul
+                  class="menu-list text-sm leading-[20px] max-sm:text-xs dark:text-dark-text-secondary text-text-secondary pb-4 transition"
+                >
+                  <li
+                    class="py-2 px-4 box-border w-fit dark:hover:text-dark-text-primary hover:text-text-primary transition"
+                  >
+                    <a href="#">Navigation and Menus</a>
+                  </li>
+                  <li
+                    class="py-2 px-4 box-border text-text-primary dark:text-dark-text-primary w-fit dark:hover:text-dark-text-primary hover:text-text-primary transition"
+                  >
+                    <a href="#">Allow access to anonymous users</a>
+                  </li>
+                  <li
+                    class="py-2 px-4 box-border w-fit dark:hover:text-dark-text-primary hover:text-text-primary transition"
+                  >
+                    <a href="#">Stakeholders</a>
+                  </li>
+                  <li
+                    class="py-2 px-4 box-border w-fit dark:hover:text-dark-text-primary hover:text-text-primary transition"
+                  >
+                    <a href="#">Easy Project Mobile App</a>
+                  </li>
+                  <li
+                    class="py-2 px-4 box-border w-fit dark:hover:text-dark-text-primary hover:text-text-primary transition"
+                  >
+                    <a href="#">Search (full-text)</a>
+                  </li>
+                  <li
+                    class="py-2 px-4 box-border w-fit dark:hover:text-dark-text-primary hover:text-text-primary transition"
+                  >
+                    <a href="#" class="inline-block flex gap-2 items-center dark:text-dark-text-link text-text-link"
+                    >Смотреть всё <img src="{% static 'icons/link_arrow.svg' %}" alt="arrow"
+                    /></a>
+                  </li>
+                </ul>
+                <!-- dropdown -->
+              </li>
+              <li class="w-full box-border" data-clicked="false">
+                <div
+                  class="menu-item py-2 box-border w-full flex justify-between items-center focus:border-none focus:outline-none transition hover:cursor-pointer hover:text-text-primary dark:hover:text-dark-text-primary"
+                >
+                  <p class="transition">Agile tools</p>
+                  <img src="{% static 'icons/chevron_down.svg' %}" alt="arrow" class="dark transition hidden dark:block" />
+                  <img src="{% static 'icons/chevron_down_hover.svg' %}" alt="arrow" class="dark-active transition hidden dark:hidden" />
+                  <img src="{% static 'icons/chevron_down_primary.svg' %}" alt="arrow" class="primary dark:hidden transition" />
+                  <img
+                    src="{% static 'icons/chevron_down primary_hover.svg' %}"
+                    alt="arrow"
+                    class="primary-active dark:hidden hidden transition"
+                  />
+                </div>
+                <!-- dropdown -->
+                <ul
+                  class="menu-list hidden text-sm leading-[20px] max-sm:text-xs dark:text-dark-text-secondary text-text-secondary pb-4 transition"
+                >
+                  <li
+                    class="py-2 px-4 box-border w-fit dark:hover:text-dark-text-primary hover:text-text-primary transition"
+                  >
+                    <a href="#">Navigation and Menus</a>
+                  </li>
+                  <li
+                    class="py-2 px-4 box-border w-fit dark:hover:text-dark-text-primary hover:text-text-primary transition"
+                  >
+                    <a href="#">Allow access to anonymous users</a>
+                  </li>
+                  <li
+                    class="py-2 px-4 box-border w-fit dark:hover:text-dark-text-primary hover:text-text-primary transition"
+                  >
+                    <a href="#">Stakeholders</a>
+                  </li>
+                  <li
+                    class="py-2 px-4 box-border w-fit dark:hover:text-dark-text-primary hover:text-text-primary transition"
+                  >
+                    <a href="#">Easy Project Mobile App</a>
+                  </li>
+                  <li
+                    class="py-2 px-4 box-border w-fit dark:hover:text-dark-text-primary hover:text-text-primary transition"
+                  >
+                    <a href="#">Search (full-text)</a>
+                  </li>
+                  <li
+                    class="py-2 px-4 box-border w-fit dark:hover:text-dark-text-primary hover:text-text-primary transition"
+                  >
+                    <a href="#" class="inline-block flex gap-2 items-center dark:text-dark-text-link text-text-link"
+                    >Смотреть всё <img src="{% static 'icons/link_arrow.svg' %}" alt="arrow"
+                    /></a>
+                  </li>
+                </ul>
+                <!-- dropdown -->
+              </li>
+              <li class="w-full box-border" data-clicked="false">
+                <div
+                  class="menu-item py-2 box-border w-full flex justify-between items-center focus:border-none focus:outline-none transition hover:cursor-pointer hover:text-text-primary dark:hover:text-dark-text-primary"
+                >
+                  <p class="transition">Resource management</p>
+                  <img src="{% static 'icons/chevron_down.svg' %}" alt="arrow" class="dark transition hidden dark:block" />
+                  <img src="{% static 'icons/chevron_down_hover.svg' %}" alt="arrow" class="dark-active transition hidden dark:hidden" />
+                  <img src="{% static 'icons/chevron_down_primary.svg' %}" alt="arrow" class="primary dark:hidden transition" />
+                  <img
+                    src="{% static 'icons/chevron_down primary_hover.svg' %}"
+                    alt="arrow"
+                    class="primary-active dark:hidden hidden transition"
+                  />
+                </div>
+                <!-- dropdown -->
+                <ul
+                  class="menu-list hidden text-sm leading-[20px] max-sm:text-xs dark:text-dark-text-secondary text-text-secondary pb-4 transition"
+                >
+                  <li
+                    class="py-2 px-4 box-border w-fit dark:hover:text-dark-text-primary hover:text-text-primary transition"
+                  >
+                    <a href="#">Navigation and Menus</a>
+                  </li>
+                  <li
+                    class="py-2 px-4 box-border w-fit dark:hover:text-dark-text-primary hover:text-text-primary transition"
+                  >
+                    <a href="#">Allow access to anonymous users</a>
+                  </li>
+                  <li
+                    class="py-2 px-4 box-border w-fit dark:hover:text-dark-text-primary hover:text-text-primary transition"
+                  >
+                    <a href="#">Stakeholders</a>
+                  </li>
+                  <li
+                    class="py-2 px-4 box-border w-fit dark:hover:text-dark-text-primary hover:text-text-primary transition"
+                  >
+                    <a href="#">Easy Project Mobile App</a>
+                  </li>
+                  <li
+                    class="py-2 px-4 box-border w-fit dark:hover:text-dark-text-primary hover:text-text-primary transition"
+                  >
+                    <a href="#">Search (full-text)</a>
+                  </li>
+                  <li
+                    class="py-2 px-4 box-border w-fit dark:hover:text-dark-text-primary hover:text-text-primary transition"
+                  >
+                    <a href="#" class="inline-block flex gap-2 items-center dark:text-dark-text-link text-text-link"
+                    >Смотреть всё <img src="{% static 'icons/link_arrow.svg' %}" alt="arrow"
+                    /></a>
+                  </li>
+                </ul>
+                <!-- dropdown -->
+              </li>
+              <li class="w-full box-border" data-clicked="false">
+                <div
+                  class="menu-item py-2 box-border w-full flex justify-between items-center focus:border-none focus:outline-none transition hover:cursor-pointer hover:text-text-primary dark:hover:text-dark-text-primary"
+                >
+                  <p class="transition">Project budgets / finance</p>
+                  <img src="{% static 'icons/chevron_down.svg' %}" alt="arrow" class="dark transition hidden dark:block" />
+                  <img src="{% static 'icons/chevron_down_hover.svg' %}" alt="arrow" class="dark-active transition hidden dark:hidden" />
+                  <img src="{% static 'icons/chevron_down_primary.svg' %}" alt="arrow" class="primary dark:hidden transition" />
+                  <img
+                    src="{% static 'icons/chevron_down primary_hover.svg' %}"
+                    alt="arrow"
+                    class="primary-active dark:hidden hidden transition"
+                  />
+                </div>
+                <!-- dropdown -->
+                <ul
+                  class="menu-list hidden text-sm leading-[20px] max-sm:text-xs dark:text-dark-text-secondary text-text-secondary pb-4 transition"
+                >
+                  <li
+                    class="py-2 px-4 box-border w-fit dark:hover:text-dark-text-primary hover:text-text-primary transition"
+                  >
+                    <a href="#">Navigation and Menus</a>
+                  </li>
+                  <li
+                    class="py-2 px-4 box-border w-fit dark:hover:text-dark-text-primary hover:text-text-primary transition"
+                  >
+                    <a href="#">Allow access to anonymous users</a>
+                  </li>
+                  <li
+                    class="py-2 px-4 box-border w-fit dark:hover:text-dark-text-primary hover:text-text-primary transition"
+                  >
+                    <a href="#">Stakeholders</a>
+                  </li>
+                  <li
+                    class="py-2 px-4 box-border w-fit dark:hover:text-dark-text-primary hover:text-text-primary transition"
+                  >
+                    <a href="#">Easy Project Mobile App</a>
+                  </li>
+                  <li
+                    class="py-2 px-4 box-border w-fit dark:hover:text-dark-text-primary hover:text-text-primary transition"
+                  >
+                    <a href="#">Search (full-text)</a>
+                  </li>
+                  <li
+                    class="py-2 px-4 box-border w-fit dark:hover:text-dark-text-primary hover:text-text-primary transition"
+                  >
+                    <a href="#" class="inline-block flex gap-2 items-center dark:text-dark-text-link text-text-link"
+                    >Смотреть всё <img src="{% static 'icons/link_arrow.svg' %}" alt="arrow"
+                    /></a>
+                  </li>
+                </ul>
+                <!-- dropdown -->
+              </li>
+              <li class="w-full box-border" data-clicked="false">
+                <div
+                  class="menu-item py-2 box-border w-full flex justify-between items-center focus:border-none focus:outline-none transition hover:cursor-pointer hover:text-text-primary dark:hover:text-dark-text-primary"
+                >
+                  <p class="transition">Expert PM tools</p>
+                  <img src="{% static 'icons/chevron_down.svg' %}" alt="arrow" class="dark transition hidden dark:block" />
+                  <img src="{% static 'icons/chevron_down_hover.svg' %}" alt="arrow" class="dark-active transition hidden dark:hidden" />
+                  <img src="{% static 'icons/chevron_down_primary.svg' %}" alt="arrow" class="primary dark:hidden transition" />
+                  <img
+                    src="{% static 'icons/chevron_down primary_hover.svg' %}"
+                    alt="arrow"
+                    class="primary-active dark:hidden hidden transition"
+                  />
+                </div>
+                <!-- dropdown -->
+                <ul
+                  class="menu-list hidden text-sm leading-[20px] max-sm:text-xs dark:text-dark-text-secondary text-text-secondary pb-4 transition"
+                >
+                  <li
+                    class="py-2 px-4 box-border w-fit dark:hover:text-dark-text-primary hover:text-text-primary transition"
+                  >
+                    <a href="#">Navigation and Menus</a>
+                  </li>
+                  <li
+                    class="py-2 px-4 box-border w-fit dark:hover:text-dark-text-primary hover:text-text-primary transition"
+                  >
+                    <a href="#">Allow access to anonymous users</a>
+                  </li>
+                  <li
+                    class="py-2 px-4 box-border w-fit dark:hover:text-dark-text-primary hover:text-text-primary transition"
+                  >
+                    <a href="#">Stakeholders</a>
+                  </li>
+                  <li
+                    class="py-2 px-4 box-border w-fit dark:hover:text-dark-text-primary hover:text-text-primary transition"
+                  >
+                    <a href="#">Easy Project Mobile App</a>
+                  </li>
+                  <li
+                    class="py-2 px-4 box-border w-fit dark:hover:text-dark-text-primary hover:text-text-primary transition"
+                  >
+                    <a href="#">Search (full-text)</a>
+                  </li>
+                  <li
+                    class="py-2 px-4 box-border w-fit dark:hover:text-dark-text-primary hover:text-text-primary transition"
+                  >
+                    <a href="#" class="inline-block flex gap-2 items-center dark:text-dark-text-link text-text-link"
+                    >Смотреть всё <img src="{% static 'icons/link_arrow.svg' %}" alt="arrow"
+                    /></a>
+                  </li>
+                </ul>
+                <!-- dropdown -->
+              </li>
+              <li class="w-full box-border" data-clicked="false">
+                <div
+                  class="menu-item py-2 box-border w-full flex justify-between items-center focus:border-none focus:outline-none transition hover:cursor-pointer hover:text-text-primary dark:hover:text-dark-text-primary"
+                >
+                  <p class="transition">Help desk</p>
+                  <img src="{% static 'icons/chevron_down.svg' %}" alt="arrow" class="dark transition hidden dark:block" />
+                  <img src="{% static 'icons/chevron_down_hover.svg' %}" alt="arrow" class="dark-active transition hidden dark:hidden" />
+                  <img src="{% static 'icons/chevron_down_primary.svg' %}" alt="arrow" class="primary dark:hidden transition" />
+                  <img
+                    src="{% static 'icons/chevron_down primary_hover.svg' %}"
+                    alt="arrow"
+                    class="primary-active dark:hidden hidden transition"
+                  />
+                </div>
+                <!-- dropdown -->
+                <ul
+                  class="menu-list hidden text-sm leading-[20px] max-sm:text-xs dark:text-dark-text-secondary text-text-secondary pb-4 transition"
+                >
+                  <li
+                    class="py-2 px-4 box-border w-fit dark:hover:text-dark-text-primary hover:text-text-primary transition"
+                  >
+                    <a href="#">Navigation and Menus</a>
+                  </li>
+                  <li
+                    class="py-2 px-4 box-border w-fit dark:hover:text-dark-text-primary hover:text-text-primary transition"
+                  >
+                    <a href="#">Allow access to anonymous users</a>
+                  </li>
+                  <li
+                    class="py-2 px-4 box-border w-fit dark:hover:text-dark-text-primary hover:text-text-primary transition"
+                  >
+                    <a href="#">Stakeholders</a>
+                  </li>
+                  <li
+                    class="py-2 px-4 box-border w-fit dark:hover:text-dark-text-primary hover:text-text-primary transition"
+                  >
+                    <a href="#">Easy Project Mobile App</a>
+                  </li>
+                  <li
+                    class="py-2 px-4 box-border w-fit dark:hover:text-dark-text-primary hover:text-text-primary transition"
+                  >
+                    <a href="#">Search (full-text)</a>
+                  </li>
+                  <li
+                    class="py-2 px-4 box-border w-fit dark:hover:text-dark-text-primary hover:text-text-primary transition"
+                  >
+                    <a href="#" class="inline-block flex gap-2 items-center dark:text-dark-text-link text-text-link"
+                    >Смотреть всё <img src="{% static 'icons/link_arrow.svg' %}" alt="arrow"
+                    /></a>
+                  </li>
+                </ul>
+                <!-- dropdown -->
+              </li>
+              <li class="w-full box-border" data-clicked="false">
+                <div
+                  class="menu-item py-2 box-border w-full flex justify-between items-center focus:border-none focus:outline-none transition hover:cursor-pointer hover:text-text-primary dark:hover:text-dark-text-primary"
+                >
+                  <p class="transition">B2B CRM</p>
+                  <img src="{% static 'icons/chevron_down.svg' %}" alt="arrow" class="dark transition hidden dark:block" />
+                  <img src="{% static 'icons/chevron_down_hover.svg' %}" alt="arrow" class="dark-active transition hidden dark:hidden" />
+                  <img src="{% static 'icons/chevron_down_primary.svg' %}" alt="arrow" class="primary dark:hidden transition" />
+                  <img
+                    src="{% static 'icons/chevron_down primary_hover.svg' %}"
+                    alt="arrow"
+                    class="primary-active dark:hidden hidden transition"
+                  />
+                </div>
+                <!-- dropdown -->
+                <ul
+                  class="menu-list hidden text-sm leading-[20px] max-sm:text-xs dark:text-dark-text-secondary text-text-secondary pb-4 transition"
+                >
+                  <li
+                    class="py-2 px-4 box-border w-fit dark:hover:text-dark-text-primary hover:text-text-primary transition"
+                  >
+                    <a href="#">Navigation and Menus</a>
+                  </li>
+                  <li
+                    class="py-2 px-4 box-border w-fit dark:hover:text-dark-text-primary hover:text-text-primary transition"
+                  >
+                    <a href="#">Allow access to anonymous users</a>
+                  </li>
+                  <li
+                    class="py-2 px-4 box-border w-fit dark:hover:text-dark-text-primary hover:text-text-primary transition"
+                  >
+                    <a href="#">Stakeholders</a>
+                  </li>
+                  <li
+                    class="py-2 px-4 box-border w-fit dark:hover:text-dark-text-primary hover:text-text-primary transition"
+                  >
+                    <a href="#">Easy Project Mobile App</a>
+                  </li>
+                  <li
+                    class="py-2 px-4 box-border w-fit dark:hover:text-dark-text-primary hover:text-text-primary transition"
+                  >
+                    <a href="#">Search (full-text)</a>
+                  </li>
+                  <li
+                    class="py-2 px-4 box-border w-fit dark:hover:text-dark-text-primary hover:text-text-primary transition"
+                  >
+                    <a href="#" class="inline-block flex gap-2 items-center dark:text-dark-text-link text-text-link"
+                    >Смотреть всё <img src="{% static 'icons/link_arrow.svg' %}" alt="arrow"
+                    /></a>
+                  </li>
+                </ul>
+                <!-- dropdown -->
+              </li>
+              <li class="w-full box-border" data-clicked="false">
+                <div
+                  class="menu-item py-2 box-border w-full flex justify-between items-center focus:border-none focus:outline-none transition hover:cursor-pointer hover:text-text-primary dark:hover:text-dark-text-primary"
+                >
+                  <p class="transition">Add-ons</p>
+                  <img src="{% static 'icons/chevron_down.svg' %}" alt="arrow" class="dark transition hidden dark:block" />
+                  <img src="{% static 'icons/chevron_down_hover.svg' %}" alt="arrow" class="dark-active transition hidden dark:hidden" />
+                  <img src="{% static 'icons/chevron_down_primary.svg' %}" alt="arrow" class="primary dark:hidden transition" />
+                  <img
+                    src="{% static 'icons/chevron_down primary_hover.svg' %}"
+                    alt="arrow"
+                    class="primary-active dark:hidden hidden transition"
+                  />
+                </div>
+                <!-- dropdown -->
+                <ul
+                  class="menu-list hidden text-sm leading-[20px] max-sm:text-xs dark:text-dark-text-secondary text-text-secondary pb-4 transition"
+                >
+                  <li
+                    class="py-2 px-4 box-border w-fit dark:hover:text-dark-text-primary hover:text-text-primary transition"
+                  >
+                    <a href="#">Navigation and Menus</a>
+                  </li>
+                  <li
+                    class="py-2 px-4 box-border w-fit dark:hover:text-dark-text-primary hover:text-text-primary transition"
+                  >
+                    <a href="#">Allow access to anonymous users</a>
+                  </li>
+                  <li
+                    class="py-2 px-4 box-border w-fit dark:hover:text-dark-text-primary hover:text-text-primary transition"
+                  >
+                    <a href="#">Stakeholders</a>
+                  </li>
+                  <li
+                    class="py-2 px-4 box-border w-fit dark:hover:text-dark-text-primary hover:text-text-primary transition"
+                  >
+                    <a href="#">Easy Project Mobile App</a>
+                  </li>
+                  <li
+                    class="py-2 px-4 box-border w-fit dark:hover:text-dark-text-primary hover:text-text-primary transition"
+                  >
+                    <a href="#">Search (full-text)</a>
+                  </li>
+                  <li
+                    class="py-2 px-4 box-border w-fit dark:hover:text-dark-text-primary hover:text-text-primary transition"
+                  >
+                    <a href="#" class="inline-block flex gap-2 items-center dark:text-dark-text-link text-text-link"
+                    >Смотреть всё <img src="{% static 'icons/link_arrow.svg' %}" alt="arrow"
+                    /></a>
+                  </li>
+                </ul>
+                <!-- dropdown -->
+              </li>
+              <li class="w-full box-border" data-clicked="false">
+                <div
+                  class="menu-item py-2 box-border w-full flex justify-between items-center focus:border-none focus:outline-none transition hover:cursor-pointer hover:text-text-primary dark:hover:text-dark-text-primary"
+                >
+                  <p class="transition">Advanced administration</p>
+                  <img src="{% static 'icons/chevron_down.svg' %}" alt="arrow" class="dark transition hidden dark:block" />
+                  <img src="{% static 'icons/chevron_down_hover.svg' %}" alt="arrow" class="dark-active transition hidden dark:hidden" />
+                  <img src="{% static 'icons/chevron_down_primary.svg' %}" alt="arrow" class="primary dark:hidden transition" />
+                  <img
+                    src="{% static 'icons/chevron_down primary_hover.svg' %}"
+                    alt="arrow"
+                    class="primary-active dark:hidden hidden transition"
+                  />
+                </div>
+                <!-- dropdown -->
+                <ul
+                  class="menu-list hidden text-sm leading-[20px] max-sm:text-xs dark:text-dark-text-secondary text-text-secondary pb-4 transition"
+                >
+                  <li
+                    class="py-2 px-4 box-border w-fit dark:hover:text-dark-text-primary hover:text-text-primary transition"
+                  >
+                    <a href="#">Navigation and Menus</a>
+                  </li>
+                  <li
+                    class="py-2 px-4 box-border w-fit dark:hover:text-dark-text-primary hover:text-text-primary transition"
+                  >
+                    <a href="#">Allow access to anonymous users</a>
+                  </li>
+                  <li
+                    class="py-2 px-4 box-border w-fit dark:hover:text-dark-text-primary hover:text-text-primary transition"
+                  >
+                    <a href="#">Stakeholders</a>
+                  </li>
+                  <li
+                    class="py-2 px-4 box-border w-fit dark:hover:text-dark-text-primary hover:text-text-primary transition"
+                  >
+                    <a href="#">Easy Project Mobile App</a>
+                  </li>
+                  <li
+                    class="py-2 px-4 box-border w-fit dark:hover:text-dark-text-primary hover:text-text-primary transition"
+                  >
+                    <a href="#">Search (full-text)</a>
+                  </li>
+                  <li
+                    class="py-2 px-4 box-border w-fit dark:hover:text-dark-text-primary hover:text-text-primary transition"
+                  >
+                    <a href="#" class="inline-block flex gap-2 items-center dark:text-dark-text-link text-text-link"
+                    >Смотреть всё <img src="{% static 'icons/link_arrow.svg' %}" alt="arrow"
+                    /></a>
+                  </li>
+                </ul>
+                <!-- dropdown -->
+              </li>
+              <li class="w-full box-border" data-clicked="false">
+                <div
+                  class="menu-item py-2 box-border w-full flex justify-between items-center focus:border-none focus:outline-none transition hover:cursor-pointer hover:text-text-primary dark:hover:text-dark-text-primary"
+                >
+                  <p class="transition">Corner situations</p>
+                  <img src="{% static 'icons/chevron_down.svg' %}" alt="arrow" class="dark transition hidden dark:block" />
+                  <img src="{% static 'icons/chevron_down_hover.svg' %}" alt="arrow" class="dark-active transition hidden dark:hidden" />
+                  <img src="{% static 'icons/chevron_down_primary.svg' %}" alt="arrow" class="primary dark:hidden transition" />
+                  <img
+                    src="{% static 'icons/chevron_down primary_hover.svg' %}"
+                    alt="arrow"
+                    class="primary-active dark:hidden hidden transition"
+                  />
+                </div>
+                <!-- dropdown -->
+                <ul
+                  class="menu-list hidden text-sm leading-[20px] max-sm:text-xs dark:text-dark-text-secondary text-text-secondary pb-4 transition"
+                >
+                  <li
+                    class="py-2 px-4 box-border w-fit dark:hover:text-dark-text-primary hover:text-text-primary transition"
+                  >
+                    <a href="#">Navigation and Menus</a>
+                  </li>
+                  <li
+                    class="py-2 px-4 box-border w-fit dark:hover:text-dark-text-primary hover:text-text-primary transition"
+                  >
+                    <a href="#">Allow access to anonymous users</a>
+                  </li>
+                  <li
+                    class="py-2 px-4 box-border w-fit dark:hover:text-dark-text-primary hover:text-text-primary transition"
+                  >
+                    <a href="#">Stakeholders</a>
+                  </li>
+                  <li
+                    class="py-2 px-4 box-border w-fit dark:hover:text-dark-text-primary hover:text-text-primary transition"
+                  >
+                    <a href="#">Easy Project Mobile App</a>
+                  </li>
+                  <li
+                    class="py-2 px-4 box-border w-fit dark:hover:text-dark-text-primary hover:text-text-primary transition"
+                  >
+                    <a href="#">Search (full-text)</a>
+                  </li>
+                  <li
+                    class="py-2 px-4 box-border w-fit dark:hover:text-dark-text-primary hover:text-text-primary transition"
+                  >
+                    <a href="#" class="inline-block flex gap-2 items-center dark:text-dark-text-link text-text-link"
+                    >Смотреть всё <img src="{% static 'icons/link_arrow.svg' %}" alt="arrow"
+                    /></a>
+                  </li>
+                </ul>
+                <!-- dropdown -->
+              </li>
+              <li class="w-full box-border" data-clicked="false">
+                <div
+                  class="menu-item py-2 box-border w-full flex justify-between items-center focus:border-none focus:outline-none transition hover:cursor-pointer hover:text-text-primary dark:hover:text-dark-text-primary"
+                >
+                  <p class="transition">Release notes</p>
+                  <img src="{% static 'icons/chevron_down.svg' %}" alt="arrow" class="dark transition hidden dark:block" />
+                  <img src="{% static 'icons/chevron_down_hover.svg' %}" alt="arrow" class="dark-active transition hidden dark:hidden" />
+                  <img src="{% static 'icons/chevron_down_primary.svg' %}" alt="arrow" class="primary dark:hidden transition" />
+                  <img
+                    src="{% static 'icons/chevron_down primary_hover.svg' %}"
+                    alt="arrow"
+                    class="primary-active dark:hidden hidden transition"
+                  />
+                </div>
+                <!-- dropdown -->
+                <ul
+                  class="menu-list hidden text-sm leading-[20px] max-sm:text-xs dark:text-dark-text-secondary text-text-secondary pb-4 transition"
+                >
+                  <li
+                    class="py-2 px-4 box-border w-fit dark:hover:text-dark-text-primary hover:text-text-primary transition"
+                  >
+                    <a href="#">Navigation and Menus</a>
+                  </li>
+                  <li
+                    class="py-2 px-4 box-border w-fit dark:hover:text-dark-text-primary hover:text-text-primary transition"
+                  >
+                    <a href="#">Allow access to anonymous users</a>
+                  </li>
+                  <li
+                    class="py-2 px-4 box-border w-fit dark:hover:text-dark-text-primary hover:text-text-primary transition"
+                  >
+                    <a href="#">Stakeholders</a>
+                  </li>
+                  <li
+                    class="py-2 px-4 box-border w-fit dark:hover:text-dark-text-primary hover:text-text-primary transition"
+                  >
+                    <a href="#">Easy Project Mobile App</a>
+                  </li>
+                  <li
+                    class="py-2 px-4 box-border w-fit dark:hover:text-dark-text-primary hover:text-text-primary transition"
+                  >
+                    <a href="#">Search (full-text)</a>
+                  </li>
+                  <li
+                    class="py-2 px-4 box-border w-fit dark:hover:text-dark-text-primary hover:text-text-primary transition"
+                  >
+                    <a href="#" class="inline-block flex gap-2 items-center dark:text-dark-text-link text-text-link"
+                    >Смотреть всё <img src="{% static 'icons/link_arrow.svg' %}" alt="arrow"
+                    /></a>
+                  </li>
+                </ul>
+                <!-- dropdown -->
+              </li>
+              <li class="w-full box-border" data-clicked="false">
+                <div
+                  class="menu-item py-2 box-border w-full flex justify-between items-center focus:border-none focus:outline-none transition hover:cursor-pointer hover:text-text-primary dark:hover:text-dark-text-primary"
+                >
+                  <p class="transition">Для Реестра отечественного ПО</p>
+                  <img src="{% static 'icons/chevron_down.svg' %}" alt="arrow" class="dark transition hidden dark:block" />
+                  <img src="{% static 'icons/chevron_down_hover.svg' %}" alt="arrow" class="dark-active transition hidden dark:hidden" />
+                  <img src="{% static 'icons/chevron_down_primary.svg' %}" alt="arrow" class="primary dark:hidden transition" />
+                  <img
+                    src="{% static 'icons/chevron_down primary_hover.svg' %}"
+                    alt="arrow"
+                    class="primary-active dark:hidden hidden transition"
+                  />
+                </div>
+                <!-- dropdown -->
+                <ul
+                  class="menu-list hidden text-sm leading-[20px] max-sm:text-xs dark:text-dark-text-secondary text-text-secondary pb-4 transition"
+                >
+                  <li
+                    class="py-2 px-4 box-border w-fit dark:hover:text-dark-text-primary hover:text-text-primary transition"
+                  >
+                    <a href="#">Navigation and Menus</a>
+                  </li>
+                  <li
+                    class="py-2 px-4 box-border w-fit dark:hover:text-dark-text-primary hover:text-text-primary transition"
+                  >
+                    <a href="#">Allow access to anonymous users</a>
+                  </li>
+                  <li
+                    class="py-2 px-4 box-border w-fit dark:hover:text-dark-text-primary hover:text-text-primary transition"
+                  >
+                    <a href="#">Stakeholders</a>
+                  </li>
+                  <li
+                    class="py-2 px-4 box-border w-fit dark:hover:text-dark-text-primary hover:text-text-primary transition"
+                  >
+                    <a href="#">Easy Project Mobile App</a>
+                  </li>
+                  <li
+                    class="py-2 px-4 box-border w-fit dark:hover:text-dark-text-primary hover:text-text-primary transition"
+                  >
+                    <a href="#">Search (full-text)</a>
+                  </li>
+                  <li
+                    class="py-2 px-4 box-border w-fit dark:hover:text-dark-text-primary hover:text-text-primary transition"
+                  >
+                    <a href="#" class="inline-block flex gap-2 items-center dark:text-dark-text-link text-text-link"
+                    >Смотреть всё <img src="{% static 'icons/link_arrow.svg' %}" alt="arrow"
+                    /></a>
+                  </li>
+                </ul>
+                <!-- dropdown -->
+              </li>
+            </ul>
+          </div>
+          <!-- menu -->
+
+          <!-- content -->
+          <div class="w-full flex flex-col">
+            <h2 class="heading font-semibold text-[40px] leading-[44px] max-md:leading-[40px]">
+              Public projects and anonymous
+            </h2>
+          </div>
+          <!-- content -->
+        </div>
+      </div>
+    </section>
+
+    <script src="scripts/script.js"></script>
+  </body>
+</html>

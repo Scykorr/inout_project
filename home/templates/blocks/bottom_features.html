@@ -1,0 +1,54 @@
+{% load wagtailimages_tags static %}
+<section class="colors-dark-gradient-base-up">
+    <div class="container mx-auto py-[100px] max-md:py-16 max-sm:py-14 max-md:px-8 max-sm:px-4">
+        <h2
+                class="max-lg:px-8 font-semibold text-[64px] leading-[64px] max-lg:text-[48px] max-lg:leading-[48px] max-sm:text-[36px] max-sm:leading-[36px] max-w-[896px] text-center mx-auto dark:bg-[linear-gradient(91deg,_#FFF_52.03%,_rgba(255,_255,_255,_0.64)_83.59%)] bg-[#000] bg-clip-text"
+                style="-webkit-text-fill-color: transparent;">{{ value.title }}</h2>
+        <div class="flex max-sm:flex-col gap-4 max-sm:gap-6 max-sm:mt-[40px] mt-16 max-lg:px-8 max-sm:px-0">
+            <div
+                    class="flex flex-col relative rounded-[40px] max-md:rounded-[24px] colors-background-card max-sm:max-w-[343px] w-1/2 max-sm:w-full max-sm:mx-auto min-h-full justify-between">
+                <div
+                        class="relative z-10 flex flex-col items-start px-[32px] max-md:px-[24px] max-sm:px-[20px] pt-[32px] max-md:pt-[24px] max-sm:pt-[20px] max-w-[504px]">
+                    <h2
+                            class="font-semibold text-[32px] max-lg:text-[24px] leading-[35px] max-lg:leading-[26px] tracking-[-0.64px] max-lg:tracking-[-0.48px]">
+                        {{ value.title_left }}</h2>
+                    <p
+                            class="font-normal text-[16px] max-sm:text-[14px] leading-[23px] max-sm:leading-[20px] dark:text-dark-text-secondary text-text-secondary mt-4">
+                        {{ value.text_left }}
+                    </p>
+                    <a href="{{ value.link_left }}" class="flex p-[1px] colors-dark-stroke-sec-bt rounded-[32px] w-[134px] mt-8">
+                        <div
+                                class="block cursor-pointer text-[16px] leading-[22px] max-sm:text-[14px] max-sm:leading-[20px] w-full py-[12px] text-center bg-card-and-Sec-BT dark:bg-[#141919] rounded-[32px] hover:shadow-[0px_-4px_12px_0px_rgba(0,_0,_0,_0.32)_inset] dark:hover:shadow-[0px_-4px_12px_0px_rgba(255,_255,_255,_0.32)_inset] transition">
+                            Подробнее
+                        </div>
+                    </a>
+                </div>
+                {% image value.image_left original as image_left %}
+                <img src="{{ image_left.url }}" alt="other_functions_img_1"
+                     class="relative mt-[84px] max-md:mt-4 max-sm:mt-10 rounded-[40px] max-md:rounded-[24px] w-full">
+            </div>
+            <div
+                    class="flex flex-col relative rounded-[40px] max-md:rounded-[24px] max-sm:max-w-[343px] w-1/2 max-sm:w-full colors-background-card max-sm:mx-auto min-h-full justify-between">
+                <div
+                        class="relative z-10 flex flex-col items-start px-8 max-md:px-6 max-sm:px-5 pt-8 max-md:pt-6 max-sm:pt-[20px] max-w-[504px]">
+                    <h2
+                            class="font-semibold text-[32px] max-lg:text-[24px] leading-[35px] max-lg:leading-[26px] tracking-[-0.64px] max-lg:tracking-[-0.48px]">
+                        {{ value.title_right }}</h2>
+                    <p
+                            class="font-normal text-[16px] max-sm:text-[14px] leading-[23px] max-sm:leading-[20px] dark:text-dark-text-secondary text-text-secondary mt-4">
+                        {{ value.text_right }}
+                    </p>
+                    <a href="{{ value.link_right }}" class="flex p-[1px] colors-dark-stroke-sec-bt rounded-[32px] w-[134px] mt-8">
+                        <div
+                                class="block cursor-pointer text-[16px] leading-[22px] max-sm:text-[14px] max-sm:leading-[20px] w-full py-[12px] text-center bg-card-and-Sec-BT dark:bg-[#141919] rounded-[32px] hover:shadow-[0px_-4px_12px_0px_rgba(0,_0,_0,_0.32)_inset] dark:hover:shadow-[0px_-4px_12px_0px_rgba(255,_255,_255,_0.32)_inset] transition">
+                            Подробнее
+                        </div>
+                    </a>
+                </div>
+                {% image value.image_right original as image_right %}
+                <img src="{{ image_right }}" alt="other_functions_img_2"
+                     class="mt-[84px] max-md:mt-4 max-sm:mt-10 rounded-[40px] max-md:rounded-[24px] w-full">
+            </div>
+        </div>
+    </div>
+</section>

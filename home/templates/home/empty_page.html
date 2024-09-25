@@ -1,0 +1,17 @@
+{% extends "base/base.html" %}
+{% load static wagtailcore_tags %}
+
+
+{% block content %}
+    <section
+            class="w-full flex flex-col flex-nowrap box-border colors-dark-gradient-platform-up bg-no-repeat"
+            style="margin-top: -55px; padding-top: 55px;"
+    >
+        <div class="container mx-auto max-md:px-4">
+            <h1 class="font-semibold text-[64px] leading-[100%] max-md:text-[36px] mt-20 mb-[16px] max-md:mt-10">{{ page.title }}</h1>
+            <div class="prose dark:prose w-full">
+                {{ page.content|richtext }}
+            </div>
+        </div>
+    </section>
+{% endblock content %}

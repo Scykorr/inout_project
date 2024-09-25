@@ -1,0 +1,39 @@
+{% load static wagtailimages_tags %}
+<div class="relative z-[2] max-sm:mt-[48px] w-full h-[1px] bg-[linear-gradient(48deg,_rgba(255,255,255,0)_0%,_rgba(255,255,255,1)_15%,_rgba(255,255,255,1)_85%,_rgba(255,255,255,0)_100%)] opacity-20"></div>
+<section class="dark:text-dark-text-primary">
+    <div class="container mx-auto pt-[100px] max-md:py-16 max-lg:px-8 max-md:px-4 max-sm:py-14">
+        <div class="grid lg:grid-cols-3 max-lg:grid-cols-2 max-sm:grid-cols-1 gap-4">
+            {% if page.get_children|length == 2 %}
+                {% for item in page.get_children %}
+                    {% if forloop.counter == 2 %}
+                        {% include 'blocks/includes/feature_product_short.html' %}
+                    {% elif forloop.counter == 1 %}
+                        {% include 'blocks/includes/feature_product_long.html' %}
+                    {% else %}
+                        {% include 'blocks/includes/feature_product_short.html' %}
+                    {% endif %}
+                {% endfor %}
+            {% else %}
+                {% for item in page.get_children %}
+                    {% if forloop.counter == 4 %}
+                        {% include 'blocks/includes/feature_product_long.html' %}
+                    {% elif forloop.counter == 5 %}
+                        {% include 'blocks/includes/feature_product_short.html' %}
+                    {% elif forloop.counter == 1 %}
+                        {% include 'blocks/includes/feature_product_short.html' %}
+                    {% elif forloop.counter == 2 %}
+                        {% include 'blocks/includes/feature_product_short.html' %}
+                    {% elif forloop.counter == 3 %}
+                        {% include 'blocks/includes/feature_product_short.html' %}
+                    {% elif forloop.counter == 6 %}
+                        {% include 'blocks/includes/feature_product_short.html' %}
+                    {% elif forloop.counter == 7 %}
+                        {% include 'blocks/includes/feature_product_long.html' %}
+                    {% else %}
+                        {% include 'blocks/includes/feature_product_short.html' %}
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+</section>

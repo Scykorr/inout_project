@@ -1,0 +1,16 @@
+{% load my_tags %}
+<div class="flex">
+    {% if value.link %}
+    <a {% if value.link_left == '#' or value.link == '/' %}data-open-form{% elif value.link == '#crm' %}data-open-partner-form{% elif value.link == '#crm2' %}data-open-partner-form-2{% else %}href="{{ value.link }}" {% endif %}
+       class="relative px-[1px] py-[1px] rounded-[32px] box-border before:absolute before:border before:border-[transparent] before:inset-0 before:z-10 before:rounded-3xl before:[-webkit-mask:linear-gradient(#fff_0_0)_padding-box,_linear-gradient(#fff_0_0)] before:[-webkit-mask-composite:destination-out] before:[mask-composite:exclude] before:[background:var(--colors-dark-stroke-tag-trans-button)_border-box] hover:shadow-[0px_-4px_12px_0px_rgba(0,_0,_0,_0.32)_inset] dark:hover:shadow-[0px_-4px_12px_0px_rgba(255,_255,_255,_0.32)_inset]">
+    {% else %}
+    <div
+        class="relative px-[1px] py-[1px] rounded-[32px] box-border before:absolute before:border before:border-[transparent] before:inset-0 before:z-10 before:rounded-3xl before:[-webkit-mask:linear-gradient(#fff_0_0)_padding-box,_linear-gradient(#fff_0_0)] before:[-webkit-mask-composite:destination-out] before:[mask-composite:exclude] before:[background:var(--colors-dark-stroke-tag-{{ page.color|get_base }})_border-box]">
+    {% endif %}
+
+        <span
+                class="flex items-center justify-center font-medium text-[16px] max-sm:text-[14px] leading-[22px] max-sm:leading-[20px] w-full px-[20px] {% if value.link %}py-[12px]{% else %}py-[5px]{% endif %} rounded-[32px] bg-[#FFFFFF0D] ">
+            {{ value.title }}
+        </span>
+    {% if value.link %}</a>{% else %}</div>{% endif %}
+</div>

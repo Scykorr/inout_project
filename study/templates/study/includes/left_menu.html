@@ -1,0 +1,19 @@
+{% load static %}
+<div class="overflow-x-auto ui-h-scroll max-md:flex dark:max-md:bg-dark-card-and-Sec-BT max-md:bg-card-and-Sec-BT max-md:rounded-[10px] max-md:p-1">
+    <a href="{% static 'files/rukovodstvo.pdf' %}" target="_blank"
+       class="block font-medium text-base max-md:text-sm leading-[22px] mt-[2px] py-2 max-md:px-3 max-md:py-2 max-md:mt-0 max-md:rounded-[8px] transition cursor-pointer whitespace-nowrap colors-text-secondary max-md:text-text-tertiary dark:max-md:text-dark-text-tertiary {% if page.get_parent.url == page.url %}text-text-primary dark:text-dark-text-primary{% endif %}">
+        Руководство пользователя
+    </a>
+    <a href="/resursy/documentation/"
+       class="block font-medium text-base max-md:text-sm leading-[22px] mt-[2px] py-2 max-md:px-3 max-md:py-2 max-md:mt-0 max-md:rounded-[8px] transition cursor-pointer whitespace-nowrap colors-text-secondary max-md:text-text-tertiary dark:max-md:text-dark-text-tertiary {% if page.get_parent.url == page.url %}text-text-primary dark:text-dark-text-primary{% endif %}">
+        Документация
+    </a>
+    <div class="hidden max-md:block">
+        <button class="tabheader-pagination-prev-education absolute z-[2] p-2 left-1 top-1 backdrop-blur-sm rounded-lg hidden">
+            <img src="{% static 'icons/arrow_down.svg' %}" alt="" class="rotate-90"/>
+        </button>
+        <button class="tabheader-pagination-next-education absolute z-[2] p-2 right-1 top-1 backdrop-blur-sm rounded-lg">
+            <img src="{% static 'icons/arrow_down.svg' %}" alt="" class="-rotate-90"/>
+        </button>
+    </div>
+</div>

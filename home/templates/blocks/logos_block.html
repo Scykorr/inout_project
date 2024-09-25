@@ -1,0 +1,25 @@
+{% load static %}
+<section class="splide">
+    <div class="py-[40px] max-sm:py-[24px] flex overflow-hidden splide__track">
+        <div class="splide__list">
+            {% for logo in value.client_logo %}
+            <div class="flex items-center justify-center splide__slide">
+                <img src="{{ logo.value.logo_light.url }}" alt="partner logo" class="dark:hidden"/>
+                <img src="{{ logo.value.logo_dark.url }}" alt="partner logo" {% if logo.value.make_big %}style="height: 50px!important;"{% endif %} class="hidden dark:block"/>
+            </div>
+            {% endfor %}
+            {% for logo in value.client_logo %}
+            <div class="flex items-center justify-center splide__slide">
+                <img src="{{ logo.value.logo_light.url }}" alt="partner logo" class="dark:hidden"/>
+                <img src="{{ logo.value.logo_dark.url }}" alt="partner logo" {% if logo.value.make_big %}style="height: 50px!important;"{% endif %} class="hidden dark:block"/>
+            </div>
+            {% endfor %}
+            {% for logo in value.client_logo %}
+            <div class="flex items-center justify-center splide__slide">
+                <img src="{{ logo.value.logo_light.url }}" alt="partner logo" class="dark:hidden"/>
+                <img src="{{ logo.value.logo_dark.url }}" alt="partner logo" {% if logo.value.make_big %}style="height: 50px!important;"{% endif %} class="hidden dark:block"/>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>

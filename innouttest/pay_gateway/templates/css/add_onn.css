@@ -298,21 +298,41 @@ section.main_section .div_road_map_img .panel_roadmap .active_plan {
     line-height: 80px;
 }
 
-section.main_section .div_road_map_img .panel_roadmap .common_plan {
+section.main_section .div_road_map_img .panel_roadmap .lin-grad-border {
+    padding: 1rem;
     position: relative;
-    width: 15px;
-    height: 15px;
-
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.28), rgba(255, 255, 255, 0));
+    /*padding: 5px;*/
+    width: 16px;
+    height: 16px;
+    display: inline-block;
     gap: 0;
     border-radius: 50%;
     margin-left: 10px;
+    padding: 10px;
+    text-align: center;
+
+}
+
+section.main_section .div_road_map_img .panel_roadmap .lin-grad-border .common_plan {
+
+    width: 16px;
+    height: 16px;
+    /*gap: 0;*/
+    border-radius: 100%;
     background: black;
+    /*background: linear-gradient(0, #121212, #121212),*/
+    /*linear-gradient(180deg, rgba(255, 255, 255, 0.28), rgba(255, 255, 255, 0));*/
     color: rgba(255, 255, 255, 0.8);
-    border: 1px solid rgba(255, 255, 255, 0.28); /* Рамка придает изящность. Будет ошеломительно выглядеть! */
-    display: inline-block; /* Выстраивает все круги в линию. Прощай, дистанция! */
-    padding: 10px; /* Достаточно места вокруг текста. Каждому – свое пространство! */
+    /*border: 1px solid rgba(255, 255, 255, 0.28); !* Рамка придает изящность. Будет ошеломительно выглядеть! *!*/
+    /*display: inline-block; !* Выстраивает все круги в линию. Прощай, дистанция! *!*/
+     /* Достаточно места вокруг текста. Каждому – свое пространство! */
     text-align: center; /* Горизонтальное центрирование текста. Само собой разумеющееся! */
-    line-height: 80px;
+    /*line-height: 80px;*/
+    padding: 9px;
+}
+
+section.main_section .div_road_map_img .panel_roadmap .lin-grad-border .common_plan .text_roadmap{
 }
 
 section.main_section .div_road_map_img .panel_roadmap .roadmap_text_second {
@@ -358,7 +378,7 @@ section.main_section .div_road_map_img .panel_roadmap .roadmap_text_fourth {
 }
 
 .inout_pict {
-  width: 34px;
+    width: 34px;
     margin-left: 10px;
 }
 
@@ -1262,10 +1282,10 @@ section.main_section .price_panel .div_result_bottom .result_bottom:hover {
     -moz-appearance: none;
     -webkit-appearance: none;
     appearance: none;
-    border: 2px solid transparent;
+    border: 1px solid transparent;
     border-radius: 8px;
     background: linear-gradient(0, #121212, #121212),
-    linear-gradient(180deg, #FFFFFF47, #FFFFFF00);
+    linear-gradient(180deg, rgba(255, 255, 255, 0.28), rgba(255, 255, 255, 0));
     background-clip: padding-box, border-box;
     background-origin: padding-box, border-box;
     margin-top: 20px;

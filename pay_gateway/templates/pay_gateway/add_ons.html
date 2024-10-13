@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/add_onn.css' %}">
+    <title>Дополнительные модули</title>
+    <script src="{% static 'scripts/add_onns_dropbtn.js' %}"></script>
+</head>
+<body>
+
+<header class="upper_footer">
+    <div class="layout_nav">
+        <nav class="left_nav">
+            <ul class="hr">
+                <li class="company_logo_li">
+                    <a href="#" class="company_logo">
+                        <img
+                            sizes="(max-width: 320px) 280px,
+            (max-width: 480px) 440px,
+            800px"
+                            src="{% static 'img/Logo-INOUT-Project.png' %}" alt="logo"
+                            srcset="{% static 'img/Logo-INOUT-Project-x2.png' %} 2x">
+                    </a>
+                </li>
+                <li>
+                    <div class="dropdown_header">
+                        <button class="dropbtn_header">Продукт</button>
+                        <div class="dropdown-content_header">
+                            <a href="#">Link 1</a>
+                            <a href="#">Link 2</a>
+                            <a href="#">Link 3</a>
+                        </div>
+                    </div>
+                </li>
+                <!-- остальные элементы навигации -->
+            </ul>
+        </nav>
+        <nav class="right_bt">
+            <ul class="right-ul">
+                <li>
+                    <a href="#">Поиск</a>
+                </li>
+                <li>
+                    <div class="vertical-line"></div>
+                </li>
+                <li>
+                    <a href="#">Войти</a>
+                </li>
+                <li>
+                    <a class="try_it" href="#">Попробовать</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div class="layout_content">
+        <div class="content_text">
+            <ul>
+                <li class="price_payment_title">
+                    <p>Цены и оплата</p>
+                </li>
+                <li class="price_payment_text">
+                    <p>Хорошо известно, что «то, что не измеряется, не может быть улучшено».
+                        Поэтому время отслеживания и регистрации важно для всех, кто хочет достичь лучших результатов.
+                        INOUT Проект позволяет отслеживать время, затрачиваемое на задачи и проекты,
+                        несколькими способами, включая секундомер и ручной ввод времени для задач.</p>
+                </li>
+            </ul>
+        </div>
+        <div class="tabs_primary">
+            <ul>
+                <li class="li_dropbtn_c">
+                    <a class="dropbtn_c">В облаке</a>
+                </li>
+                <li>
+                    <a class="dropbtn_o">На сервере</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</header>
+
+<section class="main_section">
+    <div class="second_line_img">
+        <img class="second_line" src="{% static 'img/Line_12.png' %}" alt="logo" srcset="{% static 'img/Line_12x2.png' %} 2x">
+    </div>
+    <div class="div_road_map_img">
+        <div class="panel_roadmap">
+            <div class="finish_div">
+                <img class="img_check" src="{% static 'img/check.png' %}" alt="">
+                <div class="finish_plan"></div>
+            </div>
+            <span class="roadmap_text">Выбор плана</span>
+            <div class="create-line"></div>
+            <div class="active_plan"><span class="text_inside"
+                                           style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">2</span>
+            </div>
+            <span class="roadmap_text_second">Соберите своё решение</span>
+            <div class="create-line"></div>
+            <div class="lin-grad-border">
+                <div class="common_plan" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+                    <span class="text-roadmap" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">3</span>
+                </div>
+            </div>
+            <span class="roadmap_text_third">Выставление счета</span>
+            <div class="create-line"></div>
+            <div class="lin-grad-border">
+                <div class="common_plan" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+                    <span class="text-roadmap" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">4</span>
+                </div>
+            </div>
+            <span class="roadmap_text_fourth">Оплата</span>
+            <div class="create-line"></div>
+            <img class="inout_pict" src="{% static 'img/inout_pict.png' %}" alt=""/>
+        </div>
+    </div>
+    <div class="line_19_img">
+        <img class="" src="{% static 'img/Line_19.png' %}" alt="logo" srcset="{% static 'img/Line_19x2.png' %} 2x">
+    </div>
+    <div class="choose_plan">
+        <div class="about_choose_plan">
+            <p class="text_plan">План</p>
+        </div>
+        <div class="custom-select" style="height: 57px">
+            <select id="select_plan">
+                <option>INOUT Проект База</option>
+                <option>INOUT Проект Бизнес</option>
+                <option>INOUT Проект Платформа</option>
+            </select>
+        </div>
+
+        <div class="hidden_block" id="hidden_block_id"></div>
+        <div class="hidden_plan" id="hidden_plan_id"></div>
+    </div>
+    <div class="line_20_img">
+        <img class="" src="{% static 'img/Line_19.png' %}" alt="logo" srcset="{% static 'img/Line_19x2.png' %} 2x">
+    </div>
+    <div class="choose_user_amount">
+        <div class="about_choose_user_amount">
+            <p class="text_user_amount">Количество пользователей</p>
+        </div>
+        <div class="range-with-question">
+            <div class="range">
+                <div class="range-slider">
+                <span style="position:absolute; color:#3274F9; border:0 solid blue; left: 20px; margin-top: -20px;"><span
+                        id="myValue"></span></span>
+
+                    <input
+                        type="range"
+                        min="5"
+                        max="100"
+                        value="0"
+                        class="range-input"
+                        id="range4"
+                        step="5"
+                    />
+                    <div class="sliderticks">
+                        <span>5</span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span>100</span>
+                    </div>
+                </div>
+
+                <div id="value_range" class="value4">5</div>
+            </div>
+            <span class="question_over100">Нужно решение на 100+ пользователей? <a href="#">Давайте обсудим</a></span>
+        </div>
+    </div>
+    <div class="line_21_img">
+        <img class="" src="{% static 'img/Line_19.png' %}" alt="logo" srcset="{% static 'img/Line_19x2.png' %} 2x">
+    </div>
+    <div class="addons_main">
+        <div class="addons_about">
+            <p class="">Расширения</p>
+        </div>
+        <div class="addons_list">
+            <div class="content-box">
+                <div class="show_0 show_1 show content__tittle">
+                    <div class="additions">
+                        <input type="checkbox" class="custom-checkbox" id="help_desk" name="help_desk" value="yes">
+                        <label for="help_desk"></label>
+                        <p class="text_for_checkbox">Help Desk
+                            <img class="icon_info" src="{% static 'img/icon_info_outline_.png' %}" alt="logo"
+                                 srcset="{% static 'img/icon_info_outline_x2.png' %} 2x"
+                                 title="Легко оптимизируйте все процессы&#013;обслуживания клиентов. Установите SLA&#013;и предоставьте своим клиентам&#013;высококачественную поддержку&#013;и повысьте их удовлетворенность&#013;с помощью службы поддержки.">
+                        </p>
+                        <div class="text_price">
+                            <p id="price_hd">490 руб</p>
+                        </div>
+
+                        <label class="text_about_price" id="text_about_price_id_hd">цена за одного пользователя в
+                            месяц/год</label>
+                    </div>
+                </div>
+                <div class="show_0 show_1 show_2 show content__tittle">
+                    <div class="additions">
+
+                        <input type="checkbox" class="custom-checkbox" id="basic_dms" name="basic_dms" value="yes">
+                        <label for="basic_dms"></label>
+                        <p class="text_for_checkbox">DMS
+                            <img class="icon_info"
+                                 src="{% static 'img/icon_info_outline_.png' %}"
+                                 alt="logo"
+                                 srcset="{% static 'img/icon_info_outline_x2.png 2x' %}"
+                                 title="Система управления документами&#013;обеспечивает быстрый доступ&#013;ко всем вашим файлам и документам&#013;и управление ими непосредственно&#013;из приложения INOUT.">
+                        </p>
+
+
+                        <div class="text_price">
+                            <p id="price_dms">190 руб</p>
+                        </div>
+                        <label class="text_about_price" id="text_about_price_id_dms">цена за одного пользователя в
+                            месяц/год</label>
+
+
+                    </div>
+                </div>
+                <div class="show_0 show content__tittle">
+                    <div class="additions">
+                        <input type="checkbox" class="custom-checkbox" id="risk_management" name="risk_management"
+                               value="yes">
+                        <label for="risk_management"></label>
+                        <p class="text_for_checkbox">Управление рисками
+                            <img class="icon_info" src="{% static 'img/icon_info_outline_.png' %}" alt="logo"
+                                 srcset="{% static 'img/icon_info_outline_x2.png 2x' %}"
+                                 title="Управление рисками позволяет вам&#013;устанавливать матрицу рисков&#013;для вашей организации, управлять&#013;рисками в проектах и предоставлять&#013;глобальную отчетность и обзор&#013;рисков для руководства.">
+
+                        </p>
+                        <div class="text_price">
+                            <p id="price_risk">190 руб</p>
+                        </div>
+                        <label class="text_about_price" id="text_about_price_id_risk">цена за одного пользователя в
+                            месяц/год</label>
+                    </div>
+                </div>
+                <div class="show_0 show_1 show_2 show content__tittle">
+                    <div class="additions">
+                        <input type="checkbox" class="custom-checkbox" id="custom_branding" name="custom_branding"
+                               value="yes">
+                        <label for="custom_branding"></label>
+                        <p class="text_for_checkbox_cb">Корпоративный брендинг
+                            <img class="icon_info" src="{% static 'img/icon_info_outline_.png' %}" alt="logo"
+                                 srcset="{% static 'img/icon_info_outline_x2.png 2x' %}"
+                                 title="Поддержите культуру и индивидуальность&#013;своей компании с помощью индивидуального&#013;дизайна — «примените цветные приложения&#013;в своих цветах», добавьте свой логотип&#013;и создайте индивидуальную графику&#013;для страницы входа.">
+
+                        </p>
+                        <div class="text_price">
+                            <p id="price_brand">90 руб</p>
+                        </div>
+                        <label class="text_about_price" id="text_about_price_id_brand">цена за одного пользователя в
+                            месяц/год</label>
+                    </div>
+                </div>
+                <div class="show_0 show_1 show_2 show content__tittle">
+                    <div class="additions">
+                        <input type="checkbox" class="custom-checkbox" id="gitlab_integration" name="gitlab_integration"
+                               value="yes">
+                        <label for="gitlab_integration"></label>
+                        <p class="text_for_checkbox">Gitlab интеграция
+                            <img class="icon_info" src="{% static 'img/icon_info_outline_.png' %}" alt="logo"
+                                 srcset="img/icon_info_outline_x2.png 2x"
+                                 title="Интегрируйте свой репозиторий&#013;GitLab с отслеживанием ошибок&#013;и сделайте процесс разработки&#013;еще более плавным.">
+
+                        </p>
+                        <div class="text_price">
+                            <p id="price_git">190 руб</p>
+                        </div>
+                        <label class="text_about_price" id="text_about_price_id_git">цена за одного пользователя в
+                            месяц/год</label>
+                    </div>
+                </div>
+                <div class="show_0 show_1 show content__tittle">
+                    <div class="additions">
+                        <input type="checkbox" class="custom-checkbox" id="b2b_crm" name="b2b_crm" value="yes">
+                        <label for="b2b_crm"></label>
+                        <p class="text_for_checkbox">B2B CRM
+                            <img class="icon_info" src="{% static 'img/icon_info_outline_.png' %}" alt="logo"
+                                 srcset="{% static 'img/icon_info_outline_x2.png' 2x %}"
+                                 title="Управляйте своей деятельностью&#013;по продажам и реализуйте свои проекты.&#013;B2B CRM позволяет вашей команде&#013;по продажам отслеживать возможности&#013;от лида до контракта, генерирует&#013;статистику эффективности и помогает&#013;повысить общую эффективность продаж.">
+
+                        </p>
+                        <div class="text_price">
+                            <p id="price_b2b">890 руб</p>
+                        </div>
+                        <label class="text_about_price" id="text_about_price_id_b2b">цена за одного пользователя в
+                            месяц/год</label>
+                    </div>
+                </div>
+                <div class="show_0 show_1 show_2 show content__tittle">
+                    <div class="additions">
+                        <input type="checkbox" class="custom-checkbox" id="knowledge_base" name="knowledge_base"
+                               value="yes">
+                        <label for="knowledge_base"></label>
+                        <p class="text_for_checkbox">База знаний
+                            <img class="icon_info" src="img/icon_info_outline_.png" alt="logo"
+                                 srcset="{% static 'img/icon_info_outline_x2.png' 2x %}"
+                                 title="Мощный набор инструментов для организации&#013;и масштабирования документации, процессов,&#013;руководств, управления качеством и других&#013;потребностей для поддержания знаний&#013;в организации.">
+
+                        </p>
+                        <div class="text_price">
+                            <p id="price_base">390 руб</p>
+                        </div>
+                        <label class="text_about_price" id="text_about_price_id_base">цена за одного пользователя в
+                            месяц/год</label>
+                    </div>
+                </div>
+                <div class="show_0 show_1 show_2 show content__tittle">
+                    <div class="additions">
+                        <input type="checkbox" class="custom-checkbox" id="asset_config" name="asset_config"
+                               value="yes">
+                        <label for="asset_config"></label>
+                        <p class="text_for_checkbox">Управление активами и конфигурациями
+                            <img class=icon_info src="{% static 'img/icon_info_outline_.png' %}" alt=logo"
+                                 srcset="{% static 'img/icon_info_outline_x2.png' 2x %}"
+                                 title="Наше дополнение гарантирует,&#013;что все ваши активы и конфигурации&#013;будут оставаться актуальными и&#013;легкодоступными, позволяя вам&#013;связывать данные с задачами.&#013;Держите свои данные организованными,&#013;точными и всегда под рукой.">
+
+                        </p>
+                        <div class="text_price">
+                            <p id="price_manage">290 руб</p>
+                        </div>
+                        <label class="text_about_price" id="text_about_price_id_manage">цена за одного пользователя в
+                            месяц/год</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="line_21_img">
+        <img class="" src="{% static 'img/Line_19.png' %}" alt="logo" srcset="{% static 'img/Line_19x2.png' 2x%}">
+    </div>
+    <div class="main_services">
+        <div class="services_about">
+            <p>Размещение</p>
+        </div>
+        <div class="services_list">
+            <div class="content_box">
+                <div class="services">
+                    <input type="checkbox" class="custom-checkbox" id="private_cloud" name="private_cloud" value="yes">
+                    <label for="private_cloud"></label>
+                    <p class="text_for_checkbox">Частное облако
+                        <img class="icon_info" src="{% static 'img/icon_info_outline_.png' %}" alt="logo"
+                             srcset="{% static 'img/icon_info_outline_x2.png' 2x %}"
+                             title="Частное облако предоставляет&#013;собственный выделенный сервер,&#013;сохраняя ваши внутренние&#013;ИТ-ресурсы. Оно всегда&#013;развертывается в ближайшей&#013;геолокации для максимальной&#013;связности и скорости.">
+                    </p>
+                    <div class="text_price">
+                        <p id="price_cloud">39.000 руб</p>
+                    </div>
+
+                    <label class="text_about_price" id="text_about_price_id_cloud">цена за одного пользователя в
+                        месяц/год</label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="line_21_img">
+        <img class="" src="{% static 'img/Line_19.png' %}" alt="logo" srcset="{% static 'img/Line_19x2.png' 2x %}">
+    </div>
+    <div class="bill_services">
+        <div class="bill_about">
+            <p>Выставление счета</p>
+        </div>
+        <div class="bill_list">
+            <div class="content-box">
+                <div class="bill_one">
+                    <input class="custom-radio" name="billing" type="radio" id="in_year" value="in_year" checked>
+                    <label for="in_year"></label>
+                    <p class="text_for_radio">Ежегодно (На 15% дешевле)
+                    </p>
+                </div>
+                <div class="bill_one">
+                    <input class="custom-radio" name="billing" type="radio" id="in_month" value="in_year">
+                    <label for="in_month"></label>
+                    <p class="text_for_radio">Ежемесячно
+                    </p>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    <div class="price_panel">
+        <div class="result_panel">
+            <div class="price_panel_text_about">
+                <label id="price_panel_about_label_id" class="price_panel_about_label">Итоговая цена за 5
+                    пользователей</label>
+            </div>
+            <div class="price_panel_prices">
+                <div class="price_in_year">
+                    <label id="price_in_year_label_id" class="price_in_year_label">34.540 руб / год</label>
+                </div>
+                <div class="price_in_month">
+                    <label id="price_in_year_month_id" class="price_in_month_label">(2.950 руб / месяц)</label>
+                </div>
+            </div>
+        </div>
+        <div class="div_div_result_bottom">
+            <div class="div_result_bottom">
+                <a href="add_user.html" class="result_bottom">
+                    Подтвердить и продолжить
+                </a>
+                <label id="hedden_label_plan"></label>
+            </div>
+        </div>
+
+
+    </div>
+    <script src="{% static 'scripts/addon.js' %}"></script>
+
+</section>
+<footer>
+    <div class="footer-img"></div>
+</footer>
+</body>
+
+</html>

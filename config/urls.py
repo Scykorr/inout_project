@@ -15,6 +15,7 @@ urlpatterns = [
     path("search/", search_views.search, name="search"),
     path("api/trial/", api.trial, name="trial"),
     path("api/crm/", api.crm, name="crm"),
+    path('accouts/', include('accouts.urls')),
 ]
 
 

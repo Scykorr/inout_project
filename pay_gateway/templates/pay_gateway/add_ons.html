@@ -11,7 +11,173 @@
 </head>
 <body>
 
-{% include 'header_new.html' %}
+<header class="sticky left-0 top-0 right-0 z-[1000] header-scroll">
+    <div class="absolute top-0 left-0 dark:bg-[#0000005e] light:bg-[#ffffff5e] backdrop-blur-2xl w-full h-full"></div>
+    <div class="font-normal text-[14px] leading-[20px] max-md:px-8 max-sm:px-4 relative">
+        <div class="container mx-auto py-[8px] flex justify-between">
+            <div id="logo" class="header flex gap-[24px] whitespace-nowrap">
+                <a href="/" class="flex items-center">
+                    <img src="{% static 'icons/favicon.svg' %}" alt="logo" class="hidden dark:block"/>
+                    <img src="{% static 'icons/favicon_light.svg' %}" alt="logo_dark" class="dark:hidden"/>
+                </a>
+                <nav class="max-md:hidden">
+                    <ul class="flex gap-[24px]">
+                        {% for menu_item in main_menu %}
+                            <li
+                                    class="relative group/item p-1.5 gap-x-1 rounded-lg leading-[1.4] flex items-center opacity-90 hover:opacity-100 hover:bg-[var(--colors-background-sec-bt)] cursor-pointer"
+                            >
+                                {% if menu_item.submenu %}
+                                    <span>{{ menu_item.title }}</span>
+                                    <img
+                                            src="{% static 'icons/arrow_down.svg' %}"
+                                            alt="arrow_down"
+                                            class="hidden dark:block group-hover/item:rotate-180"
+                                    />
+                                    <img
+                                            src="{% static 'icons/arrow_down_dark.svg' %}"
+                                            alt="arrow_down"
+                                            class="dark:hidden block group-hover/item:rotate-180"
+                                    />
+                                    <div class="absolute z-[4] hidden group-hover/item:flex left-0 top-9 pt-1">
+                                        <div
+                                                class="gap-x-6 group-hover/item:flex p-4 dark:bg-[var(--colors-background-header)] border border-[var(--colors-stroke-table)] rounded-[16px] bg-[#fff] dark:backdrop-blur-2xl"
+                                        >
+                                            <div
+                                                    class="p-5 group/block rounded-[12px] bg-[var(--colors-background-card)] w-[262px] hover:bg-[url('/image/back-review-card.svg')] bg-cover"
+                                                    onclick="location.href='{{ menu_item.url }}'"
+                                            >
+                                                <h3 class="text-xl text-[var(--colors-dark-base-text-primary)]">{{ menu_item.title }}</h3>
+                                                <p class="whitespace-normal text-[var(--colors-text-secondary)] mt-2 text-base font-normal">
+                                                    {{ menu_item.short_desc }}
+                                                </p>
+                                                <a
+                                                        href="{{ menu_item.url }}"
+                                                        class="rounded-full py-3 px-6 group-hover/block:dark:border-[#365995] hover:shadow-[0px_-4px_12px_0px_rgba(0,_0,_0,_0.16)_inset] text-[var(--colors-dark-base-text-primary)] bg-[#eaeef2] border-[#eaeef2] dark:bg-[rgba(255,255,255,0.05)] text-base mt-20 inline-block border dark:border-[#343942] transition"
+                                                >
+                                                    Перейти
+                                                </a>
+                                            </div>
+                                            <div>
+                                                <ul>
+                                                    {% for sub_menu_item in menu_item.submenu %}
+                                                        <li>
+                                                            <a
+                                                                    href="{{ sub_menu_item.url }}"
+                                                                    class="py-2 text-base font-medium block min-w-[222px] hover:text-[#4785FF]"
+                                                            >{{ sub_menu_item.title }}
+                                                            </a>
+                                                        </li>
+                                                    {% endfor %}
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% else %}
+                                    <a href="{{ menu_item.url }}">{{ menu_item.title }}</a>
+                                {% endif %}
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </nav>
+            </div>
+            <div class="flex items-center gap-x-6 max-md:gap-x-4">
+                <a href="/search/" class="flex items-center">
+                    <img src="{% static 'icons/search.svg' %}" alt="search" class="hidden dark:block"/>
+                    <img src="{% static 'icons/search_dark.svg' %}" alt="search" class="dark:hidden"/>
+                    <span class="ml-[8px] opacity-90 hover:opacity-100 max-md:hidden">Поиск</span>
+                </a>
+                <div
+                        class="max-md:hidden h-[24px] w-[1px] bg-[linear-gradient(0deg,_#00000000_0%,_#000000_15%,_#000000_85%,_#00000000_100%)] opacity-[0.16] dark:bg-[linear-gradient(0deg,_#ffffff00_0%,_#ffffff_15%,_#ffffff_85%,_#ffffff00_100%)] dark:opacity-[0.16]"
+                ></div>
+{#                <a href="#" class="max-md:hidden opacity-90 hover:opacity-100">Войти</a>#}
+                <div class="md:hidden max-sm:hidden">
+                    <svg
+                            class="stroke-[#000] dark:stroke-[#fff]"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                    >
+                        <path
+                                d="M21 12C21 14.3 20.1 16.4 18.7 18C18.6 18.1 18.5 18.2 18.4 18.4C16.7 20 14.5 21 12 21C9.5 21 7.3 20 5.6 18.4C5.5 18.3 5.4 18.2 5.3 18C3.9 16.4 3 14.3 3 12C3 7 7 3 12 3C14.5 3 16.7 4 18.4 5.6C20 7.3 21 9.5 21 12ZM18.4 17.6C16.7 16 14.5 15 12 15C9.3 15 6.9 16.2 5.3 18C5.4 18.1 5.5 18.2 5.6 18.4C7.3 20 9.5 21 12 21C14.5 21 16.7 20 18.4 18.4C18.5 18.3 18.6 18.2 18.7 18C18.6 17.9 18.5 17.8 18.4 17.6ZM12 7C10.6 7 9.5 8.1 9.5 9.5C9.5 10.9 10.6 12 12 12C13.4 12 14.5 10.9 14.5 9.5C14.5 8.1 13.4 7 12 7Z"
+                                stroke-width="1.5"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                        />
+                    </svg>
+                </div>
+                <a
+                        href="#" data-open-form
+                        class="block cursor-pointer px-[12px] py-[6px] bg-[linear-gradient(180deg,_#3274F9_0%,_#135BEB_100%)] rounded-[32px] hover:shadow-[0px_-4px_12px_0px_rgba(255,_255,_255,_0.32)_inset] text-dark-text-primary"
+{#                        data-open-form#}
+                >
+                    Попробовать
+                </a>
+                <div class="md:hidden p-2" id="burger">
+                    <svg
+                            class="stroke-[#000] dark:stroke-[#fff]"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                    >
+                        <path d="M6 17H18" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M6 12H18" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M6 7H18" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+        <div
+                class="w-full h-[1px] bg-[linear-gradient(48deg,_rgba(44,51,62,0)_0%,_rgba(44,51,62,1)_15%,_rgba(44,51,62,1)_85%,_rgba(44,51,62,0)_100%)] dark:bg-[linear-gradient(48deg,_rgba(255,255,255,0)_0%,_rgba(255,255,255,1)_15%,_rgba(255,255,255,1)_85%,_rgba(255,255,255,0)_100%)] opacity-20"
+        ></div>
+        <div
+                class="fixed flex flex-col z-[1000] top-[57px] left-0 w-full h-[calc(100dvh-57px)] bg-[#fff] dark:bg-[#000] transition translate-x-full"
+                id="mobile-nav"
+        >
+            <div class="p-4 overflow-y-auto">
+                {% for menu_item in main_menu %}
+                    {% if menu_item.submenu %}
+                        <div class="flex flex-col gap-2 w-full py-3">
+                            <div
+                                    class="hidden max-md:flex font-normal text-[20px] max-sm:text-sm leading-[26px] max-sm:leading-[20px] justify-between items-center cursor-pointer header-readmore"
+                            >
+                                {{ menu_item.title }}
+                                <div class="transition flex items-center">
+                                    <img src="{% static 'icons/arrow_down_16.svg' %}" alt="arrow_down"
+                                         class="hidden dark:block"/>
+                                    <img src="{% static 'icons/arrow_down_16_light.svg' %}" alt="arrow_down"
+                                         class="dark:hidden"/>
+                                </div>
+                            </div>
+                            <a href="{{ menu_item.url }}"
+                               class="font-normal text-base leading-[22px] hover:underline max-md:hidden">{{ menu_item.title }}</a>
+                            <div class="flex-col flex gap-2 pt-[4px] max-md:hidden">
+                                {% for sub_menu_item in menu_item.submenu %}
+                                    <a href="{{ sub_menu_item.url }}"
+                                       class="opacity-80 hover:opacity-100 hover:underline">{{ sub_menu_item.title }}</a>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    {% else %}
+                        <div class="flex flex-col gap-2 w-full py-3">
+                            <a href="{{ menu_item.url }}"
+                               class="font-normal text-base max-sm:text-sm leading-[22px] hover:underline">{{ menu_item.title }}</a>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+            <div class="w-full px-4 pt-8 pb-4 flex-grow flex items-end">
+{#                <a href="#"#}
+{#                   class="dark:bg-[#0e0f10] bg-[#eaeef2] border dark:border-[#1f2021] border-[#eaeef2] rounded-full py-[13px] w-full text-center block"#}
+{#                >Войти в аккаунт</a#}
+{#                >#}
+            </div>
+        </div>
+    </div>
+</header>
 
 
 <section class="main_section">

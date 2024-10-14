@@ -1,7 +1,5 @@
 from django.db import models
 
-class ForDelete(models.Model):
-    name = models.CharField(max_length=120)
 
 # Модель для плана
 class Plan(models.Model):

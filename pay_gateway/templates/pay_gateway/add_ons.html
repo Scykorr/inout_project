@@ -9,76 +9,467 @@
 </head>
 <body>
 
-<header class="upper_footer">
-    <div class="layout_nav">
-        <nav class="left_nav">
-            <ul class="hr">
-                <li class="company_logo_li">
-                    <a href="#" class="company_logo">
+{% load static %}
+<header class="font-normal text-[14px] leading-[20px] max-md:px-8 max-sm:px-4 relative">
+    <div class="container mx-auto py-[8px] flex justify-between">
+        <div id="logo" class="header flex gap-[24px] whitespace-nowrap">
+            <a href="#" class="flex items-center">
+                <img src="{% static 'icons/logo.svg' %}" alt="logo" class="hidden dark:block"/>
+                <img src="{% static 'icons/logo_dark.svg' %}" alt="logo_dark" class="dark:hidden"/>
+            </a>
+            <nav class="max-md:hidden">
+                <ul class="flex gap-[24px]">
+                    <li
+                            class="relative group/item p-1.5 gap-x-1 rounded-lg leading-[1.4] flex items-center opacity-90 hover:opacity-100 transition hover:bg-[var(--colors-background-sec-bt)] cursor-pointer"
+                    >
+                        <span>Продукт</span>
                         <img
-                            sizes="(max-width: 320px) 280px,
-            (max-width: 480px) 440px,
-            800px"
-                            src="{% static 'img/Logo-INOUT-Project.png' %}" alt="logo"
-                            srcset="{% static 'img/Logo-INOUT-Project-x2.png' %} 2x">
-                    </a>
-                </li>
-                <li>
-                    <div class="dropdown_header">
-                        <button class="dropbtn_header">Продукт</button>
-                        <div class="dropdown-content_header">
-                            <a href="#">Link 1</a>
-                            <a href="#">Link 2</a>
-                            <a href="#">Link 3</a>
+                                src="{% static 'icons/arrow_down.svg' %}"
+                                alt="arrow_down"
+                                class="hidden dark:block group-hover/item:rotate-180 transition"
+                        />
+                        <img
+                                src="{% static 'icons/arrow_down_dark.svg' %}"
+                                alt="arrow_down"
+                                class="dark:hidden block group-hover/item:rotate-180 transition"
+                        />
+                        <div class="absolute z-[4] hidden group-hover/item:flex left-0 top-9 pt-1">
+                            <div
+                                    class="gap-x-6 group-hover/item:flex p-4 dark:bg-[var(--colors-background-header)] border border-[var(--colors-stroke-table)] rounded-[16px] bg-[#fff] dark:backdrop-blur-2xl"
+                            >
+                                <div
+                                        class="p-5 group/block rounded-[12px] bg-[var(--colors-background-card)] w-[262px] hover:bg-[url('/static/image/back-review-card.svg')] bg-cover transition"
+                                >
+                                    <h3 class="text-xl text-[var(--colors-dark-base-text-primary)]">Продукт</h3>
+                                    <p class="whitespace-normal text-[var(--colors-text-secondary)] mt-2 text-base font-normal">
+                                        Страница, со списком и описанием всех продуктов INOUT Проект
+                                    </p>
+                                    <a
+                                            href="#"
+                                            class="rounded-full py-3 px-6 group-hover/block:dark:border-[#365995] hover:shadow-[0px_-4px_12px_0px_rgba(0,_0,_0,_0.16)_inset] text-[var(--colors-dark-base-text-primary)] bg-[#eaeef2] border-[#eaeef2] dark:bg-[rgba(255,255,255,0.05)] text-base mt-20 inline-block border dark:border-[#343942] transition"
+                                    >
+                                        Перейти
+                                    </a>
+                                </div>
+                                <div>
+                                    <ul>
+                                        <li>
+                                            <a
+                                                    href="#"
+                                                    class="py-2 text-base font-medium block min-w-[222px] hover:text-[#4785FF] transition"
+                                            >База
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a
+                                                    href="#"
+                                                    class="py-2 text-base font-medium block min-w-[222px] hover:text-[#4785FF] transition"
+                                            >Бизнес
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a
+                                                    href="#"
+                                                    class="py-2 text-base font-medium block min-w-[222px] hover:text-[#4785FF] transition"
+                                            >Развёртывание
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a
+                                                    href="#"
+                                                    class="py-2 text-base font-medium block min-w-[222px] hover:text-[#4785FF] transition"
+                                            >Платформа
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a
+                                                    href="#"
+                                                    class="py-2 text-base font-medium block min-w-[222px] hover:text-[#4785FF] transition"
+                                            >Интеграция
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </li>
-                <!-- остальные элементы навигации -->
-            </ul>
-        </nav>
-        <nav class="right_bt">
-            <ul class="right-ul">
-                <li>
-                    <a href="#">Поиск</a>
-                </li>
-                <li>
-                    <div class="vertical-line"></div>
-                </li>
-                <li>
-                    <a href="#">Войти</a>
-                </li>
-                <li>
-                    <a class="try_it" href="#">Попробовать</a>
-                </li>
-            </ul>
-        </nav>
-    </div>
-    <div class="layout_content">
-        <div class="content_text">
-            <ul>
-                <li class="price_payment_title">
-                    <p>Цены и оплата</p>
-                </li>
-                <li class="price_payment_text">
-                    <p>Хорошо известно, что «то, что не измеряется, не может быть улучшено».
-                        Поэтому время отслеживания и регистрации важно для всех, кто хочет достичь лучших результатов.
-                        INOUT Проект позволяет отслеживать время, затрачиваемое на задачи и проекты,
-                        несколькими способами, включая секундомер и ручной ввод времени для задач.</p>
-                </li>
-            </ul>
+                    </li>
+                    <li
+                            class="relative group/item p-1.5 gap-x-1 rounded-lg leading-[1.4] flex items-center opacity-90 hover:opacity-100 transition hover:bg-[var(--colors-background-sec-bt)] cursor-pointer"
+                    >
+                        <span>Услуги</span>
+                        <img
+                                src="{% static 'icons/arrow_down.svg' %}"
+                                alt="arrow_down"
+                                class="hidden dark:block group-hover/item:rotate-180 transition"
+                        />
+                        <img
+                                src="{% static 'icons/arrow_down_dark.svg' %}"
+                                alt="arrow_down"
+                                class="dark:hidden block group-hover/item:rotate-180 transition"
+                        />
+                        <div class="absolute z-[4] hidden group-hover/item:flex left-0 top-9 pt-1">
+                            <div
+                                    class="gap-x-6 group-hover/item:flex p-4 dark:bg-[var(--colors-background-header)] border border-[var(--colors-stroke-table)] rounded-[16px] bg-[#fff] dark:backdrop-blur-2xl"
+                            >
+                                <div
+                                        class="p-5 group/block rounded-[12px] bg-[var(--colors-background-card)] w-[262px] hover:bg-[url('/static/image/back-review-card.svg')] bg-cover transition"
+                                >
+                                    <h3 class="text-xl text-[var(--colors-dark-base-text-primary)]">Услуги</h3>
+                                    <p class="whitespace-normal text-[var(--colors-text-secondary)] mt-2 text-base font-normal">
+                                        Страница, со списком и описанием всех услуг INOUT Проект
+                                    </p>
+                                    <a
+                                            href="#"
+                                            class="rounded-full py-3 px-6 group-hover/block:dark:border-[#365995] hover:shadow-[0px_-4px_12px_0px_rgba(0,_0,_0,_0.16)_inset] text-[var(--colors-dark-base-text-primary)] bg-[#eaeef2] border-[#eaeef2] dark:bg-[rgba(255,255,255,0.05)] text-base mt-20 inline-block border dark:border-[#343942] transition"
+                                    >
+                                        Перейти
+                                    </a>
+                                </div>
+                                <div>
+                                    <ul>
+                                        <li>
+                                            <a
+                                                    href="#"
+                                                    class="py-2 text-base font-medium block min-w-[222px] hover:text-[#4785FF] transition"
+                                            >Поддержка
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a
+                                                    href="#"
+                                                    class="py-2 text-base font-medium block min-w-[222px] hover:text-[#4785FF] transition"
+                                            >Реализация
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a
+                                                    href="#"
+                                                    class="py-2 text-base font-medium block min-w-[222px] hover:text-[#4785FF] transition"
+                                            >Внедрение
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li
+                            class="relative group/item p-1.5 gap-x-1 rounded-lg leading-[1.4] flex items-center opacity-90 hover:opacity-100 transition hover:bg-[var(--colors-background-sec-bt)] cursor-pointer"
+                    >
+                        <span>О нас</span>
+                        <img
+                                src="{% static 'icons/arrow_down.svg' %}"
+                                alt="arrow_down"
+                                class="hidden dark:block group-hover/item:rotate-180 transition"
+                        />
+                        <img
+                                src="{% static 'icons/arrow_down_dark.svg' %}"
+                                alt="arrow_down"
+                                class="dark:hidden block group-hover/item:rotate-180 transition"
+                        />
+                        <div class="absolute z-[4] hidden group-hover/item:flex left-0 top-9 pt-1">
+                            <div
+                                    class="gap-x-6 group-hover/item:flex p-4 dark:bg-[var(--colors-background-header)] border border-[var(--colors-stroke-table)] rounded-[16px] bg-[#fff] dark:backdrop-blur-2xl"
+                            >
+                                <div
+                                        class="p-5 group/block rounded-[12px] bg-[var(--colors-background-card)] w-[262px] hover:bg-[url('/static/image/back-review-card.svg')] bg-cover transition"
+                                >
+                                    <h3 class="text-xl text-[var(--colors-dark-base-text-primary)]">О нас</h3>
+                                    <p class="whitespace-normal text-[var(--colors-text-secondary)] mt-2 text-base font-normal">
+                                        Страница, с описанием и партнерами компании
+                                    </p>
+                                    <a
+                                            href="#"
+                                            class="rounded-full py-3 px-6 group-hover/block:dark:border-[#365995] hover:shadow-[0px_-4px_12px_0px_rgba(0,_0,_0,_0.16)_inset] text-[var(--colors-dark-base-text-primary)] bg-[#eaeef2] border-[#eaeef2] dark:bg-[rgba(255,255,255,0.05)] text-base mt-20 inline-block border dark:border-[#343942] transition"
+                                    >
+                                        Перейти
+                                    </a>
+                                </div>
+                                <div>
+                                    <ul>
+                                        <li>
+                                            <a
+                                                    href="#"
+                                                    class="py-2 text-base font-medium block min-w-[222px] hover:text-[#4785FF] transition"
+                                            >Отзывы
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a
+                                                    href="#"
+                                                    class="py-2 text-base font-medium block min-w-[222px] hover:text-[#4785FF] transition"
+                                            >Партнеры
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a
+                                                    href="#"
+                                                    class="py-2 text-base font-medium block min-w-[222px] hover:text-[#4785FF] transition"
+                                            >Стать партнером
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a
+                                                    href="#"
+                                                    class="py-2 text-base font-medium block min-w-[222px] hover:text-[#4785FF] transition"
+                                            >Новости управления проектами
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li
+                            class="relative group/item p-1.5 gap-x-1 rounded-lg leading-[1.4] flex items-center opacity-90 hover:opacity-100 transition hover:bg-[var(--colors-background-sec-bt)] cursor-pointer"
+                    >
+                        <span>Ресурсы</span>
+                        <img
+                                src="{% static 'icons/arrow_down.svg' %}"
+                                alt="arrow_down"
+                                class="hidden dark:block group-hover/item:rotate-180 transition"
+                        />
+                        <img
+                                src="{% static 'icons/arrow_down_dark.svg' %}"
+                                alt="arrow_down"
+                                class="dark:hidden block group-hover/item:rotate-180 transition"
+                        />
+                        <div class="absolute z-[4] hidden group-hover/item:flex left-0 top-9 pt-1">
+                            <div
+                                    class="gap-x-6 group-hover/item:flex p-4 dark:bg-[var(--colors-background-header)] border border-[var(--colors-stroke-table)] rounded-[16px] bg-[#fff] dark:backdrop-blur-2xl"
+                            >
+                                <div
+                                        class="p-5 group/block rounded-[12px] bg-[var(--colors-background-card)] w-[262px] hover:bg-[url('/static/image/back-review-card.svg')] bg-cover transition"
+                                >
+                                    <h3 class="text-xl text-[var(--colors-dark-base-text-primary)]">Ресурсы</h3>
+                                    <p class="whitespace-normal text-[var(--colors-text-secondary)] mt-2 text-base font-normal">
+                                        Страница, с вспомогающими материалами, ресурсами
+                                    </p>
+                                    <a
+                                            href="#"
+                                            class="rounded-full py-3 px-6 group-hover/block:dark:border-[#365995] hover:shadow-[0px_-4px_12px_0px_rgba(0,_0,_0,_0.16)_inset] text-[var(--colors-dark-base-text-primary)] bg-[#eaeef2] border-[#eaeef2] dark:bg-[rgba(255,255,255,0.05)] text-base mt-20 inline-block border dark:border-[#343942] transition"
+                                    >
+                                        Перейти
+                                    </a>
+                                </div>
+                                <div>
+                                    <ul>
+                                        <li>
+                                            <a
+                                                    href="#"
+                                                    class="py-2 text-base font-medium block min-w-[222px] hover:text-[#4785FF] transition"
+                                            >Учебный центр
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a
+                                                    href="#"
+                                                    class="py-2 text-base font-medium block min-w-[222px] hover:text-[#4785FF] transition"
+                                            >Блог
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a
+                                                    href="#"
+                                                    class="py-2 text-base font-medium block min-w-[222px] hover:text-[#4785FF] transition"
+                                            >Документация
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a
+                                                    href="#"
+                                                    class="py-2 text-base font-medium block min-w-[222px] hover:text-[#4785FF] transition"
+                                            >Вопросы и ответы
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a
+                                                    href="#"
+                                                    class="py-2 text-base font-medium block min-w-[222px] hover:text-[#4785FF] transition"
+                                            >Техническая информация
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li
+                            class="relative group/item p-1.5 gap-x-1 rounded-lg leading-[1.4] flex items-center opacity-90 hover:opacity-100 transition hover:bg-[var(--colors-background-sec-bt)] cursor-pointer"
+                    >
+                        <a href="#">Цены</a>
+                    </li>
+                </ul>
+            </nav>
         </div>
-        <div class="tabs_primary">
-            <ul>
-                <li class="li_dropbtn_c">
-                    <a class="dropbtn_c">В облаке</a>
-                </li>
-                <li>
-                    <a class="dropbtn_o">На сервере</a>
-                </li>
-            </ul>
+        <div class="flex items-center gap-x-6 max-md:gap-x-4 relative">
+            <a href="#" class="flex items-center" id="searchIcon">
+                <img src="{% static 'icons/search.svg' %}" alt="search" class="hidden dark:block"/>
+                <img src="{% static 'icons/search_dark.svg' %}" alt="search" class="dark:hidden"/>
+                <span class="ml-[8px] opacity-90 hover:opacity-100 max-md:hidden">Поиск</span>
+            </a>
+            <div id="searchInputContainer" class="hidden py-2">
+                <input
+                        id="input"
+                        type="text"
+                        class="bg-[transparent] focus:outline-none border-none pl-5 pr-4 max-sm:w-full"
+                        placeholder="Поиск"
+                />
+                <img
+                        src="{% static 'icons/light_search.svg' %}"
+                        alt="search"
+                        class="absolute top-[18px] max-sm:top-[18px] transform -translate-y-1/2 hidden dark:block"
+                />
+                <img
+                        src="{% static 'icons/search_dark.svg' %}"
+                        alt="search"
+                        class="absolute left-[-6px] top-[18px] max-sm:top-[18px] transform -translate-y-1/2 dark:hidden"
+                />
+                <img
+                        src="{% static 'icons/cancel.svg' %}"
+                        alt="cancel"
+                        class="absolute right-52 max-sm:right-[-0.75rem] top-[18px] max-sm:top-[18px] transform -translate-y-1/2 hidden dark:block cursor-pointer"
+                        id="cancelSearch"
+                />
+            </div>
+            <div
+                    class="max-md:hidden h-[24px] w-[1px] bg-[linear-gradient(0deg,_#00000000_0%,_#000000_15%,_#000000_85%,_#00000000_100%)] opacity-[0.16] dark:bg-[linear-gradient(0deg,_#ffffff00_0%,_#ffffff_15%,_#ffffff_85%,_#ffffff00_100%)] dark:opacity-[0.16]"
+            ></div>
+            <a href="#" class="max-md:hidden opacity-90 hover:opacity-100">Войти</a>
+            <div class="md:hidden max-sm:hidden">
+                <svg
+                        class="stroke-[#000] dark:stroke-[#fff]"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                >
+                    <path
+                            d="M21 12C21 14.3 20.1 16.4 18.7 18C18.6 18.1 18.5 18.2 18.4 18.4C16.7 20 14.5 21 12 21C9.5 21 7.3 20 5.6 18.4C5.5 18.3 5.4 18.2 5.3 18C3.9 16.4 3 14.3 3 12C3 7 7 3 12 3C14.5 3 16.7 4 18.4 5.6C20 7.3 21 9.5 21 12ZM18.4 17.6C16.7 16 14.5 15 12 15C9.3 15 6.9 16.2 5.3 18C5.4 18.1 5.5 18.2 5.6 18.4C7.3 20 9.5 21 12 21C14.5 21 16.7 20 18.4 18.4C18.5 18.3 18.6 18.2 18.7 18C18.6 17.9 18.5 17.8 18.4 17.6ZM12 7C10.6 7 9.5 8.1 9.5 9.5C9.5 10.9 10.6 12 12 12C13.4 12 14.5 10.9 14.5 9.5C14.5 8.1 13.4 7 12 7Z"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                    />
+                </svg>
+            </div>
+            <a
+                    id="tryButton"
+                    href="#"
+                    class="block cursor-pointer px-[12px] py-[6px] bg-[linear-gradient(180deg,_#3274F9_0%,_#135BEB_100%)] rounded-[32px] hover:shadow-[0px_-4px_12px_0px_rgba(255,_255,_255,_0.32)_inset] transition text-dark-text-primary"
+            >
+                Попробовать
+            </a>
+            <div class="md:hidden p-2" id="burger">
+                <svg
+                        class="stroke-[#000] dark:stroke-[#fff]"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                >
+                    <path d="M6 17H18" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M6 12H18" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M6 7H18" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+        </div>
+    </div>
+    <div
+            class="w-full h-[1px] bg-[linear-gradient(48deg,_rgba(44,51,62,0)_0%,_rgba(44,51,62,1)_15%,_rgba(44,51,62,1)_85%,_rgba(44,51,62,0)_100%)] dark:bg-[linear-gradient(48deg,_rgba(255,255,255,0)_0%,_rgba(255,255,255,1)_15%,_rgba(255,255,255,1)_85%,_rgba(255,255,255,0)_100%)] opacity-20"
+    ></div>
+    <div
+            class="fixed flex flex-col z-[1000] top-[57px] left-0 w-full h-[calc(100dvw-57px)] bg-[#fff] dark:bg-[#000] transition translate-x-full"
+            id="mobile-nav"
+    >
+        <div class="p-4 overflow-y-auto">
+            <div class="flex flex-col gap-2 w-full py-3">
+                <div
+                        class="hidden max-md:flex font-normal text-[20px] max-sm:text-sm leading-[26px] max-sm:leading-[20px] justify-between items-center cursor-pointer header-readmore"
+                >
+                    Продукт
+                    <div class="transition flex items-center">
+                        <img src="{% static 'icons/arrow_down_16.svg' %}" alt="arrow_down" class="hidden dark:block"/>
+                        <img src="{% static 'icons/arrow_down_16_light.svg' %}" alt="arrow_down" class="dark:hidden"/>
+                    </div>
+                </div>
+                <a href="#" class="font-normal text-base leading-[22px] hover:underline max-md:hidden">Продукты</a>
+                <div class="flex-col flex gap-2 pt-[4px] max-md:hidden">
+                    <a href="#" class="opacity-80 hover:opacity-100 hover:underline">База</a>
+                    <a href="#" class="opacity-80 hover:opacity-100 hover:underline">Бизнес</a>
+                    <a href="#" class="opacity-80 hover:opacity-100 hover:underline">Развёртывание</a>
+                    <a href="#" class="opacity-80 hover:opacity-100 hover:underline">Платформа</a>
+                    <a href="#" class="opacity-80 hover:opacity-100 hover:underline">Интеграция</a>
+                </div>
+            </div>
+            <div class="flex flex-col gap-2 w-full py-3">
+                <div
+                        class="hidden max-md:flex font-normal text-[20px] max-sm:text-sm leading-[26px] max-sm:leading-[20px] justify-between items-center cursor-pointer header-readmore"
+                >
+                    Услуги
+                    <div class="transition flex items-center">
+                        <img src="{% static 'icons/arrow_down_16.svg' %}" alt="arrow_down" class="hidden dark:block"/>
+                        <img src="{% static 'icons/arrow_down_16_light.svg' %}" alt="arrow_down" class="dark:hidden"/>
+                    </div>
+                </div>
+                <a href="#" class="font-normal text-base leading-[22px] hover:underline max-md:hidden">Услуги</a>
+                <div class="flex-col flex gap-2 pt-[4px] max-md:hidden">
+                    <a href="#" class="opacity-80 hover:opacity-100 hover:underline">Поддержка</a>
+                    <a href="#" class="opacity-80 hover:opacity-100 hover:underline">Реализация</a>
+                    <a href="#" class="opacity-80 hover:opacity-100 hover:underline">Внедрение</a>
+                </div>
+            </div>
+            <div class="flex flex-col gap-2 w-full py-3">
+                <div
+                        class="hidden max-md:flex font-normal text-[20px] max-sm:text-sm leading-[26px] max-sm:leading-[20px] justify-between items-center cursor-pointer header-readmore"
+                >
+                    О нас
+                    <div class="transition flex items-center">
+                        <img src="{% static 'icons/arrow_down_16.svg' %}" alt="arrow_down" class="hidden dark:block"/>
+                        <img src="{% static 'icons/arrow_down_16_light.svg' %}" alt="arrow_down" class="dark:hidden"/>
+                    </div>
+                </div>
+                <a href="#" class="font-normal text-base leading-[22px] hover:underline max-md:hidden">О нас</a>
+                <div class="flex-col flex gap-2 pt-[4px] max-md:hidden">
+                    <a href="#" class="opacity-80 hover:opacity-100 hover:underline">Отзывы</a>
+                    <a href="#" class="opacity-80 hover:opacity-100 hover:underline">Партнеры</a>
+                    <a href="#" class="opacity-80 hover:opacity-100 hover:underline">Стать партнером</a>
+                    <a href="#" class="opacity-80 hover:opacity-100 hover:underline">Новости управления проектами</a>
+                </div>
+            </div>
+            <div class="flex flex-col gap-2 w-full py-3">
+                <div
+                        class="hidden max-md:flex font-normal text-[20px] max-sm:text-sm leading-[26px] max-sm:leading-[20px] justify-between items-center cursor-pointer header-readmore"
+                >
+                    Ресурсы
+                    <div class="transition flex items-center">
+                        <img src="{% static 'icons/arrow_down_16.svg' %}" alt="arrow_down" class="hidden dark:block"/>
+                        <img src="{% static 'icons/arrow_down_16_light.svg' %}" alt="arrow_down" class="dark:hidden"/>
+                    </div>
+                </div>
+                <a href="#" class="font-normal text-base leading-[22px] hover:underline max-md:hidden">Ресурсы</a>
+                <div class="flex-col flex gap-2 pt-[4px] max-md:hidden">
+                    <a href="#" class="opacity-80 hover:opacity-100 hover:underline">Учебный центр</a>
+                    <a href="#" class="opacity-80 hover:opacity-100 hover:underline">Блог</a>
+                    <a href="#" class="opacity-80 hover:opacity-100 hover:underline">Документация</a>
+                    <a href="#" class="opacity-80 hover:opacity-100 hover:underline">FAQ</a>
+                </div>
+            </div>
+            <div class="flex flex-col gap-2 w-full py-3">
+                <a href="#" class="font-normal text-base max-sm:text-sm leading-[22px] hover:underline">Цены</a>
+            </div>
+        </div>
+        <div class="w-full px-4 pt-8 pb-4 flex-grow flex items-end">
+            <a
+                    href="#"
+                    class="dark:bg-[#0e0f10] bg-[#eaeef2] border dark:border-[#1f2021] border-[#eaeef2] rounded-full py-[13px] w-full text-center block"
+            >Войти в аккаунт</a
+            >
         </div>
     </div>
 </header>
+
 
 <section class="main_section">
     <div class="second_line_img">
@@ -286,7 +677,7 @@
                         <label for="b2b_crm"></label>
                         <p class="text_for_checkbox">B2B CRM
                             <img class="icon_info" src="{% static 'img/icon_info_outline_.png' %}" alt="logo"
-                                 srcset="{% static 'img/icon_info_outline_x2.png' 2x %}"
+                                 srcset="{% static 'img/icon_info_outline_x2.png 2x'  %}"
                                  title="Управляйте своей деятельностью&#013;по продажам и реализуйте свои проекты.&#013;B2B CRM позволяет вашей команде&#013;по продажам отслеживать возможности&#013;от лида до контракта, генерирует&#013;статистику эффективности и помогает&#013;повысить общую эффективность продаж.">
 
                         </p>
@@ -304,7 +695,7 @@
                         <label for="knowledge_base"></label>
                         <p class="text_for_checkbox">База знаний
                             <img class="icon_info" src="img/icon_info_outline_.png" alt="logo"
-                                 srcset="{% static 'img/icon_info_outline_x2.png' 2x %}"
+                                 srcset="{% static 'img/icon_info_outline_x2.png 2x'  %}"
                                  title="Мощный набор инструментов для организации&#013;и масштабирования документации, процессов,&#013;руководств, управления качеством и других&#013;потребностей для поддержания знаний&#013;в организации.">
 
                         </p>
@@ -322,7 +713,7 @@
                         <label for="asset_config"></label>
                         <p class="text_for_checkbox">Управление активами и конфигурациями
                             <img class=icon_info src="{% static 'img/icon_info_outline_.png' %}" alt=logo"
-                                 srcset="{% static 'img/icon_info_outline_x2.png' 2x %}"
+                                 srcset="{% static 'img/icon_info_outline_x2.png 2x'  %}"
                                  title="Наше дополнение гарантирует,&#013;что все ваши активы и конфигурации&#013;будут оставаться актуальными и&#013;легкодоступными, позволяя вам&#013;связывать данные с задачами.&#013;Держите свои данные организованными,&#013;точными и всегда под рукой.">
 
                         </p>
@@ -337,7 +728,7 @@
         </div>
     </div>
     <div class="line_21_img">
-        <img class="" src="{% static 'img/Line_19.png' %}" alt="logo" srcset="{% static 'img/Line_19x2.png' 2x%}">
+        <img class="" src="{% static 'img/Line_19.png' %}" alt="logo" srcset="{% static 'img/Line_19x2.png 2x' %}">
     </div>
     <div class="main_services">
         <div class="services_about">

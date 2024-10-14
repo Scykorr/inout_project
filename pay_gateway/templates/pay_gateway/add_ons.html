@@ -6,6 +6,9 @@
     <meta charset="UTF-8">
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/add_onn.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet"/>
+    <link href="{% static 'sass/main_output.css' %}" rel="stylesheet">
     <title>Дополнительные модули</title>
     <script src="{% static 'scripts/add_onns_dropbtn.js' %}"></script>
 </head>
@@ -89,7 +92,7 @@
                 <div
                         class="max-md:hidden h-[24px] w-[1px] bg-[linear-gradient(0deg,_#00000000_0%,_#000000_15%,_#000000_85%,_#00000000_100%)] opacity-[0.16] dark:bg-[linear-gradient(0deg,_#ffffff00_0%,_#ffffff_15%,_#ffffff_85%,_#ffffff00_100%)] dark:opacity-[0.16]"
                 ></div>
-{#                <a href="#" class="max-md:hidden opacity-90 hover:opacity-100">Войти</a>#}
+                {#                <a href="#" class="max-md:hidden opacity-90 hover:opacity-100">Войти</a>#}
                 <div class="md:hidden max-sm:hidden">
                     <svg
                             class="stroke-[#000] dark:stroke-[#fff]"
@@ -110,7 +113,7 @@
                 <a
                         href="#" data-open-form
                         class="block cursor-pointer px-[12px] py-[6px] bg-[linear-gradient(180deg,_#3274F9_0%,_#135BEB_100%)] rounded-[32px] hover:shadow-[0px_-4px_12px_0px_rgba(255,_255,_255,_0.32)_inset] text-dark-text-primary"
-{#                        data-open-form#}
+                        {#                        data-open-form#}
                 >
                     Попробовать
                 </a>
@@ -170,10 +173,10 @@
                 {% endfor %}
             </div>
             <div class="w-full px-4 pt-8 pb-4 flex-grow flex items-end">
-{#                <a href="#"#}
-{#                   class="dark:bg-[#0e0f10] bg-[#eaeef2] border dark:border-[#1f2021] border-[#eaeef2] rounded-full py-[13px] w-full text-center block"#}
-{#                >Войти в аккаунт</a#}
-{#                >#}
+                {#                <a href="#"#}
+                {#                   class="dark:bg-[#0e0f10] bg-[#eaeef2] border dark:border-[#1f2021] border-[#eaeef2] rounded-full py-[13px] w-full text-center block"#}
+                {#                >Войти в аккаунт</a#}
+                {#                >#}
             </div>
         </div>
     </div>
@@ -182,7 +185,8 @@
 
 <section class="main_section">
     <div class="second_line_img">
-        <img class="second_line" src="{% static 'img/Line_12.png' %}" alt="logo" srcset="{% static 'img/Line_12x2.png' %} 2x">
+        <img class="second_line" src="{% static 'img/Line_12.png' %}" alt="logo"
+             srcset="{% static 'img/Line_12x2.png' %} 2x">
     </div>
     <div class="div_road_map_img">
         <div class="panel_roadmap">
@@ -198,15 +202,19 @@
             <span class="roadmap_text_second">Соберите своё решение</span>
             <div class="create-line"></div>
             <div class="lin-grad-border">
-                <div class="common_plan" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
-                    <span class="text-roadmap" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">3</span>
+                <div class="common_plan"
+                     style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+                    <span class="text-roadmap"
+                          style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">3</span>
                 </div>
             </div>
             <span class="roadmap_text_third">Выставление счета</span>
             <div class="create-line"></div>
             <div class="lin-grad-border">
-                <div class="common_plan" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
-                    <span class="text-roadmap" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">4</span>
+                <div class="common_plan"
+                     style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+                    <span class="text-roadmap"
+                          style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">4</span>
                 </div>
             </div>
             <span class="roadmap_text_fourth">Оплата</span>
@@ -246,13 +254,13 @@
                         id="myValue"></span></span>
 
                     <input
-                        type="range"
-                        min="5"
-                        max="100"
-                        value="0"
-                        class="range-input"
-                        id="range4"
-                        step="5"
+                            type="range"
+                            min="5"
+                            max="100"
+                            value="0"
+                            class="range-input"
+                            id="range4"
+                            step="5"
                     />
                     <div class="sliderticks">
                         <span>5</span>
@@ -386,7 +394,7 @@
                         <label for="b2b_crm"></label>
                         <p class="text_for_checkbox">B2B CRM
                             <img class="icon_info" src="{% static 'img/icon_info_outline_.png' %}" alt="logo"
-                                 srcset="{% static 'img/icon_info_outline_x2.png 2x'  %}"
+                                 srcset="{% static 'img/icon_info_outline_x2.png 2x' %}"
                                  title="Управляйте своей деятельностью&#013;по продажам и реализуйте свои проекты.&#013;B2B CRM позволяет вашей команде&#013;по продажам отслеживать возможности&#013;от лида до контракта, генерирует&#013;статистику эффективности и помогает&#013;повысить общую эффективность продаж.">
 
                         </p>
@@ -404,7 +412,7 @@
                         <label for="knowledge_base"></label>
                         <p class="text_for_checkbox">База знаний
                             <img class="icon_info" src="img/icon_info_outline_.png" alt="logo"
-                                 srcset="{% static 'img/icon_info_outline_x2.png 2x'  %}"
+                                 srcset="{% static 'img/icon_info_outline_x2.png 2x' %}"
                                  title="Мощный набор инструментов для организации&#013;и масштабирования документации, процессов,&#013;руководств, управления качеством и других&#013;потребностей для поддержания знаний&#013;в организации.">
 
                         </p>
@@ -422,7 +430,7 @@
                         <label for="asset_config"></label>
                         <p class="text_for_checkbox">Управление активами и конфигурациями
                             <img class=icon_info src="{% static 'img/icon_info_outline_.png' %}" alt=logo"
-                                 srcset="{% static 'img/icon_info_outline_x2.png 2x'  %}"
+                                 srcset="{% static 'img/icon_info_outline_x2.png 2x' %}"
                                  title="Наше дополнение гарантирует,&#013;что все ваши активы и конфигурации&#013;будут оставаться актуальными и&#013;легкодоступными, позволяя вам&#013;связывать данные с задачами.&#013;Держите свои данные организованными,&#013;точными и всегда под рукой.">
 
                         </p>

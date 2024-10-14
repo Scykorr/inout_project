@@ -6,7 +6,7 @@ from django.shortcuts import render
 
 
 def plan_view(request):
-    return render(request, 'pay_gateway/bottom_choose_plan.html')  # Рендерим шаблон choose_plan.html
+    return render(request, 'pay_gateway/botton_choose_plan.html')  # Рендерим шаблон choose_plan.html
 
 
 def add_ons(request):

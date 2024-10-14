@@ -1,0 +1,477 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: radial-gradient(100% 100% at 51.15% 0%, #061637 0%, #000000 100%);
+}
+
+.container {
+    max-width: 1920px;
+    margin: 0 auto;
+    display: flex;
+    min-height: 100vh;
+    overflow: auto; /* Позволяет прокручивать контент, если он выходит за пределы экрана */
+}
+
+.sidebar {
+    width: 240px; /* Уменьшено с 286px */
+    padding: 15px; /* Уменьшено */
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid transparent;
+    transition: transform 0.3s ease, width 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.sidebar.hidden {
+    transform: translateX(-100%);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    margin-top: 6px;
+    margin-bottom: 58px; /* Уменьшено */
+}
+
+.logo-image {
+    width: 40px; /* Уменьшено */
+    margin-right: 8px; /* Уменьшено */
+}
+
+.logo-text {
+    font-size: 20px; /* Уменьшено */
+    color: white;
+}
+
+.menu {
+    list-style-type: none;
+    padding-left: 0;
+    margin-bottom: auto;
+}
+
+.menu li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 22px; /* Уменьшено */
+}
+
+.menu li img {
+    margin-right: 15px; /* Уменьшено */
+}
+
+.menu li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 14px; /* Уменьшено */
+}
+
+.sidebar-footer {
+    margin-top: auto;
+    text-align: center;
+    padding: 10px 0; /* Уменьшено */
+}
+
+.sidebar-footer img {
+    width: 200px; /* Уменьшено */
+}
+
+.main-content {
+    flex: 1;
+    padding: 15px; /* Уменьшено */
+    transition: margin-left 0.3s ease;
+}
+
+.main-content.shifted {
+    margin-left: -240px; /* Уменьшено */
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.block-help {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu-toggle {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.hamburger {
+    width: 15px;
+    height: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-right: 8px; /* Уменьшено */
+}
+
+.hamburger div {
+    width: 100%;
+    height: 1px;
+    background-color: #FFF;
+}
+
+.logo-title {
+    color: #FFF;
+    font-size: 24px; /* Уменьшено */
+    font-weight: bold;
+    position: relative;
+}
+
+.user-info {
+    display: inline;
+    color: white;
+}
+
+.logout {
+    padding: 5px 8px; /* Уменьшено */
+    border: none;
+}
+
+.user-details {
+    display: grid;
+    grid-template-columns: auto 1fr; /* Первая колонка авто, вторая занимает оставшееся пространство */
+    gap: 10px; /* Отступ между колонками */
+    width: 100%;
+    height: 460px; /* Изменено на auto */
+    margin-bottom: 6px;
+}
+.invoices-section {
+    width: 100%; /* Занимает всю доступную ширину */
+    margin-top: 20px; /* Отступ сверху для разделения от других блоков */
+}
+
+
+.first-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Два столбца для заголовков и информации */
+    width: 100%;
+    gap: 10px;
+}
+.first-half-container,
+.second-half-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.commerical-header, .payment-header, .requisites-header, .regular-header {
+    background-color: rgba(255, 255, 255, 0.05);
+    height: 50px; /* Уменьшено */
+    border: 1px solid #5877C7;
+    color: white;
+    text-align: center;
+    padding: 8px; /* Уменьшено */
+    margin-bottom: 1px; /* Уменьшено */
+    border-radius: 18px 18px 0 0;
+}
+.commerical-block, .payment-block, .requisites-block{
+    display: flex;
+    flex-direction: column;
+    height: 202px; /* Изменено на auto */
+    color: white;
+    font-size: 14px; /* Стандартный размер текста */
+    border-radius: 0 0 18px 18px;
+    border: 1px solid #5877C7;
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Добавляем тень */
+}
+
+.commerical-block table, 
+.payment-block table{
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+}
+
+.commerical-block table th,
+.commerical-block table td {
+    padding: 10px;
+}
+
+.payment-block table th,
+.payment-block table td {
+    padding: 10px;
+}
+
+
+.requisites-block {
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    padding: 20px;
+    font-size: 14px; 
+    border-radius: 0 0 18px 18px;
+    border: 1px solid #5877C7;
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); 
+}
+
+
+.block {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.block h3{
+    font-size: 20px;
+    font-weight: 500;
+}
+.address, .inn, .email {
+    margin-bottom: 10px;
+}
+
+.address, .inn, .email span {
+    font-size: 12px; /* Размер текста для подписи */
+    color: #888888; /* Цвет серого текста для подписей */
+    text-transform: uppercase; /* Заглавные буквы */
+}
+
+.address p, .inn p, .email p {
+    font-size: 16px; /* Основной текст */
+    color: #ffffff; /* Белый цвет */
+    margin: 0;
+}
+
+.regular-block {
+    display: flex;
+    flex-direction: column;
+    height: 147px; /* Изменено на auto */
+    color: white;
+    font-size: 14px; /* Стандартный размер текста */
+    border-radius: 0 0 18px 18px;
+    border: 1px solid #5877C7;
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Добавляем тень */
+}
+
+.regular-block table{
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+}
+
+.regular-block table th,
+.regular-block table td {
+    padding: 10px;
+}
+
+.pagination {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 14px;
+    margin-top: auto;
+    margin-bottom: 6px;
+    margin-right: 21px;
+}
+.pagination select {
+    background: transparent; /* Прозрачный или другой фон */
+    border: none;
+    color: gray; /* Серый текст по умолчанию */
+    padding: 5px;
+    margin-left: 10px;
+    transition: background-color 0.3s ease; /* Анимация плавного перехода */
+}
+
+/* Стиль при открытии (фокусе) */
+.pagination select:focus {
+    background: black; /* Чёрный фон при фокусе */
+    color: white; /* Белый текст при фокусе */
+    outline: none; /* Убираем стандартную обводку браузера */
+}
+.pagination button {
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.pagination button:hover {
+    color: white;
+}
+
+.pagination .disabled {
+    color: rgba(255, 255, 255, 0.3);
+    cursor: not-allowed;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(5px);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.popup-content {
+    background: rgba(255, 255, 255, 0.05);
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 90%;
+    position: relative;
+}
+
+.form-container {
+    display: flex;
+    justify-content: space-between; /* Две формы расположены рядом друг с другом */
+    margin-bottom: 20px; /* Отступ снизу для кнопки */
+}
+
+.form-left, .form-right {
+    width: 48%; /* Уменьшаем ширину, чтобы две формы стали в строку */
+}
+
+.form-left {
+    display: flex;
+    flex-direction: column; /* Вертикальное расположение элементов в левом столбце */
+}
+
+.form-right {
+    display: flex;
+    flex-direction: column; /* Вертикальное расположение элементов в правом столбце */
+    margin-left: 20px; /* Отступ между двумя столбцами */
+}
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+}
+
+.switch input {
+
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.05);
+    transition: .4s;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 14px;
+    width: 14px;
+    left: 3px;
+    bottom: 3px;
+    background: linear-gradient(rgba(50, 116, 249, 1),rgba(19, 91, 235, 1));
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background: linear-gradient(rgba(88, 119, 199, 0.6),rgba(81, 107, 178, 0.6));
+}
+
+input:checked + .slider:before {
+    transform: translateX(20px);
+    background-color: #5361fc;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.popup-content h2 {
+    margin-bottom: 20px;
+}
+
+.popup-content form {
+    display: flex;
+    flex-direction: column;
+}
+
+.popup-content label {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.popup-content input[type="text"],
+.popup-content input[type="email"],
+.popup-content input[type="password"] {
+    padding: 10px;
+    margin-top: 5px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid #444;
+    border-radius: 4px;
+    color: white;
+    width: 100%;
+}
+
+.popup-content button {
+    margin-top: 20px;
+    margin-right: auto;
+    margin-left: auto;
+    width: 121px;
+    height: 46px;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.05);;
+    color: white;
+    border: none;
+    border-radius: 24px;
+    cursor: pointer;
+}
+.popup-content button:hover{
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.email-notifications {
+    margin-top: 20px;
+}
+
+.email-notifications h3 {
+    margin-bottom: 10px;
+}
+
+.toggle-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.toggle-group input[type="checkbox"] {
+    transform: scale(1.2);
+}

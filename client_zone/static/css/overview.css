@@ -1,0 +1,623 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: radial-gradient(100% 100% at 51.15% 0%, #061637 0%, #000000 100%);
+}
+
+.container {
+    max-width: 1920px;
+    margin: 0 auto;
+    display: flex;
+    min-height: 100vh;
+    overflow: auto; /* Позволяет прокручивать контент, если он выходит за пределы экрана */
+}
+
+.sidebar {
+    width: 240px; /* Уменьшено с 286px */
+    padding: 15px; /* Уменьшено */
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid transparent;
+    transition: transform 0.3s ease, width 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.sidebar.hidden {
+    transform: translateX(-100%);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    margin-top: 6px;
+    margin-bottom: 58px; /* Уменьшено */
+}
+
+.logo-image {
+    width: 40px; /* Уменьшено */
+    margin-right: 8px; /* Уменьшено */
+}
+
+.logo-text {
+    font-size: 20px; /* Уменьшено */
+    color: white;
+}
+
+.menu {
+    list-style-type: none;
+    padding-left: 0;
+    margin-bottom: auto;
+}
+
+.menu li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 22px; /* Уменьшено */
+}
+
+.menu li img {
+    margin-right: 15px; /* Уменьшено */
+}
+
+.menu li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 14px; /* Уменьшено */
+}
+
+.sidebar-footer {
+    margin-top: auto;
+    text-align: center;
+    padding: 10px 0; /* Уменьшено */
+}
+
+.sidebar-footer img {
+    width: 200px; /* Уменьшено */
+}
+
+.main-content {
+    flex: 1;
+    padding: 15px; /* Уменьшено */
+    transition: margin-left 0.3s ease;
+}
+
+.main-content.shifted {
+    margin-left: -240px; /* Уменьшено */
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.block-help {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu-toggle {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.hamburger {
+    width: 15px;
+    height: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-right: 8px; /* Уменьшено */
+}
+
+.hamburger div {
+    width: 100%;
+    height: 1px;
+    background-color: #FFF;
+}
+
+.logo-title {
+    color: #FFF;
+    font-size: 24px; /* Уменьшено */
+    font-weight: bold;
+    position: relative;
+}
+
+.user-info {
+    display: inline;
+    color: white;
+}
+
+.logout {
+    padding: 5px 8px; /* Уменьшено */
+    border: none;
+}
+
+.user-details {
+    display: grid;
+    grid-template-columns: auto 1fr; /* Первая колонка авто, вторая занимает оставшееся пространство */
+    gap: 10px; /* Отступ между колонками */
+    width: 100%;
+    height: 460px; /* Изменено на auto */
+    margin-bottom: 6px;
+}
+
+
+.info-block {
+    width: 447px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 18px;
+    padding: 15px;
+    border: 1px solid  #5877C7;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.invoices-block {
+    width: 100%;
+    display: flex;
+    height: 410px;
+    color: white;
+    flex-direction: column;
+    font-size: 14px; /* Стандартный размер текста */
+    border-radius: 0 0 18px 18px;
+    border: 1px solid #5877C7;
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Добавляем тень */
+}
+
+.invoices-header {
+    background-color: rgba(255, 255, 255, 0.05);
+    height: 50px; /* Уменьшено */
+    border: 1px solid #5877C7;
+    color: white;
+    text-align: center;
+    padding: 8px; /* Уменьшено */
+    margin-bottom: 1px; /* Уменьшено */
+    border-radius: 18px 18px 0 0;
+}
+.info-block h2 {
+    font-size: 18px;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.95);
+    margin-bottom: 10px;
+}
+.info-label {
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 16px;
+}
+.info-value {
+    color: rgba(255, 255, 255, 1);
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.invoices-block table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 10px; /* Уменьшено */
+}
+
+.invoices-block th, .invoices-block td {
+    text-align: left;
+    padding: 8px; /* Уменьшено */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.invoices-block td{
+    font-size: 18px; /* Уменьшено */
+    font-weight: 400;
+} 
+
+.invoices-block th {
+    font-size: 16px; /* Уменьшено */
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.invoices-block button {
+    display: flex;
+    width: 272hug;
+    height: 22hug;
+    padding: 12px; /* Уменьшено */
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 19px;
+    justify-content: center;
+    color: white;
+    font-size: 16px; /* Уменьшено */
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 0 auto;
+    margin-top: 270px;
+}
+
+.invoices-block button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+ .info-box p, .contract-details p {
+    color: #fff;
+}
+
+ .info-box h3, .contract-details h3 {
+    color: #fff;
+}
+
+.info-button {
+    display: flex;
+    width: 255hug;
+    height: 46px;
+    padding: 12px 24px; /* Уменьшено */
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 24px;
+    cursor: pointer;
+    margin-top: 215px;
+    margin-right:auto;
+    margin-left:auto;/* Позиционирование */
+    transition: background-color 0.3s ease;
+}
+
+.info-button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.contact-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid  #5877C7;
+    border-radius: 12px;
+    width: 100%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    margin-bottom: 6px;
+}
+
+.contact-text {
+    color: white;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.contact-date {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.details-button {
+    padding: 10px 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: none;
+    border-radius: 25px;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.details-button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.h3-title{
+    margin-top: 15px;
+}
+.info-section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 100%;
+    gap: 10px; /* Уменьшено */
+}
+
+.info-box-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0; /* Уменьшено */
+    margin: 0;
+}
+
+.info-box-header {
+    background-color: rgba(255, 255, 255, 0.05);
+    /*height: 61.63px;*/
+    border: 1px solid #5877C7;
+    color: white;
+    text-align: center;
+    padding: 14px, 12px 13px 12px; /* Уменьшено */
+    border-radius: 18px 18px 0 0;
+    min-height: 50px;
+    margin-bottom: 1.37px;
+}
+
+.info-box {
+    border: 1px solid #5877C7; 
+    border-radius: 0 0 18px 18px;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    background: rgba(255, 255, 255, 0.05);
+    text-align: center; 
+    min-height: 130px;
+}
+
+.info-box p {
+    color: #fff;
+}
+
+.info-box button {
+    display: flex;
+    height: 46px;
+    padding: 8px; /* Уменьшено */
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: none;
+    border-radius: 24px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    margin-top: 100px;
+    margin: auto; /* Center the button */
+    transition: background-color 0.3s ease;
+}
+
+.info-box button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.need-help {
+
+    border: 1px solid #5877C7;
+    padding: 15px; /* Reduced */
+    display: flex;
+    flex-direction: column; /* Changed to column for vertical stacking */
+    align-items: center; /* Centering content */
+    color: #fff;
+    border-radius: 0 0 18px 18px;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.need-help-buttons {
+    display: flex; /* Flexbox for horizontal alignment */
+    justify-content: center; /* Center buttons */
+    gap: 10px; /* Space between buttons */
+    margin-top: auto; /* Margin for spacing */
+}
+
+.need-help button {
+    height: 46px;
+    padding: 8px; /* Reduced */
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: none;
+    border-radius: 24px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: auto; /* Auto width for buttons */
+}
+
+.need-help button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(5px);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.popup-content {
+    background: rgba(255, 255, 255, 0.05);
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 90%;
+    position: relative;
+}
+
+.form-container {
+    display: flex;
+    justify-content: space-between; /* Две формы расположены рядом друг с другом */
+    margin-bottom: 20px; /* Отступ снизу для кнопки */
+}
+
+.form-left, .form-right {
+    width: 48%; /* Уменьшаем ширину, чтобы две формы стали в строку */
+}
+
+.form-left {
+    display: flex;
+    flex-direction: column; /* Вертикальное расположение элементов в левом столбце */
+}
+
+.form-right {
+    display: flex;
+    flex-direction: column; /* Вертикальное расположение элементов в правом столбце */
+    margin-left: 20px; /* Отступ между двумя столбцами */
+}
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+}
+
+.switch input {
+
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.05);
+    transition: .4s;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 14px;
+    width: 14px;
+    left: 3px;
+    bottom: 3px;
+    background: linear-gradient(rgba(50, 116, 249, 1),rgba(19, 91, 235, 1));
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background: linear-gradient(rgba(88, 119, 199, 0.6),rgba(81, 107, 178, 0.6));
+}
+
+input:checked + .slider:before {
+    transform: translateX(20px);
+    background-color: #5361fc;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.popup-content h2 {
+    margin-bottom: 20px;
+}
+
+.popup-content form {
+    display: flex;
+    flex-direction: column;
+}
+
+.popup-content label {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.popup-content input[type="text"],
+.popup-content input[type="email"],
+.popup-content input[type="password"] {
+    padding: 10px;
+    margin-top: 5px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid #444;
+    border-radius: 4px;
+    color: white;
+    width: 100%;
+}
+
+.popup-content button {
+    margin-top: 20px;
+    margin-right: auto;
+    margin-left: auto;
+    width: 121px;
+    height: 46px;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.05);;
+    color: white;
+    border: none;
+    border-radius: 24px;
+    cursor: pointer;
+}
+.popup-content button:hover{
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.email-notifications {
+    margin-top: 20px;
+}
+
+.email-notifications h3 {
+    margin-bottom: 10px;
+}
+
+.toggle-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.toggle-group input[type="checkbox"] {
+    transform: scale(1.2);
+}
+
+.file-upload-wrapper {
+    display: flex;
+    gap: 10px;
+}
+
+#custom-file-button {
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.05);
+    padding-left: 10px;
+    border-radius: 5px;
+    border: 1px solid #444;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#custom-file-button:hover {
+    background-color: #2A7BB3;
+}
+
+#file-name {
+    font-size: 14px;
+    color: white;
+    opacity: 0.7;
+}
+
+
+
+@media screen and (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+    }
+
+    .main-content {
+        padding: 10px;
+    }
+}
+
+.main-content {
+    margin-left: 0;
+    max-width: 1800px;
+}

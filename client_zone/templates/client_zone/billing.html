@@ -224,24 +224,7 @@
         </div>
     </div>
 <script>
-    // Toggle Sidebar и смещение контента
-document.getElementById("menuToggle").addEventListener("click", function() {
-    const sidebar = document.getElementById("sidebar");
-    const mainContent = document.querySelector(".main-content");
-
-    // Переключаем класс hidden у sidebar
-    sidebar.classList.toggle("hidden");
-
-    // Если sidebar скрыт, смещаем основной контент
-    if (sidebar.classList.contains("hidden")) {
-        mainContent.classList.add("shifted");
-    } else {
-        mainContent.classList.remove("shifted");
-    }
-});
-
-
-// Функция для открытия попапов
+    // Функция для открытия попапов
 function openPopup(popupId) {
     document.getElementById(popupId).style.display = 'block';
 }
@@ -260,6 +243,22 @@ function closePopupOnOutsideClick(popupId) {
         }
     });
 }
+
+      // Toggle Sidebar и смещение контента
+    document.getElementById("menuToggle").addEventListener("click", function() {
+        const sidebar = document.getElementById("sidebar");
+        const mainContent = document.querySelector(".main-content");
+
+        // Переключаем класс hidden у sidebar
+        sidebar.classList.toggle("hidden");
+
+        // Если sidebar скрыт, смещаем основной контент
+        if (sidebar.classList.contains("hidden")) {
+            mainContent.classList.add("shifted");
+        } else {
+            mainContent.classList.remove("shifted");
+        }
+    });
 
 // Открытие попапа для реквизитов компании
 document.getElementById('requirets_btn').addEventListener('click', function() {

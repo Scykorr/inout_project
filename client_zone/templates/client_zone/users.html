@@ -359,14 +359,14 @@
     </div>
 </div>
 <script>
-    // Toggle Sidebar и смещение контента
+      // Toggle Sidebar и смещение контента
     document.getElementById("menuToggle").addEventListener("click", function() {
         const sidebar = document.getElementById("sidebar");
         const mainContent = document.querySelector(".main-content");
-        
+
         // Переключаем класс hidden у sidebar
         sidebar.classList.toggle("hidden");
-        
+
         // Если sidebar скрыт, смещаем основной контент
         if (sidebar.classList.contains("hidden")) {
             mainContent.classList.add("shifted");
@@ -374,9 +374,23 @@
             mainContent.classList.remove("shifted");
         }
     });
- // Открыть попап для добавления пользователя
+// Открыть попап для добавления пользователя
+// Закрыть все попапы
+function closeAllPopups() {
+    document.getElementById('userPopup').style.display = 'none';
+    document.getElementById('profile-popup').style.display = 'none';
+}
+
+// Открыть попап для добавления пользователя
 function openUserPopup() {
+    closeAllPopups(); // Закрываем все попапы перед открытием нового
     document.getElementById('userPopup').style.display = 'flex';
+}
+
+// Открыть попап для редактирования профиля
+function openAccountPopup() {
+    closeAllPopups(); // Закрываем все попапы перед открытием нового
+    document.getElementById('profile-popup').style.display = 'flex';
 }
 
 // Закрыть попап для добавления пользователя
@@ -384,70 +398,48 @@ function closeUserPopup() {
     document.getElementById('userPopup').style.display = 'none';
 }
 
-// Открыть попап для редактирования пользователя
-function openAccountPopup() {
-    document.getElementById('edit_Popup').style.display = 'flex';
-}
-
-// Закрыть попап для редактирования пользователя
+// Закрыть попап для редактирования профиля
 function closeEditPopup() {
-    document.getElementById('edit_Popup').style.display = 'none';
+    document.getElementById('profile-popup').style.display = 'none';
 }
 
-// Открыть попап при нажатии на кнопку добавления пользователя
+// Открытие попапа при нажатии на кнопку добавления пользователя
 document.querySelector('.add-user-btn').addEventListener('click', function() {
     openUserPopup();
 });
 
-// Открыть попап при нажатии на кнопку редактирования
+// Открытие попапа при нажатии на кнопку редактирования
 document.querySelectorAll('.edit-btn').forEach(function(button) {
     button.addEventListener('click', function() {
         openAccountPopup();
     });
 });
 
-// Закрыть попап для добавления пользователя при нажатии на кнопку закрытия
-document.querySelector('.user-close-button[data-popup="user"]').addEventListener('click', function() {
-    closeUserPopup();
+// Открытие попапа при нажатии на иконку аккаунта
+document.querySelector('.account-icon').addEventListener('click', function() {
+    openAccountPopup();
 });
 
-// Закрыть попап для редактирования пользователя при нажатии на кнопку закрытия
-document.querySelector('.user-close-button[data-popup="edit"]').addEventListener('click', function() {
+// Закрытие попапов при нажатии на крестик
+document.getElementById('closeProfilePopup').addEventListener('click', function() {
     closeEditPopup();
 });
 
-// Открытие попапа при нажатии на иконку аккаунта
-document.querySelector('.account-icon').addEventListener('click', function() {
-    document.getElementById('profile-popup').style.display = 'flex';
-});
-
-// Закрытие попапа при нажатии на крестик
-document.getElementById('closeProfilePopup').addEventListener('click', function() {
-    document.getElementById('profile-popup').style.display = 'none';
-});
-
-// Закрытие попапа при нажатии вне его контента
+// Закрытие попапов при нажатии вне их области
 window.addEventListener('click', function(event) {
     const userPopup = document.getElementById('userPopup');
-    const editPopup = document.getElementById('edit_Popup');
     const profilePopup = document.getElementById('profile-popup');
 
-    // Закрыть попап для пользователя, если кликнули вне его
+    // Закрыть попап для добавления пользователя, если кликнули вне его
     if (event.target === userPopup) {
         closeUserPopup();
     }
 
-    // Закрыть попап для редактирования, если кликнули вне его
-    if (event.target === editPopup) {
-        closeEditPopup();
-    }
-
     // Закрыть попап для профиля, если кликнули вне его
     if (event.target === profilePopup) {
-        profilePopup.style.display = 'none';
+        closeEditPopup();
     }
 });
-
 </script>
 </body>
 </html>

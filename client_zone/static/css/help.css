@@ -22,7 +22,7 @@ body {
     padding: 15px; /* Уменьшено */
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid transparent;
-    transition: transform 0.3s ease, width 0.3s ease;
+    transition: transform 0.3s ease,width 0.3s ease;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -88,7 +88,7 @@ body {
 }
 
 .main-content.shifted {
-    margin-left: -240px; /* Уменьшено */
+   margin-left: 0; /* Уменьшено */
 }
 
 header {
@@ -136,11 +136,6 @@ header {
     color: white;
 }
 
-.logout {
-    padding: 5px 8px; /* Уменьшено */
-    border: none;
-}
-
 .support-section {
     flex: ;
     color: white;
@@ -156,6 +151,7 @@ header {
     position: relative;
     background-color: rgba(255, 255, 255, 0.05);
     padding: 20px;
+    border: 1px solid #5877C7;
     border-radius: 10px;
     width: calc(33%);
     text-align: center;
@@ -195,6 +191,7 @@ header {
 .support-ticket-info {
     background-color: rgba(255, 255, 255, 0.05);
     padding: 20px;
+    border: 1px solid #5877C7;
     border-radius: 18px;
     margin-bottom: 6px;
     display: flex;
@@ -228,6 +225,7 @@ header {
 .ticket-search {
     background-color: rgba(255, 255, 255, 0.05);
     height: 76px;
+    border: 1px solid #5877C7;
     border-radius: 18px;
     padding: 10px;
     display: flex;
@@ -325,6 +323,7 @@ header {
     border-radius: 0  0 18px 18px;
     color: rgba(255, 255, 255, 0.7);
     margin-bottom: 6px;
+    border: 1px solid #5877C7;
 }
 
 .ticket-section table {
@@ -342,6 +341,7 @@ header {
 
 
 .section-title {
+    border: 1px solid #5877C7;
     display: flex;
     justify-items: flex-start;
     padding-top: 21px;
@@ -417,6 +417,7 @@ header {
 /* Стиль для контейнера заголовка и кнопки */
 .ticket-header {
     display: flex;
+    border: 1px solid #5877C7;
     justify-content: space-between;
     align-items: center;
     background-color: rgba(255, 255, 255, 0.05); /* Цвет фона */
@@ -444,6 +445,7 @@ header {
     background-color: rgba(255, 255, 255, 0.05);
     padding: 20px;
     border-radius: 0 0 18px 18px;
+    border: 1px solid #5877C7;
 }
 
 .hidden {
@@ -775,7 +777,7 @@ input:checked + .slider:before {
   margin-bottom: 20px;
   border: none;
   border-radius: 6px;
-  background-color: rgba(255, 255, 255, 0.05);
+  background-color: rgba(255, 255, 255, 0.1);
   color: #fff;
   font-size: 14px;
 }

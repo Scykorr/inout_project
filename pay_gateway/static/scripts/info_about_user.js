@@ -189,7 +189,7 @@ function checkAll() {
     checkRadio_2();
     if ((agreem_2.checked) && (agreem_1.checked) && (isNotNullValid(input_inn.value)) && (isNotNullValid(input_address.value)) && (isNotNullValid(input_city.value)) && (isNotNullValid(input_country.value)) && (isNotNullValid(input_phone.value)) && (isNotNullValid(input_org.value)) && (isEmailValid(input_email.value)) && (isDomainValid(input_domain.value))) {
         // window.open('http://localhost:63342/innout_project/pay_gateway/templates/payment.html?_ijt=7nem6b1094tksvtdl0ggb6coro');
-        window.open('https://domen-test.ru/payment/payment/', name = '_self' );
+        window.open('https://domen-test.ru/payment/payment/', '/payment/payment/' );
     }
 
 

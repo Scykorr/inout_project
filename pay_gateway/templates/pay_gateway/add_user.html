@@ -118,7 +118,8 @@
 </header>
 <section class="main_section">
     <div class="second_line_img">
-        <img class="second_line" src="{% static 'img/Line_12.png' %}" alt="logo" srcset="{% static 'img/Line_12x2.png' %} 2x">
+        <img class="second_line" src="{% static 'img/Line_12.png' %}" alt="logo"
+             srcset="{% static 'img/Line_12x2.png' %} 2x">
     </div>
     <div class="div_road_map_img">
         <div class="panel_roadmap">
@@ -234,144 +235,147 @@
                             <span id="phone_span"></span>
                         </label>
                     </form>
-<form class="curr_inp_field_form" method="get" action="../result">
-    <label class="curr_inp_field_label">
-        <span class="input-title">Страна</span>
-        <input
-            class="input_country"
-            type="text"
-            name="one-line"
-            style="width: 462px; height: 42px;
+                    <form class="curr_inp_field_form" method="get" action="../result">
+                        <label class="curr_inp_field_label">
+                            <span class="input-title">Страна</span>
+                            <input
+                                    class="input_country"
+                                    type="text"
+                                    name="one-line"
+                                    style="width: 462px; height: 42px;
             background-color: rgba(255, 255, 255, 0.05);
             color: white; border-radius:5px;
             border-color: rgba(255, 255, 255, 0.3);"
-        >
-        <span id="country_span"></span>
-    </label>
-</form>
-<form class="curr_inp_field_form" method="get" action="../result">
-    <label class="curr_inp_field_label">
-        <span class="input-title">Город</span>
-        <input
-            class="input_city"
-            type="text"
-            name="one-line"
-            style="width: 462px; height: 42px;
+                            >
+                            <span id="country_span"></span>
+                        </label>
+                    </form>
+                    <form class="curr_inp_field_form" method="get" action="../result">
+                        <label class="curr_inp_field_label">
+                            <span class="input-title">Город</span>
+                            <input
+                                    class="input_city"
+                                    type="text"
+                                    name="one-line"
+                                    style="width: 462px; height: 42px;
             background-color: rgba(255, 255, 255, 0.05);
             color: white; border-radius:5px;
             border-color: rgba(255, 255, 255, 0.3);"
-        >
-        <span id="city_span"></span>
-    </label>
-</form>
-<form class="curr_inp_field_form" method="get" action="../result">
-    <label class="curr_inp_field_label">
-        <span class="input-title">Юридический адрес</span>
-        <input
-            class="input_address"
-            type="text"
-            name="one-line"
-            style="width: 462px; height: 42px;
+                            >
+                            <span id="city_span"></span>
+                        </label>
+                    </form>
+                    <form class="curr_inp_field_form" method="get" action="../result">
+                        <label class="curr_inp_field_label">
+                            <span class="input-title">Юридический адрес</span>
+                            <input
+                                    class="input_address"
+                                    type="text"
+                                    name="one-line"
+                                    style="width: 462px; height: 42px;
             background-color: rgba(255, 255, 255, 0.05);
             color: white; border-radius:5px;
             border-color: rgba(255, 255, 255, 0.3);"
-        >
-        <span id="address_span"></span>
-    </label>
-</form>
-<form class="curr_inp_field_form" method="get" action="../result">
-    <label class="curr_inp_field_label">
-        <span class="input-title">ИНН</span>
-        <input
-            class="input_inn"
-            type="text"
-            name="one-line"
-            style="width: 462px; height: 42px;
+                            >
+                            <span id="address_span"></span>
+                        </label>
+                    </form>
+                    <form class="curr_inp_field_form" method="get" action="../result">
+                        <label class="curr_inp_field_label">
+                            <span class="input-title">ИНН</span>
+                            <input
+                                    class="input_inn"
+                                    type="text"
+                                    name="one-line"
+                                    style="width: 462px; height: 42px;
             background-color: rgba(255, 255, 255, 0.05);
             color: white; border-radius:5px;
             border-color: rgba(255, 255, 255, 0.3);"
-        >
-        <span id="inn_span"></span>
-    </label>
-</form>
-<div class="agreement_checkboxes">
-    <div class="checkbox_info">
-        <input type="checkbox" class="custom-checkbox" id="agreem_1" name="agreem_1" value="yes">
-        <label for="agreem_1">
-            <a href="#">Я согласен с условиями использования ПО</a>
-        </label>
-        <span class="agreem_1_span"></span>
-    </div>
-    <div class="checkbox_info">
-        <label>
-            <input type="checkbox" class="custom-checkbox" id="agreem_2" name="agreem_2"
-                   title="Halo" value="yes">
-            <label for="agreem_2">
-                <a href="#">Я даю согласие на обработку моих персональных данных </a>
-            </label>
-            <span class="agreem_2_span"></span>
-        </label>
-    </div>
-</div>
-</div>
-</div>
-<div class="create-line"></div>
-<div class="bill_method_main">
-    <div class="about_bill_method">
-        <p class="bill_about_text">Метод оплаты</p>
-    </div>
-    <div class="payment_kind_main">
-        <div class="bill_one">
-            <input class="custom-radio" name="billing" type="radio" id="credit_card" value="credit_card" checked>
-            <label for="credit_card"></label>
-            <p class="text_for_radio">Банковская карта</p>
-        </div>
-        <div class="bill_one">
-            <input class="custom-radio" name="billing" type="radio" id="pay_check" value="pay_check">
-            <label for="pay_check"></label>
-            <p class="text_for_radio">Счет на оплату</p>
-        </div>
-    </div>
-    <div class="">
-        <img class="" src="{% static 'img/banks_card.png' %}" alt="logo" srcset="{% static 'img/banks_card_x2.png' %} 2x">
-    </div>
-</div>
-<div class="div_div_result_bottom">
-    <div class="div_result_bottom">
-        <button type="submit" class="result_bottom">Подтвердить и продолжить оплату</button>
-        <label id="hidden_label_plan"></label>
-    </div>
-</div>
-</div>
-<div class="about_billing">
-    <div class="about_billing_panel">
-        <div class="billing_title">
-            <span class="billing_title_text">Описание заказа</span>
-        </div>
-        <div class="billing_line"></div>
-        <div class="billing_plan">
-            <span class="plan_and_users" id="plan_and_users_id">INOUT Project Business - 5 пользователей</span>
-            <div class="font_price_per_month">
-                <span class="price_per_month">(2.950 руб / месяц)</span>
-            </div>
-        </div>
-        <div class="billing_line"></div>
-        <div class="full_price">
-            <div class="full_price_d">
-                <span class="full_price_title">Полная цена</span>
-            </div>
-            <div class="full_prices_d">
-                <div class="font_price_per_year">
-                    <span class="price_per_year">34.540 руб / год</span>
+                            >
+                            <span id="inn_span"></span>
+                        </label>
+                    </form>
+                    <div class="agreement_checkboxes">
+                        <div class="checkbox_info">
+                            <input type="checkbox" class="custom-checkbox" id="agreem_1" name="agreem_1" value="yes">
+                            <label for="agreem_1">
+                                <a href="#">Я согласен с условиями использования ПО</a>
+                            </label>
+                            <span class="agreem_1_span"></span>
+                        </div>
+                        <div class="checkbox_info">
+                            <label>
+                                <input type="checkbox" class="custom-checkbox" id="agreem_2" name="agreem_2"
+                                       title="Halo" value="yes">
+                                <label for="agreem_2">
+                                    <a href="#">Я даю согласие на обработку моих персональных данных </a>
+                                </label>
+                                <span class="agreem_2_span"></span>
+                            </label>
+                        </div>
+                    </div>
                 </div>
-                <div class="font_price_per_month">
-                    <span class="price_per_month" id="price_per_month_2">(2.950 руб / месяц)</span>
+            </div>
+            <div class="create-line"></div>
+            <div class="bill_method_main">
+                <div class="about_bill_method">
+                    <p class="bill_about_text">Метод оплаты</p>
+                </div>
+                <div class="payment_kind_main">
+                    <div class="bill_one">
+                        <input class="custom-radio" name="billing" type="radio" id="credit_card" value="credit_card"
+                               checked>
+                        <label for="credit_card"></label>
+                        <p class="text_for_radio">Банковская карта</p>
+                    </div>
+                    <div class="bill_one">
+                        <input class="custom-radio" name="billing" type="radio" id="pay_check" value="pay_check">
+                        <label for="pay_check"></label>
+                        <p class="text_for_radio">Счет на оплату</p>
+                    </div>
+                </div>
+                <div class="">
+                    <img class="" src="{% static 'img/banks_card.png' %}" alt="logo"
+                         srcset="{% static 'img/banks_card_x2.png' %} 2x">
+                </div>
+            </div>
+            <div class="div_div_result_bottom">
+                <div class="div_result_bottom">
+                    <button type="submit" class="result_bottom">Подтвердить и продолжить оплату</button>
+                    <label id="hidden_label_plan"></label>
                 </div>
             </div>
         </div>
+        <div class="about_billing">
+            <div class="about_billing_panel">
+                <div class="billing_title">
+                    <span class="billing_title_text">Описание заказа</span>
+                </div>
+                <div class="billing_line"></div>
+                <div class="billing_plan">
+                    <span class="plan_and_users" id="plan_and_users_id">INOUT Project Business - 5 пользователей</span>
+                    <div class="font_price_per_month">
+                        <span class="price_per_month">(2.950 руб / месяц)</span>
+                    </div>
+                </div>
+                <div class="billing_line"></div>
+                <div class="full_price">
+                    <div class="full_price_d">
+                        <span class="full_price_title">Полная цена</span>
+                    </div>
+                    <div class="full_prices_d">
+                        <div class="font_price_per_year">
+                            <span class="price_per_year">34.540 руб / год</span>
+                        </div>
+                        <div class="font_price_per_month">
+                            <span class="price_per_month" id="price_per_month_2">(2.950 руб / месяц)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-</div>
-<script src="{% static 'scripts/info_about_user.js' %}"></script>
+    <script src="{% static 'scripts/info_about_user.js' %}"></script>
 </section>
 <footer>
     <div class="footer-img"></div>

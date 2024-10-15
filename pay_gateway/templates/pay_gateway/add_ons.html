@@ -47,7 +47,7 @@
 
 <header>
     <div w3-include-html="/config/templates/includes/header.html"></div>
-
+    <iframe src="test_input.html"></iframe>
     <script>
         includeHTML();
     </script>
@@ -55,11 +55,6 @@
 
 
 <section class="main_section">
-    <script>
-        var link = document.querySelector('link[rel=import]');
-        var content = link.import.querySelector('#intro-dm');
-        document.body.appendChild(content.cloneNode(true));
-    </script>
     <div class="second_line_img">
         <img class="second_line" src="{% static 'img/Line_12.png' %}" alt="logo"
              srcset="{% static 'img/Line_12x2.png' %} 2x">

@@ -8,115 +8,16 @@
     <link rel="stylesheet" href="{% static 'css/add_onn.css' %}">
     <title>Дополнительные модули</title>
     <script src="{% static 'scripts/add_onns_dropbtn.js' %}"></script>
+    <link rel="import" href="test_input.html">
 </head>
 <body>
 
-<header class="upper_footer">
-    <div class="layout_nav">
-        <nav class="left_nav">
-
-            <ul class="hr">
-                <li class="company_logo_li">
-                    <a href="#" class="company_logo">
-                        <img
-                                sizes="(max-width: 320px) 280px,
-            (max-width: 480px) 440px,
-            800px" src="{% static 'img/Logo-INOUT-Project.png' %}" alt="logo"
-                                srcset="{% static 'img/Logo-INOUT-Project-x2.png' %} 2x">
-                    </a>
-                </li>
-                <li>
-                    <div class="dropdown_header">
-                        <button class="dropbtn_header">Продукт</button>
-                        <div class="dropdown-content_header">
-                            <a href="#">Link 1</a>
-                            <a href="#">Link 2</a>
-                            <a href="#">Link 3</a>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="dropdown_header">
-                        <button class="dropbtn_header">Услуги</button>
-                        <div class="dropdown-content_header">
-                            <a href="#">Link 1</a>
-                            <a href="#">Link 2</a>
-                            <a href="#">Link 3</a>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="dropdown_header">
-                        <button class="dropbtn_header">О нас</button>
-                        <div class="dropdown-content_header">
-                            <a href="#">Link 1</a>
-                            <a href="#">Link 2</a>
-                            <a href="#">Link 3</a>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="dropdown_header">
-                        <button class="dropbtn_header">Ресурсы</button>
-                        <div class="dropdown-content_header">
-                            <a href="#">Link 1</a>
-                            <a href="#">Link 2</a>
-                            <a href="#">Link 3</a>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <a href="#">Цены</a>
-                </li>
-            </ul>
-        </nav>
-        <nav class="right_bt">
-
-            <ul class="right-ul">
-
-                <li>
-                    <a href="#">Поиск</a>
-                </li>
-                <li>
-                    <div class="vertical-line"></div>
-                </li>
-                <li>
-                    <a href="#">Войти</a>
-                </li>
-                <li>
-                    <a class="try_it" href="#">Попробовать</a>
-                </li>
-            </ul>
-        </nav>
-    </div>
-    <div class="layout_content">
-        <div class="content_text">
-            <ul>
-                <li class="price_payment_title">
-                    <p>Цены и оплата</p>
-                </li>
-                <li class="price_payment_text">
-                    <p>Хорошо известно, что «то, что не измеряется, не может быть улучшено».
-                        Поэтому время отслеживания и регистрации важно для всех, кто хочет достичь лучших результатов.
-                        INOUT Проект позволяет отслеживать время, затрачиваемое на задачи и проекты,
-                        несколькими способами, включая секундомер и ручной ввод времени для задач.</p>
-                </li>
-
-            </ul>
-
-
-        </div>
-        <div class="tabs_primary">
-            <ul>
-                <li class="li_dropbtn_c">
-                    <a class="dropbtn_c">В облаке</a>
-                </li>
-                <li>
-                    <a class="dropbtn_o">На сервере</a>
-                </li>
-            </ul>
-        </div>
-    </div>
+<header>
+    <script>
+        var link = document.querySelector('link[rel=import]');
+        var content = link.import.querySelector('#intro-dm');
+        document.body.appendChild(content.cloneNode(true));
+    </script>
 </header>
 
 

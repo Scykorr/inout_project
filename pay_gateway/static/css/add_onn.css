@@ -21,7 +21,8 @@ body {
 
 header {
     width: 100%;
-    background-color: black;
+    background-color: white;
+    height: 300px;
 }
 
 /*Header*/

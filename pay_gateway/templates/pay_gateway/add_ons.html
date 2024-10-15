@@ -47,10 +47,11 @@
 
 <header>
     <div w3-include-html="/config/templates/includes/header.html"></div>
-    <iframe src="test_input.html"></iframe>
     <script>
         includeHTML();
     </script>
+    <iframe src="test_input.html"></iframe>
+    {% include "test_input.html" %}
 </header>
 
 

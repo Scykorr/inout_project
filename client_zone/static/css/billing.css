@@ -248,6 +248,9 @@ header {
 }
 /* Popup стили */
 
+#profile-popup{
+
+}
 .popup {
     display: none;
     position: absolute;
@@ -264,6 +267,7 @@ header {
     margin: 5% auto;
     padding: 20px;
     width: 50%;
+    height: 50%;
     border-radius: 10px;
     color: white;
     position: relative; /* Для позиционирования крестика */

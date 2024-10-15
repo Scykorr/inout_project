@@ -230,7 +230,6 @@ document.getElementById("menuToggle").addEventListener("click", function() {
     }
 });
 
-
    // Открытие попапа для реквизитов компании при нажатии на кнопку "Изменить"
 document.getElementById('new-ticket-btn').addEventListener('click', function() {
     document.getElementById('new-ticket-popup').style.display = 'block';
@@ -255,9 +254,10 @@ document.getElementById('call-request-btn').addEventListener('click', function()
 });
 
 // Закрытие попапа для платёжной информации при нажатии на крестик
-document.getElementById('closePaymentPopup').addEventListener('click', function() {
+document.querySelector('.custom-close-button').addEventListener('click', function() {
     document.getElementById('customPopup').style.display = 'none';
 });
+
 
 // Закрытие попапа для платёжной информации при клике вне области контента
 window.addEventListener('click', function(event) {

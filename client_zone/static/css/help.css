@@ -25,7 +25,21 @@ body {
     transition: transform 0.3s ease,width 0.3s ease;
     display: flex;
     flex-direction: column;
+    position: relative;
     justify-content: space-between;
+}
+
+.sidebar::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    padding: 1px;
+    background: linear-gradient(90deg, rgba(88, 119, 199, 0.65), rgba(66, 86, 142, 0.05), rgba(81, 107, 178, 0.65));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
 }
 
 .sidebar.hidden {
@@ -131,6 +145,12 @@ header {
     position: relative;
 }
 
+.logout {
+    padding: 5px 8px; /* Уменьшено */
+    border: none;
+    background: transparent;
+}
+
 .user-info {
     display: inline;
     color: white;
@@ -151,11 +171,24 @@ header {
     position: relative;
     background-color: rgba(255, 255, 255, 0.05);
     padding: 20px;
-    border: 1px solid #5877C7;
     border-radius: 10px;
     width: calc(33%);
     text-align: center;
     margin-bottom: 6px;
+}
+
+.support-box::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 18px;
+    padding: 1px;
+    background: linear-gradient(90deg, rgba(88, 119, 199, 0.65), rgba(66, 86, 142, 0.05), rgba(81, 107, 178, 0.65));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
 }
 
 .support-button-container{
@@ -171,19 +204,20 @@ header {
 
 .support-box p {
     font-size: 14px;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 .support-btn {
+    height: 32px;
+    width: 114px;
     position: relative;
     display: flex;
-    flex-direction: column;
     justify-content: space-between;
     background: linear-gradient(rgba(50, 116, 249, 1),rgba(19, 91, 235, 1));
     border: none;
     margin-top: 10px;
-    padding: 10px 20px;
-    border-radius: 18px;
+    padding: 8px 12px;
+    border-radius: 32px;
     color: white;
     cursor: pointer;
 }
@@ -191,13 +225,27 @@ header {
 .support-ticket-info {
     background-color: rgba(255, 255, 255, 0.05);
     padding: 20px;
-    border: 1px solid #5877C7;
+    position: relative;
     border-radius: 18px;
     margin-bottom: 6px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     height: 159px; /* Или любую другую высоту, которую вы хотите */
+}
+
+.support-ticket-info::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 18px;
+    padding: 1px;
+    background: linear-gradient(90deg, rgba(88, 119, 199, 0.65), rgba(66, 86, 142, 0.05), rgba(81, 107, 178, 0.65));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
 }
 
 .button-container {
@@ -209,34 +257,53 @@ header {
 .new-ticket-btn,
 .call-request-btn {
     background-color: rgba(255, 255, 255, 0.05);
-    border: none;
+    border: 1px solid rgba(255, 255, 255, 0.1);
     padding: 10px 20px;
     border-radius: 18px;
+    font-size: 16px;
     color: white;
     cursor: pointer;
-    width: 200px; /* Устанавливаем ширину для кнопок */
+    width: 265px;
+    height: 46px; /* Устанавливаем ширину для кнопок */
 }
 
 .new-ticket-btn:hover,
 .call-request-btn:hover {
-    background-color: #2A7BB3; /* Цвет при наведении */
+    background-color: rgba(255, 255, 255, 0.2); /* Цвет при наведении */
 }
 
 .ticket-search {
     background-color: rgba(255, 255, 255, 0.05);
     height: 76px;
-    border: 1px solid #5877C7;
     border-radius: 18px;
     padding: 10px;
     display: flex;
+    position: relative;
     text-align: center;
     margin-bottom: 6px;
 }
+
+.ticket-search::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 18px;
+    padding: 1px;
+    background: linear-gradient(90deg, rgba(88, 119, 199, 0.65), rgba(66, 86, 142, 0.05), rgba(81, 107, 178, 0.65));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+}
+
 .ticket-search-title {
     margin-top: 15px;
     font-size: 24px;
     color: #fff;
 }
+
+
 .search-bar-custom {
     display: flex;
     justify-content: center;
@@ -323,7 +390,21 @@ header {
     border-radius: 0  0 18px 18px;
     color: rgba(255, 255, 255, 0.7);
     margin-bottom: 6px;
-    border: 1px solid #5877C7;
+    position: relative;
+}
+
+.ticket-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 0 0 18px 18px;
+    padding: 1px;
+    background: linear-gradient(90deg, rgba(88, 119, 199, 0.65), rgba(66, 86, 142, 0.05), rgba(81, 107, 178, 0.65));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
 }
 
 .ticket-section table {
@@ -341,7 +422,7 @@ header {
 
 
 .section-title {
-    border: 1px solid #5877C7;
+    position: relative;
     display: flex;
     justify-items: flex-start;
     padding-top: 21px;
@@ -352,6 +433,20 @@ header {
     font-size: 24px;
     color: #FFFFFF;
     margin-bottom: 2px;
+}
+
+.section-title::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 18px 18px 0 0;
+    padding: 1px;
+    background: linear-gradient(90deg, rgba(88, 119, 199, 0.65), rgba(66, 86, 142, 0.05), rgba(81, 107, 178, 0.65));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
 }
 
 .ticket-section th,
@@ -417,13 +512,27 @@ header {
 /* Стиль для контейнера заголовка и кнопки */
 .ticket-header {
     display: flex;
-    border: 1px solid #5877C7;
+    position: relative;
     justify-content: space-between;
     align-items: center;
     background-color: rgba(255, 255, 255, 0.05); /* Цвет фона */
     padding: 15px;
     border-radius: 18px 18px 0 0;
     margin-bottom: 2px;
+}
+
+.ticket-header::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 18px 18px 0 0;
+    padding: 1px;
+    background: linear-gradient(90deg, rgba(88, 119, 199, 0.65), rgba(66, 86, 142, 0.05), rgba(81, 107, 178, 0.65));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
 }
 
 .ticket-header p {
@@ -445,7 +554,21 @@ header {
     background-color: rgba(255, 255, 255, 0.05);
     padding: 20px;
     border-radius: 0 0 18px 18px;
-    border: 1px solid #5877C7;
+    position: relative;
+}
+
+.ticket-content::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 0 0 18px 18px;
+    padding: 1px;
+    background: linear-gradient(90deg, rgba(88, 119, 199, 0.65), rgba(66, 86, 142, 0.05), rgba(81, 107, 178, 0.65));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
 }
 
 .hidden {
@@ -475,82 +598,28 @@ th, td {
     color: #888;
 }
 
-/* Стиль для пагинации */
-
-
-.popup {
+.profile-popup {
     display: none;
     position: fixed;
-    z-index: 1000;
-    left: 0;
     top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    justify-content: center; /* Центрирование по горизонтали */
-    align-items: center; /* Центрирование по вертикали */
-    backdrop-filter: blur(5px);
-}
-
-.popup-content {
-    width: 966px;
-    height: 598px;
-    background: rgba(255, 255, 255, 0.05);
-    margin: 5% auto;
-    padding: 20px;
-    width: 50%;
-    border-radius: 10px;
-    color: white;
-    position: relative; /* Для позиционирования крестика */
-}
-
-.popup-content h2{
-    margin-bottom: 45px;
-}
-
-.popup-content input {
-    width: 100%;
-    height: 42px;
-    padding: 10px;
-    margin: 10px 0;
-    background-color: rgba(255, 255, 255, 0.05);
-    border: 1px solid #444;
-    border-radius: 5px;
-    color: white;
-}
-
-.popup-content button {
-    display: block;
-    width: 121px;
-    height: 46px;
-    padding: 12px 24px;
-    background-color: rgba(255, 255, 255, 0.05);
-    color: white;
-    border: none;
-    border-radius: 24px;
-    cursor: pointer;
-    margin-top: auto;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.popup-content button:hover {
-    background-color: rgba(255,255,255,0.1);
-}
-
-.close-btn {
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    font-size: 24px;
-    color: white;
-    cursor: pointer;
-}
-
-.file-upload-wrapper {
-    display: flex;
+    backdrop-filter: blur(15px);
+    justify-content: center;
     align-items: center;
-    justify-content: flex-start;
-    gap: 10px;
+    z-index: 1000;
+}
+
+.profile-popup-content {
+    background: rgba(255, 255, 255, 0.05);
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 966px;
+    height: 510px;
+    max-width: 90%;
+    position: relative;
 }
 
 .form-container {
@@ -573,6 +642,7 @@ th, td {
     flex-direction: column; /* Вертикальное расположение элементов в правом столбце */
     margin-left: 20px; /* Отступ между двумя столбцами */
 }
+
 .switch {
     position: relative;
     display: inline-block;
@@ -588,6 +658,8 @@ th, td {
 }
 
 .slider {
+    width: 49px;
+    height: 29px;
     position: absolute;
     cursor: pointer;
     top: 0;
@@ -603,8 +675,8 @@ th, td {
 .slider:before {
     position: absolute;
     content: "";
-    height: 14px;
-    width: 14px;
+    height: 21px;
+    width: 21px;
     left: 3px;
     bottom: 3px;
     background: linear-gradient(rgba(50, 116, 249, 1),rgba(19, 91, 235, 1));
@@ -629,34 +701,153 @@ input:checked + .slider:before {
     cursor: pointer;
 }
 
-.popup-content h2 {
+.profile-popup-content h2 {
     margin-bottom: 20px;
+    font-size: 32px;
 }
 
-.popup-content form {
+.profile-popup-content form {
     display: flex;
     flex-direction: column;
 }
 
-.popup-content label {
+.profile-popup-content label {
+    bottom: 5px;
     margin-top: 10px;
     font-size: 14px;
 }
 
-.popup-content input[type="text"],
-.popup-content input[type="email"],
-.popup-content input[type="password"] {
+.profile-popup-content input[type="text"],
+.profile-popup-content input[type="email"],
+.profile-popup-content input[type="password"],
+.profile-popup-content input[type="full-name"]{
     padding: 10px;
     margin-top: 5px;
+    margin-bottom: 17px;
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid #444;
-    border-radius: 4px;
+    border-radius: 5px;
     color: white;
     width: 100%;
 }
 
-.popup-content button {
+.profile-popup-content button {
+    margin-left: 164px;
+    margin-bottom: 20px;
+    width: 121px;
+    height: 46px;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.05);;
+    color: white;
+    border: none;
+    border-radius: 24px;
+    cursor: pointer;
+}
+.profile-popup-content button:hover{
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.email-notifications {
     margin-top: 20px;
+}
+
+.email-notifications h3 {
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+
+.form-right h3{
+    margin-bottom: 29px;
+}
+
+.toggle-group {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 17px;
+}
+
+.toggle-group label{
+    margin-left: 15px;
+}
+.toggle-group input[type="checkbox"] {
+    transform: scale(1.2);
+}
+
+.new-ticket-popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(30px);
+    justify-content: center;
+    align-items: center;
+    z-index: 1001;
+}
+
+.new-ticket-popup-content {
+    background: rgba(255, 255, 255, 0.05);
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 966px;
+    height: 598px;
+    max-width: 90%;
+    position: relative;
+}
+
+
+
+input:checked + .slider {
+    background: linear-gradient(rgba(88, 119, 199, 0.6),rgba(81, 107, 178, 0.6));
+}
+
+input:checked + .slider:before {
+    transform: translateX(20px);
+    background-color: #5361fc;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.new-ticket-popup-content h2 {
+    margin-bottom: 47px;
+    font-size: 32px;
+}
+
+.new-ticket-popup-content form {
+    display: flex;
+    flex-direction: column;
+}
+
+.new-ticket-popup-content label {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.new-ticket-popup-content input[type="text"],
+.new-ticket-popup-content input[type="email"],
+.new-ticket-popup-content input[type="password"] {
+    padding: 10px;
+    margin-bottom: 37px;
+    margin-left: 23px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid #444;
+    border-radius: 4px;
+    color: white;
+    justify-content: flex-start;
+    align-items: center;
+    width: 881px;
+}
+
+.new-ticket-popup-content button {
     margin-right: auto;
     margin-left: auto;
     width: 121px;
@@ -668,7 +859,7 @@ input:checked + .slider:before {
     border-radius: 24px;
     cursor: pointer;
 }
-.popup-content button:hover{
+.new-ticket-popup-content button:hover{
     background-color: rgba(255, 255, 255, 0.2);
 }
 
@@ -680,15 +871,9 @@ input:checked + .slider:before {
     margin-bottom: 10px;
 }
 
-.toggle-group {
+.file-upload-wrapper {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 15px;
-}
-
-.toggle-group input[type="checkbox"] {
-    transform: scale(1.2);
+    margin-bottom: 45px;
 }
 
 #custom-file-button {
@@ -696,7 +881,7 @@ input:checked + .slider:before {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    width: 100%;
+    width: 881px;
     background-color: rgba(255, 255, 255, 0.05);
     padding-left: 10px;
     border-radius: 5px;

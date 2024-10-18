@@ -1,11 +1,11 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Обзор Клиентской Зоны</title>
-    {% load static%}
-    <link rel="stylesheet" href="{% static 'css/product-details.css' %}">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'ccs/product-details.css %}">
 </head>
 <body>
     <div class="container">
@@ -47,31 +47,31 @@
             </div>
         </div>
         <!-- Main Content -->
-        <!-- Main Content -->
-<div class="main-content">
-    <header>
-        <div class="block-help">
-            <div class="menu-toggle" id="menuToggle">
-                <div class="hamburger">
-                    <div></div>
-                    <div></div>
-                    <div></div>
+        <div class="main-content">
+            <header>
+                <div class="block-help">
+                    <div class="menu-toggle" id="menuToggle">
+                        <div class="hamburger">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                    </div>
+                    <h2 class="logo-title">Детали выставления счёта</h2>
                 </div>
-            </div>
-            <h2 class="logo-title">Счета и коммерческие предложения</h2>
-        </div>
-        <div class="user-info">
-            <span class="user-name">Test User</span>
-            <img class="account-icon" src="{% static 'img/account.svg' %}" alt="Account Icon">
-            <button class="logout">
-                <img src="{% static 'img/leave.svg' %}" alt="Logout Icon">
-            </button>
-        </div>
-    </header>
+                <div class="user-info">
+                    <span class="user-name">Test User</span>
+                    <img class="account-icon" src="{% static 'img/account.svg' %}" alt="Account Icon">
+                    <button class="logout">
+                        <img src="{% static 'img/leave.svg' %}" alt="Logout Icon">
+                    </button>
+                </div>
+            </header>
+
             <section class="info-container">
                 <div class="info-block">
-                    <span class="contact-name">Имя</span>
-                    <div class="contact-text">INOUT Проект Бизнес в Облаке для 5 пользователей. <br>
+                    <span class="info-block-contact-name">Имя</span>
+                    <div class="info-block-contact-text">INOUT Проект Бизнес в Облаке для 5 пользователей. <br>
                         <span class="contact-date">Оплачено до 09.08.2024</span>
                     </div>
                 </div>
@@ -90,8 +90,8 @@
                     <p class="subscription-date">12.12.25</p>
                 </div>
                 <div class="contact-details">
-                    <div class="contact-text">Сервисы<br>
-                        <span class="contact-date">Услуги не были ещё заказаны</span>
+                    <div class="contact-details-contact-text">Сервисы<br>
+                        <span class="contact-details-contact-date">Услуги не были ещё заказаны</span>
                     </div>
                     <button id="details-button"class="details-button">Детали выставления счета</button>
                 </div>
@@ -142,70 +142,9 @@
     </form>
   </div>
 </div>
- <div id="profile-popup" class="popup">
-    <div class="popup-content">
-        <span class="close-btn" id="closeProfilePopup">&times;</span>
-        <h2>Редактировать профиль</h2>
-        <form>
-            <div class="form-left">
-                <label for="full-name">Полное имя</label>
-                <input type="text" id="full-name" value="quantumteam">
-
-                <label for="email">Почта</label>
-                <input type="email" id="email" value="quantumteam">
-
-                <label for="password">Пароль</label>
-                <input type="password" id="password" value="quantumteam">
-
-                <label for="confirm-password">Подтверждение пароля</label>
-                <input type="password" id="confirm-password" value="quantumteam">
-            </div>
-
-            <div class="form-right">
-                <h3>Уведомления на почту</h3>
-                <div class="toggle-group">
-                    <label>Все пункты</label>
-                    <label class="switch">
-                        <input type="checkbox" checked>
-                        <span class="slider round"></span>
-                    </label>
-                </div>
-                <div class="toggle-group">
-                    <label>Новости о продукте</label>
-                    <label class="switch">
-                        <input type="checkbox" checked>
-                        <span class="slider round"></span>
-                    </label>
-                </div>
-                <div class="toggle-group">
-                    <label>Обновления ПО</label>
-                    <label class="switch">
-                        <input type="checkbox">
-                        <span class="slider round"></span>
-                    </label>
-                </div>
-                <div class="toggle-group">
-                    <label>Срок действия контракта</label>
-                    <label class="switch">
-                        <input type="checkbox" checked>
-                        <span class="slider round"></span>
-                    </label>
-                </div>
-                <div class="toggle-group">
-                    <label>Счета и коммерческие предложения</label>
-                    <label class="switch">
-                        <input type="checkbox" checked>
-                        <span class="slider round"></span>
-                    </label>
-                </div>
-            </div>
-
-            <button type="submit">Сохранить</button>
-        </form>
-    </div>
-</div>
-<div id="profile-popup" class="popup">
-    <div class="popup-content">
+ 
+<div id="profile-popup" class="profile-popup">
+    <div class="profile-popup-content">
         <span class="close-btn" id="closeProfilePopup">&times;</span>
         <h2>Редактировать профиль</h2>
         <form>
@@ -227,39 +166,39 @@
                 <div class="form-right">
                     <h3>Уведомления на почту</h3>
                     <div class="toggle-group">
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider round"></span>
+                        </label>
                         <label>Все пункты</label>
+                    </div>
+                    <div class="toggle-group">
                         <label class="switch">
                             <input type="checkbox" checked>
                             <span class="slider round"></span>
                         </label>
-                    </div>
-                    <div class="toggle-group">
                         <label>Новости о продукте</label>
+                    </div>
+                    <div class="toggle-group">
                         <label class="switch">
                             <input type="checkbox" checked>
                             <span class="slider round"></span>
                         </label>
-                    </div>
-                    <div class="toggle-group">
                         <label>Обновления ПО</label>
-                        <label class="switch">
-                            <input type="checkbox">
-                            <span class="slider round"></span>
-                        </label>
                     </div>
                     <div class="toggle-group">
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider round"></span>
+                        </label>
                         <label>Срок действия контракта</label>
-                        <label class="switch">
-                            <input type="checkbox" checked>
-                            <span class="slider round"></span>
-                        </label>
                     </div>
                     <div class="toggle-group">
-                        <label>Счета и коммерческие предложения</label>
                         <label class="switch">
                             <input type="checkbox" checked>
                             <span class="slider round"></span>
                         </label>
+                        <label>Счета и коммерческие предложения</label>
                     </div>
                 </div>
             </div>

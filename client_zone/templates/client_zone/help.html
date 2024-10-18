@@ -1,11 +1,11 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Обзор Клиентской Зоны</title>
-    {% load static%}
-    <link rel="stylesheet" href="{% static 'css/help.css' %}">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'ccs/help.css %}">
 </head>
 <body>
     <div class="container">
@@ -46,7 +46,8 @@
                 <img src="{% static 'img/logo.svg' %}" alt="Логотип">
             </div>
         </div>
-        <main class="main-content">
+        <!-- Main Content -->
+        <div class="main-content">
             <header>
                 <div class="block-help">
                     <div class="menu-toggle" id="menuToggle">
@@ -104,7 +105,7 @@
                     <p class="ticket-search-title">Поиск тикетов</p>
                     <div class="search-bar-custom">
                         <div class="line-input" contenteditable="true"></div>
-                        <button class="search-button-custom"><img src="{% static 'img/Search.svg' %}"></button>
+                        <button class="search-button-custom"><img src="{% static 'css/Search.svg' %}"></button>
                     </div>
                 </div>
 
@@ -139,96 +140,155 @@
                     </div>
                 </div>
                 <div class="ticket-container">
-                    <!-- Верхний контейнер с заголовком и кнопкой -->
-                    <div class="ticket-header">
-                        <p>История - 0 закрытых тикетов</p>
-                        <button id="toggle-button" onclick="toggleContent()">Показать</button>
-                    </div>
-
-                    <!-- Нижний контейнер с таблицей, который будет скрываться/показываться -->
-                    <div id="ticket-content" class="ticket-content hidden">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Статус</th>
-                                    <th>Предмет</th>
-                                    <th>ID</th>
-                                    <th>Последнее обновление</th>
-                                    <th>Активности</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td colspan="5" class="no-data">Нет доступных данных</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <div class="pagination">
-                            Строки на странице:
-                            <select>
-                                <option>10</option>
-                                <option>15</option>
-                                <option>20</option>
-                                <option>25</option>
-                            </select>
-                            <button class="disabled">&lt;</button>
-                            <button>&gt;</button>
-                        </div>
-                    </div>
-                </div>
-
-            </section>
-        </main>
+    <!-- Верхний контейнер с заголовком и кнопкой -->
+    <div class="ticket-header">
+        <p>История - 0 закрытых тикетов</p>
+        <button id="toggle-button" onclick="toggleContent()">Показать</button>
     </div>
-    <div id="new-ticket-popup" class="popup">
-        <div class="popup-content">
-            <span class="close-btn" id="closeRequiretsPopup">&times;</span>
-            <h2>Создать новый саппорт тикет</h2>
-            <!-- Форма для реквизитов компании -->
-            <form>
-                <input type="text" id="subject*" placeholder="Предмет*">
-                <input type="text" id="question" placeholder="Что беспокоит?*">
-                <input type="text" id="answer" placeholder="Что бы вы хотели, чтобы происходило?*">
-                <input type="text" id="file" placeholder="Прикрепить URL (ссылки).">
-                <div class="file-upload-wrapper">
-                    <button type="button" id="custom-file-button">
-                    <img src="{% static 'img/paperclip.svg' %}" alt="icon" class="icon">Прикрепить файл
-                    </button>
-                    <input type="file" id="file-upload" style="display: none;">
-                </div>
-                <button type="submit">Изменить</button>
-            </form>
+
+    <!-- Нижний контейнер с таблицей, который будет скрываться/показываться -->
+    <div id="ticket-content" class="ticket-content hidden">
+        <table>
+            <thead>
+                <tr>
+                    <th>Статус</th>
+                    <th>Предмет</th>
+                    <th>ID</th>
+                    <th>Последнее обновление</th>
+                    <th>Активности</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td colspan="5" class="no-data">Нет доступных данных</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="pagination">
+            Строки на странице:
+            <select>
+                <option>10</option>
+                <option>15</option>
+                <option>20</option>
+                <option>25</option>
+            </select>
+            <button class="disabled">&lt;</button>
+            <button>&gt;</button>
         </div>
     </div>
-    <div class="custom-popup-overlay" id="customPopup">
-      <div class="custom-popup-content">
-        <span class="custom-close-button" onclick="closeCustomPopup()">&times;</span>
-        <h2>Связь с менеджером по продажам</h2>
+</div>
+
+<div id="new-ticket-popup" class="new-ticket-popup">
+    <div class="new-ticket-popup-content">
+        <span class="close-btn" id="closeRequiretsPopup">&times;</span>
+        <h2>Создать новый саппорт тикет</h2>
+        <!-- Форма для реквизитов компании -->
         <form>
-          <input type="text" placeholder="Ваше имя*">
-          <input type="email" placeholder="Ваш email*">
-          <input type="text" placeholder="Ваш телефон*">
-          <textarea placeholder="Сообщение*"></textarea>
-          <button type="submit">Отправить</button>
+            <input type="text" id="subject*" placeholder="Предмет*">
+            <input type="text" id="question" placeholder="Что беспокоит?*">
+            <input type="text" id="answer" placeholder="Что бы вы хотели, чтобы происходило?*">
+            <input type="text" id="file" placeholder="Прикрепить URL (ссылки).">
+            <div class="file-upload-wrapper">
+                <button type="button" id="custom-file-button">
+                <img src="{% static 'css/paperclip.svg' %}" alt="icon" class="icon">Прикрепить файл
+                </button>
+                <input type="file" id="file-upload" style="display: none;">
+            </div>
+            <button type="submit">Отправить заявку</button>
         </form>
-      </div>
     </div>
+</div>
+<div class="custom-popup-overlay" id="customPopup">
+  <div class="custom-popup-content">
+    <span class="custom-close-button" onclick="closeCustomPopup()">&times;</span>
+    <h2>Связь с менеджером по работе с заказчиками</h2>
+
+    <form>
+      <input type="text" id="subject*" placeholder="Что мы можем,чтобы помочь вам?">
+
+      <label for="customPhone">Номер телефона</label>
+      <div class="custom-input-group">
+        <input type="tel" id="customPhone" name="phone" value="+7995939535">
+      </div>
+
+      <label for="customTimezone">Часовой пояс</label>
+      <select id="customTimezone" name="timezone">
+        <option value="gmt-6">(GMT-06:00) Центральное время (США и Канада)</option>
+      </select>
+
+      <p>Пожалуйтса, введите свой номер телефона, по которому наша служба поддержки сможет связаться с вами напрямую.Вы также можете указать тему для обсуждения</p>
+
+      <button type="submit">Отправить заявку</button>
+    </form>
+  </div>
+</div>
+
+<div id="profile-popup" class="profile-popup">
+    <div class="profile-popup-content">
+        <span class="close-btn" id="closeProfilePopup">&times;</span>
+        <h2>Редактировать профиль</h2>
+        <form>
+            <div class="form-container"> <!-- Новый контейнер для обеих частей -->
+                <div class="form-left">
+                    <label for="full-name">Полное имя</label>
+                    <input type="text" id="full-name" value="quantumteam">
+
+                    <label for="email">Почта</label>
+                    <input type="email" id="email" value="quantumteam">
+
+                    <label for="password">Пароль</label>
+                    <input type="password" id="password" value="quantumteam">
+
+                    <label for="confirm-password">Подтверждение пароля</label>
+                    <input type="password" id="confirm-password" value="quantumteam">
+                </div>
+
+                <div class="form-right">
+                    <h3>Уведомления на почту</h3>
+                    <div class="toggle-group">
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider round"></span>
+                        </label>
+                        <label>Все пункты</label>
+                    </div>
+                    <div class="toggle-group">
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider round"></span>
+                        </label>
+                        <label>Новости о продукте</label>
+                    </div>
+                    <div class="toggle-group">
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider round"></span>
+                        </label>
+                        <label>Обновления ПО</label>
+                    </div>
+                    <div class="toggle-group">
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider round"></span>
+                        </label>
+                        <label>Срок действия контракта</label>
+                    </div>
+                    <div class="toggle-group">
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider round"></span>
+                        </label>
+                        <label>Счета и коммерческие предложения</label>
+                    </div>
+                </div>
+            </div>
+
+            <button type="submit">Сохранить</button> <!-- Кнопка перенесена под обе формы -->
+        </form>
+    </div>
+</div>
 <script>
-    // Toggle Sidebar и смещение контента
-document.getElementById("menuToggle").addEventListener("click", function() {
-    const sidebar = document.getElementById("sidebar");
-    const mainContent = document.querySelector(".main-content");
 
-    // Переключаем класс hidden у sidebar
-    sidebar.classList.toggle("hidden");
-
-    // Если sidebar скрыт, смещаем основной контент
-    if (sidebar.classList.contains("hidden")) {
-        mainContent.classList.add("shifted");
-    } else {
-        mainContent.classList.remove("shifted");
-    }
-});
 
 
    // Открытие попапа для реквизитов компании при нажатии на кнопку "Изменить"
@@ -255,9 +315,10 @@ document.getElementById('call-request-btn').addEventListener('click', function()
 });
 
 // Закрытие попапа для платёжной информации при нажатии на крестик
-document.getElementById('closePaymentPopup').addEventListener('click', function() {
+document.querySelector('.custom-close-button').addEventListener('click', function() {
     document.getElementById('customPopup').style.display = 'none';
 });
+
 
 // Закрытие попапа для платёжной информации при клике вне области контента
 window.addEventListener('click', function(event) {

@@ -1,11 +1,11 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Обзор Клиентской Зоны</title>
-    {% load static%}
-    <link rel="stylesheet" href="{% static 'css/users.css' %}">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'ccs/users.css %}">
 </head>
 <body>
     <div class="container">
@@ -47,30 +47,29 @@
             </div>
         </div>
         <!-- Main Content -->
-        <!-- Main Content -->
-<div class="main-content">
-    <header>
-        <div class="block-help">
-            <div class="menu-toggle" id="menuToggle">
-                <div class="hamburger">
-                    <div></div>
-                    <div></div>
-                    <div></div>
+        <div class="main-content">
+            <header>
+                <div class="block-help">
+                    <div class="menu-toggle" id="menuToggle">
+                        <div class="hamburger">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                    </div>
+                    <h2 class="logo-title">Пользователи</h2>
                 </div>
-            </div>
-            <h2 class="logo-title">Счета и коммерческие предложения</h2>
-        </div>
-        <div class="user-info">
-            <span class="user-name">Test User</span>
-            <img class="account-icon" src="{% static 'img/account.svg' %}" alt="Account Icon">
-            <button class="logout">
-                <img src="{% static 'img/leave.svg' %}" alt="Logout Icon">
-            </button>
-        </div>
-    </header>
+                <div class="user-info">
+                    <span class="user-name">Test User</span>
+                    <img class="account-icon" src="{% static 'img/account.svg' %}" alt="Account Icon">
+                    <button class="logout">
+                        <img src="{% static 'img/leave.svg' %}" alt="Logout Icon">
+                    </button>
+                </div>
+            </header>
             <section class="users-section">
                 <div class="users-header">
-                    <span>Пользователи</span>
+                    <h2>Пользователи</h2>
                     <button id="add-user-btn" class="add-user-btn">Добавить пользователя</button>
                 </div>
                 <div class="users-table-container">
@@ -105,340 +104,299 @@
             </section>
         </div>
     </div>
-    <div class="user-popup-overlay" id="userPopup">
+<!-- Попап для добавления пользователя -->
+<!-- Кнопка для открытия попапа добавления пользователя -->
+<button id="add-user-btn">Добавить пользователя</button>
+
+<!-- Попап для добавления пользователя -->
+<div id="userPopup" class="user-popup-overlay">
   <div class="user-popup-content">
-    <span class="user-close-button" onclick="closeUserPopup()">&times;</span>
-    <h2>Изменить пользователя</h2>
+    <span class="user-popup-close-button">&times;</span>
+    <h2>Добавить нового пользователя</h2>
     <form>
-        <h2>Персональная информация</h2>
-      <div class="form-group">
+      <div class="user-form-group">
         <label for="userFullName">Полное имя</label>
         <input type="text" id="userFullName" name="fullName" value="quantumteam">
       </div>
 
-      <div class="form-group">
+      <div class="user-form-group">
         <label for="userEmail">Почта</label>
         <input type="email" id="userEmail" name="email" value="quantumteam">
       </div>
 
-      <div class="form-group">
+      <div class="user-form-group">
         <label for="userPassword">Пароль</label>
         <input type="password" id="userPassword" name="password" value="quantumteam">
       </div>
 
-      <div class="switch-container">
-        <div class="access-level">
+      <div class="user-switch-container">
+        <div class="user-access-level">
           <h3>Уровень доступа</h3>
-          <div class="switch-item">
-      <label for="adminAccess" class="switch">
-        <input type="checkbox" id="adminAccess" checked>
-        <span class="slider"></span>
-      </label>
-      <label for="adminAccess">Администратор</label>
-    </div>
-    <div class="switch-item">
-      <label for="scanAccess" class="switch">
-        <input type="checkbox" id="scanAccess">
-        <span class="slider"></span>
-      </label>
-      <label for="scanAccess">Сканирование</label>
-    </div>
-    <div class="switch-item">
-      <label for="purchaseAccess" class="switch">
-        <input type="checkbox" id="purchaseAccess">
-        <span class="slider"></span>
-      </label>
-      <label for="purchaseAccess">Заказ на покупку</label>
-    </div>
-    <div class="switch-item">
-      <label for="invoiceAccess" class="switch">
-        <input type="checkbox" id="invoiceAccess">
-        <span class="slider"></span>
-      </label>
-      <label for="invoiceAccess">Выставление счета</label>
-    </div>
-    <div class="switch-item">
-      <label for="supportAccess" class="switch">
-        <input type="checkbox" id="supportAccess">
-        <span class="slider"></span>
-      </label>
-      <label for="supportAccess">Поддержка</label>
-    </div>
-  </div>
+          <div class="user-switch-item">
+            <label for="adminAccess" class="user-switch">
+              <input type="checkbox" id="adminAccess" checked>
+              <span class="user-slider"></span>
+            </label>
+            <label for="adminAccess">Администратор</label>
+          </div>
+          <div class="user-switch-item">
+            <label for="scanAccess" class="user-switch">
+              <input type="checkbox" id="scanAccess">
+              <span class="user-slider"></span>
+            </label>
+            <label for="scanAccess">Сканирование</label>
+          </div>
+          <div class="user-switch-item">
+            <label for="purchaseAccess" class="user-switch">
+              <input type="checkbox" id="purchaseAccess">
+              <span class="user-slider"></span>
+            </label>
+            <label for="purchaseAccess">Заказ на покупку</label>
+          </div>
+          <div class="user-switch-item">
+            <label for="invoiceAccess" class="user-switch">
+              <input type="checkbox" id="invoiceAccess">
+              <span class="user-slider"></span>
+            </label>
+            <label for="invoiceAccess">Выставление счета</label>
+          </div>
+          <div class="user-switch-item">
+            <label for="supportAccess" class="user-switch">
+              <input type="checkbox" id="supportAccess">
+              <span class="user-slider"></span>
+            </label>
+            <label for="supportAccess">Поддержка</label>
+          </div>
+        </div>
 
-        <div class="email-notifications">
-    <h3>Уведомления на почту</h3>
-    <div class="switch-item">
-      <label for="allNotifications" class="switch">
-        <input type="checkbox" id="allNotifications" checked>
-        <span class="slider"></span>
-      </label>
-      <label for="allNotifications">Все</label>
-    </div>
-    <div class="switch-item">
-      <label for="productNews" class="switch">
-        <input type="checkbox" id="productNews">
-        <span class="slider"></span>
-      </label>
-      <label for="productNews">Новости о продукте</label>
-    </div>
-    <div class="switch-item">
-      <label for="promotions" class="switch">
-        <input type="checkbox">
-        <span class="slider"></span>
-      </label>
-      <label for="promotions">Акции</label>
-    </div>
-    <div class="switch-item">
-      <label for="updates" class="switch">
-        <input type="checkbox">
-        <span class="slider"></span>
-      </label>
-      <label for="updates">Обновления</label>
-    </div>
-  </div>
+        <div class="user-email-notifications">
+          <h3>Уведомления на почту</h3>
+          <div class="user-switch-item">
+            <label for="allNotifications" class="user-switch">
+              <input type="checkbox" id="allNotifications" checked>
+              <span class="user-slider"></span>
+            </label>
+            <label for="allNotifications">Все</label>
+          </div>
+          <div class="user-switch-item">
+            <label for="productNews" class="user-switch">
+              <input type="checkbox" id="productNews">
+              <span class="user-slider"></span>
+            </label>
+            <label for="productNews">Новости о продукте</label>
+          </div>
+        </div>
+      </div>
+      <button type="submit">Отправить</button>
     </form>
   </div>
-  <button type="submit">Отправить</button>
 </div>
-<div class="user-popup-overlay" id="edit_Popup">
+
+<div id="editPopup" class="user-popup-overlay">
   <div class="user-popup-content">
-    <span class="user-close-button" onclick="closeUserPopup()">&times;</span>
-    <h2>Изменить пользователя</h2>
+    <span class="user-popup-close-button">&times;</span>
+    <h2>Редактировать пользователя</h2>
     <form>
-        <h2>Персональная информация</h2>
-      <div class="form-group">
+        <h3>Персональная информация</h3>
+      <div class="user-form-group">
         <label for="userFullName">Полное имя</label>
         <input type="text" id="userFullName" name="fullName" value="quantumteam">
       </div>
 
-      <div class="form-group">
+      <div class="user-form-group">
         <label for="userEmail">Почта</label>
         <input type="email" id="userEmail" name="email" value="quantumteam">
       </div>
 
-      <div class="form-group">
+      <div class="user-form-group">
         <label for="userPassword">Пароль</label>
         <input type="password" id="userPassword" name="password" value="quantumteam">
       </div>
 
-      <div class="switch-container">
-        <div class="access-level">
-          <h3>Уровень доступа</h3>
-          <div class="switch-item">
-      <label for="adminAccess" class="switch">
-        <input type="checkbox" id="adminAccess" checked>
-        <span class="slider"></span>
-      </label>
-      <label for="adminAccess">Администратор</label>
-    </div>
-    <div class="switch-item">
-      <label for="scanAccess" class="switch">
-        <input type="checkbox" id="scanAccess">
-        <span class="slider"></span>
-      </label>
-      <label for="scanAccess">Сканирование</label>
-    </div>
-    <div class="switch-item">
-      <label for="purchaseAccess" class="switch">
-        <input type="checkbox" id="purchaseAccess">
-        <span class="slider"></span>
-      </label>
-      <label for="purchaseAccess">Заказ на покупку</label>
-    </div>
-    <div class="switch-item">
-      <label for="invoiceAccess" class="switch">
-        <input type="checkbox" id="invoiceAccess">
-        <span class="slider"></span>
-      </label>
-      <label for="invoiceAccess">Выставление счета</label>
-    </div>
-    <div class="switch-item">
-      <label for="supportAccess" class="switch">
-        <input type="checkbox" id="supportAccess">
-        <span class="slider"></span>
-      </label>
-      <label for="supportAccess">Поддержка</label>
-    </div>
-  </div>
+      <div class="user-switch-container">
+        <div class="user-access-level">
+          <h4>Уровень доступа</h4>
+          <div class="user-switch-item">
+            <label for="adminAccess" class="user-switch">
+              <input type="checkbox" id="adminAccess" checked>
+              <span class="user-slider"></span>
+            </label>
+            <label for="adminAccess">Администратор</label>
+          </div>
+          <div class="user-switch-item">
+            <label for="scanAccess" class="user-switch">
+              <input type="checkbox" id="scanAccess">
+              <span class="user-slider"></span>
+            </label>
+            <label for="scanAccess">Сканирование</label>
+          </div>
+          <div class="user-switch-item">
+            <label for="purchaseAccess" class="user-switch">
+              <input type="checkbox" id="purchaseAccess">
+              <span class="user-slider"></span>
+            </label>
+            <label for="purchaseAccess">Заказ на покупку</label>
+          </div>
+          <div class="user-switch-item">
+            <label for="invoiceAccess" class="user-switch">
+              <input type="checkbox" id="invoiceAccess">
+              <span class="user-slider"></span>
+            </label>
+            <label for="invoiceAccess">Выставление счета</label>
+          </div>
+          <div class="user-switch-item">
+            <label for="supportAccess" class="user-switch">
+              <input type="checkbox" id="supportAccess">
+              <span class="user-slider"></span>
+            </label>
+            <label for="supportAccess">Поддержка</label>
+          </div>
+        </div>
 
-        <div class="email-notifications">
-    <h3>Уведомления на почту</h3>
-    <div class="switch-item">
-      <label for="allNotifications" class="switch">
-        <input type="checkbox" id="allNotifications" checked>
-        <span class="slider"></span>
-      </label>
-      <label for="allNotifications">Все</label>
-    </div>
-    <div class="switch-item">
-      <label for="productNews" class="switch">
-        <input type="checkbox" id="productNews">
-        <span class="slider"></span>
-      </label>
-      <label for="productNews">Новости о продукте</label>
-    </div>
-    <div class="switch-item">
-      <label for="promotions" class="switch">
-        <input type="checkbox">
-        <span class="slider"></span>
-      </label>
-      <label for="promotions">Акции</label>
-    </div>
-    <div class="switch-item">
-      <label for="updates" class="switch">
-        <input type="checkbox">
-        <span class="slider"></span>
-      </label>
-      <label for="updates">Обновления</label>
-    </div>
-  </div>
+        <div class="user-email-notifications">
+          <h4>Уведомления на почту</h4>
+          <div class="user-switch-item">
+            <label for="allNotifications" class="user-switch">
+              <input type="checkbox" id="allNotifications" checked>
+              <span class="user-slider"></span>
+            </label>
+            <label for="allNotifications">Все</label>
+          </div>
+          <div class="user-switch-item">
+            <label for="productNews" class="user-switch">
+              <input type="checkbox" id="productNews">
+              <span class="user-slider"></span>
+            </label>
+            <label for="productNews">Новости о продукте</label>
+          </div>
+        </div>
+      </div>
+      <button type="submit">Отправить</button>
     </form>
   </div>
-  <button type="submit">Отправить</button>
 </div>
-<div id="profile-popup" class="popup">
-    <div class="popup-content">
-        <span class="close-btn" id="closeProfilePopup">&times;</span>
-        <h2>Редактировать профиль</h2>
-        <form style="display: flex; flex-direction: row; justify-content: space-between;">
-            <div class="form-left">
-                <label for="full-name">Полное имя</label>
-                <input type="text" id="full-name" value="quantumteam">
+<div id="profile-popup" class="profile-popup">
+            <div class="profile-popup-content">
+                <span class="close-btn" id="closeProfilePopup">&times;</span>
+                <h2>Редактировать профиль</h2>
+                <form>
+                    <div class="form-container"> 
+                        <div class="form-left">
+                            <label for="full-name">Полное имя</label>
+                            <input type="text" id="full-name" value="quantumteam">
 
-                <label for="email">Почта</label>
-                <input type="email" id="email" value="quantumteam">
+                            <label for="email">Почта</label>
+                            <input type="email" id="email" value="quantumteam">
 
-                <label for="password">Пароль</label>
-                <input type="password" id="password" value="quantumteam">
+                            <label for="password">Пароль</label>
+                            <input type="password" id="password" value="quantumteam">
 
-                <label for="confirm-password">Подтверждение пароля</label>
-                <input type="password" id="confirm-password" value="quantumteam">
+                            <label for="confirm-password">Подтверждение пароля</label>
+                            <input type="password" id="confirm-password" value="quantumteam">
+                        </div>
+
+                        <div class="form-right">
+                            <h3>Уведомления на почту</h3>
+                            <div class="toggle-group">
+                                <label class="switch">
+                                    <input type="checkbox" checked>
+                                    <span class="slider round"></span>
+                                </label>
+                                <label>Все пункты</label>
+                            </div>
+                            <div class="toggle-group">
+                                <label class="switch">
+                                    <input type="checkbox" checked>
+                                    <span class="slider round"></span>
+                                </label>
+                                <label>Новости о продукте</label>
+                            </div>
+                            <div class="toggle-group">
+                                <label class="switch">
+                                    <input type="checkbox" checked>
+                                    <span class="slider round"></span>
+                                </label>
+                                <label>Обновления ПО</label>
+                            </div>
+                            <div class="toggle-group">
+                                <label class="switch">
+                                    <input type="checkbox" checked>
+                                    <span class="slider round"></span>
+                                </label>
+                                <label>Срок действия контракта</label>
+                            </div>
+                            <div class="toggle-group">
+                                <label class="switch">
+                                    <input type="checkbox" checked>
+                                    <span class="slider round"></span>
+                                </label>
+                                <label>Счета и коммерческие предложения</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="submit">Сохранить</button> 
+                </form>
             </div>
-
-            <div class="form-right">
-                <h3>Уведомления на почту</h3>
-                <div class="toggle-group">
-                    <label>Все пункты</label>
-                    <label class="switch">
-                        <input type="checkbox" checked>
-                        <span class="slider round"></span>
-                    </label>
-                </div>
-                <div class="toggle-group">
-                    <label>Новости о продукте</label>
-                    <label class="switch">
-                        <input type="checkbox" checked>
-                        <span class="slider round"></span>
-                    </label>
-                </div>
-                <div class="toggle-group">
-                    <label>Обновления ПО</label>
-                    <label class="switch">
-                        <input type="checkbox">
-                        <span class="slider round"></span>
-                    </label>
-                </div>
-                <div class="toggle-group">
-                    <label>Срок действия контракта</label>
-                    <label class="switch">
-                        <input type="checkbox" checked>
-                        <span class="slider round"></span>
-                    </label>
-                </div>
-                <div class="toggle-group">
-                    <label>Счета и коммерческие предложения</label>
-                    <label class="switch">
-                        <input type="checkbox" checked>
-                        <span class="slider round"></span>
-                    </label>
-                </div>
-            </div>
-        </form>
-        <button type="submit">Сохранить</button>
-    </div>
-</div>
+        </div>
 <script>
-      // Toggle Sidebar и смещение контента
+    // Toggle Sidebar и смещение контента
     document.getElementById("menuToggle").addEventListener("click", function() {
         const sidebar = document.getElementById("sidebar");
         const mainContent = document.querySelector(".main-content");
-
+        
         // Переключаем класс hidden у sidebar
         sidebar.classList.toggle("hidden");
-
+        
         // Если sidebar скрыт, смещаем основной контент
         if (sidebar.classList.contains("hidden")) {
             mainContent.classList.add("shifted");
         } else {
             mainContent.classList.remove("shifted");
         }
-    });
-// Открыть попап для добавления пользователя
-// Закрыть все попапы
-function closeAllPopups() {
-    document.getElementById('userPopup').style.display = 'none';
-    document.getElementById('profile-popup').style.display = 'none';
-}
+    })
 
-// Открыть попап для добавления пользователя
-function openUserPopup() {
-    closeAllPopups(); // Закрываем все попапы перед открытием нового
-    document.getElementById('userPopup').style.display = 'flex';
-}
+function openPopup(triggerSelector, popupId) {
+    const trigger = document.querySelector(triggerSelector);
+    const popup = document.getElementById(popupId);
 
-// Открыть попап для редактирования профиля
-function openAccountPopup() {
-    closeAllPopups(); // Закрываем все попапы перед открытием нового
-    document.getElementById('profile-popup').style.display = 'flex';
-}
+    if (trigger && popup) {
+        // Открытие попапа при клике на элемент
+        trigger.addEventListener('click', () => {
+            popup.style.display = 'flex'; // flex для центрирования
+        });
 
-// Закрыть попап для добавления пользователя
-function closeUserPopup() {
-    document.getElementById('userPopup').style.display = 'none';
-}
+        // Закрытие попапа при нажатии на крестик
+        const closeBtn = popup.querySelector('.close-btn') || popup.querySelector('.user-popup-close-button');
+        if (closeBtn) {
+            closeBtn.addEventListener('click', () => {
+                popup.style.display = 'none';
+            });
+        }
 
-// Закрыть попап для редактирования профиля
-function closeEditPopup() {
-    document.getElementById('profile-popup').style.display = 'none';
-}
-
-// Открытие попапа при нажатии на кнопку добавления пользователя
-document.querySelector('.add-user-btn').addEventListener('click', function() {
-    openUserPopup();
-});
-
-// Открытие попапа при нажатии на кнопку редактирования
-document.querySelectorAll('.edit-btn').forEach(function(button) {
-    button.addEventListener('click', function() {
-        openAccountPopup();
-    });
-});
-
-// Открытие попапа при нажатии на иконку аккаунта
-document.querySelector('.account-icon').addEventListener('click', function() {
-    openAccountPopup();
-});
-
-// Закрытие попапов при нажатии на крестик
-document.getElementById('closeProfilePopup').addEventListener('click', function() {
-    closeEditPopup();
-});
-
-// Закрытие попапов при нажатии вне их области
-window.addEventListener('click', function(event) {
-    const userPopup = document.getElementById('userPopup');
-    const profilePopup = document.getElementById('profile-popup');
-
-    // Закрыть попап для добавления пользователя, если кликнули вне его
-    if (event.target === userPopup) {
-        closeUserPopup();
+        // Закрытие попапа при клике вне его контента
+        window.addEventListener('click', (event) => {
+            if (event.target === popup) {
+                popup.style.display = 'none';
+            }
+        });
     }
+}
 
-    // Закрыть попап для профиля, если кликнули вне его
-    if (event.target === profilePopup) {
-        closeEditPopup();
-    }
+// Открытие попапов
+openPopup('.account-icon', 'profile-popup'); // Попап для профиля
+openPopup('#add-user-btn', 'userPopup'); 
+openPopup('#edit-btn', 'editPopup');     // Попап для добавления пользователя
+
+document.querySelectorAll('.user-switch input').forEach(switchElement => {
+    switchElement.addEventListener('change', function() {
+        const slider = this.nextElementSibling;
+        if (this.checked) {
+            slider.classList.add('active');
+        } else {
+            slider.classList.remove('active');
+        }
+    });
 });
 </script>
 </body>

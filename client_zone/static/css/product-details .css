@@ -21,12 +21,25 @@ body {
     width: 240px; /* Уменьшено с 286px */
     padding: 15px; /* Уменьшено */
     background: rgba(255, 255, 255, 0.05);
-    border: 1px solid transparent;
     transition: transform 0.3s ease, width 0.3s ease;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
+
+.sidebar::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    padding: 1px;
+    background: linear-gradient(90deg, rgba(88, 119, 199, 0.65), rgba(66, 86, 142, 0.05), rgba(81, 107, 178, 0.65));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+}
+
 
 .sidebar.hidden {
     transform: translateX(-100%);
@@ -147,9 +160,9 @@ button {
     background: rgba(255, 255, 255, 0.1);
     color: white;
     border: none;
-    border-radius: 25px;
+    border-radius: 24px;
     cursor: pointer;
-    font-size: 13px;
+    font-size: 16px;
 }
 button:hover {
     background-color: rgba(255, 255, 255, 0.2);
@@ -158,7 +171,8 @@ button:hover {
     display: grid; /* Устанавливаем display: grid для контейнера */
     grid-template-columns: 1fr; /* Одна колонка */
     gap: 1.37px; /* Отступы между блоками */
-    padding: 15px; /* Отступы внутри контейнера */
+    padding: 10px; /* Отступы внутри контейнера */
+    margin-top: 2px;
 }
 
 .user-details {
@@ -168,20 +182,87 @@ button:hover {
     width: 100%;
     margin-bottom: 6px;
 }
-.info-block, .settings-container, .contact-details {
+.info-block{
+    height: 124.4px;
     justify-content: flex-start;
     background: rgba(255, 255, 255, 0.05);
     padding: 15px;
-    border: 1px solid #5877C7;
+    position: relative;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
-span {
-    font-size: 16px;
-    color: rgba(255, 255, 255, 0.6);
-}
+
 .info-block{
     border-radius: 18px 18px 0 0;
 }
+
+.info-block contact-text{
+    margin-bottom: 10px;
+}
+
+.info-block::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 18px 18px 0 0;
+    padding: 1px;
+    background: linear-gradient(90deg, rgba(88, 119, 199, 0.65), rgba(66, 86, 142, 0.05), rgba(81, 107, 178, 0.65));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+}
+
+.settings-container{
+    height: 239.45px;
+    justify-content: flex-start;
+    position: relative;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.settings-container::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    padding: 1px;
+    background: linear-gradient(90deg, rgba(88, 119, 199, 0.65), rgba(66, 86, 142, 0.05), rgba(81, 107, 178, 0.65));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+}
+.contact-details {
+    height: 88.12px;
+    justify-content: flex-start;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 15px;
+    position: relative;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.contact-details::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 0 0 18px 18px;
+    padding: 1px;
+    background: linear-gradient(90deg, rgba(88, 119, 199, 0.65), rgba(66, 86, 142, 0.05), rgba(81, 107, 178, 0.65));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+}
+
+.info-block contact-name {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 100px;
+}
+
 .contact-details {
     border-radius: 0 0 18px 18px;
 }
@@ -197,7 +278,7 @@ span {
 }
 .settings-container p {
     font-size: 16px;
-    margin-bottom: 10px;
+    margin-bottom: 22px;
 }
 
 .header {
@@ -205,19 +286,22 @@ span {
     justify-content: space-between;
     margin: auto;
     margin-bottom: 10px;
+    line-height: 23.2px;
 }
 
 .cloud-inout {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 10px;
     color: white;
 }
 
 .user-number, .subscription-date {
     color: white;
     text-align: left;
+    margin-top: 6px;
 }
+
+
 
 .contact-details {
     display: flex;
@@ -225,19 +309,33 @@ span {
     align-items: center;
     padding: 15px;
     background-color: rgba(255, 255, 255, 0.05);
-    border: 1px solid  #5877C7;
     border-radius: 0 0 18px 18px;
     width: 100%;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     margin-bottom: 6px;
 }
 .contact-name{
-    color: rgba(255, 255, 255, 0.6)
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 18px;
 }
 
-.contact-text{
+.contact-details-contact-date{
+    font-size: 18px;
+}
+.info-block-contact-text{
     color: white;
-    font-size: 16px;
+    font-size: 24px;
+    margin-top: 10px;
+    line-height: 34.8px;
+}
+
+.contact-details-contact-text{
+    color: white;
+    font-size: 24px;
+}
+
+span{
+    color:rgba(255, 255, 255, 0.5);
 }
 
 /* Стиль для фона попапа */
@@ -247,7 +345,7 @@ span {
   left: 0;
   width: 100%;
   height: 100%;
-  backdrop-filter: blur(5px);
+  backdrop-filter: blur(15px);
   display: none;
   justify-content: center;
   align-items: center;
@@ -279,13 +377,12 @@ span {
 /* Стилизация заголовка */
 .custom-popup-content h2 {
   margin-bottom: 20px;
-  font-size: 20px;
+  font-size: 32px;
 }
 
 /* Стилизация формы */
 .custom-popup-overlay form, .custom-popup-overlay label {
   display: block;
-  margin-bottom: 8px;
   color: #bbb;
 }
 
@@ -308,10 +405,9 @@ span {
 .custom-popup-overlay button {
   display: flex;
   position: relative;
-  text-align: center;
   width: 179px;
-  padding: 10px;
-  border: none;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 12px 24px;
   border-radius: 24px;
   background-color: rgba(255, 255, 255, 0.05);
   color: white;
@@ -322,7 +418,7 @@ span {
 }
 
 .custom-popup-overlay button:hover {
-  background-color: #5361fc;
+  background: rgba(255, 255, 255, 0.2);
 }
 
 /* Группа с радиокнопками и инпутами */
@@ -348,25 +444,26 @@ select, input[type="email"], input[type="tel"] {
   color: #fff;
 }
 
-.popup {
+.profile-popup {
     display: none;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(15px);
     justify-content: center;
     align-items: center;
     z-index: 1000;
 }
 
-.popup-content {
+.profile-popup-content {
     background: rgba(255, 255, 255, 0.05);
     color: white;
     padding: 20px;
     border-radius: 8px;
-    width: 100%;
+    width: 966px;
+    height: 510px;
     max-width: 90%;
     position: relative;
 }
@@ -391,6 +488,7 @@ select, input[type="email"], input[type="tel"] {
     flex-direction: column; /* Вертикальное расположение элементов в правом столбце */
     margin-left: 20px; /* Отступ между двумя столбцами */
 }
+
 .switch {
     position: relative;
     display: inline-block;
@@ -406,6 +504,8 @@ select, input[type="email"], input[type="tel"] {
 }
 
 .slider {
+    width: 49px;
+    height: 29px;
     position: absolute;
     cursor: pointer;
     top: 0;
@@ -421,8 +521,8 @@ select, input[type="email"], input[type="tel"] {
 .slider:before {
     position: absolute;
     content: "";
-    height: 14px;
-    width: 14px;
+    height: 21px;
+    width: 21px;
     left: 3px;
     bottom: 3px;
     background: linear-gradient(rgba(50, 116, 249, 1),rgba(19, 91, 235, 1));
@@ -447,36 +547,39 @@ input:checked + .slider:before {
     cursor: pointer;
 }
 
-.popup-content h2 {
+.profile-popup-content h2 {
     margin-bottom: 20px;
+    font-size: 32px;
 }
 
-.popup-content form {
+.profile-popup-content form {
     display: flex;
     flex-direction: column;
 }
 
-.popup-content label {
+.profile-popup-content label {
+    bottom: 5px;
     margin-top: 10px;
     font-size: 14px;
 }
 
-.popup-content input[type="text"],
-.popup-content input[type="email"],
-.popup-content input[type="password"] {
+.profile-popup-content input[type="text"],
+.profile-popup-content input[type="email"],
+.profile-popup-content input[type="password"],
+.profile-popup-content input[type="full-name"]{
     padding: 10px;
     margin-top: 5px;
+    margin-bottom: 17px;
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid #444;
-    border-radius: 4px;
+    border-radius: 5px;
     color: white;
     width: 100%;
 }
 
-.popup-content button {
-    margin-top: 20px;
-    margin-right: auto;
-    margin-left: auto;
+.profile-popup-content button {
+    margin-left: 164px;
+    margin-bottom: 20px;
     width: 121px;
     height: 46px;
     padding: 10px;
@@ -486,7 +589,7 @@ input:checked + .slider:before {
     border-radius: 24px;
     cursor: pointer;
 }
-.popup-content button:hover{
+.profile-popup-content button:hover{
     background-color: rgba(255, 255, 255, 0.2);
 }
 
@@ -496,15 +599,23 @@ input:checked + .slider:before {
 
 .email-notifications h3 {
     margin-bottom: 10px;
+    font-size: 24px;
+}
+
+.form-right h3{
+    margin-bottom: 29px;
 }
 
 .toggle-group {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
-    margin-bottom: 15px;
+    margin-bottom: 17px;
 }
 
+.toggle-group label{
+    margin-left: 15px;
+}
 .toggle-group input[type="checkbox"] {
     transform: scale(1.2);
 }

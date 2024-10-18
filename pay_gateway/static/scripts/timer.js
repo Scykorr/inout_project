@@ -18,7 +18,7 @@ const timer = setInterval(() => {
     if (remaining < 0) {
         clearInterval(timer);
         document.getElementById("demo").textContent = "Время истекло";
-        window.open("unsuccess_paymant.html", name='_self')
+        window.open("/payment/unsuccess_payment/", name='_self')
     }
 }, 1000);
 

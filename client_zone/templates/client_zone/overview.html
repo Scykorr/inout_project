@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Обзор Клиентской Зоны</title>
-    {% load static %}
-    <link rel="stylesheet" href="{% static 'ccs/overview.css %}">
+    {% load static%}
+    <link rel="stylesheet" href="{% static 'css/overview.css' %}">
 </head>
 <body>
     <div class="container">
@@ -47,26 +47,27 @@
             </div>
         </div>
         <!-- Main Content -->
-        <div class="main-content">
-            <header>
-                <div class="block-help">
-                    <div class="menu-toggle" id="menuToggle">
-                        <div class="hamburger">
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                        </div>
-                    </div>
-                    <h2 class="logo-title">Обзор</h2>
+        <!-- Main Content -->
+<div class="main-content">
+    <header>
+        <div class="block-help">
+            <div class="menu-toggle" id="menuToggle">
+                <div class="hamburger">
+                    <div></div>
+                    <div></div>
+                    <div></div>
                 </div>
-                <div class="user-info">
-                    <span class="user-name">Test User</span>
-                    <img class="account-icon" src="{% static 'img/account.svg' %}" alt="Account Icon">
-                    <button class="logout">
-                        <img src="{% static 'img/leave.svg' %}" alt="Logout Icon">
-                    </button>
-                </div>
-            </header>
+            </div>
+            <h2 class="logo-title">Счета и коммерческие предложения</h2>
+        </div>
+        <div class="user-info">
+            <span class="user-name">Test User</span>
+            <img class="account-icon" src="{% static 'img/account.svg' %}" alt="Account Icon">
+            <button class="logout">
+                <img src="{% static 'img/leave.svg' %}" alt="Logout Icon">
+            </button>
+        </div>
+    </header>
             
             <!-- User Info Section -->
             <section class="user-details">
@@ -82,7 +83,7 @@
                 </div>
 
                 <div class="invoices-container">
-                    <div class="invoices-header"><img src="{% static 'css/invoice-logo.svg' %}" alt="Логотип" class="invoice-logo" />Счета и коммерческие предложения</div>
+                    <div class="invoices-header">Счета и коммерческие предложения</div>
                     <div class="invoices-block">
                         <table>
                             <thead>
@@ -119,37 +120,31 @@
             <section class="info-section">
                 <div class="info-box-container">
                     <div class="info-box-header">
-                        <h3 class="h3-title">
-                        <img src="{% static 'css/regular.svg' %}" alt="Иконка" class="icon">
-                        Регулярные платежи</h3>
+                        <h3 class="h3-title">Рекуррентные платежи</h3>
                     </div>
                     <div class="info-box">
-                        <p class="p-help">Нет регулярных платежей</p>
+                        <p class="p-help">Нет рекуррентных платежей</p>
                         <button id="manage-recurring-payments" class="manage-recurring-payments">Управление рекуррентными платежами</button>
                     </div>
                 </div>
 
                 <div class="info-box-container">
                     <div class="info-box-header">
-                        <h3 class="h3-title">
-                         <img src="{% static css/people.svg' %}" alt="Иконка" class="icon">
-                     Пользователи</h3>
+                        <h3 class="h3-title">Пользователи</h3>
                     </div>
                     <div class="info-box">
-                        <p class="p-help">Управление доступом пользователей в клиентской зоне</p>
+                        <p class="p-help">Контроль доступа пользователей</p>
                         <button id="manage-users" class="manage-users">Управление пользователями</button>
                     </div>
                 </div>
 
                 <div class="info-box-container">
                     <div class="info-box-header">
-                        <h3 class="h3-title">
-                         <img src="{% static cc/micro.svg' %}" alt="Иконка" class="icon">
-                     Нужна помощь?</h3>
+                        <h3 class="h3-title">Нужна помощь?</h3>
                     </div>
                     <!--<div class="need-help">-->
                     <div class="info-box">
-                        <p class="p-help">Документация, FAQ и портал службы поддержки для решения любых вопросов</p>
+                        <p class="p-help">Найдите решения в FAQ, документации или свяжитесь с нами.</p>
                         <div class="need-help-buttons">
                             <button id="create-ticket">Создать тикет</button>
                             <button id="visit-support-center">Подробнее</button>
@@ -159,8 +154,8 @@
             </section>
         </div>
     </div>
-    <div id="profile-popup" class="profile-popup">
-    <div class="profile-popup-content">
+    <div id="profile-popup" class="popup">
+    <div class="popup-content">
         <span class="close-btn" id="closeProfilePopup">&times;</span>
         <h2>Редактировать профиль</h2>
         <form>
@@ -182,39 +177,39 @@
                 <div class="form-right">
                     <h3>Уведомления на почту</h3>
                     <div class="toggle-group">
-                        <label class="switch">
-                            <input type="checkbox" checked>
-                            <span class="slider round"></span>
-                        </label>
                         <label>Все пункты</label>
-                    </div>
-                    <div class="toggle-group">
                         <label class="switch">
                             <input type="checkbox" checked>
                             <span class="slider round"></span>
                         </label>
+                    </div>
+                    <div class="toggle-group">
                         <label>Новости о продукте</label>
-                    </div>
-                    <div class="toggle-group">
                         <label class="switch">
                             <input type="checkbox" checked>
                             <span class="slider round"></span>
                         </label>
+                    </div>
+                    <div class="toggle-group">
                         <label>Обновления ПО</label>
-                    </div>
-                    <div class="toggle-group">
                         <label class="switch">
-                            <input type="checkbox" checked>
+                            <input type="checkbox">
                             <span class="slider round"></span>
                         </label>
+                    </div>
+                    <div class="toggle-group">
                         <label>Срок действия контракта</label>
-                    </div>
-                    <div class="toggle-group">
                         <label class="switch">
                             <input type="checkbox" checked>
                             <span class="slider round"></span>
                         </label>
+                    </div>
+                    <div class="toggle-group">
                         <label>Счета и коммерческие предложения</label>
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider round"></span>
+                        </label>
                     </div>
                 </div>
             </div>
@@ -223,8 +218,70 @@
         </form>
     </div>
 </div>
-<div id="new-ticket-popup" class="new-ticket-popup">
-    <div class="new-ticket-popup-content">
+
+<div id="profile-popup" class="popup">
+    <div class="popup-content">
+        <span class="close-btn" id="closeProfilePopup">&times;</span>
+        <h2>Редактировать профиль</h2>
+        <form style="display: flex; flex-direction: row; justify-content: space-between;">
+            <div class="form-left">
+                <label for="full-name">Полное имя</label>
+                <input type="text" id="full-name" value="quantumteam">
+
+                <label for="email">Почта</label>
+                <input type="email" id="email" value="quantumteam">
+
+                <label for="password">Пароль</label>
+                <input type="password" id="password" value="quantumteam">
+
+                <label for="confirm-password">Подтверждение пароля</label>
+                <input type="password" id="confirm-password" value="quantumteam">
+            </div>
+
+            <div class="form-right">
+                <h3>Уведомления на почту</h3>
+                <div class="toggle-group">
+                    <label>Все пункты</label>
+                    <label class="switch">
+                        <input type="checkbox" checked>
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                <div class="toggle-group">
+                    <label>Новости о продукте</label>
+                    <label class="switch">
+                        <input type="checkbox" checked>
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                <div class="toggle-group">
+                    <label>Обновления ПО</label>
+                    <label class="switch">
+                        <input type="checkbox">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                <div class="toggle-group">
+                    <label>Срок действия контракта</label>
+                    <label class="switch">
+                        <input type="checkbox" checked>
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                <div class="toggle-group">
+                    <label>Счета и коммерческие предложения</label>
+                    <label class="switch">
+                        <input type="checkbox" checked>
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+            </div>
+        </form>
+        <button type="submit">Сохранить</button>
+    </div>
+</div>
+<div id="new-ticket-popup" class="popup">
+    <div class="popup-content">
         <span class="close-btn" id="closeRequiretsPopup">&times;</span>
         <h2>Создать новый саппорт тикет</h2>
         <!-- Форма для реквизитов компании -->
@@ -235,30 +292,30 @@
             <input type="text" id="file" placeholder="Прикрепить URL (ссылки).">
             <div class="file-upload-wrapper">
                 <button type="button" id="custom-file-button">
-                <img src="{% static 'css/paperclip.svg' %}" alt="icon" class="icon">Прикрепить файл
+                <img src="{% static 'img/paperclip.svg'%}" alt="icon" class="icon">Прикрепить файл
                 </button>
                 <input type="file" id="file-upload" style="display: none;">
             </div>
-            <button type="submit">Отправить заявку</button>
+            <button type="submit">Изменить</button>
         </form>
     </div>
 </div>
 <script>
-    // Toggle Sidebar и смещение контента
-    document.getElementById("menuToggle").addEventListener("click", function() {
-        const sidebar = document.getElementById("sidebar");
-        const mainContent = document.querySelector(".main-content");
-        
-        // Переключаем класс hidden у sidebar
-        sidebar.classList.toggle("hidden");
-        
-        // Если sidebar скрыт, смещаем основной контент
-        if (sidebar.classList.contains("hidden")) {
-            mainContent.classList.add("shifted");
-        } else {
-            mainContent.classList.remove("shifted");
-        }
-    });
+   // Toggle Sidebar и смещение контента
+document.getElementById("menuToggle").addEventListener("click", function() {
+    const sidebar = document.getElementById("sidebar");
+    const mainContent = document.querySelector(".main-content");
+
+    // Переключаем класс hidden у sidebar
+    sidebar.classList.toggle("hidden");
+
+    // Если sidebar скрыт, смещаем основной контент
+    if (sidebar.classList.contains("hidden")) {
+        mainContent.classList.add("shifted");
+    } else {
+        mainContent.classList.remove("shifted");
+    }
+});
 
 // Обработчики кнопок для переходов по страницам
 document.getElementById("info-button").addEventListener("click", function() {
@@ -285,37 +342,42 @@ document.getElementById("visit-support-center").addEventListener("click", functi
     window.location.href = "{% url 'help' %}"; // Используйте имя URL для страницы
 });
 
+// Открытие попапа при нажатии на иконку аккаунта
+document.querySelector('.account-icon').addEventListener('click', function() {
+    document.getElementById('profile-popup').style.display = 'flex';
+});
 
-// Функция для открытия попапа
-function openPopup(triggerSelector, popupId) {
-    const trigger = document.querySelector(triggerSelector);
-    const popup = document.getElementById(popupId);
+// Закрытие попапа при нажатии на крестик
+document.getElementById('closeProfilePopup').addEventListener('click', function() {
+    document.getElementById('profile-popup').style.display = 'none';
+});
 
-    if (trigger && popup) {
-        trigger.addEventListener('click', () => {
-            popup.style.display = 'flex'; // flex для центрирования
-        });
-
-        // Закрытие попапа при нажатии на крестик
-        const closeBtn = popup.querySelector('.close-btn');
-        if (closeBtn) {
-            closeBtn.addEventListener('click', () => {
-                popup.style.display = 'none';
-            });
-        }
-
-        // Закрытие попапа при клике вне его контента
-        window.addEventListener('click', (event) => {
-            if (event.target === popup) {
-                popup.style.display = 'none';
-            }
-        });
+// Закрытие попапа при нажатии вне его контента
+window.addEventListener('click', function(event) {
+    const popup = document.getElementById('profile-popup');
+    if (event.target === popup) {
+        popup.style.display = 'none';
     }
-}
+});
 
-// Открытие попапов
-openPopup('.account-icon', 'profile-popup');
-openPopup('#create-ticket', 'new-ticket-popup');
+// Открытие попапа для реквизитов компании при нажатии на кнопку "Изменить"
+document.getElementById('create-ticket').addEventListener('click', function() {
+    document.getElementById('new-ticket-popup').style.display = 'block';
+});
+
+// Закрытие попапа для реквизитов компании при нажатии на крестик
+document.getElementById('closeRequiretsPopup').addEventListener('click', function() {
+    document.getElementById('new-ticket-popup').style.display = 'none';
+});
+
+// Закрытие попапа для реквизитов компании при клике вне области контента
+window.addEventListener('click', function(event) {
+    const popup = document.getElementById('new-ticket-popup');
+    if (event.target === popup) {
+        popup.style.display = 'none';
+    }
+});
+
 </script>
 </body>
 </html>

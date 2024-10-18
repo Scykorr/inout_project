@@ -1,3 +1,5 @@
+{% load static wagtailcore_tags wagtailuserbar %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,83 +8,20 @@
     <link rel="stylesheet" href="{% static 'css/add_onn.css' %}">
     <title>Дополнительные модули</title>
     <script src="{% static 'scripts/add_onns_dropbtn.js' %}"></script>
+
+
 </head>
 <body>
 
-<header class="upper_footer">
-    <div class="layout_nav">
-        <nav class="left_nav">
-            <ul class="hr">
-                <li class="company_logo_li">
-                    <a href="#" class="company_logo">
-                        <img
-                            sizes="(max-width: 320px) 280px,
-            (max-width: 480px) 440px,
-            800px"
-                            src="{% static 'img/Logo-INOUT-Project.png' %}" alt="logo"
-                            srcset="{% static 'img/Logo-INOUT-Project-x2.png' %} 2x">
-                    </a>
-                </li>
-                <li>
-                    <div class="dropdown_header">
-                        <button class="dropbtn_header">Продукт</button>
-                        <div class="dropdown-content_header">
-                            <a href="#">Link 1</a>
-                            <a href="#">Link 2</a>
-                            <a href="#">Link 3</a>
-                        </div>
-                    </div>
-                </li>
-                <!-- остальные элементы навигации -->
-            </ul>
-        </nav>
-        <nav class="right_bt">
-            <ul class="right-ul">
-                <li>
-                    <a href="#">Поиск</a>
-                </li>
-                <li>
-                    <div class="vertical-line"></div>
-                </li>
-                <li>
-                    <a href="#">Войти</a>
-                </li>
-                <li>
-                    <a class="try_it" href="#">Попробовать</a>
-                </li>
-            </ul>
-        </nav>
-    </div>
-    <div class="layout_content">
-        <div class="content_text">
-            <ul>
-                <li class="price_payment_title">
-                    <p>Цены и оплата</p>
-                </li>
-                <li class="price_payment_text">
-                    <p>Хорошо известно, что «то, что не измеряется, не может быть улучшено».
-                        Поэтому время отслеживания и регистрации важно для всех, кто хочет достичь лучших результатов.
-                        INOUT Проект позволяет отслеживать время, затрачиваемое на задачи и проекты,
-                        несколькими способами, включая секундомер и ручной ввод времени для задач.</p>
-                </li>
-            </ul>
-        </div>
-        <div class="tabs_primary">
-            <ul>
-                <li class="li_dropbtn_c">
-                    <a class="dropbtn_c">В облаке</a>
-                </li>
-                <li>
-                    <a class="dropbtn_o">На сервере</a>
-                </li>
-            </ul>
-        </div>
-    </div>
+<header>
+
 </header>
+
 
 <section class="main_section">
     <div class="second_line_img">
-        <img class="second_line" src="{% static 'img/Line_12.png' %}" alt="logo" srcset="{% static 'img/Line_12x2.png' %} 2x">
+        <img class="second_line" src="{% static 'img/Line_12.png' %}" alt="logo"
+             srcset="{% static 'img/Line_12x2.png' %} 2x">
     </div>
     <div class="div_road_map_img">
         <div class="panel_roadmap">
@@ -98,15 +37,19 @@
             <span class="roadmap_text_second">Соберите своё решение</span>
             <div class="create-line"></div>
             <div class="lin-grad-border">
-                <div class="common_plan" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
-                    <span class="text-roadmap" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">3</span>
+                <div class="common_plan"
+                     style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+                    <span class="text-roadmap"
+                          style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">3</span>
                 </div>
             </div>
             <span class="roadmap_text_third">Выставление счета</span>
             <div class="create-line"></div>
             <div class="lin-grad-border">
-                <div class="common_plan" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
-                    <span class="text-roadmap" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">4</span>
+                <div class="common_plan"
+                     style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+                    <span class="text-roadmap"
+                          style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">4</span>
                 </div>
             </div>
             <span class="roadmap_text_fourth">Оплата</span>
@@ -146,13 +89,13 @@
                         id="myValue"></span></span>
 
                     <input
-                        type="range"
-                        min="5"
-                        max="100"
-                        value="0"
-                        class="range-input"
-                        id="range4"
-                        step="5"
+                            type="range"
+                            min="5"
+                            max="100"
+                            value="0"
+                            class="range-input"
+                            id="range4"
+                            step="5"
                     />
                     <div class="sliderticks">
                         <span>5</span>
@@ -286,7 +229,7 @@
                         <label for="b2b_crm"></label>
                         <p class="text_for_checkbox">B2B CRM
                             <img class="icon_info" src="{% static 'img/icon_info_outline_.png' %}" alt="logo"
-                                 srcset="{% static 'img/icon_info_outline_x2.png' 2x %}"
+                                 srcset="{% static 'img/icon_info_outline_x2.png 2x' %}"
                                  title="Управляйте своей деятельностью&#013;по продажам и реализуйте свои проекты.&#013;B2B CRM позволяет вашей команде&#013;по продажам отслеживать возможности&#013;от лида до контракта, генерирует&#013;статистику эффективности и помогает&#013;повысить общую эффективность продаж.">
 
                         </p>
@@ -304,7 +247,7 @@
                         <label for="knowledge_base"></label>
                         <p class="text_for_checkbox">База знаний
                             <img class="icon_info" src="img/icon_info_outline_.png" alt="logo"
-                                 srcset="{% static 'img/icon_info_outline_x2.png' 2x %}"
+                                 srcset="{% static 'img/icon_info_outline_x2.png 2x' %}"
                                  title="Мощный набор инструментов для организации&#013;и масштабирования документации, процессов,&#013;руководств, управления качеством и других&#013;потребностей для поддержания знаний&#013;в организации.">
 
                         </p>
@@ -322,7 +265,7 @@
                         <label for="asset_config"></label>
                         <p class="text_for_checkbox">Управление активами и конфигурациями
                             <img class=icon_info src="{% static 'img/icon_info_outline_.png' %}" alt=logo"
-                                 srcset="{% static 'img/icon_info_outline_x2.png' 2x %}"
+                                 srcset="{% static 'img/icon_info_outline_x2.png 2x' %}"
                                  title="Наше дополнение гарантирует,&#013;что все ваши активы и конфигурации&#013;будут оставаться актуальными и&#013;легкодоступными, позволяя вам&#013;связывать данные с задачами.&#013;Держите свои данные организованными,&#013;точными и всегда под рукой.">
 
                         </p>
@@ -337,7 +280,7 @@
         </div>
     </div>
     <div class="line_21_img">
-        <img class="" src="{% static 'img/Line_19.png' %}" alt="logo" srcset="{% static 'img/Line_19x2.png' 2x%}">
+        <img class="" src="{% static 'img/Line_19.png' %}" alt="logo" srcset="{% static 'img/Line_19x2.png 2x' %}">
     </div>
     <div class="main_services">
         <div class="services_about">
@@ -418,9 +361,11 @@
     <script src="{% static 'scripts/addon.js' %}"></script>
 
 </section>
+
 <footer>
     <div class="footer-img"></div>
 </footer>
+
 </body>
 
 </html>

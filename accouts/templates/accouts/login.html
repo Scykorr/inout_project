@@ -4,32 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>INOUT Проект</title>
+    <link rel="stylesheet" href="styles.css">
     {% load static %}
-    <link rel="stylesheet" href="{% static 'accouts/login_styles.css' %}">
 </head>
 <body>
     <!-- Шапка сайта -->
-    <header class="header">
-        <div class="container-header">
-            <div class="logo">
-                <img src="{% static 'images/logo.svg' %}" alt="INOUT Проект" width="120" height="20">
-            </div>
-            <nav class="nav">
-                <ul>
-                    <li><a href="#">Продукт</a></li>
-                    <li><a href="#">Услуги</a></li>
-                    <li><a href="#">О нас</a></li>
-                    <li><a href="#">Ресурсы</a></li>
-                    <li><a href="#">Цены</a></li>
-                    <div class="search-icon">
-                        <img src="{% static 'images/search-icon.svg' %}" alt="search">
+    <header class="sticky left-0 top-0 right-0 z-[1000] header-scroll">
+        <div class="absolute top-0 left-0 dark:bg-[#0000005e] light:bg-[#ffffff5e] backdrop-blur-2xl w-full h-full"></div>
+        <div class="font-normal text-[14px] leading-[20px] max-md:px-8 max-sm:px-4 relative">
+            <div class="container mx-auto py-[8px] flex justify-between">
+                <div id="logo" class="header flex gap-[24px] whitespace-nowrap">
+                    <a href="/" class="flex items-center">
+                        <img src="{% static 'images/favicon.svg' %}" alt="logo" class="hidden dark:block"/>
+                        <img src="{% static 'images/favicon_light.svg' %}" alt="logo_dark" class="dark:hidden"/>
+                    </a>
+                    <nav class="max-md:hidden">
+                        <ul class="flex gap-[24px]">
+                            <li><a href="#">Продукт</a></li>
+                            <li><a href="#">Услуги</a></li>
+                            <li><a href="#">О нас</a></li>
+                            <li><a href="#">Ресурсы</a></li>
+                            <li><a href="#">Цены</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="flex items-center gap-x-6 max-md:gap-x-4">
+                    <a href="/search/" class="flex items-center">
+                        <img src="{% static 'images/search.svg' %}" alt="search" class="hidden dark:block"/>
+                        <img src="{% static 'images/search_dark.svg' %}" alt="search" class="dark:hidden"/>
+                        <span class="ml-[8px] opacity-90 hover:opacity-100 max-md:hidden">Поиск</span>
+                    </a>
+                    <a href="#" class="block cursor-pointer px-[12px] py-[6px] bg-[linear-gradient(180deg,_#3274F9_0%,_#135BEB_100%)] rounded-[32px] hover:shadow-[0px_-4px_12px_0px_rgba(255,_255,_255,_0.32)_inset] text-dark-text-primary">
+                        Попробовать
+                    </a>
+                    <div class="md:hidden p-2" id="burger">
+                        <svg class="stroke-[#000] dark:stroke-[#fff]" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M6 17H18" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M6 12H18" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M6 7H18" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
                     </div>
-                    <li><a href="#">Поиск</a></li>
-                    <div class="separator"></div>
-                    <li><a href="#">Войти</a></li>
-                    <li><a href="#" class="btn">Попробовать</a></li>
-                </ul>
-            </nav>
+                </div>
+            </div>
+            <div class="w-full h-[1px] bg-[linear-gradient(48deg,_rgba(44,51,62,0)_0%,_rgba(44,51,62,1)_15%,_rgba(44,51,62,1)_85%,_rgba(44,51,62,0)_100%)] dark:bg-[linear-gradient(48deg,_rgba(255,255,255,0)_0%,_rgba(255,255,255,1)_15%,_rgba(255,255,255,1)_85%,_rgba(255,255,255,0)_100%)] opacity-20"></div>
         </div>
     </header>
     

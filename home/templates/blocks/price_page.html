@@ -684,21 +684,11 @@
                     </li>
                 </ul>
                 <div class="flex flex-col gap-4 mt-auto items-center">
-                    <a
-                            {% if value.request_call== '#' or value.link == '/' %}data-open-form{% elif
-                    value.request_call == '#crm' %}data-open-partner-form{% elif value.request_call == '#crm2'
-                    %}data-open-partner-form-2{% else %}href="{{ value.request_call }}" {% endif %}
-                    class="inline-block dark:text-dark-text-primary max-sm:h-[44px]
-                    hover:shadow-[0px_-4px_12px_0px_rgba(255,255,255,0.08)_inset] text-text-primary w-full
-                    rounded-[32px] text-base leading-[22px] max-sm:text-sm text-center py-3 transition
-                    dark:bg-dark-card-and-Sec-BT bg-[rgba(0,0,0,0.10)] relative z-20 before:absolute before:border
-                    before:border-[transparent] before:inset-0 before:z-10 before:rounded-[24px]
-                    dark:before:[background:linear-gradient(98deg,_rgba(255,255,255,0.08)_0%,_rgba(255,255,255,0.02)_75.5%)_border-box]
-                    before:[background:linear-gradient(98deg,_rgba(0,0,0,0.08)_0%,_rgba(0,0,0,0.02)_75.5%)_border-box]
-                    before:[-webkit-mask:linear-gradient(#fff_0_0)_padding-box,_linear-gradient(#fff_0_0)]
-                    before:[-webkit-mask-composite:destination-out] before:[mask-composite:exclude]"
+                   <a
+                            {% if value.request_call == '#' or value.link == '/' %}data-open-form{% elif value.request_call == '#crm' %}data-open-partner-form{% elif value.request_call == '#crm2' %}data-open-partner-form-2{% else %}href="{{ value.request_call }}" {% endif %}
+                            class="inline-block dark:text-dark-text-primary max-sm:h-[44px] hover:shadow-[0px_-4px_12px_0px_rgba(255,255,255,0.08)_inset] text-text-primary w-full rounded-[32px] text-base leading-[22px] max-sm:text-sm text-center py-3 transition dark:bg-dark-card-and-Sec-BT bg-[rgba(0,0,0,0.10)] relative z-20 before:absolute before:border before:border-[transparent] before:inset-0 before:z-10 before:rounded-[24px] dark:before:[background:linear-gradient(98deg,_rgba(255,255,255,0.08)_0%,_rgba(255,255,255,0.02)_75.5%)_border-box] before:[background:linear-gradient(98deg,_rgba(0,0,0,0.08)_0%,_rgba(0,0,0,0.02)_75.5%)_border-box] before:[-webkit-mask:linear-gradient(#fff_0_0)_padding-box,_linear-gradient(#fff_0_0)] before:[-webkit-mask-composite:destination-out] before:[mask-composite:exclude]"
                     >Заказать звонок</a
-                        >
+                    >
                 </div>
             </div>
         </div>

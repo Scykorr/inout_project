@@ -7,8 +7,14 @@
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/add_onn.css' %}">
     <title>Дополнительные модули</title>
-    <script src="{% static 'scripts/add_onns_dropbtn.js' %}"></script>
 
+    {% include 'includes/css.html' %}
+    <link rel="icon" href="/static/icons/logos/favicon_dark.ico" sizes="any">
+    <link rel="apple-touch-icon" href="/static/icons/logos/favicon_dark.png" type="image/png">
+    <link rel="mask-icon" href="/static/icons/logos/favicon_dark.png" type="image/png">
+    {% block extra_css %}
+    {% endblock %}
+    <script src="{% static 'scripts/add_onns_dropbtn.js' %}"></script>
 
 </head>
 <body>
@@ -26,59 +32,60 @@
                 <nav class="max-md:hidden">
                     <ul class="flex gap-[24px]">
                         {% for menu_item in main_menu %}
-                            <li
-                                    class="relative group/item p-1.5 gap-x-1 rounded-lg leading-[1.4] flex items-center opacity-90 hover:opacity-100 hover:bg-[var(--colors-background-sec-bt)] cursor-pointer"
-                            >
-                                {% if menu_item.submenu %}
-                                    <span>{{ menu_item.title }}</span>
-                                    <img
-                                            src="{% static 'icons/arrow_down.svg' %}"
-                                            alt="arrow_down"
-                                            class="hidden dark:block group-hover/item:rotate-180"
-                                    />
-                                    <img
-                                            src="{% static 'icons/arrow_down_dark.svg' %}"
-                                            alt="arrow_down"
-                                            class="dark:hidden block group-hover/item:rotate-180"
-                                    />
-                                    <div class="absolute z-[4] hidden group-hover/item:flex left-0 top-9 pt-1">
-                                        <div
-                                                class="gap-x-6 group-hover/item:flex p-4 dark:bg-[var(--colors-background-header)] border border-[var(--colors-stroke-table)] rounded-[16px] bg-[#fff] dark:backdrop-blur-2xl"
+                        <li
+                                class="relative group/item p-1.5 gap-x-1 rounded-lg leading-[1.4] flex items-center opacity-90 hover:opacity-100 hover:bg-[var(--colors-background-sec-bt)] cursor-pointer"
+                        >
+                            {% if menu_item.submenu %}
+                            <span>{{ menu_item.title }}</span>
+                            <img
+                                    src="{% static 'icons/arrow_down.svg' %}"
+                                    alt="arrow_down"
+                                    class="hidden dark:block group-hover/item:rotate-180"
+                            />
+                            <img
+                                    src="{% static 'icons/arrow_down_dark.svg' %}"
+                                    alt="arrow_down"
+                                    class="dark:hidden block group-hover/item:rotate-180"
+                            />
+                            <div class="absolute z-[4] hidden group-hover/item:flex left-0 top-9 pt-1">
+                                <div
+                                        class="gap-x-6 group-hover/item:flex p-4 dark:bg-[var(--colors-background-header)] border border-[var(--colors-stroke-table)] rounded-[16px] bg-[#fff] dark:backdrop-blur-2xl"
+                                >
+                                    <div
+                                            class="p-5 group/block rounded-[12px] bg-[var(--colors-background-card)] w-[262px] hover:bg-[url('/image/back-review-card.svg')] bg-cover"
+                                            onclick="location.href='{{ menu_item.url }}'"
+                                    >
+                                        <h3 class="text-xl text-[var(--colors-dark-base-text-primary)]">{{
+                                            menu_item.title }}</h3>
+                                        <p class="whitespace-normal text-[var(--colors-text-secondary)] mt-2 text-base font-normal">
+                                            {{ menu_item.short_desc }} {# TODO #}
+                                        </p>
+                                        <a
+                                                href="{{ menu_item.url }}"
+                                                class="rounded-full py-3 px-6 group-hover/block:dark:border-[#365995] hover:shadow-[0px_-4px_12px_0px_rgba(0,_0,_0,_0.16)_inset] text-[var(--colors-dark-base-text-primary)] bg-[#eaeef2] border-[#eaeef2] dark:bg-[rgba(255,255,255,0.05)] text-base mt-20 inline-block border dark:border-[#343942] transition"
                                         >
-                                            <div
-                                                    class="p-5 group/block rounded-[12px] bg-[var(--colors-background-card)] w-[262px] hover:bg-[url('/image/back-review-card.svg')] bg-cover"
-                                                    onclick="location.href='{{ menu_item.url }}'"
-                                            >
-                                                <h3 class="text-xl text-[var(--colors-dark-base-text-primary)]">{{ menu_item.title }}</h3>
-                                                <p class="whitespace-normal text-[var(--colors-text-secondary)] mt-2 text-base font-normal">
-                                                    {{ menu_item.short_desc }} {# TODO #}
-                                                </p>
-                                                <a
-                                                        href="{{ menu_item.url }}"
-                                                        class="rounded-full py-3 px-6 group-hover/block:dark:border-[#365995] hover:shadow-[0px_-4px_12px_0px_rgba(0,_0,_0,_0.16)_inset] text-[var(--colors-dark-base-text-primary)] bg-[#eaeef2] border-[#eaeef2] dark:bg-[rgba(255,255,255,0.05)] text-base mt-20 inline-block border dark:border-[#343942] transition"
-                                                >
-                                                    Перейти
-                                                </a>
-                                            </div>
-                                            <div>
-                                                <ul>
-                                                    {% for sub_menu_item in menu_item.submenu %}
-                                                        <li>
-                                                            <a
-                                                                    href="{{ sub_menu_item.url }}"
-                                                                    class="py-2 text-base font-medium block min-w-[222px] hover:text-[#4785FF]"
-                                                            >{{ sub_menu_item.title }}
-                                                            </a>
-                                                        </li>
-                                                    {% endfor %}
-                                                </ul>
-                                            </div>
-                                        </div>
+                                            Перейти
+                                        </a>
                                     </div>
-                                {% else %}
-                                    <a href="{{ menu_item.url }}">{{ menu_item.title }}</a>
-                                {% endif %}
-                            </li>
+                                    <div>
+                                        <ul>
+                                            {% for sub_menu_item in menu_item.submenu %}
+                                            <li>
+                                                <a
+                                                        href="{{ sub_menu_item.url }}"
+                                                        class="py-2 text-base font-medium block min-w-[222px] hover:text-[#4785FF]"
+                                                >{{ sub_menu_item.title }}
+                                                </a>
+                                            </li>
+                                            {% endfor %}
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            {% else %}
+                            <a href="{{ menu_item.url }}">{{ menu_item.title }}</a>
+                            {% endif %}
+                        </li>
                         {% endfor %}
                     </ul>
                 </nav>
@@ -92,7 +99,7 @@
                 <div
                         class="max-md:hidden h-[24px] w-[1px] bg-[linear-gradient(0deg,_#00000000_0%,_#000000_15%,_#000000_85%,_#00000000_100%)] opacity-[0.16] dark:bg-[linear-gradient(0deg,_#ffffff00_0%,_#ffffff_15%,_#ffffff_85%,_#ffffff00_100%)] dark:opacity-[0.16]"
                 ></div>
-{#                <a href="#" class="max-md:hidden opacity-90 hover:opacity-100">Войти</a>#}
+                {# <a href="#" class="max-md:hidden opacity-90 hover:opacity-100">Войти</a>#}
                 <div class="md:hidden max-sm:hidden">
                     <svg
                             class="stroke-[#000] dark:stroke-[#fff]"
@@ -113,7 +120,7 @@
                 <a
                         href="#" data-open-form
                         class="block cursor-pointer px-[12px] py-[6px] bg-[linear-gradient(180deg,_#3274F9_0%,_#135BEB_100%)] rounded-[32px] hover:shadow-[0px_-4px_12px_0px_rgba(255,_255,_255,_0.32)_inset] text-dark-text-primary"
-{#                        data-open-form#}
+                        {# data-open-form#}
                 >
                     Попробовать
                 </a>
@@ -142,41 +149,45 @@
         >
             <div class="p-4 overflow-y-auto">
                 {% for menu_item in main_menu %}
-                    {% if menu_item.submenu %}
-                        <div class="flex flex-col gap-2 w-full py-3">
-                            <div
-                                    class="hidden max-md:flex font-normal text-[20px] max-sm:text-sm leading-[26px] max-sm:leading-[20px] justify-between items-center cursor-pointer header-readmore"
-                            >
-                                {{ menu_item.title }}
-                                <div class="transition flex items-center">
-                                    <img src="{% static 'icons/arrow_down_16.svg' %}" alt="arrow_down"
-                                         class="hidden dark:block"/>
-                                    <img src="{% static 'icons/arrow_down_16_light.svg' %}" alt="arrow_down"
-                                         class="dark:hidden"/>
-                                </div>
-                            </div>
-                            <a href="{{ menu_item.url }}"
-                               class="font-normal text-base leading-[22px] hover:underline max-md:hidden">{{ menu_item.title }}</a>
-                            <div class="flex-col flex gap-2 pt-[4px] max-md:hidden">
-                                {% for sub_menu_item in menu_item.submenu %}
-                                    <a href="{{ sub_menu_item.url }}"
-                                       class="opacity-80 hover:opacity-100 hover:underline">{{ sub_menu_item.title }}</a>
-                                {% endfor %}
-                            </div>
+                {% if menu_item.submenu %}
+                <div class="flex flex-col gap-2 w-full py-3">
+                    <div
+                            class="hidden max-md:flex font-normal text-[20px] max-sm:text-sm leading-[26px] max-sm:leading-[20px] justify-between items-center cursor-pointer header-readmore"
+                    >
+                        {{ menu_item.title }}
+                        <div class="transition flex items-center">
+                            <img src="{% static 'icons/arrow_down_16.svg' %}" alt="arrow_down"
+                                 class="hidden dark:block"/>
+                            <img src="{% static 'icons/arrow_down_16_light.svg' %}" alt="arrow_down"
+                                 class="dark:hidden"/>
                         </div>
-                    {% else %}
-                        <div class="flex flex-col gap-2 w-full py-3">
-                            <a href="{{ menu_item.url }}"
-                               class="font-normal text-base max-sm:text-sm leading-[22px] hover:underline">{{ menu_item.title }}</a>
-                        </div>
-                    {% endif %}
+                    </div>
+                    <a href="{{ menu_item.url }}"
+                       class="font-normal text-base leading-[22px] hover:underline max-md:hidden">{{ menu_item.title
+                        }}</a>
+                    <div class="flex-col flex gap-2 pt-[4px] max-md:hidden">
+                        {% for sub_menu_item in menu_item.submenu %}
+                        <a href="{{ sub_menu_item.url }}"
+                           class="opacity-80 hover:opacity-100 hover:underline">{{ sub_menu_item.title }}</a>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% else %}
+                <div class="flex flex-col gap-2 w-full py-3">
+                    <a href="{{ menu_item.url }}"
+                       class="font-normal text-base max-sm:text-sm leading-[22px] hover:underline">{{ menu_item.title
+                        }}</a>
+                </div>
+                {% endif %}
                 {% endfor %}
             </div>
             <div class="w-full px-4 pt-8 pb-4 flex-grow flex items-end">
-{#                <a href="#"#}
-{#                   class="dark:bg-[#0e0f10] bg-[#eaeef2] border dark:border-[#1f2021] border-[#eaeef2] rounded-full py-[13px] w-full text-center block"#}
-{#                >Войти в аккаунт</a#}
-{#                >#}
+                {# <a href="#" #}
+                      {#
+                      class="dark:bg-[#0e0f10] bg-[#eaeef2] border dark:border-[#1f2021] border-[#eaeef2] rounded-full py-[13px] w-full text-center block"
+                      #}
+                      {#>Войти в аккаунт</a#}
+                    {# >#}
             </div>
         </div>
     </div>
@@ -528,7 +539,145 @@
 </section>
 
 <footer>
-    <div class="footer-img"></div>
+    <footer class="relative font-normal text-sm leading-[20px] text-dark-text-primary rounded-t-[32px]">
+{#  <img src="{% static 'image/bg/footer_bg.svg' %}" alt="footer"#}
+{#       class="absolute top-0 left-0 w-full -z-50 object-cover h-full hidden dark:block rounded-t-[32px]">#}
+{#  <img src="{% static 'image/bg/footer_bg_light.svg' %}" alt="footer"#}
+{#       class="absolute top-0 left-0 w-full -z-50 object-cover h-full dark:hidden rounded-t-[32px]">#}
+  <div
+    class="container mx-auto pt-[100px] max-sm:px-4 max-md:pt-[58px] max-sm:pt-[56px] flex justify-between max-sm:flex-col max-sm:items-center max-sm:items-center">
+    <div class="max-w-[406px] max-md:max-w-[351px] max-sm:max-w-[608px]">
+      <h2
+        class="mt-[12px] max-md:mt-[30px] max-sm:mt-0 max-sm:text-center font-semibold text-[64px] max-md:text-[56px] max-md:leading-[56px] leading-[64px] tracking-tight max-md:tracking-[-1.68px] max-sm:text-[36px] max-sm:leading-[36px] colors-dark-base-text-accent bg-clip-text"
+        style="">Попробуйте INOUT Проект</h2>
+      <p
+        class="mt-5 max-sm:mt-4 text-[20px] leading-[26px] max-sm:text-base max-sm:leading-[23px] max-sm:text-center">
+        Все функции, SSL-сертификат, ежедневные резервные копии, в вашем географическом местоположении
+			</p>
+      <div
+        class="mt-12 max-md:mt-10 max-sm:mt-6 h-[62px] w-[139px] inline-block max-sm:flex max-sm:mx-auto p-1"
+        style="background: url('{% static 'icons/button.svg') center no-repeat;">
+        <a
+          href="#"
+          class="block cursor-pointer font-medium text-center w-full text-base max-sm:text-sm leading-[22px] max-sm:leading-[20px] px-6 py-4 bg-primary-bg text-text-primary rounded-full hover:shadow-[0px_-4px_12px_0px_rgba(0,_0,_0,_0.32)_inset] transition">
+          Подробнее
+        </a>
+      </div>
+    </div>
+    <div
+      class="max-sm:mt-[32px] max-lg:absolute overflow-hidden right-0 min-h-[372px] max-sm:min-h-0 max-sm:min-w-0 max-sm:h-full min-w-[640px] max-sm:w-full max-sm:relative">
+      <img src="{% static 'image/footer_img.svg' %}" alt="footer_img"
+           class="max-h-[360px] max-lg:min-h-[372px] max-sm:min-h-0 max-sm:h-full max-lg:absolute max-sm:relative max-sm:flex max-lg:right-[-316px] max-sm:right-0">
+    </div>
+  </div>
+  <div
+    class="mt-[100px] max-md:mt-[30px] max-sm:mt-[48px] w-full h-[1px] bg-[linear-gradient(48deg,_rgba(255,255,255,0)_0%,_rgba(255,255,255,1)_15%,_rgba(255,255,255,1)_85%,_rgba(255,255,255,0)_100%)] opacity-20"></div>
+  <div class="container mx-auto mt-6 flex justify-between items-center max-md:hidden">
+    <a href="#"><img src="{% static 'icons/logo.svg' %}" alt="logo"></a>
+    <div class="flex items-center gap-x-6">
+      <a href="#" class="flex items-center">
+        <img src="{% static 'icons/search.svg' %}" alt="search">
+        <span class="ml-[8px] opacity-90 hover:opacity-100">Поиск</span>
+      </a>
+      <div class="h-6 w-0.5 bg-white opacity-5"></div>
+      <a href="#" class="opacity-90 hover:opacity-100">Войти</a>
+      <a href="#"
+         class="block cursor-pointer px-3 py-1.5 bg-[linear-gradient(180deg,_#3274F9_0%,_#135BEB_100%)] rounded-[32px] hover:shadow-[0px_-4px_12px_0px_rgba(255,_255,_255,_0.32)_inset] transition">
+        Подробнее
+      </a>
+    </div>
+  </div>
+  <div
+    class="container mx-auto mt-6 w-full h-[1px] bg-[linear-gradient(48deg,_rgba(255,255,255,0)_0%,_rgba(255,255,255,1)_15%,_rgba(255,255,255,1)_85%,_rgba(255,255,255,0)_100%)] opacity-20 max-md:hidden"></div>
+  <div
+    class="container mx-auto max-sm:px-4 mt-6 max-md:mt-[52px] max-md:mt-10 flex max-md:flex-col max-md:gap-[24px] gap-4">
+    <div class="flex flex-col gap-2 w-full">
+      <div
+        class="hidden max-md:flex font-normal text-[20px] max-sm:text-sm leading-[26px] max-sm:leading-[20px] hover:underline justify-between items-center footer-readmore cursor-pointer">
+        Продукт
+        <div class="transition">
+          <img src="{% static 'icons/arrow_down_16.svg' %}" alt="arrow_down">
+        </div>
+      </div>
+      <a href="#" class="font-normal text-base leading-[22px] hover:underline max-md:hidden">Продукты</a>
+      <div class="flex-col flex gap-2 max-md:hidden">
+        <a href="#" class="pt-[4px] opacity-80 hover:opacity-100 hover:underline">База</a>
+        <a href="#" class="opacity-80 hover:opacity-100 hover:underline">Бизнес</a>
+        <a href="#" class="opacity-80 hover:opacity-100 hover:underline">Развёртывание</a>
+        <a href="#" class="opacity-80 hover:opacity-100 hover:underline">Платформа</a>
+        <a href="#" class="opacity-80 hover:opacity-100 hover:underline">Интеграция</a>
+      </div>
+    </div>
+    <div class="flex flex-col gap-2 w-full">
+      <div
+        class="hidden max-md:flex font-normal text-[20px] max-sm:text-sm leading-[26px] max-sm:leading-[20px] hover:underline justify-between items-center footer-readmore cursor-pointer">
+        Услуги
+        <div class="transition">
+          <img src="{% static 'icons/arrow_down_16.svg' %}" alt="arrow_down">
+        </div>
+      </div>
+      <a href="#" class="font-normal text-base leading-[22px] hover:underline max-md:hidden">Услуги</a>
+      <div class="flex-col flex gap-2 max-md:hidden">
+        <a href="#" class="pt-[4px] opacity-80 hover:opacity-100 hover:underline">Поддержка</a>
+        <a href="#" class="opacity-80 hover:opacity-100 hover:underline">Реализация</a>
+        <a href="#" class="opacity-80 hover:opacity-100 hover:underline">Внедрение</a>
+      </div>
+    </div>
+    <div class="flex flex-col gap-2 w-full">
+      <div
+        class="hidden max-md:flex font-normal text-[20px] max-sm:text-sm leading-[26px] max-sm:leading-[20px] hover:underline justify-between items-center footer-readmore cursor-pointer">
+        О нас
+        <div class="transition">
+          <img src="{% static 'icons/arrow_down_16.svg' %}" alt="arrow_down">
+        </div>
+      </div>
+      <a href="#" class="font-normal text-base leading-[22px] hover:underline max-md:hidden">О нас</a>
+      <div class="flex-col flex gap-2 max-md:hidden">
+        <a href="#" class="pt-[4px] opacity-80 hover:opacity-100 hover:underline">Компания</a>
+        <a href="#" class="opacity-80 hover:opacity-100 hover:underline">Отзывы</a>
+        <a href="#" class="opacity-80 hover:opacity-100 hover:underline">Партнеры</a>
+        <a href="#" class="opacity-80 hover:opacity-100 hover:underline">Новости</a>
+        <a href="#" class="opacity-80 hover:opacity-100 hover:underline">Новости управления проектами</a>
+      </div>
+    </div>
+    <div class="flex flex-col gap-2 w-full">
+      <div
+        class="hidden max-md:flex font-normal text-[20px] max-sm:text-sm leading-[26px] max-sm:leading-[20px] hover:underline justify-between items-center footer-readmore cursor-pointer">
+        Ресурсы
+        <div class="transition">
+          <img src="{% static 'icons/arrow_down_16.svg' %}" alt="arrow_down">
+        </div>
+      </div>
+      <a href="#" class="font-normal text-base leading-[22px] hover:underline max-md:hidden">Ресурсы</a>
+      <div class="flex-col flex gap-2 max-md:hidden">
+        <a href="#" class="pt-[4px] opacity-80 hover:opacity-100 hover:underline">Учебный центр</a>
+        <a href="#" class="opacity-80 hover:opacity-100 hover:underline">Блог</a>
+        <a href="#" class="opacity-80 hover:opacity-100 hover:underline">Документация</a>
+        <a href="#" class="opacity-80 hover:opacity-100 hover:underline">FAQ</a>
+        <a href="#" class="opacity-80 hover:opacity-100 hover:underline">Техническая информация</a>
+      </div>
+    </div>
+    <div class="flex flex-col gap-2 hidden max-md:flex w-full">
+      <a href="#"
+         class="font-normal text-[20px] max-sm:text-sm leading-[26px] max-sm:leading-[20px] hover:underline">Цены</a>
+    </div>
+  </div>
+  <div
+    class="container mx-auto max-md:px-[32px] max-sm:px-4 mt-[40px] flex max-sm:flex-col justify-between pb-[32px] max-md:pb-[40px]">
+    <div class="flex max-md:flex-col gap-[80px] max-md:gap-2">
+      <a class="opacity-50 hover:opacity-100 hover:underline max-sm:text-[12px] max-sm:leading-[17px]" href="#">© 2005 –
+        2024 INOUT Software Ltd.</a>
+      <a class="opacity-50 hover:opacity-100 hover:underline max-sm:text-[12px] max-sm:leading-[17px]" href="#">Принципы
+        обработки пер. данных</a>
+      <a class="opacity-50 hover:opacity-100 hover:underline max-sm:text-[12px] max-sm:leading-[17px]" href="#">Условия
+        использования</a>
+    </div>
+    <div class="flex max-sm:mt-[8px]">
+      <p class="opacity-50 max-sm:text-[12px] max-sm:leading-[17px]">Сайт сделала</p>
+      <img src="{% static 'icons/New_Logo_Mateca.svg' %}" alt="signature" class="ml-[8px] opacity-100 max-w-[100px] h-[20px]">
+    </div>
+  </div>
+</footer>
 </footer>
 
 </body>

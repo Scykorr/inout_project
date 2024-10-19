@@ -581,6 +581,8 @@
                     </li>
                 </ul>
                 <div class="flex flex-col gap-4 items-center">
+
+                    {% if price.value.popular %}
                     <div class="div_div_result_bottom">
                             <div class="div_result_bottom_business">
                                 <a href="/payment/add_ons/" class="result_bottom_business" id="button_2">
@@ -588,7 +590,6 @@
                                 </a>
                             </div>
                         </div>
-                    {% if price.value.popular %}
                     <div
                             class="rounded-[500px] flex items-center justify-center h-[46px] max-sm:h-[44px] w-full p-px dark:bg-[rgba(255,255,255,0.20)] bg-[rgba(0,0,0,0.10)] relative z-20 before:absolute before:border before:border-[transparent] before:inset-0 before:z-10 before:rounded-[24px] dark:before:[background:linear-gradient(98deg,_rgba(92,201,255,0.48)_0%,_rgba(133,214,255,0.12)_55.5%,_rgba(173,228,255,0.38)_100%)border-box] before:[background:linear-gradient(98deg,_rgba(92,201,255,0.48)_0%,_rgba(133,214,255,0.12)_55.5%,_rgba(173,228,255,0.38)_100%)border-box] before:[-webkit-mask:linear-gradient(#fff_0_0)_padding-box,_linear-gradient(#fff_0_0)] before:[-webkit-mask-composite:destination-out] before:[mask-composite:exclude]"
                     >
@@ -599,7 +600,13 @@
                         >Попробовать</a>
                     </div>
                     {% else %}
-
+                    <div class="div_div_result_bottom">
+                            <div class="div_result_bottom_business">
+                                <a href="/payment/add_ons/" class="result_bottom_business" id="button_2">
+                                    Купить
+                                </a>
+                            </div>
+                        </div>
                     <a
                             data-open-form
                             class="inline-block text-dark-text-primary w-full bg-[linear-gradient(180deg,_#3274F9_0%,_#135BEB_100%)] rounded-[32px] text-base leading-[22px] max-sm:text-sm text-center py-3 hover:shadow-[0px_-4px_12px_0px_rgba(255,_255,_255,_0.32)_inset] transition"

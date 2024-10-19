@@ -4,16 +4,16 @@
 
 @font-face {
     font-family: --font-SF-Pro-Display;
-    src: url('{% static "/fonts/SF-Pro-Display-Medium.woff" %}') format('opentype');
-    font-weight: 400;
-    font-style: normal;
+    src: url('/fonts/SF-Pro-Display-Medium.woff') format('opentype');
+    font-weight: 400; /* Укажите вес шрифта, если он есть */
+    font-style: normal;  /* Укажите стиль (обычный или курсив) */
 }
 
 @font-face {
     font-family: --font-SF-Pro-Display2;
     src: url('/fonts/SF-Pro-Display-Medium.woff') format('opentype');
-    font-weight: 400;
-    font-style: normal;
+    font-weight: 400; /* Укажите вес шрифта, если он есть */
+    font-style: normal;  /* Укажите стиль (обычный или курсив) */
 }
 
 body {
@@ -23,20 +23,6 @@ body {
     justify-content: center;
     align-items: center;
     font-family: --font-SF-Pro-Display;
-}
-
-/* Новые стили */
-.py-[8px] {
-    padding-top: 8px;
-    padding-bottom: 8px;
-}
-
-.justify-between {
-    justify-content: space-between;
-}
-
-.flex {
-    display: flex;
 }
 
 .header {
@@ -87,7 +73,7 @@ body {
     border-radius: 32px;
 }
 
-.search-icon img {
+.search-icon img{
     width: 24px;
     height: 24px;
 }
@@ -97,13 +83,12 @@ body {
     height: 24px;
     background-color: #ccc;
 }
-
 .main {
     flex-grow: 1;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 180px 0;
+    padding: 180px 0; /* Отступы для выравнивания по центру страницы */
 }
 
 .container {
@@ -113,8 +98,9 @@ body {
     display: flex;
     border-radius: 30px;
     background: rgba(255, 255, 255, 0.05);
-    border: 1px solid transparent;
-    background-image: linear-gradient(37.52deg, #061430 11.08%, rgba(18, 28, 50, 0.87) 38.22%, #0E1115 91.99%), linear-gradient(98.23deg, rgba(92, 201, 255, 0.48) 0%, rgba(133, 214, 255, 0.1152) 55.5%, rgba(173, 228, 255, 0.384) 100%);
+    border: 1px solid transparent; /* Начальное состояние обводки */
+    background-image:linear-gradient(37.52deg, #061430 11.08%, rgba(18, 28, 50, 0.87) 38.22%, #0E1115 91.99%),
+    linear-gradient(98.23deg, rgba(92, 201, 255, 0.48) 0%, rgba(133, 214, 255, 0.1152) 55.5%, rgba(173, 228, 255, 0.384) 100%);
     background-clip: padding-box, border-box;
 }
 
@@ -123,7 +109,7 @@ body {
 }
 
 .logo-image {
-    max-width: 323px;
+    max-width: 323px; /* Ограничиваем максимальную ширину, если нужно */
     margin-top: 118px;
     margin-left: 146px;
     margin-right: 160px;
@@ -134,20 +120,21 @@ body {
 
 .content-left, .content-right {
     border-radius: 30px;
+    
 }
-
 .content-left {
-    position: relative;
+    position: relative; /* Устанавливаем относительное позиционирование для родителя */
     display: flex;
     justify-content: center;
-    border-radius: 30px;
+    border: 1px; /* Добавляем обводку */
+    border-radius: 30px; /* Добавляем скругленные углы */
 }
 
 .content-left .about-btn {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 131px;
+    width:131px;
     height: 46px;
     margin-top: 219px;
     margin-left: 28px;
@@ -165,6 +152,7 @@ body {
     font-weight: normal;
     z-index: 2;
 }
+
 
 .content-right {
     width: 1204px;
@@ -185,22 +173,19 @@ body {
 .content-right form {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: center; /* Центровка элементов внутри формы */
     font-family: --font-SF-Pro-Display;
 }
-
-.content-right .input-group {
+.content-right .input-group{
     margin-left: 6px;
 }
-
 .content-right .input-group label {
     color: #FFFFFF;
     font-size: 14px;
-    display: flex;
+    display: flex; /* Убедимся, что метка занимает всю ширину родителя */
     align-self: flex-start;
     font-family: --font-SF-Pro-Display;
 }
-
 .content-right input {
     width: 450px;
     height: 37px;
@@ -209,17 +194,51 @@ body {
     border-radius: 5px;
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid transparent;
-    background-image: linear-gradient(#4a4a4a 0%, #1a1a1a 0%, #1c2332 1%), linear-gradient(98.23deg, rgba(92, 201, 255, 0.48) 0%, rgba(133, 214, 255, 0.1152) 55.5%, rgba(173, 228, 255, 0.384) 100%);
+    background-image:linear-gradient(#4a4a4a 0%, #1a1a1a 0%, #1c2332 1%),
+    linear-gradient(98.23deg, rgba(92, 201, 255, 0.48) 0%, rgba(133, 214, 255, 0.1152) 55.5%, rgba(173, 228, 255, 0.384) 100%);
     background-clip: padding-box, border-box;
     color: #ffffff;
+    z-index: 1;
+
+/*
+.content-right input::before {
+    content: "";
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    bottom: -5px;
+    left: -5px;
+    background-color: linear-gradient(37.52deg, #061430 11.08%, rgba(18, 28, 50, 0.87) 38.22%, #0E1115 91.99%),
+                linear-gradient(98.23deg, rgba(92, 201, 255, 0.48) 0%, rgba(133, 214, 255, 0.1152) 55.5%, rgba(173, 228, 255, 0.384) 100%);
+    border-radius: 10px;
+    z-index: -1;
 }
 
+.content-right input::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(100% 100% at 50% 100%, #061637 0%, #000000 100%);
+    z-index: -2;
+    border-radius: inherit;
+}
+*/
+
+
+
+
+}
+.content-right .input-group input {
+    margin-bottom: 1px; /* Отступ снизу для поля ввода */
+}
+.password_t{
+    margin-top: 10px;
+}
 .email_t, .password_t {
     margin-bottom: 1px;
     font-family: var(--font-SF-Pro-Display);
     font-weight: lighter;
 }
-
 .content-right .btn {
     width: 223px;
     height: 42px;
@@ -235,7 +254,6 @@ body {
     cursor: pointer;
     font-family: --font-SF-Pro-Display;
 }
-
 .content-right .links {
     display: flex;
     width: 100%;
@@ -243,14 +261,15 @@ body {
     font-family: --font-SF-Pro-Display;
 }
 
-.content-right .forgot-password {
+.content-right .forgot-password{
     color: #FFFFFF;
     text-decoration: underline;
     font-size: 14px;
-    align-self: flex-end;
+    align-self: flex-end; /* Выровнять метки по левому краю */
     position: relative;
     margin-right: 94px;
     top: -5px;
+    right:1px;
     font-weight: lighter;
 }
 
@@ -258,7 +277,17 @@ body {
     text-decoration: underline;
 }
 
-.register-link {
+.content-right .links a:hover {
+    text-decoration: underline;
+}
+
+.email, .password {
+    border: 5 px solid red;
+    border-radius: 2 px;
+    outline: none; /* Убираем контур при фокусе */
+}
+
+.register-link{
     margin-left: auto;
     margin-right: 261px;
     margin-top: -4px;
@@ -268,6 +297,7 @@ body {
     color: #FFF;
     font-size: 14px;
     text-decoration: underline;
+
     font-weight: lighter;
 }
 
@@ -275,23 +305,37 @@ body {
     text-decoration: underline;
 }
 
-.email:focus, .password:focus {
+.content-right .forgot-password:hover, .register-link a:hover {
+    text-decoration: underline;
+}
+
+.email:focus {
     border-color: #5f9ea0;
+}
+.password:focus {
+            border-color: #5f9ea0; /* Цвет обводки при фокусе */
 }
 
 .error-message {
     color: #FF4B4B;
     font-size: 14px;
     margin-top: 5px;
-    display: none;
+    display: none; /* Скрыто по умолчанию */
 }
 
+/* Обводка поля ввода при ошибке */
 input.error {
-    border: 2px solid #FF4B4B;
+    border: 2px solid #FF4B4B; /* Красная обводка */
 }
 
+/* Стили формы */
 form {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 10px; /* Расстояние между элементами */
 }
+
+
+
+
+

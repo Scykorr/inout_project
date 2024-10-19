@@ -26,12 +26,12 @@ body {
 }
 
 
-.price_panel .div_div_result_bottom .div_result_bottom {
+.div_div_result_bottom .div_result_bottom {
     position: relative;
 
 }
 
-.price_panel .div_result_bottom {
+.div_result_bottom {
     position: absolute;
     width: 193px;
     height: 46px;
@@ -39,7 +39,7 @@ body {
     margin-left: 20px;
 }
 
-.price_panel .div_result_bottom .result_bottom {
+.div_result_bottom .result_bottom {
     font-size: 16px;
     line-height: 17.6px;
     display: inline-block;
@@ -55,12 +55,12 @@ body {
 }
 
 
-.price_panel .div_div_result_bottom .div_result_bottom_business {
+.div_div_result_bottom .div_result_bottom_business {
     position: relative;
 
 }
 
-.price_panel .div_result_bottom_business {
+.div_result_bottom_business {
     width: 223px;
     height: 46px;
     margin-top: 10px;
@@ -71,7 +71,7 @@ body {
     border-radius: 35px;
 }
 
-.price_panel .div_result_bottom_business .result_bottom_business {
+.div_result_bottom_business .result_bottom_business {
     font-size: 16px;
     line-height: 17.6px;
     display: inline-block;
@@ -93,11 +93,11 @@ body {
 }
 
 
-.price_panel .div_result_bottom .result_bottom:hover {
+.div_result_bottom .result_bottom:hover {
     background: linear-gradient(150deg, rgba(1, 60, 163, 1) 0%, rgba(35, 90, 191, 1) 50%, rgba(57, 114, 213, 1) 50%, rgba(51, 106, 206, 1) 100%);
 }
 
-.price_panel .div_result_bottom_business .result_bottom_business:hover {
+.div_result_bottom_business .result_bottom_business:hover {
     background: linear-gradient(150deg, rgba(1, 60, 163, 1) 0%, rgba(35, 90, 191, 1) 50%, rgba(57, 114, 213, 1) 50%, rgba(51, 106, 206, 1) 100%);
     color: #FFFFFF;
 }

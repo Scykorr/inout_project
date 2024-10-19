@@ -1,0 +1,659 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: radial-gradient(100% 100% at 51.15% 0%, #061637 0%, #000000 100%);
+}
+
+.container {
+    max-width: 1920px;
+    margin: 0 auto;
+    display: flex;
+    min-height: 100vh;
+    overflow: auto; /* Позволяет прокручивать контент, если он выходит за пределы экрана */
+}
+
+.sidebar {
+    width: 240px; /* Уменьшено с 286px */
+    padding: 15px; /* Уменьшено */
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid transparent;
+    transition: transform 0.3s ease, width 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+}
+
+
+.sidebar::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    padding: 1px;
+    background: linear-gradient(90deg, rgba(88, 119, 199, 0.65), rgba(66, 86, 142, 0.05), rgba(81, 107, 178, 0.65));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+}
+
+
+
+.sidebar.hidden {
+    transform: translateX(-100%);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    margin-top: 6px;
+    margin-bottom: 58px; /* Уменьшено */
+}
+
+.logo-image {
+    width: 40px; /* Уменьшено */
+    margin-right: 8px; /* Уменьшено */
+}
+
+.logo-text {
+    font-size: 20px; /* Уменьшено */
+    color: white;
+}
+
+.menu {
+    list-style-type: none;
+    padding-left: 0;
+    margin-bottom: auto;
+}
+
+.menu li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 22px; /* Уменьшено */
+}
+
+.menu li img {
+    margin-right: 15px; /* Уменьшено */
+}
+
+.menu li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 14px; /* Уменьшено */
+}
+
+.sidebar-footer {
+    margin-top: auto;
+    text-align: center;
+    padding: 10px 0; /* Уменьшено */
+}
+
+.sidebar-footer img {
+    width: 200px; /* Уменьшено */
+}
+
+.main-content {
+    flex: 1;
+    padding: 15px; /* Уменьшено */
+    transition: margin-left 0.3s ease;
+}
+
+.main-content.shifted {
+    margin-left: -240px; /* Уменьшено */
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.block-help {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu-toggle {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.hamburger {
+    width: 15px;
+    height: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-right: 8px; /* Уменьшено */
+}
+
+.hamburger div {
+    width: 100%;
+    height: 1px;
+    background-color: #FFF;
+}
+
+.logo-title {
+    color: #FFF;
+    font-size: 24px; /* Уменьшено */
+    font-weight: bold;
+    position: relative;
+}
+
+.user-info {
+    display: inline;
+    color: white;
+}
+
+.logout {
+    padding: 5px 8px; /* Уменьшено */
+    border: none;
+    background: transparent;
+}
+
+.users-section {
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.users-header {
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    position: relative;
+    height: 66px;
+    background: rgba(255, 255, 255, 0.05);
+    margin-bottom: 2px;
+    border-radius: 18px 18px 0 0;
+}
+
+.users-header::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 18px 18px 0 0;
+    padding: 1px;
+    background: linear-gradient(90deg, rgba(88, 119, 199, 0.65), rgba(66, 86, 142, 0.05), rgba(81, 107, 178, 0.65));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+}
+
+.users-header h2{
+    margin-top: auto;
+    margin-bottom: auto;
+    font-size: 24px;
+    margin-left: 15px;
+}
+.add-user-btn {
+    width: 222hug;
+    height: 46px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px;
+    justify-content: flex-end;
+    padding: 10px 20px;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 24px;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: 21px;
+}
+
+.users-table-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.users-table-header{
+    position: relative;
+}
+
+.users-table-header::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    padding: 1px;
+    background: linear-gradient(90deg, rgba(88, 119, 199, 0.65), rgba(66, 86, 142, 0.05), rgba(81, 107, 178, 0.65));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+}
+
+.users-table-header table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 2px;
+}
+
+
+.users-table-header th {
+    padding: 15px;
+    text-align: left;
+    color:rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.05);
+    font-weight: 400;
+    font-size: 16px;
+    width: 25%; /* Задаём фиксированную ширину колонок */
+}
+
+.users-table-body {
+    height: 100%;
+    border-radius: 0 0 18px 18px;
+    overflow: hidden;
+    position: relative;
+}
+
+.users-table-body::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 0 0 18px 18px;
+    padding: 1px;
+    background: linear-gradient(90deg, rgba(88, 119, 199, 0.65), rgba(66, 86, 142, 0.05), rgba(81, 107, 178, 0.65));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+}
+
+.users-table-body table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.users-table-body td {
+    padding: 15px;
+    text-align: left;
+    color:rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.05);
+    width: 15%; /* Ширина совпадает с заголовками */
+    vertical-align: middle; /* Вертикальное выравнивание текста по центру */
+    white-space: nowrap; /* Отключаем перенос текста */
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.users-table-body td.actions {
+    text-align: right; /* Правое выравнивание для кнопок */
+}
+
+.edit-btn, .delete-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: #fff;
+    vertical-align: middle; /* Выравнивание по центру ячейки */
+}
+
+.edit-btn {
+    color: white;
+}
+
+.delete-btn {
+    color: #ff4444;
+}
+
+
+.profile-popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(15px);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.profile-popup-content {
+    background: rgba(255, 255, 255, 0.05);
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 966px;
+    height: 510px;
+    max-width: 90%;
+    position: relative;
+}
+
+.form-container {
+    display: flex;
+    justify-content: space-between; /* Две формы расположены рядом друг с другом */
+    margin-bottom: 20px; /* Отступ снизу для кнопки */
+}
+
+.form-left, .form-right {
+    width: 48%; /* Уменьшаем ширину, чтобы две формы стали в строку */
+}
+
+.form-left {
+    display: flex;
+    flex-direction: column; /* Вертикальное расположение элементов в левом столбце */
+}
+
+.form-right {
+    display: flex;
+    flex-direction: column; /* Вертикальное расположение элементов в правом столбце */
+    margin-left: 20px; /* Отступ между двумя столбцами */
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+}
+
+.switch input {
+
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    width: 49px;
+    height: 29px;
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.05);
+    transition: .4s;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 21px;
+    width: 21px;
+    left: 3px;
+    bottom: 3px;
+    background: linear-gradient(rgba(50, 116, 249, 1),rgba(19, 91, 235, 1));
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background: linear-gradient(rgba(88, 119, 199, 0.6),rgba(81, 107, 178, 0.6));
+}
+
+input:checked + .slider:before {
+    transform: translateX(20px);
+    background-color: #5361fc;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.profile-popup-content h2 {
+    margin-bottom: 20px;
+    font-size: 32px;
+}
+
+.profile-popup-content form {
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-popup-content label {
+    bottom: 5px;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.profile-popup-content input[type="text"],
+.profile-popup-content input[type="email"],
+.profile-popup-content input[type="password"],
+.profile-popup-content input[type="full-name"]{
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 17px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid #444;
+    border-radius: 5px;
+    color: white;
+    width: 100%;
+}
+
+.profile-popup-content button {
+    margin-left: 164px;
+    margin-bottom: 20px;
+    width: 121px;
+    height: 46px;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.05);;
+    color: white;
+    border: none;
+    border-radius: 24px;
+    cursor: pointer;
+}
+.profile-popup-content button:hover{
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.email-notifications {
+    margin-top: 20px;
+}
+
+.email-notifications h3 {
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+
+.form-right h3{
+    margin-bottom: 29px;
+}
+
+.toggle-group {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 17px;
+}
+
+.toggle-group label{
+    margin-left: 15px;
+}
+.toggle-group input[type="checkbox"] {
+    transform: scale(1.2);
+}
+
+/* Подложка попапа (без изменений) */
+.user-popup-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(30px);
+    justify-content: center;
+    align-items: center;
+    z-index: 1001;
+    background-color: rgba(0, 0, 0, 0.75); /* Затемнённый фон */
+}
+
+/* Основной контейнер попапа (изменено) */
+.user-popup-content {
+    background-color: rgba(31, 36, 48, 0.85); /* Более тёмный фон */
+    padding: 40px; /* Увеличенный отступ */
+    border-radius: 16px;
+    width: 980px;
+    height: 866px;
+    max-width: 90%;
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+    box-shadow: 
+        0 0 5px rgba(0, 0, 0, 0.2),
+        0 0 15px rgba(0, 0, 0, 0.2),
+        0 0 35px rgba(0, 0, 0, 0.4);
+    position: relative;
+    overflow: hidden; /* Чтобы блоки не вылезали */
+}
+
+/* Закрывающая кнопка (без изменений) */
+.user-popup-close-button {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #fff;
+}
+
+/* Заголовок попапа (изменено) */
+.user-popup-content h2 {
+    text-align: center;
+    font-size: 28px;
+    color: #fff;
+    margin-bottom: 30px;
+}
+
+/* Формы (без изменений) */
+.user-form-group {
+    margin-bottom: 15px;
+}
+
+/* Подписи к полям (без изменений) */
+.user-popup-overlay label {
+    color: #bbb;
+}
+
+/* Поля ввода (изменено) */
+.user-popup-overlay input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Тонкая граница */
+    border-radius: 6px;
+    background-color: rgba(255, 255, 255, 0.05);
+    color: #fff;
+    font-size: 16px; /* Увеличенный размер текста */
+}
+
+.user-popup-overlay h3{
+    text-align: center;
+    margin-bottom: 43px;
+    margin-top: 49px;
+}
+
+/* Переключатели */
+.user-switch-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+/* Заголовки секций (изменено) */
+.user-access-level h3, .user-email-notifications h3 {
+    font-size: 20px;
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+/* Переключатели (изменено) */
+.user-switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.user-switch-item{
+    margin-bottom: 17px;
+}
+.user-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.user-switch{
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+}
+}
+.user-slider {
+    width: 49px;
+    height: 29px;
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.05);
+    transition: .4s;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 34px;
+}
+
+.user-switch .user-slider:before {
+    position: absolute;
+    content: "";
+    height: 21px;
+    width: 21px;
+    left: 3px;
+    bottom: 3px;
+    background: linear-gradient(rgba(50, 116, 249, 1),rgba(19, 91, 235, 1));
+    transition: .4s;
+    border-radius: 50%;
+}
+.user-switch input:checked + .slider {
+    background: linear-gradient(rgba(88, 119, 199, 0.6), rgba(81, 107, 178, 0.6));
+}
+
+.user-switch input:checked + .slider:before {
+    transform: translateX(20px);
+    background-color: #3d54f8;
+}
+
+/* Кнопка отправки (изменено) */
+.user-popup-overlay button {
+    width: 127px;
+    height: 46px;
+    padding: 12px 24px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 24px;
+    background-color: rgba(255, 255, 255, 0.05);
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 65px;
+    margin-left: 370px;
+}
+
+.user-popup-overlay button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}

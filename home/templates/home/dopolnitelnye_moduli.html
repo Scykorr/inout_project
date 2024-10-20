@@ -1,0 +1,31 @@
+{% load static %}
+<!doctype html>
+<html lang="en" class="dark h-full">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>Test</title>
+    <link href="{% static 'sass/main.css' %}" rel="stylesheet"/>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="{% static 'js/tailwind.config.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="{% static 'scripts/script.js' %}"></script>
+
+</head>
+
+<body class="text-text-primary dark:text-dark-text-primary colors-dark-gradient-platform-up h-full">
+{% include 'sources/header.html' %}
+{% include 'sources/hero-products.html' %}
+{% include 'sources/big-card.html' %}
+{% include 'sources/features-horizontal.html' %}
+{#{% include 'sources/logos.html' %}#}
+{% include 'sources/features-tableft.html' %}
+{#{% include 'sources/features-tabcenter.html' %}#}
+{% include 'sources/features-product.html' %}
+{% include 'sources/project.html' %}
+{#{% include 'sources/review.html' %}#}
+{% include 'sources/features-typical.html' %}
+{% include 'sources/footer.html' %}
+</body>
+</html>

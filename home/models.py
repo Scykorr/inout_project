@@ -482,3 +482,4 @@ class AddOns(Page):
 
     class Meta:
         verbose_name = 'Страница дополнительных модулей '
+

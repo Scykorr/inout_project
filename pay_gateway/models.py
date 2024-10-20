@@ -1,6 +1,5 @@
 from django.db import models
 
-
 class ForDelete(models.Model):
     name = models.CharField(max_length=120)
 
@@ -26,7 +25,7 @@ class AddOn(models.Model):
 class User(models.Model):
     name = models.CharField(max_length=100)  # Имя пользователя
     email = models.EmailField()  # Почта
-    plan = models.ForeignKey(Plan, on_delete=models.CASCADE)  # План, который выбрал пользователь
+    plan = models.ForeignKey(Plan, on_delete=models.CASCADE, related_name='user_plan')  # План, который выбрал пользователь
 
     def __str__(self):
         return self.name

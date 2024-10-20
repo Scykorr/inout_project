@@ -32,10 +32,8 @@ INSTALLED_APPS = [
     "docs",
     "study",
     "tech",
-    "accouts",
+
     "search",
-    "pay_gateway",
-    "client_zone",
     "wagtail.contrib.search_promotions",
     "wagtail.contrib.forms",
     "wagtail.contrib.redirects",
@@ -102,9 +100,6 @@ if ENV_TYPE in ('local',):
             "ENGINE": "django.db.backends.postgresql_psycopg2",
             "NAME": "inout",
             "USER": "postgres",
-	        "PASSWORD": "123",
-            "HOST": "localhost",
-            "PORT": "5432",
         }
     }
 else:
@@ -161,7 +156,6 @@ STATICFILES_FINDERS = [
 
 STATICFILES_DIRS = [
     os.path.join(PROJECT_DIR, "static"),
-    "/pay_gateway/static/",
 ]
 
 # ManifestStaticFilesStorage is recommended in production, to prevent outdated

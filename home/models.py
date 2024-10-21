@@ -461,6 +461,7 @@ class AddOns(Page):
         ('hero_product_blue', HeroProductsBlueBlock()),
         ('table_deploy', TableDeploymentBlock()),
         ('button_duble', ButtonDubleBlock()),
+        ('price_block', PriceBlock()),
     ], use_json_field=True, blank=True, verbose_name='Блоки на странице')
 
     content_panels = Page.content_panels + [

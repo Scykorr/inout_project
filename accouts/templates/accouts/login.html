@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>INOUT Проект</title>
     {% load static %}
-    <link rel="stylesheet" href="{% static 'accouts/login_styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
 <body>
     <!-- Шапка сайта -->
@@ -39,7 +39,7 @@
             <div class="border"></div>
             <div class="content-left">
                 <img src="{% static 'images/tag.svg' %}" class="svg-image">
-                <button type="button" class="about-btn">Подробнее</button>
+                <button type="button" class="about-btn" onclick="window.location.href='https://domen-test.ru/'">Подробнее</button>
                 </div>
            
             <div class="content-right">
@@ -57,13 +57,13 @@
                     <input type="password" id="password" name="password" class="password" required>
                 </div>
                     <div class="links">
-                    <a href="{% url 'reset_password' %}" class="forgot-password">Забыли пароль?</a>
+                    <a href="file:../reset_password/reset_password.html" class="forgot-password">Забыли пароль?</a>
                 </div>
 
                 <button type="submit" class="btn">Продолжить</button>
 
                 <div class="register-link">
-                    <a href="#">Нет клиентской зоны</a>
+                    <a href="https://domen-test.ru/price/">Нет клиентской зоны</a>
             </div>
         </form>
     </div>

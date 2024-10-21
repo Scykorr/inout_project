@@ -34,7 +34,6 @@ INSTALLED_APPS = [
     "tech",
     "accouts",
     "search",
-    "pay_gateway",
     "client_zone",
     "wagtail.contrib.search_promotions",
     "wagtail.contrib.forms",

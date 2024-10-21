@@ -3,9 +3,7 @@
 
 
 {% block content %}
-    <div class="z-[2]">
     {% for block in page.page_block %}
         {% include_block block %}
     {% endfor %}
-    </div>
 {% endblock content %}

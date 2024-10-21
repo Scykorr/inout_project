@@ -401,78 +401,15 @@ class EmptyPage(Page):
 
 
 class AddOns(Page):
-    show_left_menu = models.BooleanField(default=False, verbose_name='Отображать левое меню с потомками')
-    show_main_menu = models.BooleanField(default=True, verbose_name='Отображать в главном меню')
-    need_fold = models.BooleanField(default=False, verbose_name='Убрать отступ вниз')
-
-    COLORS = (
-        ('colors-dark-gradient-base', 'colors-dark-gradient-base'),
-        ('colors-dark-gradient-platform', 'colors-dark-gradient-platform'),
-        ('colors-dark-gradient-integration', 'colors-dark-gradient-integration'),
-        ('colors-dark-gradient-deployment', 'colors-dark-gradient-deployment'),
-        ('colors-dark-gradient-business', 'colors-dark-gradient-business'),
-    )
-    color = models.CharField(choices=COLORS, default='colors-dark-gradient-base')
-
-    WAYS = (
-        ('up', 'up'),
-        ('down', 'down'),
-    )
-    color_way = models.CharField(choices=WAYS, default='up', verbose_name='Направление градиента')
-
-    description = models.CharField(max_length=255, null=True, blank=True, verbose_name='Описание')
-    image = models.ForeignKey(
-        'wagtailimages.Image', on_delete=models.CASCADE, related_name='+', null=True, blank=True,
-        verbose_name='Картинка'
-    )
-
     ordering = models.PositiveSmallIntegerField(default=0, verbose_name='Сортировка')
+    show_main_menu = models.BooleanField(default=True, verbose_name='Отображать в главном меню')
 
     page_block = StreamField([
-        ('blog_slider_block', BlogSliderBlock()),
-        ('feature_horizontal_block', FeatureHorizontalBlock()),
-        ('clients_logo_block', ClientsLogoBlock()),
-        ('feature_tab_left_block', FeatureTabLeftBlock()),
-        ('project_block', ProjectBlock()),
-        ('hero_products', HeroProductsBlock()),
-        ('big_card', BigCardBlock()),
-        ('hero_feature_products', HeroFeatureProductsBlock()),
-        ('hero_block', HeroBlock()),
-        ('reviews_block', ReviewsSliderBlock()),
-        ('features_project', FeatureProjectBlock()),
-        ('features_tabcenter', FeatureTabCenterBlock()),
-        ('text_image_left', TextImageLeftBlock()),
-        ('text_image_right', TextImageRightBlock()),
-        ('about', AboutBlock()),
-        ('indiv_app', IndAppBlock()),
-        ('integration_app', IntegrationAppBlock()),
-        ('make_interface_app', MakeInterfaceAppBlock()),
-        ('how_it_work_app', HowItWorkAppBlock()),
-        ('other_functions', OtherFunctionAppBlock()),
-        ('page_inout', PageInOut()),
-        ('partners', Partner()),
-        ('technical_information', TechnicalInformation()),
-        ('feature_hor_icons', FeatureHorizontalIconsBlock()),
-        ('price', PriceBlock()),
-        ('rich_text', RichTextCustomBlock()),
-        ('button_custom', ButtonCustomBlock()),
-        ('pi_second', PageInOutSecondBlock()),
-        ('button_trans', ButtonTransCustomBlock()),
-        ('hero_product_blue', HeroProductsBlueBlock()),
-        ('table_deploy', TableDeploymentBlock()),
-        ('button_duble', ButtonDubleBlock()),
         ('price_block', PriceBlock()),
     ], use_json_field=True, blank=True, verbose_name='Блоки на странице')
 
     content_panels = Page.content_panels + [
         FieldPanel('ordering'),
-        FieldPanel('show_main_menu'),
-        FieldPanel('description'),
-        FieldPanel('show_left_menu'),
-        FieldPanel('need_fold'),
-        FieldPanel('image'),
-        FieldPanel('color'),
-        FieldPanel('color_way'),
         FieldPanel('page_block'),
     ]
 

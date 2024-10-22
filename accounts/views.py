@@ -13,7 +13,7 @@ def login_view(request):
             user = User.objects.get(email=email)
         except User.DoesNotExist:
             messages.error(request, 'Пользователь с таким email не найден')
-            return render(request, 'accounts/login.html')
+            return render(request, 'your_app/login.html')
 
         user = authenticate(request, username=user.username, password=password)
         if user is not None:
@@ -22,4 +22,4 @@ def login_view(request):
         else:
             messages.error(request, 'Неверный пароль')
 
-    return render(request, 'accounts/login.html')
+    return render(request, 'your_app/login.html')

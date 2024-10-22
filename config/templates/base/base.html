@@ -23,15 +23,18 @@
     {% endblock %}
 </head>
 <body class="text-text-primary dark:text-dark-text-primary h-full ">
+{#<body class="bg-primary-bg dark:bg-dark-primary-bg text-text-primary dark:text-dark-text-primary">#}
 {% include 'includes/gtm_ns.html' %}
+{#{% include 'includes/loader_start.html' %}#}
 {% include 'includes/header.html' %}
-<div class="z-[2] relative">
+<div class="z-[2] relative" {# style="margin-top: -55px; padding-top: 110px;" #}>
     {% block content %}
     {% endblock %}
 </div>
 {% include 'includes/footer.html' %}
 {% include 'includes/js.html' %}
 {% block js_extends %}
+
 {% endblock %}
 <script src="{% static 'scripts/script.js' %}"></script>
 </body>

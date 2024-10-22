@@ -1,39 +1,9 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>INOUT Проект</title>
-    {% load static %}
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
-</head>
-<body>
-    <!-- Шапка сайта -->
-    <header class="header">
-        <div class="container-header">
-            <div class="logo">
-                <img src="{% static 'images/logo.svg' %}" alt="INOUT Проект" width="120" height="20">
-            </div>
-            <nav class="nav">
-                <ul>
-                    <li><a href="#">Продукт</a></li>
-                    <li><a href="#">Услуги</a></li>
-                    <li><a href="#">О нас</a></li>
-                    <li><a href="#">Ресурсы</a></li>
-                    <li><a href="#">Цены</a></li>
-                    <div class="search-icon">
-                        <img src="{% static 'images/search-icon.svg' %}" alt="search">
-                    </div>
-                    <li><a href="#">Поиск</a></li>
-                    <div class="separator"></div>
-                    <li><a href="#">Войти</a></li>
-                    <li><a href="#" class="btn">Попробовать</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-    
+{% extends "base.html" %}
+{% load wagtailcore_tags %}
+
     <!-- Основной контент -->
+
+{% block content %}
     <main class="main">
         <div class="container">
             <div class="border"></div>
@@ -46,7 +16,8 @@
                 <div class="cont"></div>
                 <img src="{% static 'images/big-logo.svg' %}" width="324" height="53" alt="INOUT Проект" class="logo-image">
                     <h2>Добро пожаловать в клиентскую зону INOUT Проект</h2>
-    
+
+                {{ page.body|richtext }}
                 <form>
                     <div class="input-group">
                     <label for="email" class="email_t">Почта</label>
@@ -70,33 +41,4 @@
         </div>
         </div>
     </main>
-    <script>
-        function validateForm() {
-            const email = document.getElementById('email');
-            const password = document.getElementById('password');
-            const errorMessage = document.getElementById('error-message');
-
-            // Сбросить предыдущие ошибки
-            email.classList.remove('error');
-            password.classList.remove('error');
-            errorMessage.style.display = 'none'; // Скрыть сообщение об ошибке
-
-            // Простейшая проверка
-            if (email.value === '' || password.value === '') {
-                // Установка красной обводки для пустых полей
-                if (email.value === '') email.classList.add('error');
-                if (password.value === '') password.classList.add('error');
-
-                // Показать сообщение об ошибке
-                errorMessage.style.display = 'block';
-                return;
-            }
-
-            // Здесь можно добавить код для дальнейшей проверки email и пароля
-
-            // Для примера просто показываем сообщение об ошибке
-            errorMessage.style.display = 'block'; // Отобразить сообщение об ошибке
-        }
-    </script>
-</body>
-</html>
+{% endblock %}

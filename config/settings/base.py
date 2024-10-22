@@ -29,12 +29,11 @@ ENV_TYPE = os.getenv('ENV_TYPE')
 INSTALLED_APPS = [
     "home",
     "blog",
+    "accounts",
     "docs",
     "study",
     "tech",
-    "accouts",
     "search",
-    "client_zone",
     "wagtail.contrib.search_promotions",
     "wagtail.contrib.forms",
     "wagtail.contrib.redirects",
@@ -99,7 +98,7 @@ if ENV_TYPE in ('local',):
     DATABASES = {
         'default': {
             "ENGINE": "django.db.backends.postgresql_psycopg2",
-            "NAME": "inout",
+            "NAME": "innout",
             "USER": "postgres",
 	        "PASSWORD": "123",
             "HOST": "localhost",

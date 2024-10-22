@@ -32,7 +32,6 @@ INSTALLED_APPS = [
     "docs",
     "study",
     "tech",
-    "accouts",
     "search",
     "client_zone",
     "wagtail.contrib.search_promotions",

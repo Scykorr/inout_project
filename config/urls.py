@@ -15,7 +15,8 @@ urlpatterns = [
     path("search/", search_views.search, name="search"),
     path("api/trial/", api.trial, name="trial"),
     path("api/crm/", api.crm, name="crm"),
-    path("accounts/", include("accounts.urls")),
+    path('accounts/', include('accouts.urls')),
+    path('client zone/', include('client_zone.urls')),
 ]
 
 

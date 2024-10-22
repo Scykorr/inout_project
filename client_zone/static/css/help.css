@@ -1,0 +1,1028 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: radial-gradient(100% 100% at 51.15% 0%, #061637 0%, #000000 100%);
+}
+
+.container {
+    max-width: 1920px;
+    margin: 0 auto;
+    display: flex;
+    min-height: 100vh;
+    overflow: auto; /* Позволяет прокручивать контент, если он выходит за пределы экрана */
+}
+
+.sidebar {
+    width: 240px; /* Уменьшено с 286px */
+    padding: 15px; /* Уменьшено */
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid transparent;
+    transition: transform 0.3s ease,width 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    justify-content: space-between;
+}
+
+.sidebar::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    padding: 1px;
+    background: linear-gradient(90deg, rgba(88, 119, 199, 0.65), rgba(66, 86, 142, 0.05), rgba(81, 107, 178, 0.65));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+}
+
+.sidebar.hidden {
+    transform: translateX(-100%);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    margin-top: 6px;
+    margin-bottom: 58px; /* Уменьшено */
+}
+
+.logo-image {
+    width: 40px; /* Уменьшено */
+    margin-right: 8px; /* Уменьшено */
+}
+
+.logo-text {
+    font-size: 20px; /* Уменьшено */
+    color: white;
+}
+
+.menu {
+    list-style-type: none;
+    padding-left: 0;
+    margin-bottom: auto;
+}
+
+.menu li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 22px; /* Уменьшено */
+}
+
+.menu li img {
+    margin-right: 15px; /* Уменьшено */
+}
+
+.menu li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 14px; /* Уменьшено */
+}
+
+.sidebar-footer {
+    margin-top: auto;
+    text-align: center;
+    padding: 10px 0; /* Уменьшено */
+}
+
+.sidebar-footer img {
+    width: 200px; /* Уменьшено */
+}
+
+.main-content {
+    flex: 1;
+    padding: 15px; /* Уменьшено */
+    transition: margin-left 0.3s ease;
+}
+
+.main-content.shifted {
+   margin-left: 0; /* Уменьшено */
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.block-help {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu-toggle {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.hamburger {
+    width: 15px;
+    height: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-right: 8px; /* Уменьшено */
+}
+
+.hamburger div {
+    width: 100%;
+    height: 1px;
+    background-color: #FFF;
+}
+
+.logo-title {
+    color: #FFF;
+    font-size: 24px; /* Уменьшено */
+    font-weight: bold;
+    position: relative;
+}
+
+.logout {
+    padding: 5px 8px; /* Уменьшено */
+    border: none;
+    background: transparent;
+}
+
+.user-info {
+    display: inline;
+    color: white;
+}
+
+.support-section {
+    flex: ;
+    color: white;
+    margin: 6px;
+}
+
+.support-blocks {
+    display: flex;
+    justify-content: space-between;
+}
+
+.support-box {
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: 10px;
+    width: calc(33%);
+    text-align: center;
+    margin-bottom: 6px;
+}
+
+.support-box::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 18px;
+    padding: 1px;
+    background: linear-gradient(90deg, rgba(88, 119, 199, 0.65), rgba(66, 86, 142, 0.05), rgba(81, 107, 178, 0.65));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+}
+
+.support-button-container{
+    position: absolute;
+    align-items:flex-end; /* Абсолютное позиционирование относительно .support-box */
+    bottom: 20px; /* Отступ снизу */
+    right: 20px; /* Отступ справа */
+}
+.support-box h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.support-box p {
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+
+.support-btn {
+    height: 32px;
+    width: 114px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    background: linear-gradient(rgba(50, 116, 249, 1),rgba(19, 91, 235, 1));
+    border: none;
+    margin-top: 10px;
+    padding: 8px 12px;
+    border-radius: 32px;
+    color: white;
+    cursor: pointer;
+}
+
+.support-ticket-info {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    position: relative;
+    border-radius: 18px;
+    margin-bottom: 6px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 159px; /* Или любую другую высоту, которую вы хотите */
+}
+
+.support-ticket-info::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 18px;
+    padding: 1px;
+    background: linear-gradient(90deg, rgba(88, 119, 199, 0.65), rgba(66, 86, 142, 0.05), rgba(81, 107, 178, 0.65));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: auto;
+}
+
+.new-ticket-btn,
+.call-request-btn {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 10px 20px;
+    border-radius: 18px;
+    font-size: 16px;
+    color: white;
+    cursor: pointer;
+    width: 265px;
+    height: 46px; /* Устанавливаем ширину для кнопок */
+}
+
+.new-ticket-btn:hover,
+.call-request-btn:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Цвет при наведении */
+}
+
+.ticket-search {
+    background-color: rgba(255, 255, 255, 0.05);
+    height: 76px;
+    border-radius: 18px;
+    padding: 10px;
+    display: flex;
+    position: relative;
+    text-align: center;
+    margin-bottom: 6px;
+}
+
+.ticket-search::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 18px;
+    padding: 1px;
+    background: linear-gradient(90deg, rgba(88, 119, 199, 0.65), rgba(66, 86, 142, 0.05), rgba(81, 107, 178, 0.65));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+}
+
+.ticket-search-title {
+    margin-top: 15px;
+    font-size: 24px;
+    color: #fff;
+}
+
+
+.search-bar-custom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+    background-color: none;
+    border: none;
+    position: relative;
+    padding: 5px 20px 0px 10px;
+}
+
+.line-input {
+    background-color: none;
+    border-bottom: 2px solid white; /* Подчеркивание */
+    min-height: 20px; /* Минимальная высота для поля ввода */
+    font-size: 16px; /* Размер шрифта */
+    width: 217px; /* Устанавливаем ширину на 100% родителя */
+    max-width: 100%; /* Максимальная ширина для поля ввода */
+    outline: none; /* Убираем контур */
+    white-space: nowrap; /* Запрет на перенос текста */
+}
+
+
+.line-input:focus {
+    border-bottom: 2px solid #0056b3; /* Изменение цвета подчеркивания при фокусе */
+}
+
+/* Псевдоэлемент для placeholder */
+.line-input::before {
+    content: attr(placeholder);
+    position: absolute; /* Абсолютное позиционирование */
+    pointer-events: none; /* Игнорировать события мыши */
+}
+
+
+.search-button-custom {
+    position: absolute;
+    right: 20px;
+    background-color: transparent;
+    border: none;
+    font-size: 24px;
+    color: #3C99F5;
+    cursor: pointer;
+}
+
+.search-button-custom:hover {
+    color: #2A7BB3;
+}
+
+
+.open-tickets {
+    margin-top: 20px;
+}
+
+.open-tickets table {
+    width: 100%;
+    background-color: #1B2B44;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+}
+
+.open-tickets table th,
+.open-tickets table td {
+    padding: 10px;
+}
+
+.ticket-history {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.show-history-btn {
+    background-color: #3C99F5;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+}
+
+.ticket-section {
+    background-color: rgba(255, 255, 255, 0.05); /* темный фон */
+    border-radius: 0  0 18px 18px;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 6px;
+    position: relative;
+}
+
+.ticket-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 0 0 18px 18px;
+    padding: 1px;
+    background: linear-gradient(90deg, rgba(88, 119, 199, 0.65), rgba(66, 86, 142, 0.05), rgba(81, 107, 178, 0.65));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+}
+
+.ticket-section table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.closed-tickets {
+    background-color: rgba(255, 255, 255, 0.1); /* Same background color */
+    padding: 15px; /* Add padding */
+    border-radius: 10px; /* Optional: to match the style */
+}
+
+
+.section-title {
+    position: relative;
+    display: flex;
+    justify-items: flex-start;
+    padding-top: 21px;
+    padding-left: 15px;
+    height: 76px;
+    border-radius: 18px 18px 0 0;
+    background-color: rgba(255, 255, 255, 0.05);
+    font-size: 24px;
+    color: #FFFFFF;
+    margin-bottom: 2px;
+}
+
+.section-title::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 18px 18px 0 0;
+    padding: 1px;
+    background: linear-gradient(90deg, rgba(88, 119, 199, 0.65), rgba(66, 86, 142, 0.05), rgba(81, 107, 178, 0.65));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+}
+
+.ticket-section th,
+.ticket-section td {
+    padding: 15px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.5); /* Полупрозрачный текст */
+}
+
+.ticket-section th {
+    font-weight: normal;
+    color: rgba(255, 255, 255, 0.5); /* Полупрозрачные заголовки */
+}
+
+
+.ticket-section .no-data {
+    size: 12px;
+    color: rgba(255, 255, 255, 0.5);
+    padding: 20px;
+}
+
+.pagination {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 14px;
+    margin-right: 21px;
+}
+
+.pagination select {
+    background: transparent; /* Прозрачный или другой фон */
+    border: none;
+    color: gray; /* Серый текст по умолчанию */
+    padding: 5px;
+    margin-left: 10px;
+    transition: background-color 0.3s ease; /* Анимация плавного перехода */
+}
+
+/* Стиль при открытии (фокусе) */
+.pagination select:focus {
+    background: black; /* Чёрный фон при фокусе */
+    color: white; /* Белый текст при фокусе */
+    outline: none; /* Убираем стандартную обводку браузера */
+}
+
+.pagination button {
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.pagination button:hover {
+    color: white;
+}
+
+.pagination .disabled {
+    color: rgba(255, 255, 255, 0.3);
+    cursor: not-allowed;
+}
+/* Стиль для контейнера заголовка и кнопки */
+.ticket-header {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.05); /* Цвет фона */
+    padding: 15px;
+    border-radius: 18px 18px 0 0;
+    margin-bottom: 2px;
+}
+
+.ticket-header::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 18px 18px 0 0;
+    padding: 1px;
+    background: linear-gradient(90deg, rgba(88, 119, 199, 0.65), rgba(66, 86, 142, 0.05), rgba(81, 107, 178, 0.65));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+}
+
+.ticket-header p {
+    margin: 0;
+    font-size: 1.5em;
+    color: #fff;
+}
+
+.ticket-header button {
+    background-color: transparent;
+    border: none;
+    color: rgba(255, 255, 255, 0.5);
+    padding: 10px;
+    cursor: pointer;
+}
+
+/* Стиль для скрываемого контейнера */
+.ticket-content {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: 0 0 18px 18px;
+    position: relative;
+}
+
+.ticket-content::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 0 0 18px 18px;
+    padding: 1px;
+    background: linear-gradient(90deg, rgba(88, 119, 199, 0.65), rgba(66, 86, 142, 0.05), rgba(81, 107, 178, 0.65));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+}
+
+.hidden {
+    display: none;
+}
+
+.visible {
+    display: block;
+}
+
+/* Стиль для таблицы */
+table {
+    width: 100%;
+    color: rgba(255, 255, 255, 0.5);
+    text-align: left;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 15px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.5)
+}
+
+.no-data {
+    text-align: center;
+    color: #888;
+}
+
+.profile-popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(15px);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.profile-popup-content {
+    background: rgba(255, 255, 255, 0.05);
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 966px;
+    height: 510px;
+    max-width: 90%;
+    position: relative;
+}
+
+.form-container {
+    display: flex;
+    justify-content: space-between; /* Две формы расположены рядом друг с другом */
+    margin-bottom: 20px; /* Отступ снизу для кнопки */
+}
+
+.form-left, .form-right {
+    width: 48%; /* Уменьшаем ширину, чтобы две формы стали в строку */
+}
+
+.form-left {
+    display: flex;
+    flex-direction: column; /* Вертикальное расположение элементов в левом столбце */
+}
+
+.form-right {
+    display: flex;
+    flex-direction: column; /* Вертикальное расположение элементов в правом столбце */
+    margin-left: 20px; /* Отступ между двумя столбцами */
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+}
+
+.switch input {
+
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    width: 49px;
+    height: 29px;
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.05);
+    transition: .4s;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 21px;
+    width: 21px;
+    left: 3px;
+    bottom: 3px;
+    background: linear-gradient(rgba(50, 116, 249, 1),rgba(19, 91, 235, 1));
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background: linear-gradient(rgba(88, 119, 199, 0.6),rgba(81, 107, 178, 0.6));
+}
+
+input:checked + .slider:before {
+    transform: translateX(20px);
+    background-color: #5361fc;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.profile-popup-content h2 {
+    margin-bottom: 20px;
+    font-size: 32px;
+}
+
+.profile-popup-content form {
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-popup-content label {
+    bottom: 5px;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.profile-popup-content input[type="text"],
+.profile-popup-content input[type="email"],
+.profile-popup-content input[type="password"],
+.profile-popup-content input[type="full-name"]{
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 17px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid #444;
+    border-radius: 5px;
+    color: white;
+    width: 100%;
+}
+
+.profile-popup-content button {
+    margin-left: 164px;
+    margin-bottom: 20px;
+    width: 121px;
+    height: 46px;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.05);;
+    color: white;
+    border: none;
+    border-radius: 24px;
+    cursor: pointer;
+}
+.profile-popup-content button:hover{
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.email-notifications {
+    margin-top: 20px;
+}
+
+.email-notifications h3 {
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+
+.form-right h3{
+    margin-bottom: 29px;
+}
+
+.toggle-group {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 17px;
+}
+
+.toggle-group label{
+    margin-left: 15px;
+}
+.toggle-group input[type="checkbox"] {
+    transform: scale(1.2);
+}
+
+.new-ticket-popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(30px);
+    justify-content: center;
+    align-items: center;
+    z-index: 1001;
+}
+
+.new-ticket-popup-content {
+    background: rgba(255, 255, 255, 0.05);
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 966px;
+    height: 598px;
+    max-width: 90%;
+    position: relative;
+}
+
+
+
+input:checked + .slider {
+    background: linear-gradient(rgba(88, 119, 199, 0.6),rgba(81, 107, 178, 0.6));
+}
+
+input:checked + .slider:before {
+    transform: translateX(20px);
+    background-color: #5361fc;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.new-ticket-popup-content h2 {
+    margin-bottom: 47px;
+    font-size: 32px;
+}
+
+.new-ticket-popup-content form {
+    display: flex;
+    flex-direction: column;
+}
+
+.new-ticket-popup-content label {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.new-ticket-popup-content input[type="text"],
+.new-ticket-popup-content input[type="email"],
+.new-ticket-popup-content input[type="password"] {
+    padding: 10px;
+    margin-bottom: 37px;
+    margin-left: 23px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid #444;
+    border-radius: 4px;
+    color: white;
+    justify-content: flex-start;
+    align-items: center;
+    width: 881px;
+}
+
+.new-ticket-popup-content button {
+    margin-right: auto;
+    margin-left: auto;
+    width: 121px;
+    height: 46px;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.05);;
+    color: white;
+    border: none;
+    border-radius: 24px;
+    cursor: pointer;
+}
+.new-ticket-popup-content button:hover{
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.email-notifications {
+    margin-top: 20px;
+}
+
+.email-notifications h3 {
+    margin-bottom: 10px;
+}
+
+.file-upload-wrapper {
+    display: flex;
+    margin-bottom: 45px;
+}
+
+#custom-file-button {
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 881px;
+    background-color: rgba(255, 255, 255, 0.05);
+    padding-left: 10px;
+    border-radius: 5px;
+    border: 1px solid #444;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#custom-file-button:hover {
+    background-color: #2A7BB3;
+}
+
+#file-name {
+    font-size: 14px;
+    color: white;
+    opacity: 0.7;
+}
+
+
+/* Стиль для фона попапа */
+.custom-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(5px);
+  display: none; /* по умолчанию скрыт */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Стиль для контентной части попапа */
+.custom-popup-content {
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  max-width: 90%;
+  max-height: 90%; /* Чтобы попап не выходил за пределы экрана */
+  overflow-y: auto; /* Добавлено для прокрутки контента, если он слишком большой */
+  color: #fff;
+  font-family: 'Arial', sans-serif;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Закрывающая кнопка */
+.custom-close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  cursor: pointer;
+  color: white;
+}
+/* Стилизация заголовка */
+.custom-popup-content h2 {
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
+/* Стилизация формы */
+.custom-popup-overlay form, .custom-popup-overlay label {
+  display: block;
+  margin-bottom: 8px;
+  color: #bbb;
+}
+
+.custom-popup-overlay input, .custom-popup-overlay select, .custom-popup-overlay textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 6px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-size: 14px;
+}
+
+.custom-popup-overlay textarea {
+  height: 80px;
+  resize: none;
+}
+
+.custom-popup-overlay button {
+  width: 179px;
+  height: 46px;
+  padding: 10px;
+  border: none;
+  border-radius: 24px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgba(255, 255, 255, 0.05);
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.custom-popup-overlay button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Группа с радиокнопками и инпутами */
+.custom-input-group {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.custom-radio {
+  display: flex;
+  align-items: center;
+  color: #bbb;
+}
+
+.custom-radio input {
+  margin-right: 10px;
+}
+
+/* Прочие стили */
+select, input[type="email"], input[type="tel"] {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #fff;
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+    }
+
+    .main-content {
+        padding: 10px;
+    }

@@ -32,6 +32,8 @@ INSTALLED_APPS = [
     "docs",
     "study",
     "tech",
+    "accouts",
+    "pay_gateway",
     "search",
     "client_zone",
     "wagtail.contrib.search_promotions",
@@ -135,6 +137,13 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
+EMAIL_HOST = 'smtp.yandex.ru'
+EMAIL_PORT = 465
+EMAIL_HOST_USER = "x.xxxx46.XX@yandex.ru"
+EMAIL_HOST_PASSWORD = "irgrnbxnzfdkzwsj"
+EMAIL_USE_TLS = False
+EMAIL_USE_SSL = True
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
 

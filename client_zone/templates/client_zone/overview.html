@@ -67,7 +67,7 @@
                 <div class="user-info">
                     <span class="user-name">Test User</span>
                     <img class="account-icon" src="{% static 'img/account.svg' %}" alt="Account Icon">
-                    <button class="logout">
+                    <button class="logout" id="logout-button">
                         <img src="{% static 'img/leave.svg' %}" alt="Logout Icon">
                     </button>
                 </div>
@@ -107,7 +107,7 @@
                                 {% endfor %}
                             </tbody>
                         </table>
-                        <a href="{% url 'client_zone:invoices' %}" class="view-invoices">Смотреть все счета</a>
+                        <button href="{% url 'client_zone:invoices' %}" id="view-invoices" class="view-invoices">Смотреть все счета</button>
                     </div>
                 </div>
             </section>
@@ -327,6 +327,29 @@ function openPopup(triggerSelector, popupId) {
 // Открытие попапов
 openPopup('.account-icon', 'profile-popup');
 openPopup('#create-ticket', 'new-ticket-popup');
+
+    document.getElementById('logout-button').addEventListener('click', function() {
+        // Отправляем запрос на выход
+        fetch('/logout/', { // Замените '/logout/' на ваш URL для выхода
+            method: 'POST', // Используйте 'POST' или 'GET' в зависимости от вашего сервера
+            headers: {
+                'X-CSRFToken': '{{ csrf_token }}' // Добавьте CSRF-токен, если используете Django
+            }
+        })
+        .then(response => {
+            if (response.ok) {
+                // Если выход успешен, перенаправляем на страницу авторизации
+                window.location.href = '/accounts/login/'; // Замените '/login/' на ваш URL для страницы авторизации
+            } else {
+                // Обработка ошибок, если необходимо
+                alert('Ошибка при выходе. Попробуйте еще раз.');
+            }
+        })
+        .catch(error => {
+            console.error('Ошибка:', error);
+            alert('Ошибка при выходе. Попробуйте еще раз.');
+        });
+    });
 </script>
 </body>
 </html>

@@ -23,7 +23,7 @@ def login_view(request):
             user = authenticate(request, username=email, password=password)
             if user is not None:
                 login(request, user)
-                return redirect('http://other-application.com/dashboard')  # Редирект после логина
+                return redirect('client_zone:overview')  # Редирект после логина
             else:
                 messages.error(request, 'Неверная почта или пароль.')
         else:

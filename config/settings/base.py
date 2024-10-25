@@ -100,7 +100,7 @@ if ENV_TYPE in ('local',):
     DATABASES = {
         'default': {
             "ENGINE": "django.db.backends.postgresql_psycopg2",
-            "NAME": "inout",
+            "NAME": "postgres",
             "USER": "postgres",
 	        "PASSWORD": "123",
             "HOST": "localhost",

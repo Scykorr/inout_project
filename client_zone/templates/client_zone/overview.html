@@ -19,27 +19,32 @@
             <ul class="menu">
                 <li>
                     <img src="{% static 'img/overview.svg' %}" alt="Обзор" width="20" height="20">
-                    <a href="{% url 'overview' %}">Обзор</a>
+                    <a href="{% url 'client_zone:overview' %}">Обзор</a>
                 </li>
                 <li>
                     <img src="{% static 'img/info.svg' %}" alt="Информация о Продукте" width="20" height="20">
-                    <a href="{% url 'product-details' %}">Информация о продукте</a>
+                    <a href="{% url 'client_zone:product-details' %}">Информация о продукте</a>
+
                 </li>
                 <li>
                     <img src="{% static 'img/invoises.svg' %}" alt="Счета и КП" width="20" height="20">
-                    <a href="{% url 'invoices' %}">Счета и КП</a>
+                    <a href="{% url 'client_zone:invoices' %}">Счета и кп</a>
+
                 </li>
                 <li>
                     <img src="{% static 'img/details.svg' %}" alt="Детали выставления счета" width="20" height="20">
-                    <a href="{% url 'billing' %}">Детали выставления счета</a>
+                    <a href="{% url 'client_zone:billing' %}">Детали выставления счёта</a>
+
                 </li>
                 <li>
                     <img src="{% static 'img/users.svg' %}" alt="Пользователи" width="20" height="20">
-                    <a href="{% url 'users' %}">Пользователи</a>
+                    <a href="{% url 'client_zone:users' %}">Пользователи</a>
+
                 </li>
                 <li>
                     <img src="{% static 'img/help.svg' %}" alt="Центр поддержки" width="20" height="20">
-                    <a href="{% url 'help' %}">Центр поддержки</a>
+                    <a href="{% url 'client_zone:help' %}">Центр поддержки</a>
+
                 </li>
             </ul>
             <div class="sidebar-footer">
@@ -71,14 +76,14 @@
             <!-- User Info Section -->
             <section class="user-details">
                 <div class="info-block">
-                    <h2>Название организации</h2>
+                    <h2>{{ organization.name }}</h2>
                     <p class="info-label">Адрес</p>
-                    <p class="info-value">Россия, Курск</p>
+                    <p class="info-value">{{ organization.address }}</p>
                     <p class="info-label">ИНН</p>
-                    <p class="info-value">21301203120313</p>
+                    <p class="info-value">{{ organization.inn }}</p>
                     <p class="info-label">EMAIL</p>
-                    <p class="info-value">inoutcompany@gmail.com</p>
-                    <button  id="info-button" class="info-button">Изменить платежный адрес</button>
+                    <p class="info-value">{{ organization.email }}</p>
+                    <button id="info-button" class="info-button">Изменить платежный адрес</button>
                 </div>
 
                 <div class="invoices-container">
@@ -93,14 +98,16 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                {% for invoice in invoices %}
                                 <tr>
-                                    <td>09.09.24</td>
-                                    <td>10 000 руб.</td>
-                                    <td>Платеж от организации</td>
+                                    <td>{{ invoice.date_created }}</td>
+                                    <td>{{ invoice.amount }} руб.</td>
+                                    <td>{{ invoice.subject }}</td>
                                 </tr>
+                                {% endfor %}
                             </tbody>
                         </table>
-                        <button id="view-invoices" class="view-invoices">Счета и коммерческие предложения</button>
+                        <a href="{% url 'client_zone:invoices' %}" class="view-invoices">Смотреть все счета</a>
                     </div>
                 </div>
             </section>
@@ -108,10 +115,10 @@
             <!-- Contract Details Section -->
             <section class="contract-details">
                 <div class="contact-details">
-                    <div class="contact-text">INOUT Проект Бизнес в Облаке для 5 пользователей. <br>
-                    <span class="contact-date">Оплачено до 09.08.2024</span>
+                    <div class="contact-text">{{ contract.project_name }} для {{ contract.user_count }} пользователей.<br>
+                    <span class="contact-date">Оплачено до {{ contract.paid_until }}</span>
                     </div>
-                    <button id="details-button" class="details-button">Детали выставления счета</button>
+                <button id="details-button" class="details-button">Детали выставления счета</button>
                 </div>
             </section>
 
@@ -244,6 +251,35 @@
     </div>
 </div>
 <script>
+    // Обработчики кнопок для переходов по страницам
+
+// Обработчики кнопок для переходов по страницам
+document.getElementById("info-button").addEventListener("click", function() {
+    window.location.href = "/client_zone/billing/"; // Используйте имя URL для страницы
+});
+
+document.getElementById("view-invoices").addEventListener("click", function() {
+    window.location.href = "/client_zone/invoices/"; // Используйте имя URL для страницы
+});
+
+document.getElementById("details-button").addEventListener("click", function() {
+    window.location.href = "/client_zone/billing/"; // Используйте имя URL для страницы
+});
+
+document.getElementById("manage-recurring-payments").addEventListener("click", function() {
+    window.location.href = "/client_zone/invoices/"; // Используйте имя URL для страницы
+});
+
+document.getElementById("manage-users").addEventListener("click", function() {
+    window.location.href = "/client_zone/users/"; // Используйте имя URL для страницы
+});
+
+document.getElementById("visit-support-center").addEventListener("click", function() {
+    window.location.href = "/client_zone/help/"; // Используйте имя URL для страницы
+});
+
+
+
     // Toggle Sidebar и смещение контента
     document.getElementById("menuToggle").addEventListener("click", function() {
         const sidebar = document.getElementById("sidebar");
@@ -259,31 +295,6 @@
             mainContent.classList.remove("shifted");
         }
     });
-
-// Обработчики кнопок для переходов по страницам
-document.getElementById("info-button").addEventListener("click", function() {
-    window.location.href = "{% url 'billing' %}"; // Используйте имя URL для страницы
-});
-
-document.getElementById("view-invoices").addEventListener("click", function() {
-    window.location.href = "{% url 'invoices' %}"; // Используйте имя URL для страницы
-});
-
-document.getElementById("details-button").addEventListener("click", function() {
-    window.location.href = "{% url 'billing' %}"; // Используйте имя URL для страницы
-});
-
-document.getElementById("manage-recurring-payments").addEventListener("click", function() {
-    window.location.href = "{% url 'invoices' %}"; // Используйте имя URL для страницы
-});
-
-document.getElementById("manage-users").addEventListener("click", function() {
-    window.location.href = "{% url 'users' %}"; // Используйте имя URL для страницы
-});
-
-document.getElementById("visit-support-center").addEventListener("click", function() {
-    window.location.href = "{% url 'help' %}"; // Используйте имя URL для страницы
-});
 
 
 // Функция для открытия попапа

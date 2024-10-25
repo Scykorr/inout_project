@@ -19,27 +19,32 @@
             <ul class="menu">
                 <li>
                     <img src="{% static 'img/overview.svg' %}" alt="Обзор" width="20" height="20">
-                    <a href="{% url 'overview' %}">Обзор</a>
+                    <a href="{% url 'client_zone:overview' %}">Обзор</a>
                 </li>
                 <li>
                     <img src="{% static 'img/info.svg' %}" alt="Информация о Продукте" width="20" height="20">
-                    <a href="{% url 'product-details' %}">Информация о продукте</a>
+                    <a href="{% url 'client_zone:product-details' %}">Информация о продукте</a>
+
                 </li>
                 <li>
                     <img src="{% static 'img/invoises.svg' %}" alt="Счета и КП" width="20" height="20">
-                    <a href="{% url 'invoices' %}">Счета и КП</a>
+                    <a href="{% url 'client_zone:invoices' %}">Счета и кп</a>
+
                 </li>
                 <li>
                     <img src="{% static 'img/details.svg' %}" alt="Детали выставления счета" width="20" height="20">
-                    <a href="{% url 'billing' %}">Детали выставления счета</a>
+                    <a href="{% url 'client_zone:billing' %}">Детали выставления счёта</a>
+
                 </li>
                 <li>
                     <img src="{% static 'img/users.svg' %}" alt="Пользователи" width="20" height="20">
-                    <a href="{% url 'users' %}">Пользователи</a>
+                    <a href="{% url 'client_zone:users' %}">Пользователи</a>
+
                 </li>
                 <li>
                     <img src="{% static 'img/help.svg' %}" alt="Центр поддержки" width="20" height="20">
-                    <a href="{% url 'help' %}">Центр поддержки</a>
+                    <a href="{% url 'client_zone:help' %}">Центр поддержки</a>
+
                 </li>
             </ul>
             <div class="sidebar-footer">
@@ -78,26 +83,26 @@
                 <div class="details-row">
                     <div>
                         <p class="label">Юридический адрес:</p>
-                        <p>Россия, Курск</p>
+                        <p>{{ company_details.legal_address }}</p>
                         
                         <p class="label">ИНН:</p>
-                        <p>21301203120313</p>
+                        <p>{{ company_details.inn }}</p>
 
                         <p class="label">EMAIL:</p>
-                        <p>inoutcompany@gmail.com</p>
+                        <p>{{ company_details.email }}</p>
 
                         <p class="label">Фактический адрес:</p>
-                        <p>Россия, Курск</p>
+                        <p>{{ company_details.actual_address }}</p>
                     </div>
                     <div>
                         <p class="label">Расчетный счет:</p>
-                        <p>Россия, Курск</p>
+                        <p>{{ company_details.payment_account }}</p>
 
                         <p class="label">БИК:</p>
-                        <p>inoutcompany@gmail.com</p>
+                        <p>{{ company_details.bik }}</p>
 
                         <p class="label">Номер телефона:</p>
-                        <p>21301203120313</p>
+                        <p>{{ company_details.phone_number }}</p>
                     </div>
                 </div>
             </div>
@@ -111,13 +116,13 @@
     <div class="details-row">
         <div>
             <p class="label">Адрес:</p>
-            <p>Россия, Курск</p>
+            <p>{{ company_details.legal_address }}</p>
             
             <p class="label">ИНН:</p>
-            <p>21301203120313</p>
+            <p>{{ company_details.inn }}</p>
             
             <p class="label">EMAIL:</p>
-            <p>inoutcompany@gmail.com</p>
+            <p>{{ company_details.email }}</p>
         </div>
         <div>
                         <p class="label">Адрес:</p>

@@ -282,6 +282,8 @@ header {
     color:rgba(255, 255, 255, 0.5);
     background-color: rgba(255, 255, 255, 0.05);
     width: 15%; /* Ширина совпадает с заголовками */
+    overflow: hidden;
+    text-overflow: ellipsis;
     vertical-align: middle; /* Вертикальное выравнивание текста по центру */
     white-space: nowrap; /* Отключаем перенос текста */
     font-weight: 400;
@@ -308,6 +310,8 @@ header {
 .delete-btn {
     color: #ff4444;
 }
+
+
 
 
 .profile-popup {

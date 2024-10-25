@@ -19,27 +19,32 @@
             <ul class="menu">
                 <li>
                     <img src="{% static 'img/overview.svg' %}" alt="Обзор" width="20" height="20">
-                    <a href="{% url 'overview' %}">Обзор</a>
+                    <a href="{% url 'client_zone:overview' %}">Обзор</a>
                 </li>
                 <li>
                     <img src="{% static 'img/info.svg' %}" alt="Информация о Продукте" width="20" height="20">
-                    <a href="{% url 'product-details' %}">Информация о продукте</a>
+                    <a href="{% url 'client_zone:product-details' %}">Информация о продукте</a>
+
                 </li>
                 <li>
                     <img src="{% static 'img/invoises.svg' %}" alt="Счета и КП" width="20" height="20">
-                    <a href="{% url 'invoices' %}">Счета и КП</a>
+                    <a href="{% url 'client_zone:invoices' %}">Счета и кп</a>
+
                 </li>
                 <li>
                     <img src="{% static 'img/details.svg' %}" alt="Детали выставления счета" width="20" height="20">
-                    <a href="{% url 'billing' %}">Детали выставления счета</a>
+                    <a href="{% url 'client_zone:billing' %}">Детали выставления счёта</a>
+
                 </li>
                 <li>
                     <img src="{% static 'img/users.svg' %}" alt="Пользователи" width="20" height="20">
-                    <a href="{% url 'users' %}">Пользователи</a>
+                    <a href="{% url 'client_zone:users' %}">Пользователи</a>
+
                 </li>
                 <li>
                     <img src="{% static 'img/help.svg' %}" alt="Центр поддержки" width="20" height="20">
-                    <a href="{% url 'help' %}">Центр поддержки</a>
+                    <a href="{% url 'client_zone:help' %}">Центр поддержки</a>
+
                 </li>
             </ul>
             <div class="sidebar-footer">
@@ -183,7 +188,8 @@
         <span class="close-btn" id="closeRequiretsPopup">&times;</span>
         <h2>Создать новый саппорт тикет</h2>
         <!-- Форма для реквизитов компании -->
-        <form>
+        <form method="post">
+            {% csrf_token %}
             <input type="text" id="subject*" placeholder="Предмет*">
             <input type="text" id="question" placeholder="Что беспокоит?*">
             <input type="text" id="answer" placeholder="Что бы вы хотели, чтобы происходило?*">
@@ -293,7 +299,7 @@
 
    // Открытие попапа для реквизитов компании при нажатии на кнопку "Изменить"
 document.getElementById('new-ticket-btn').addEventListener('click', function() {
-    document.getElementById('new-ticket-popup').style.display = 'block';
+    document.getElementById('new-ticket-popup').style.display = 'flex';
 });
 
 // Закрытие попапа для реквизитов компании при нажатии на крестик
@@ -360,6 +366,67 @@ window.addEventListener('click', function(event) {
         popup.style.display = 'none';
     }
 });
+document.addEventListener('DOMContentLoaded', function () {
+    // Получаем форму и элемент таблицы
+    const form = document.getElementById('ticket-form');
+    const tableBody = document.querySelector('.ticket-section tbody');
+
+    // Обработка события отправки формы
+    form.addEventListener('submit', function (event) {
+        event.preventDefault();  // Останавливаем стандартное поведение формы
+
+        // Создаём объект FormData для сбора данных формы
+        const formData = new FormData(form);
+
+        // AJAX запрос с использованием fetch API
+        fetch('', {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'X-CSRFToken': formData.get('csrfmiddlewaretoken')  // Добавляем CSRF токен в заголовок
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                // Если тикет успешно отправлен, добавляем новую строку в таблицу
+                addTicketToTable(data.ticket);  // Добавляем новый тикет в таблицу с данными с сервера
+
+                // Очищаем форму после отправки
+                form.reset();
+            } else {
+                // Выводим сообщение об ошибке
+                alert('Произошла ошибка при отправке тикета. Попробуйте снова.');
+            }
+        })
+        .catch(error => {
+            console.error('Ошибка:', error);
+            alert('Ошибка подключения. Проверьте интернет-соединение.');
+        });
+    });
+
+    // Функция для добавления тикета в таблицу
+    function addTicketToTable(ticket) {
+        const newRow = document.createElement('tr');
+        newRow.innerHTML = `
+            <td>${ticket.status || 'Открыто'}</td>
+            <td>${ticket.subject}</td>
+            <td>${ticket.id || 'Неизвестен'}</td>
+            <td>${ticket.priority || 'Средний'}</td>
+            <td>${ticket.date || new Date().toLocaleDateString()}</td>
+        `;
+
+        // Удаляем строку "Нет данных", если она существует
+        const noDataRow = tableBody.querySelector('.no-data');
+        if (noDataRow) {
+            noDataRow.remove();
+        }
+
+        // Добавляем новую строку в таблицу
+        tableBody.appendChild(newRow);
+    }
+});
+
 </script>
 </body>
 </html>

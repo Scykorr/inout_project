@@ -5,98 +5,106 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>INOUT Проект</title>
     {% load static %}
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/login_styles.css' %}">
 </head>
 <body>
-    <!-- Шапка сайта -->
-    <header class="header">
-        <div class="container-header">
-            <div class="logo">
-                <img src="{% static 'images/logo.svg' %}" alt="INOUT Проект" width="120" height="20">
-            </div>
-            <nav class="nav">
-                <ul>
-                    <li><a href="#">Продукт</a></li>
-                    <li><a href="#">Услуги</a></li>
-                    <li><a href="#">О нас</a></li>
-                    <li><a href="#">Ресурсы</a></li>
-                    <li><a href="#">Цены</a></li>
-                    <div class="search-icon">
-                        <img src="{% static 'images/search-icon.svg' %}" alt="search">
-                    </div>
-                    <li><a href="#">Поиск</a></li>
-                    <div class="separator"></div>
-                    <li><a href="#">Войти</a></li>
-                    <li><a href="#" class="btn">Попробовать</a></li>
-                </ul>
-            </nav>
+<!-- Шапка сайта -->
+<header class="header">
+    <div class="container-header">
+        <div class="logo">
+            <img src="{% static 'images/logo.svg' %}" alt="INOUT Проект" width="120" height="20">
         </div>
-    </header>
-
-    <!-- Основной контент -->
-    <main class="main">
-        <div class="container">
-            <div class="border"></div>
-            <div class="content-left">
-                <img src="{% static 'images/tag.svg' %}" class="svg-image">
-                <button type="button" class="about-btn" onclick="window.location.href='https://domen-test.ru/'">Подробнее</button>
+        <nav class="nav">
+            <ul>
+                <li><a href="#">Продукт</a></li>
+                <li><a href="#">Услуги</a></li>
+                <li><a href="#">О нас</a></li>
+                <li><a href="#">Ресурсы</a></li>
+                <li><a href="#">Цены</a></li>
+                <div class="search-icon">
+                    <img src="{% static 'images/search-icon.svg' %}" alt="search">
                 </div>
-           
-            <div class="content-right">
-                <div class="cont"></div>
-                <img src="{% static 'images/big-logo.svg' %}" width="324" height="53" alt="INOUT Проект" class="logo-image">
-                    <h2>Добро пожаловать в клиентскую зону INOUT Проект</h2>
+                <li><a href="#">Поиск</a></li>
+                <div class="separator"></div>
+                <li><a href="#">Войти</a></li>
+                <li><a href="#" class="btn">Попробовать</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
 
-                <form>
-                    <div class="input-group">
+<!-- Основной контент -->
+<main class="main">
+    <div class="container">
+        <div class="border"></div>
+        <div class="content-left">
+            <img src="{% static 'images/tag.svg' %}" class="svg-image">
+            <button type="button" class="about-btn" onclick="window.location.href='https://domen-test.ru/'">Подробнее
+            </button>
+        </div>
+
+        <div class="content-right">
+            <div class="cont"></div>
+            <img src="{% static 'images/big-logo.svg' %}" width="324" height="53" alt="INOUT Проект" class="logo-image">
+            <h2>Добро пожаловать в клиентскую зону INOUT Проект</h2>
+
+            <form method="post">
+                {% csrf_token%}
+                <div class="input-group">
                     <label for="email" class="email_t">Почта</label>
-                    <input type="email" id="email" name="email" class="email" required>
+                    {{ form.username }}
                 </div>
                 <div class="input-group">
                     <label for="password" class="password_t">Пароль</label>
-                    <input type="password" id="password" name="password" class="password" required>
+                    {{ form.password }}
                 </div>
-                    <div class="links">
-                    <a href="file:../reset_password/reset_password.html" class="forgot-password">Забыли пароль?</a>
+                <div class="links">
+                    <a href="{% url 'password_reset' %}" class="forgot-password">Забыли пароль?</a>
                 </div>
-
-                <button type="submit" class="btn">Продолжить</button>
+                {% if messages %}
+                <div class="error-message">
+                    {% for message in messages %}
+                    {{ message }}
+                    {% endfor %}
+                </div>
+                {% endif %}
+                <button type="submit" class="btn" href="{% url 'login' %}">Продолжить</button>
 
                 <div class="register-link">
                     <a href="https://domen-test.ru/price/">Нет клиентской зоны</a>
-            </div>
-        </form>
+                </div>
+            </form>
+        </div>
     </div>
-        </div>
-        </div>
-    </main>
-    <script>
-        function validateForm() {
-            const email = document.getElementById('email');
-            const password = document.getElementById('password');
-            const errorMessage = document.getElementById('error-message');
+    </div>
+</main>
+<script>
+    function validateForm() {
+        const email = document.getElementById('email');
+        const password = document.getElementById('password');
+        const errorMessage = document.getElementById('error-message');
 
-            // Сбросить предыдущие ошибки
-            email.classList.remove('error');
-            password.classList.remove('error');
-            errorMessage.style.display = 'none'; // Скрыть сообщение об ошибке
+        // Сбросить предыдущие ошибки
+        email.classList.remove('error');
+        password.classList.remove('error');
+        errorMessage.style.display = 'none'; // Скрыть сообщение об ошибке
 
-            // Простейшая проверка
-            if (email.value === '' || password.value === '') {
-                // Установка красной обводки для пустых полей
-                if (email.value === '') email.classList.add('error');
-                if (password.value === '') password.classList.add('error');
+        // Простейшая проверка
+        if (email.value === '' || password.value === '') {
+            // Установка красной обводки для пустых полей
+            if (email.value === '') email.classList.add('error');
+            if (password.value === '') password.classList.add('error');
 
-                // Показать сообщение об ошибке
-                errorMessage.style.display = 'block';
-                return;
-            }
-
-            // Здесь можно добавить код для дальнейшей проверки email и пароля
-
-            // Для примера просто показываем сообщение об ошибке
-            errorMessage.style.display = 'block'; // Отобразить сообщение об ошибке
+            // Показать сообщение об ошибке
+            errorMessage.style.display = 'block';
+            return;
         }
-    </script>
+
+        // Здесь можно добавить код для дальнейшей проверки email и пароля
+
+        // Для примера просто показываем сообщение об ошибке
+        errorMessage.style.display = 'block'; // Отобразить сообщение об ошибке
+    }
+</script>
 </body>
 </html>

@@ -19,27 +19,32 @@
             <ul class="menu">
                 <li>
                     <img src="{% static 'img/overview.svg' %}" alt="Обзор" width="20" height="20">
-                    <a href="{% url 'overview' %}">Обзор</a>
+                    <a href="{% url 'client_zone:overview' %}">Обзор</a>
                 </li>
                 <li>
                     <img src="{% static 'img/info.svg' %}" alt="Информация о Продукте" width="20" height="20">
-                    <a href="{% url 'product-details' %}">Информация о продукте</a>
+                    <a href="{% url 'client_zone:product-details' %}">Информация о продукте</a>
+
                 </li>
                 <li>
                     <img src="{% static 'img/invoises.svg' %}" alt="Счета и КП" width="20" height="20">
-                    <a href="{% url 'invoices' %}">Счета и КП</a>
+                    <a href="{% url 'client_zone:invoices' %}">Счета и кп</a>
+
                 </li>
                 <li>
                     <img src="{% static 'img/details.svg' %}" alt="Детали выставления счета" width="20" height="20">
-                    <a href="{% url 'billing' %}">Детали выставления счета</a>
+                    <a href="{% url 'client_zone:billing' %}">Детали выставления счёта</a>
+
                 </li>
                 <li>
                     <img src="{% static 'img/users.svg' %}" alt="Пользователи" width="20" height="20">
-                    <a href="{% url 'users' %}">Пользователи</a>
+                    <a href="{% url 'client_zone:users' %}">Пользователи</a>
+
                 </li>
                 <li>
                     <img src="{% static 'img/help.svg' %}" alt="Центр поддержки" width="20" height="20">
-                    <a href="{% url 'help' %}">Центр поддержки</a>
+                    <a href="{% url 'client_zone:help' %}">Центр поддержки</a>
+
                 </li>
             </ul>
             <div class="sidebar-footer">
@@ -89,12 +94,12 @@
                         <table>
                             <tbody>
                                 <tr>
-                                    <td>Inout Проект</td>
-                                    <td>Администратор</td>
-                                    <td>inoutproject@ok.ok</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
                                     <td>
-                                        <button id="edit-btn" class="edit-btn"> <img src="client zone/Edit.svg" alt="Редактировать" /></button>
-                                        <button id="delete-btn" class="delete-btn"><img src="client zone/Delete.svg" alt="Удалить" /></button>
+                                        <button id="edit-btn" class="edit-btn"> <img src="client zone/Edit.svg"/></button>
+                                        <button id="delete-btn" class="delete-btn"><img src="client zone/Delete.svg"/></button>
                                     </td>
                                 </tr>
                             </tbody>
@@ -109,24 +114,25 @@
 <button id="add-user-btn">Добавить пользователя</button>
 
 <!-- Попап для добавления пользователя -->
+<!-- Попап для добавления пользователя -->
 <div id="userPopup" class="user-popup-overlay">
   <div class="user-popup-content">
     <span class="user-popup-close-button">&times;</span>
     <h2>Добавить нового пользователя</h2>
-    <form>
+    <form id="userForm"> <!-- Добавлено id для формы -->
       <div class="user-form-group">
         <label for="userFullName">Полное имя</label>
-        <input type="text" id="userFullName" name="fullName" value="quantumteam">
+        <input type="text" id="userFullName" name="fullName" required>
       </div>
 
       <div class="user-form-group">
         <label for="userEmail">Почта</label>
-        <input type="email" id="userEmail" name="email" value="quantumteam">
+        <input type="email" id="userEmail" name="email" required>
       </div>
 
       <div class="user-form-group">
         <label for="userPassword">Пароль</label>
-        <input type="password" id="userPassword" name="password" value="quantumteam">
+        <input type="password" id="userPassword" name="password" required>
       </div>
 
       <div class="user-switch-container">
@@ -134,7 +140,7 @@
           <h3>Уровень доступа</h3>
           <div class="user-switch-item">
             <label for="adminAccess" class="user-switch">
-              <input type="checkbox" id="adminAccess" checked>
+              <input type="checkbox" id="adminAccess">
               <span class="user-slider"></span>
             </label>
             <label for="adminAccess">Администратор</label>
@@ -166,24 +172,6 @@
               <span class="user-slider"></span>
             </label>
             <label for="supportAccess">Поддержка</label>
-          </div>
-        </div>
-
-        <div class="user-email-notifications">
-          <h3>Уведомления на почту</h3>
-          <div class="user-switch-item">
-            <label for="allNotifications" class="user-switch">
-              <input type="checkbox" id="allNotifications" checked>
-              <span class="user-slider"></span>
-            </label>
-            <label for="allNotifications">Все</label>
-          </div>
-          <div class="user-switch-item">
-            <label for="productNews" class="user-switch">
-              <input type="checkbox" id="productNews">
-              <span class="user-slider"></span>
-            </label>
-            <label for="productNews">Новости о продукте</label>
           </div>
         </div>
       </div>
@@ -283,16 +271,16 @@
                     <div class="form-container"> 
                         <div class="form-left">
                             <label for="full-name">Полное имя</label>
-                            <input type="text" id="full-name" value="quantumteam">
+                            <input type="text" id="full-name" required>
 
                             <label for="email">Почта</label>
-                            <input type="email" id="email" value="quantumteam">
+                            <input type="email" id="email" required>
 
                             <label for="password">Пароль</label>
-                            <input type="password" id="password" value="quantumteam">
+                            <input type="password" id="password" required>
 
                             <label for="confirm-password">Подтверждение пароля</label>
-                            <input type="password" id="confirm-password" value="quantumteam">
+                            <input type="password" id="confirm-password" required">
                         </div>
 
                         <div class="form-right">
@@ -398,6 +386,138 @@ document.querySelectorAll('.user-switch input').forEach(switchElement => {
         }
     });
 });
+    document.getElementById('userForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent default form submission
+
+    // Collect roles based on checked checkboxes
+    const roles = [];
+    if (document.getElementById('adminAccess').checked) roles.push('admin');
+    if (document.getElementById('scanAccess').checked) roles.push('scanning');
+    if (document.getElementById('purchaseAccess').checked) roles.push('ordering');
+    if (document.getElementById('invoiceAccess').checked) roles.push('billing');
+    if (document.getElementById('supportAccess').checked) roles.push('help');
+
+    // Convert roles array to a string (or use another format as needed)
+    const rolesString = roles.join(',');
+
+    // Prepare data for submission (you can use fetch or XMLHttpRequest)
+    const formData = {
+      fullName: document.getElementById('userFullName').value,
+      email: document.getElementById('userEmail').value,
+      password: document.getElementById('userPassword').value,
+      roles: rolesString,
+    };
+
+    console.log(formData); // For testing: log the data to be submitted
+
+    // Implement your data submission logic here
+  });
+
+    document.addEventListener('DOMContentLoaded', function () {
+    let userCount = 0;
+    const maxUsers = 10;
+
+    const userForm = document.getElementById('userForm');
+    const usersTableBody = document.querySelector('.users-table-body tbody');
+    const userPopup = document.getElementById('userPopup');
+    const closePopupButton = document.querySelector('.user-popup-close-button');
+
+    // Обработчик формы добавления пользователя
+    userForm.addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        if (userCount >= maxUsers) {
+            alert('Вы не можете добавить более 10 пользователей.');
+            return;
+        }
+
+        const fullName = document.getElementById('userFullName').value;
+        const email = document.getElementById('userEmail').value;
+
+        // Сбор ролей
+        const roles = [];
+        if (document.getElementById('adminAccess').checked) roles.push('Администратор');
+        if (document.getElementById('scanAccess').checked) roles.push('Сканирование');
+        if (document.getElementById('purchaseAccess').checked) roles.push('Заказ на покупку ');
+        if (document.getElementById('invoiceAccess').checked) roles.push('Выставление счета');
+        if (document.getElementById('supportAccess').checked) roles.push('Поддержка');
+
+        // Создание новой строки пользователя
+        const newRow = document.createElement('tr');
+        newRow.innerHTML = `
+          <td>${fullName}</td>
+          <td>${roles.join(', ') || 'Нет роли'}</td>
+          <td>${email}</td>
+          <td>
+            <button class="edit-btn"><img src="{% static 'img/edit.svg' %}" alt="Редактировать" /></button>
+            <button class="delete-btn"><img src="{% static 'img/delete.svg' %}" alt="Удалить" /></button>
+          </td>
+        `;
+
+        usersTableBody.appendChild(newRow);
+        userCount++;
+
+        // Закрыть попап после добавления пользователя
+        userPopup.style.display = 'none';
+
+        // Очистить форму после отправки
+        userForm.reset();
+    });
+
+    // Закрыть попап по кнопке
+    closePopupButton.addEventListener('click', function () {
+        userPopup.style.display = 'none';
+    });
+});
+
+    document.addEventListener('DOMContentLoaded', function () {
+  const usersTableBody = document.querySelector('.users-table-body tbody');
+
+  // Удаление пользователя
+  usersTableBody.addEventListener('click', function (event) {
+    if (event.target.classList.contains('delete-btn') || event.target.closest('.delete-btn')) {
+      const row = event.target.closest('tr');
+      row.remove();
+    }
+  });
+});
+
+
+    document.addEventListener('DOMContentLoaded', function () {
+  const usersTableBody = document.querySelector('.users-table-body tbody');
+
+  // Редактирование пользователя
+  usersTableBody.addEventListener('click', function (event) {
+    if (event.target.classList.contains('edit-btn') || event.target.closest('.edit-btn')) {
+      const row = event.target.closest('tr');
+      const fullName = row.children[0].textContent;
+      const roles = row.children[1].textContent;
+      const email = row.children[2].textContent;
+
+      // Открываем попап с заполненными полями
+      document.getElementById('userFullName').value = fullName;
+      document.getElementById('userEmail').value = email;
+
+      // Нужно обновить информацию о ролях (псевдокод)
+      updateRolesInForm(roles);
+
+      // Показываем попап
+      userPopup.style.display = 'block';
+
+      // В этом месте добавляем логику для обновления пользователя после сохранения
+    }
+  });
+
+  function updateRolesInForm(roles) {
+    // Логика для обновления чекбоксов на основе ролей
+    document.getElementById('adminAccess').checked = roles.includes('Администратор');
+    document.getElementById('scanAccess').checked = roles.includes('Сканирование');
+    document.getElementById('purchaseAccess').checked = roles.includes('Заказ на покупку');
+    document.getElementById('invoiceAccess').checked = roles.includes('Выставление счета');
+    document.getElementById('supportAccess').checked = roles.includes('Поддержка');
+  }
+});
+
 </script>
 </body>
 </html>

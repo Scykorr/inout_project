@@ -19,27 +19,32 @@
             <ul class="menu">
                 <li>
                     <img src="{% static 'img/overview.svg' %}" alt="Обзор" width="20" height="20">
-                    <a href="{% url 'overview' %}">Обзор</a>
+                    <a href="{% url 'client_zone:overview' %}">Обзор</a>
                 </li>
                 <li>
                     <img src="{% static 'img/info.svg' %}" alt="Информация о Продукте" width="20" height="20">
-                    <a href="{% url 'product-details' %}">Информация о продукте</a>
+                    <a href="{% url 'client_zone:product-details' %}">Информация о продукте</a>
+
                 </li>
                 <li>
                     <img src="{% static 'img/invoises.svg' %}" alt="Счета и КП" width="20" height="20">
-                    <a href="{% url 'invoices' %}">Счета и КП</a>
+                    <a href="{% url 'client_zone:invoices' %}">Счета и кп</a>
+
                 </li>
                 <li>
                     <img src="{% static 'img/details.svg' %}" alt="Детали выставления счета" width="20" height="20">
-                    <a href="{% url 'billing' %}">Детали выставления счета</a>
+                    <a href="{% url 'client_zone:billing' %}">Детали выставления счёта</a>
+
                 </li>
                 <li>
                     <img src="{% static 'img/users.svg' %}" alt="Пользователи" width="20" height="20">
-                    <a href="{% url 'users' %}">Пользователи</a>
+                    <a href="{% url 'client_zone:users' %}">Пользователи</a>
+
                 </li>
                 <li>
                     <img src="{% static 'img/help.svg' %}" alt="Центр поддержки" width="20" height="20">
-                    <a href="{% url 'help' %}">Центр поддержки</a>
+                    <a href="{% url 'client_zone:help' %}">Центр поддержки</a>
+
                 </li>
             </ul>
             <div class="sidebar-footer">
@@ -71,8 +76,8 @@
             <section class="info-container">
                 <div class="info-block">
                     <span class="info-block-contact-name">Имя</span>
-                    <div class="info-block-contact-text">INOUT Проект Бизнес в Облаке для 5 пользователей. <br>
-                        <span class="contact-date">Оплачено до 09.08.2024</span>
+                    <div class="info-block-contact-text">{{ product.name }}<br>
+                        <span class="contact-date">Оплачено до {{ product.paid_until }}</span>
                     </div>
                 </div>
                 <div class="settings-container">
@@ -81,17 +86,17 @@
                         <span class="package">ПАКЕТ</span>
                     </div>
                     <div class="cloud-inout">
-                        <p class="cloud">Облачное</p>
-                        <p class="inout">INOUT база</p>
+                        <p class="cloud">{{ product.solution_type }}</p>
+                        <p class="inout">{{ product.package }}</p>
                     </div>
                     <span class="user-count">КОЛИЧЕСТВО ПОЛЬЗОВАТЕЛЕЙ</span>
-                    <p class="user-number">5 (0 активных пользователей)</p>
-                    <span class="subscription">ПОДПИСКА ДЕЙСТВУЕТ ДО</span>
-                    <p class="subscription-date">12.12.25</p>
+                    <p class="user-number">{{ product.user_count }} ({{ product.active_user_count }} активных пользователей)</p>
+                    <span class="subscription">ПОДПИСКА ДЕЙСТВУЕТ ДО </span>
+                    <p class="subscription-date">{{ product.subscription_until }}</p>
                 </div>
                 <div class="contact-details">
                     <div class="contact-details-contact-text">Сервисы<br>
-                        <span class="contact-details-contact-date">Услуги не были ещё заказаны</span>
+                        <span class="contact-details-contact-date">{{ product.services_ordered }}</span>
                     </div>
                     <button id="details-button"class="details-button">Детали выставления счета</button>
                 </div>

@@ -3,8 +3,12 @@
 from django.urls import path
 from . import views
 
+
+app_name = 'client_zone'
+
+
 urlpatterns = [
-    path('', views.overview, name='overview'),  # Главная страница или обзор
+    path('overview/', views.overview, name='overview'),  # Главная страница или обзор
     path('product-details/', views.product_details, name='product-details'),  # Информация о продукте
     path('invoices/', views.invoices, name='invoices'),  # Счета и КП
     path('billing/', views.billing, name='billing'),  # Детали выставления счета

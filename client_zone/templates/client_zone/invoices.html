@@ -19,27 +19,32 @@
             <ul class="menu">
                 <li>
                     <img src="{% static 'img/overview.svg' %}" alt="Обзор" width="20" height="20">
-                    <a href="{% url 'overview' %}">Обзор</a>
+                    <a href="{% url 'client_zone:overview' %}">Обзор</a>
                 </li>
                 <li>
                     <img src="{% static 'img/info.svg' %}" alt="Информация о Продукте" width="20" height="20">
-                    <a href="{% url 'product-details' %}">Информация о продукте</a>
+                    <a href="{% url 'client_zone:product-details' %}">Информация о продукте</a>
+
                 </li>
                 <li>
                     <img src="{% static 'img/invoises.svg' %}" alt="Счета и КП" width="20" height="20">
-                    <a href="{% url 'invoices' %}">Счета и КП</a>
+                    <a href="{% url 'client_zone:invoices' %}">Счета и кп</a>
+
                 </li>
                 <li>
                     <img src="{% static 'img/details.svg' %}" alt="Детали выставления счета" width="20" height="20">
-                    <a href="{% url 'billing' %}">Детали выставления счета</a>
+                    <a href="{% url 'client_zone:billing' %}">Детали выставления счёта</a>
+
                 </li>
                 <li>
                     <img src="{% static 'img/users.svg' %}" alt="Пользователи" width="20" height="20">
-                    <a href="{% url 'users' %}">Пользователи</a>
+                    <a href="{% url 'client_zone:users' %}">Пользователи</a>
+
                 </li>
                 <li>
                     <img src="{% static 'img/help.svg' %}" alt="Центр поддержки" width="20" height="20">
-                    <a href="{% url 'help' %}">Центр поддержки</a>
+                    <a href="{% url 'client_zone:help' %}">Центр поддержки</a>
+
                 </li>
             </ul>
             <div class="sidebar-footer">
@@ -81,9 +86,19 @@
                                     </tr>
                                 </thead>
                             <tbody>
+                            {% if commercial_offers %}
+                                {% for offer in commercial_offers %}
+                                    <tr>
+                                        <td>{{ offer.created_date }}</td>
+                                        <td>{{ offer.amount }}</td>
+                                        <td>{{ offer.subject }}</td>
+                                        </tr>
+                                {% endfor %}
+                            {% else %}
                                     <tr>
                                         <td colspan="3" class="no-data">Нет доступных данных</td>
                                     </tr>
+                            {% endif %}
                             </tbody>
                             </table>
                             <div class="pagination">
@@ -116,9 +131,21 @@
                                     </tr>
                                 </thead>
                             <tbody>
+                                {% if invoices %}
+                                    {% for invoice in invoices %}
+                                        <tr>
+                                            <td>{{ invoice.status }}</td>
+                                            <td>{{ invoice.subject }}</td>
+                                            <td>{{ invoice.number }}</td>
+                                            <td>Высокий</td> <!-- Пример, можно заменить на приоритет в модели, если он есть -->
+                                            <td>{{ invoice.created_date }}</td>
+                                        </tr>
+                                        {% endfor %}
+                                    {% else %}
                                     <tr>
                                         <td colspan="5" class="no-data">Нет доступных данных</td>
                                     </tr>
+                                {% endif %}
                             </tbody>
                             </table>
                             <div class="pagination">
@@ -144,21 +171,21 @@
                 <div class="block">
                     <div class="address">
                         <span>адрес</span>
-                        <p>Россия, Курск</p>
+                        <p>{{ company_details.legal_address }}</p>
                     </div>
                     <div class="inn">
                         <span>инн</span>
-                        <p>21301203120313</p>
+                        <p>{{ company_details.inn }}</p>
                     </div>
                     <div class="email">
                         <span>email</span>
-                        <p>inoutcompany@gmail.com</p>
+                        <p>{{ company_details.email }}</p>
                     </div>
                 </div>
                 <div class="block">
                     <div class="address">
                         <span>адрес</span>
-                        <p>Россия, Курск</p>
+                        <p>{{ company_details.payment_account }}</p>
                     </div>
                 </div>
             </div>
@@ -180,9 +207,24 @@
                                 </tr>
                         </thead>
                         <tbody>
+                            {% if regular_payments %}
+                                {% for payment in regular_payments %}
+                                    <tr>
+                                        <td>{{ payment.status }}</td>
+                                        <td>{{ payment.contact_id }}</td>
+                                        <td>{{ payment.product }}</td>
+                                        <td>{{ payment.payment_method }}</td>
+                                        <td>{{ payment.next_payment }}</td>
+                                        <td>{{ payment.period }}</td>
+                                        <td>{{ payment.amount }}</td>
+                                        <td><button>Действие</button></td> <!-- Пример действия -->
+                                    </tr>
+                                {% endfor %}
+                            {% else %}
                                 <tr>
                                     <td colspan="8" class="no-data">Нет доступных данных</td>
                                 </tr>
+                            {% endif %}
                         </tbody>
                 </table>
             </div>

@@ -35,7 +35,6 @@ INSTALLED_APPS = [
     "accouts",
     "pay_gateway",
     "search",
-    "accouts",
     "client_zone",
     "wagtail.contrib.search_promotions",
     "wagtail.contrib.forms",
@@ -101,7 +100,7 @@ if ENV_TYPE in ('local',):
     DATABASES = {
         'default': {
             "ENGINE": "django.db.backends.postgresql_psycopg2",
-            "NAME": "postgres",
+            "NAME": "inout",
             "USER": "postgres",
 	        "PASSWORD": "123",
             "HOST": "localhost",

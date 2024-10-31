@@ -8,7 +8,7 @@ class AddOn(models.Model):
         ('inout_business', 'INOUT Проект Бизнес'),
         ('inout_platform', 'INOUT Проект Платформа'),
     ]
-
+    session_id = models.CharField(max_length=36, unique=True)
     plan = models.CharField(max_length=20, choices=PLAN_CHOICES)
     user_amount = models.PositiveIntegerField(default=5)  # Значение по умолчанию 5
     help_desk = models.BooleanField(default=False)
@@ -26,6 +26,7 @@ class AddOn(models.Model):
 
 
 class UserProfile(models.Model):
+    session_id = models.CharField(max_length=36, unique=True)
     email = models.EmailField()
     organization_name = models.CharField(max_length=255, blank=True)
     phone_number = models.CharField(max_length=20, blank=True)

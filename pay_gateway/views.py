@@ -3,19 +3,17 @@ import logging
 from django.conf import settings
 from django.shortcuts import redirect, render
 from django.contrib import messages
-from .models import AddOn, UserProfile  # Импортируем ваши модели
+from .models import AddOn, UserProfile
 from .forms import AddOnForm, UserProfileForm
 from django.db import IntegrityError
 from django.core.mail import send_mail
-
 
 logger = logging.getLogger(__name__)
 
 
 def choose_plan(request):
-    # Создание нового session_id при каждом запросе
-    request.session.flush()  # Удаляет старую сессию и создает новую
-    request.session['session_id'] = str(uuid.uuid4())  # Генерация нового session_id
+    request.session.flush()
+    request.session['session_id'] = str(uuid.uuid4())
     logger.info("New session_id created: %s", request.session['session_id'])
     return render(request, 'pay_gateway/botton_choose_plan.html')
 
@@ -47,7 +45,7 @@ def user_profile_view(request):
             profile.session_id = session_id
             profile.save()
             messages.success(request, 'Ваши данные успешно сохранены!')
-            logger.info("User  Profile saved with session_id: %s", session_id)
+            logger.info("User Profile saved with session_id: %s", session_id)
             return redirect('payment')
         else:
             logger.error("Form is not valid: %s", form.errors)
@@ -58,7 +56,7 @@ def user_profile_view(request):
 
 
 def payment(request):
-    return render(request, 'pay_gateway/payment.html')  # Рендерим шаблон payment.html
+    return render(request, 'pay_gateway/payment.html')
 
 
 def send_payment_email(email, session_id, payment_status):
@@ -69,23 +67,23 @@ def send_payment_email(email, session_id, payment_status):
         f'Сессия ID: {session_id}.\n\n'
         'Спасибо за использование нашего сервиса!'
     )
-    send_mail(subject, message, settings.DEFAULT_FROM_EMAIL, [email])  # Замените 'from@example.com' на ваш email
+    send_mail(subject, message, settings.DEFAULT_FROM_EMAIL, [email])
+
 
 def accept_payment(request):
     session_id = request.session.get('session_id')
     payment_successful = True  # Эта переменная должна быть результатом проверки успешности оплаты
 
     if payment_successful:
-        # Проверяем наличие временных профилей
         temp_profiles = UserProfile.objects.filter(session_id=session_id)
         if temp_profiles.exists():
             addons = AddOn.objects.filter(session_id=session_id)
             for temp_profile in temp_profiles:
-                logger.info("Проверка существования профиля с domain_name: %s", temp_profile.domain_name)
-                existing_profile = UserProfile.objects.filter(domain_name=temp_profile.domain_name.strip()).first()
-                if existing_profile:
-                    logger.warning("Профиль с domain_name %s уже существует. Пропускаем создание.", temp_profile.domain_name)
-                    continue  # Пропускаем создание, если профиль уже существует
+                domain_name = temp_profile.domain_name.strip()
+                if UserProfile.objects.filter(domain_name=domain_name).exists():
+                    logger.warning("Профиль с domain_name %s уже существует. Пропускаем создание.", domain_name)
+                    messages.warning(request, f'Профиль с domain_name {domain_name} уже существует.')
+                    continue
 
                 try:
                     user = UserProfile.objects.create(
@@ -96,13 +94,12 @@ def accept_payment(request):
                         city=temp_profile.city,
                         legal_address=temp_profile.legal_address,
                         inn=temp_profile.inn,
-                        domain_name=temp_profile.domain_name.strip(),
+                        domain_name=domain_name,
                         payment_method=temp_profile.payment_method,
                         session_id=session_id,
                         payment_status='successful',
                     )
 
-                    # Перенос аддонов
                     for addon in addons:
                         user.addon_set.create(
                             plan=addon.plan,
@@ -121,13 +118,10 @@ def accept_payment(request):
 
                 except IntegrityError as e:
                     logger.error("Ошибка при создании профиля: %s", e)
-                    messages.error(request, 'Ошибка при создании профиля: уже существует профиль с таким domain_name.')
+                    messages.error(request, 'Ошибка при создании профиля.')
                     return redirect('some_view')
 
-            # Отправляем уведомление по email
             send_payment_email(temp_profile.email, session_id, 'успешная')
-
-            # Очистка временных данных после переноса
             temp_profiles.delete()
             addons.delete()
 
@@ -138,35 +132,6 @@ def accept_payment(request):
             logger.error("Profile not found for session_id: %s", session_id)
             return redirect('some_view')
     else:
-        # Если оплата не прошла, сохраняем временные данные
-        temp_profiles = UserProfile.objects.filter(session_id=session_id)
-        addons = AddOn.objects.filter(session_id=session_id)
-
-        for temp_profile in temp_profiles:
-            try:
-                # Сохраняем профиль с пометкой о неуспешной оплате
-                UserProfile.objects.create(
-                    email=temp_profile.email,
-                    organization_name=temp_profile.organization_name,
-                    phone_number=temp_profile.phone_number,
-                    country=temp_profile.country,
-                    city=temp_profile.city,
-                    legal_address=temp_profile.legal_address,
-                    inn=temp_profile.inn,
-                    domain_name=temp_profile.domain_name.strip(),
-                    payment_method=temp_profile.payment_method,
-                    session_id=session_id,
-                    payment_status='failed',
-                )
-            except IntegrityError as e:
-                logger.error("Ошибка при сохранении временного профиля: %s", e)
-
-        # Отправляем уведомление по email
-        send_payment_email(temp_profile.email, session_id, 'неуспешная')
-
-        # Очистка аддонов
-        addons.delete()
-
         messages.error(request, 'Оплата не прошла, данные сохранены, но статус оплаты неуспешный.')
         logger.error("Payment failed, but data saved for session_id: %s", session_id)
 

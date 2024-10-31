@@ -382,4 +382,36 @@ radioMonth.addEventListener('change', (event) => {
 
 test_onload();
 
+function saveSessionData() {
+    const sessionId = getSessionId(); // Функция для получения текущего session ID
+    const privateCloud = document.getElementById('private_cloud').checked; // Чекбокс для частного облака
+    const cloudHosting = document.getElementById('cloud_hosting').checked; // Чекбокс для облачного хостинга
+    const billingFormat = document.querySelector('input[name="billing"]:checked').value; // Получаем выбранный формат выставления счета
+    const totalPrice = calculateTotalPrice(); // Функция для расчета итоговой цены на основе выбора пользователя
+
+    fetch('/save_user_session_data/', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRFToken': getCookie('csrftoken') // Функция для получения CSRF токена
+        },
+        body: JSON.stringify({
+            session_id: sessionId,
+            private_cloud: privateCloud,
+            cloud_hosting: cloudHosting, // Добавляем облачное хостинг значение
+            billing_format: billingFormat,
+            total_price: totalPrice
+        })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            // Обработка успешного ответа (например, редирект или сообщение)
+            console.log('Data saved successfully:', data.session_id);
+        }
+    })
+    .catch(error => {
+        console.error('Error saving data:', error);
+    });
+}
 

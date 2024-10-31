@@ -16,7 +16,7 @@ urlpatterns = [
     path("api/trial/", api.trial, name="trial"),
     path("api/crm/", api.crm, name="crm"),
     path('accounts/', include('accouts.urls')),
-    path('client_zone/', include('client_zone.urls')),
+    #path('client_zone/', include('client_zone.urls')),
     path('payment/', include('pay_gateway.urls')),
 ]
 

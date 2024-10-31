@@ -1,20 +1,53 @@
-from django.shortcuts import render
-from .models import Plan, AddOn, User, Payment
+from django.shortcuts import render, redirect
+import logging
+from pay_gateway.forms import AddOnForm, UserProfileForm
+from django.contrib import messages
+from django.utils.crypto import get_random_string
 
-# Представление для выбора плана
-from django.shortcuts import render
-
-
-def plan_view(request):
-    return render(request, 'pay_gateway/botton_choose_plan.html')  # Рендерим шаблон choose_plan.html
+logger = logging.getLogger(__name__)
 
 
-def add_ons(request):
-    return render(request, 'pay_gateway/add_ons.html')  # Рендерим шаблон add_ons.html
+def choose_plan(request):
+    return render(request, 'pay_gateway/botton_choose_plan.html')  # Рендерим шаблон add_ons.html
 
 
-def add_users(request):
-    return render(request, 'pay_gateway/add_user.html')  # Рендерим шаблон add_users.html
+def start_session(request):
+    plan = request.GET.get('plan')
+    if plan:
+        session_id = get_random_string(16)
+        request.session['session_id'] = session_id
+        request.session['selected_plan'] = plan
+    return redirect('add_ons')
+
+def add_on_view(request):
+    if request.method == 'POST':
+        logger.debug(request.POST)  # Логирование данных POST
+        form = AddOnForm(request.POST)
+        if form.is_valid():
+            add_on = form.save()
+            return redirect('add_users')
+        else:
+            logger.error("Form is not valid: %s", form.errors)  # Логирование ошибок формы
+    else:
+        form = AddOnForm()
+
+    return render(request, 'pay_gateway/add_ons.html', {'form': form})
+
+
+def user_profile_view(request):
+    if request.method == 'POST':
+        form = UserProfileForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Ваши данные успешно сохранены!')
+            return redirect(
+                'accept_payment')  # Замените 'success_url' на URL, куда вы хотите перенаправить пользователя
+        else:
+            logger.error("Form is not valid: %s", form.errors)  # Логирование ошибок формы
+    else:
+        form = UserProfileForm()
+
+    return render(request, 'pay_gateway/add_user.html', {'form': form})
 
 
 def payment(request):

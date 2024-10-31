@@ -1,17 +1,39 @@
 from django import forms
-from .models import AddOn
+from .models import AddOn, UserProfile
 
 
 class AddOnForm(forms.ModelForm):
     class Meta:
         model = AddOn
         fields = [
-            'plan', 'users_count', 'help_desk', 'dms', 'risk_management', 'custom_branding',
+            'plan', 'user_amount', 'help_desk', 'dms', 'risk_management', 'custom_branding',
             'gitlab_integration', 'b2b_crm', 'knowledge_base', 'asset_management', 'private_cloud',
-            'billing_period', 'total_price'
+            'billing'
         ]
         widgets = {
             'plan': forms.Select(attrs={'id': 'select_plan'}),
-            'users_count': forms.NumberInput(attrs={'id': 'range4'}),
-            'billing_period': forms.RadioSelect(attrs={'name': 'billing'}),
+            'user_amount': forms.NumberInput(attrs={'id': 'range4'}),
+            'billing': forms.RadioSelect(attrs={'name': 'billing'}),
+        }
+
+
+class UserProfileForm(forms.ModelForm):
+    class Meta:
+        model = UserProfile
+        fields = [
+            'email', 'organization_name', 'phone_number', 'country', 'city',
+            'legal_address', 'inn', 'domain_name',
+            'payment_method'
+        ]
+        widgets = {
+            'email': forms.EmailInput(),
+            'organization_name': forms.TextInput(),
+            'phone_number': forms.TextInput(),
+            'country': forms.TextInput(),
+            'city': forms.TextInput(),
+            'legal_address': forms.TextInput(),
+            'inn': forms.TextInput(),
+            'domain_name': forms.TextInput(),
+            'payment_method': forms.RadioSelect(),
+            'users_count': forms.NumberInput(),
         }

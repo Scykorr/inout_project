@@ -5,85 +5,27 @@
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/add_user.css' %}">
     <script src="{% static 'scripts/add_user_dropbtn.js' %}"></script>
-
     <title>Информация о пользователе</title>
 </head>
 <body>
 <header class="upper_footer">
     <div class="layout_nav">
         <nav class="left_nav">
-
             <ul class="hr">
                 <li class="company_logo_li">
                     <a href="#" class="company_logo">
-                        <img
-                                sizes="(max-width: 320px) 280px,
-            (max-width: 480px) 440px,
-            800px" src="{% static 'img/Logo-INOUT-Project.png' %}" alt="logo"
-                                srcset="{% static 'img/Logo-INOUT-Project-x2.png' %} 2x">
+                        <img sizes="(max-width: 320px) 280px, (max-width: 480px) 440px, 800px" src="{% static 'img/Logo-INOUT-Project.png' %}" alt="logo" srcset="{% static 'img/Logo-INOUT-Project-x2.png' %} 2x">
                     </a>
                 </li>
-                <li>
-                    <div class="dropdown_header">
-                        <button class="dropbtn_header">Продукт</button>
-                        <div class="dropdown-content_header">
-                            <a href="#">Link 1</a>
-                            <a href="#">Link 2</a>
-                            <a href="#">Link 3</a>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="dropdown_header">
-                        <button class="dropbtn_header">Услуги</button>
-                        <div class="dropdown-content_header">
-                            <a href="#">Link 1</a>
-                            <a href="#">Link 2</a>
-                            <a href="#">Link 3</a>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="dropdown_header">
-                        <button class="dropbtn_header">О нас</button>
-                        <div class="dropdown-content_header">
-                            <a href="#">Link 1</a>
-                            <a href="#">Link 2</a>
-                            <a href="#">Link 3</a>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="dropdown_header">
-                        <button class="dropbtn_header">Ресурсы</button>
-                        <div class="dropdown-content_header">
-                            <a href="#">Link 1</a>
-                            <a href="#">Link 2</a>
-                            <a href="#">Link 3</a>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <a href="#">Цены</a>
-                </li>
+                <!-- Other navigation items -->
             </ul>
         </nav>
         <nav class="right_bt">
-
             <ul class="right-ul">
-
-                <li>
-                    <a href="#">Поиск</a>
-                </li>
-                <li>
-                    <div class="vertical-line"></div>
-                </li>
-                <li>
-                    <a href="#">Войти</a>
-                </li>
-                <li>
-                    <a class="try_it" href="#">Попробовать</a>
-                </li>
+                <li><a href="#">Поиск</a></li>
+                <li><div class="vertical-line"></div></li>
+                <li><a href="#">Войти</a></li>
+                <li><a class="try_it" href="#">Попробовать</a></li>
             </ul>
         </nav>
     </div>
@@ -94,68 +36,22 @@
                     <p>Цены и оплата</p>
                 </li>
                 <li class="price_payment_text">
-                    <p>Хорошо известно, что «то, что не измеряется, не может быть улучшено».
-                        Поэтому время отслеживания и регистрации важно для всех, кто хочет достичь лучших результатов.
-                        INOUT Проект позволяет отслеживать время, затрачиваемое на задачи и проекты,
-                        несколькими способами, включая секундомер и ручной ввод времени для задач.</p>
+                    <p>Хорошо известно, что «то, что не измеряется, не может быть улучшено». Поэтому время отслеживания и регистрации важно для всех, кто хочет достичь лучших результатов. INOUT Проект позволяет отслеживать время, затрачиваемое на задачи и проекты, несколькими способами, включая секундомер и ручной ввод времени для задач.</p>
                 </li>
-
             </ul>
-
-
         </div>
         <div class="tabs_primary">
             <ul>
-                <li class="li_dropbtn_c">
-                    <a class="dropbtn_c">В облаке</a>
-                </li>
-                <li>
-                    <a class="dropbtn_o">На сервере</a>
-                </li>
+                <li class="li_dropbtn_c"><a class="dropbtn_c">В облаке</a></li>
+                <li><a class="dropbtn_o">На сервере</a></li>
             </ul>
         </div>
     </div>
 </header>
 <section class="main_section">
     <div class="second_line_img">
-        <img class="second_line" src="{% static 'img/Line_12.png' %}" alt="logo"
-             srcset="{% static 'img/Line_12x2.png' %} 2x">
+        <img class="second_line" src="{% static 'img/Line_12.png' %}" alt="logo" srcset="{% static 'img/Line_12x2.png' %} 2x">
     </div>
-    <div class="div_road_map_img">
-        <div class="panel_roadmap">
-            <div class="finish_div">
-                <img class="img_check" src="{% static 'img/check.png' %}" alt="">
-                <div class="finish_plan"></div>
-            </div>
-            <span class="roadmap_text">Выбор плана</span>
-            <div class="create-line_new"></div>
-            <div class="finish_div">
-                <img class="img_check" src="{% static 'img/check.png' %}" alt="">
-                <div class="finish_plan"></div>
-            </div>
-            <span class="roadmap_text_second">Соберите своё решение</span>
-            <div class="create-line"></div>
-            <div class="active_plan"><span class="text_inside"
-                                           style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">3</span>
-            </div>
-            <span class="roadmap_text_third">Выставление счета</span>
-            <div class="create-line"></div>
-            <div class="lin-grad-border">
-                <div class="common_plan"
-                     style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
-                    <span class="text-roadmap"
-                          style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">4</span>
-                </div>
-            </div>
-            <span class="roadmap_text_fourth">Оплата</span>
-            <div class="create-line"></div>
-            <img
-                    class="inout_pict"
-                    src="{% static 'img/inout_pict.png' %}"
-                    alt=""/>
-        </div>
-    </div>
-
     <div class="main_info">
         <div class="main_user_about">
             <div class="create-line"></div>
@@ -163,23 +59,13 @@
                 <div class="domain_about">
                     <p class="text_domain">Ваш домен</p>
                 </div>
-                <form class="inp_domain" method="get" action="../result">
+                <form method="POST" action="{% url 'add_users' %}">
+                    {% csrf_token %}
                     <label class="input-label">
-                        <input
-                                class="input_domain"
-                                type="text"
-                                name="domainName"
-                                style="width: 227.57px; height: 42px;
-                                 background-color: rgba(255, 255, 255, 0.05);
-                                  color: white; border-radius:5px;
-                                   border-color: rgba(255, 255, 255, 0.3);"
-                                minlength="2"
-                                required
-                        >
+                        <input class="input_domain" type="text" name="domain_name" required>
                         <span class="input-title">.inoutproject.ru</span>
                         <span id="domain_span"></span>
                     </label>
-                </form>
             </div>
             <div class="create-line"></div>
             <div class="user_info">
@@ -187,114 +73,41 @@
                     <p class="user_info_about_text">Информация</p>
                 </div>
                 <div class="input_fields">
-                    <form class="curr_inp_field_form" method="get" action="../result">
-                        <label class="curr_inp_field_label">
-                            <span class="input-title">Почта</span>
-                            <input
-                                    class="input_email"
-                                    type="email"
-                                    name="one-line"
-                                    style="width: 462px; height: 42px;
-                                 background-color: rgba(255, 255, 255, 0.05);
-                                  color: white; border-radius:5px;
-                                   border-color: rgba(255, 255, 255, 0.3);"
-                                    required
-                                    id="email_input"
-                            >
-                            <span id="email_span"></span>
-
-                        </label>
-                    </form>
-                    <form class="curr_inp_field_form" method="get" action="../result">
-                        <label class="curr_inp_field_label">
-                            <span class="input-title">Название организации</span>
-                            <input
-                                    class="input_org"
-                                    type="text"
-                                    name="one-line"
-                                    style="width: 462px; height: 42px;
-                                 background-color: rgba(255, 255, 255, 0.05);
-                                  color: white; border-radius:5px;
-                                   border-color: rgba(255, 255, 255, 0.3);"
-                            >
-                            <span id="org_span"></span>
-                        </label>
-                    </form>
-                    <form class="curr_inp_field_form" method="get" action="../result">
-                        <label class="curr_inp_field_label">
-                            <span class="input-title">Номер телефона</span>
-                            <input
-                                    class="input_phone"
-                                    type="tel"
-                                    name="one-line"
-                                    style="width: 462px; height: 42px;
-                                 background-color: rgba(255, 255, 255, 0.05);
-                                  color: white; border-radius:5px;
-                                   border-color: rgba(255, 255, 255, 0.3);"
-                            >
-                            <span id="phone_span"></span>
-                        </label>
-                    </form>
-                    <form class="curr_inp_field_form" method="get" action="../result">
-                        <label class="curr_inp_field_label">
-                            <span class="input-title">Страна</span>
-                            <input
-                                    class="input_country"
-                                    type="text"
-                                    name="one-line"
-                                    style="width: 462px; height: 42px;
-            background-color: rgba(255, 255, 255, 0.05);
-            color: white; border-radius:5px;
-            border-color: rgba(255, 255, 255, 0.3);"
-                            >
-                            <span id="country_span"></span>
-                        </label>
-                    </form>
-                    <form class="curr_inp_field_form" method="get" action="../result">
-                        <label class="curr_inp_field_label">
-                            <span class="input-title">Город</span>
-                            <input
-                                    class="input_city"
-                                    type="text"
-                                    name="one-line"
-                                    style="width: 462px; height: 42px;
-            background-color: rgba(255, 255, 255, 0.05);
-            color: white; border-radius:5px;
-            border-color: rgba(255, 255, 255, 0.3);"
-                            >
-                            <span id="city_span"></span>
-                        </label>
-                    </form>
-                    <form class="curr_inp_field_form" method="get" action="../result">
-                        <label class="curr_inp_field_label">
-                            <span class="input-title">Юридический адрес</span>
-                            <input
-                                    class="input_address"
-                                    type="text"
-                                    name="one-line"
-                                    style="width: 462px; height: 42px;
-            background-color: rgba(255, 255, 255, 0.05);
-            color: white; border-radius:5px;
-            border-color: rgba(255, 255, 255, 0.3);"
-                            >
-                            <span id="address_span"></span>
-                        </label>
-                    </form>
-                    <form class="curr_inp_field_form" method="get" action="../result">
-                        <label class="curr_inp_field_label">
-                            <span class="input-title">ИНН</span>
-                            <input
-                                    class="input_inn"
-                                    type="text"
-                                    name="one-line"
-                                    style="width: 462px; height: 42px;
-            background-color: rgba(255, 255, 255, 0.05);
-            color: white; border-radius:5px;
-            border-color: rgba(255, 255, 255, 0.3);"
-                            >
-                            <span id="inn_span"></span>
-                        </label>
-                    </form>
+                    <label class="curr_inp_field_label">
+                        <span class="input-title">Почта</span>
+                        <input class="input_email" type="email" name="email" required id="email_input">
+                        <span id="email_span"></span>
+                    </label>
+                    <label class="curr_inp_field_label">
+                        <span class="input-title">Название организации</span>
+                        <input class="input_org" type="text" name="organization_name" required>
+                        <span id="org_span"></span>
+                    </label>
+                    <label class="curr_inp_field_label">
+                        <span class="input-title">Номер телефона</span>
+                        <input class="input_phone" type="tel" name="phone_number" required>
+                        <span id="phone_span"></span>
+                    </label>
+                    <label class="curr_inp_field_label">
+                        <span class="input-title">Страна</span>
+                        <input class="input_country" type="text" name="country" required>
+                        <span id="country_span"></span>
+                    </label>
+                    <label class="curr_inp_field_label">
+                        <span class="input-title">Город</span>
+                        <input class="input_city" type="text" name="city" required>
+                        <span id="city_span"></span>
+                    </label>
+                    <label class="curr_inp_field_label">
+                        <span class="input-title">Юридический адрес</span>
+                        <input class="input_address" type="text" name="legal_address" required>
+                        <span id="address_span"></span>
+                    </label>
+                    <label class="curr_inp_field_label">
+                        <span class="input-title">ИНН</span>
+                        <input class="input_inn" type="text" name="inn" required>
+                        <span id="inn_span"></span>
+                    </label>
                     <div class="agreement_checkboxes">
                         <div class="checkbox_info">
                             <input type="checkbox" class="custom-checkbox" id="agreem_1" name="agreem_1" value="yes">
@@ -305,8 +118,7 @@
                         </div>
                         <div class="checkbox_info">
                             <label>
-                                <input type="checkbox" class="custom-checkbox" id="agreem_2" name="agreem_2"
-                                       title="Halo" value="yes">
+                                <input type="checkbox" class="custom-checkbox" id="agreem_2" name="agreem_2" value="yes">
                                 <label for="agreem_2">
                                     <a href="#">Я даю согласие на обработку моих персональных данных </a>
                                 </label>
@@ -314,61 +126,27 @@
                             </label>
                         </div>
                     </div>
-                </div>
-            </div>
-            <div class="create-line"></div>
-            <div class="bill_method_main">
-                <div class="about_bill_method">
-                    <p class="bill_about_text">Метод оплаты</p>
-                </div>
-                <div class="payment_kind_main">
-                    <div class="bill_one">
-                        <input class="custom-radio" name="billing" type="radio" id="credit_card" value="credit_card"
-                               checked>
-                        <label for="credit_card"></label>
-                        <p class="text_for_radio">Банковская карта</p>
-                    </div>
-                    <div class="bill_one">
-                        <input class="custom-radio" name="billing" type="radio" id="pay_check" value="pay_check">
-                        <label for="pay_check"></label>
-                        <p class="text_for_radio">Счет на оплату</p>
-                    </div>
-                </div>
-                <div class="">
-                    <img class="" src="{% static 'img/banks_card.png' %}" alt="logo"
-                         srcset="{% static 'img/banks_card_x2.png' %} 2x">
-                </div>
-            </div>
-            <div class="div_div_result_bottom">
-                <div class="div_result_bottom">
-                    <button type="submit" class="result_bottom">Подтвердить и продолжить оплату</button>
-                    <label id="hidden_label_plan"></label>
-                </div>
-            </div>
-        </div>
-        <div class="about_billing">
-            <div class="about_billing_panel">
-                <div class="billing_title">
-                    <span class="billing_title_text">Описание заказа</span>
-                </div>
-                <div class="billing_line"></div>
-                <div class="billing_plan">
-                    <span class="plan_and_users" id="plan_and_users_id">INOUT Project Business - 5 пользователей</span>
-                    <div class="font_price_per_month">
-                        <span class="price_per_month">(2.950 руб / месяц)</span>
-                    </div>
-                </div>
-                <div class="billing_line"></div>
-                <div class="full_price">
-                    <div class="full_price_d">
-                        <span class="full_price_title">Полная цена</span>
-                    </div>
-                    <div class="full_prices_d">
-                        <div class="font_price_per_year">
-                            <span class="price_per_year">34.540 руб / год</span>
+                    <div class="bill_method_main">
+                        <div class="about_bill_method">
+                            <p class="bill_about_text">Метод оплаты</p>
                         </div>
-                        <div class="font_price_per_month">
-                            <span class="price_per_month" id="price_per_month_2">(2.950 руб / месяц)</span>
+                        <div class="payment_kind_main">
+                            <div class="bill_one">
+                                <input class="custom-radio" name="payment_method" type="radio" id="credit_card" value="credit_card" checked>
+                                <label for="credit_card"></label>
+                                <p class="text_for_radio">Банковская карта</p>
+                            </div>
+                            <div class="bill_one">
+                                <input class="custom-radio" name="payment_method" type="radio" id="pay_check" value="pay_check">
+                                <label for="pay_check"></label>
+                                <p class="text_for_radio">Счет на оплату</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="div_div_result_bottom">
+                        <div class="div_result_bottom">
+                            <button type="submit" class="result_bottom">Подтвердить и продолжить оплату</button>
+                            <label id="hidden_label_plan"></label>
                         </div>
                     </div>
                 </div>

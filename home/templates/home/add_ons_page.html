@@ -2,9 +2,1381 @@
 {% load static wagtailcore_tags %}
 
 
-
 {% block content %}
-    <section class="main_section">
+<style>
+    @import url("reset.css");
+
+    @font-face {
+        font-weight: 400;
+        font-family: SF-Pro-Display;
+        src: url('../fonts/SF-Pro-Display-Regular.otf');
+        font-style: normal;
+
+    }
+
+
+    body {
+        font-family: "SF-Pro-Display", serif;
+        color: #FFFFFF;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 19.6px;
+        text-align: left;
+
+    }
+
+    header {
+        width: 100%;
+        background-color: black;
+    }
+
+    /*Header*/
+
+    .vertical-line {
+        border-left: 1px solid white;
+        height: 15px; /* Высота линии */
+        align-items: center;
+    }
+
+    .upper_footer {
+        width: 100%;
+        height: 440px;
+
+    }
+
+    .layout_nav {
+        display: flex;
+        max-width: 1440px;
+        width: 100%;
+        height: 48px;
+        margin: 0 auto;
+
+    }
+
+    .layout_content {
+        display: flex;
+        max-width: 1200px;
+        width: 100%;
+        height: 323px;
+        margin: 0 auto;
+    }
+
+
+    header.upper_footer .layout_nav,
+    header.upper_footer .layout_content {
+        align-items: center;
+        justify-content: space-around;
+        position: relative;
+    }
+
+
+    header.upper-footer .layout_nav nav.left_nav,
+    header.upper-footer .layout_nav nav.right_bt {
+        display: flex;
+        margin-right: 100px;
+    }
+
+
+    header.upper_footer .layout_nav nav.left_nav ul,
+    header.upper_footer .layout_nav nav.right_bt ul {
+        display: flex;
+
+    }
+
+    header.upper_footer .layout_nav nav.left_nav ul li,
+    header.upper_footer .layout_nav nav.right_bt ul li {
+        margin-right: 20px;
+
+    }
+
+    header.upper_footer .layout_nav nav.left_nav ul li a,
+    header.upper_footer .layout_nav nav.right_bt ul li a {
+        color: inherit;
+        text-decoration: none;
+        transition: all 300ms ease-in-out;
+    }
+
+    .company_logo_li {
+        margin-right: 16px;
+    }
+
+    /*prices and payment*/
+
+    header.upper_footer .layout_content {
+        max-width: 1200px;
+        max-height: 323px;
+
+    }
+
+    header.upper_footer .layout_content .content_text {
+        align-items: center;
+        width: 1200px;
+        height: 157px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    header.upper_footer .layout_content .content_text ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+
+    header.upper_footer .layout_content .price_payment_title {
+        width: 500px;
+        height: 64px;
+        font-size: 64px;
+
+    }
+
+    header.upper_footer .layout_content .price_payment_title p {
+        text-align: center;
+    }
+
+    header.upper_footer .layout_content .price_payment_text {
+        width: 896px;
+        height: 69px;
+        font-size: 16px;
+        color: #FFFFFF80;
+        line-height: 23.2px;
+        text-align: center;
+    }
+
+
+    header.upper_footer .layout_content .tabs_primary {
+        position: absolute;
+        bottom: 0;
+        width: 205px;
+        height: 46px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #FFFFFF0D;
+        border-radius: 10px;
+    }
+
+    header.upper_footer .layout_content .tabs_primary ul {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 38px;
+
+    }
+
+    header.upper_footer .layout_content .tabs_primary ul li {
+        display: flex;
+        height: 38px;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
+    }
+
+    header.upper_footer .layout_content .tabs_primary ul li a {
+        font-size: 16px;
+        line-height: 22.4px;
+        margin-right: 10px;
+        margin-left: 10px;
+        align-items: center;
+        justify-content: center;
+
+    }
+
+    .li_dropbtn_c {
+        justify-content: center;
+        background-color: rgba(255, 255, 255, 0.05);
+
+    }
+
+    .dropbtn_c {
+        justify-content: center;
+    }
+
+    .dropbtn_o {
+
+        color: #4D4F52;
+    }
+
+    /*main section*/
+
+    .main_section {
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: black;
+        flex-direction: column;
+
+    }
+
+    section.main_section .second_line_img {
+        width: 1198px;
+        height: 81px;
+        gap: 0;
+    }
+
+    .second_line {
+        max-width: 900px;
+    }
+
+    /*road map*/
+
+    section.main_section .div_road_map_img {
+        width: 1209px;
+        height: 34px;
+        top: 81px;
+        left: 163px;
+        gap: 0;
+        margin-left: 100px;
+    }
+
+    section.main_section .div_road_map_img .panel_roadmap {
+        display: flex;
+        flex-direction: row;
+        width: 1120px;
+        height: 30px;
+        top: 85px;
+        left: 163px;
+        gap: 0;
+        background: black;
+    }
+
+    section.main_section .div_road_map_img .panel_roadmap .finish_plan {
+        width: 15px;
+        height: 15px;
+        top: 85px;
+        left: 163px;
+        gap: 0;
+        border-radius: 50%;
+
+        border: 1px solid rgba(88, 119, 199, 0.6); /* Рамка придает изящность. Будет ошеломительно выглядеть! */
+        display: inline-block; /* Выстраивает все круги в линию. Прощай, дистанция! */
+        padding: 10px; /* Достаточно места вокруг текста. Каждому – свое пространство! */
+        color: silver; /* Цвет текста. Почему бы и нет? */
+        text-align: center; /* Горизонтальное центрирование текста. Само собой разумеющееся! */
+        line-height: 80px;
+    }
+
+    section.main_section .div_road_map_img .panel_roadmap .finish_div .finish_plan {
+
+    }
+
+    section.main_section .div_road_map_img .panel_roadmap .finish_div .img_check {
+        margin-right: -34px;
+        margin-top: -21px;
+    }
+
+    section.main_section .div_road_map_img .panel_roadmap .roadmap_text {
+        width: 93px;
+        height: 23px;
+        top: 87px;
+        left: 201px;
+        margin-left: 8px;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 23.2px;
+        text-align: left;
+        margin-top: 5px;
+
+    }
+
+    section.main_section .div_road_map_img .panel_roadmap .create-line {
+        margin-left: 8px;
+        width: 96px;
+        border-top: 1px solid white;
+        margin-top: 17px;
+    }
+
+    section.main_section .div_road_map_img .panel_roadmap .active_plan {
+        position: relative;
+        width: 15px;
+        height: 15px;
+
+        gap: 0;
+        border-radius: 50%;
+        margin-left: 10px;
+        background: linear-gradient(rgba(50, 116, 249, 1), rgba(19, 91, 235, 1));
+        color: white;
+        border: 1px solid rgba(88, 119, 199, 0.6); /* Рамка придает изящность. Будет ошеломительно выглядеть! */
+        display: inline-block; /* Выстраивает все круги в линию. Прощай, дистанция! */
+        padding: 10px; /* Достаточно места вокруг текста. Каждому – свое пространство! */
+        text-align: center; /* Горизонтальное центрирование текста. Само собой разумеющееся! */
+        line-height: 80px;
+    }
+
+    section.main_section .div_road_map_img .panel_roadmap .lin-grad-border {
+        padding: 1rem;
+        position: relative;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.28), rgba(255, 255, 255, 0));
+        /*padding: 5px;*/
+        width: 16px;
+        height: 16px;
+        display: inline-block;
+        gap: 0;
+        border-radius: 50%;
+        margin-left: 10px;
+        padding: 10px;
+        text-align: center;
+
+    }
+
+    section.main_section .div_road_map_img .panel_roadmap .lin-grad-border .common_plan {
+
+        width: 16px;
+        height: 16px;
+        /*gap: 0;*/
+        border-radius: 100%;
+        background: black;
+        /*background: linear-gradient(0, #121212, #121212),*/
+        /*linear-gradient(180deg, rgba(255, 255, 255, 0.28), rgba(255, 255, 255, 0));*/
+        color: rgba(255, 255, 255, 0.8);
+        /*border: 1px solid rgba(255, 255, 255, 0.28); !* Рамка придает изящность. Будет ошеломительно выглядеть! *!*/
+        /*display: inline-block; !* Выстраивает все круги в линию. Прощай, дистанция! *!*/
+        /* Достаточно места вокруг текста. Каждому – свое пространство! */
+        text-align: center; /* Горизонтальное центрирование текста. Само собой разумеющееся! */
+        /*line-height: 80px;*/
+        padding: 9px;
+    }
+
+    section.main_section .div_road_map_img .panel_roadmap .lin-grad-border .common_plan .text_roadmap {
+    }
+
+    section.main_section .div_road_map_img .panel_roadmap .roadmap_text_second {
+        width: 173px;
+        height: 23px;
+        top: 87px;
+        left: 201px;
+        margin-left: 8px;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 23.2px;
+        text-align: left;
+        margin-top: 5px;
+
+    }
+
+    section.main_section .div_road_map_img .panel_roadmap .roadmap_text_third {
+        width: 137px;
+        height: 23px;
+        top: 87px;
+        left: 201px;
+        margin-left: 8px;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 23.2px;
+        text-align: left;
+        margin-top: 5px;
+
+    }
+
+    section.main_section .div_road_map_img .panel_roadmap .roadmap_text_fourth {
+        width: 53px;
+        height: 23px;
+        top: 87px;
+        left: 201px;
+        margin-left: 8px;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 23.2px;
+        text-align: left;
+        margin-top: 5px;
+
+    }
+
+    .inout_pict {
+        width: 34px;
+        margin-left: 10px;
+    }
+
+    /*main section line 19*/
+
+    section.main_section .line_19_img {
+        max-width: 1198px;
+        top: 169px;
+        left: 0;
+        gap: 0;
+        align-items: center;
+        margin-top: 40px;
+    }
+
+    /*main section choose plan*/
+
+    section.main_section .choose_plan {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        max-width: 1169px;
+        max-height: 84px;
+        top: 60px;
+        left: 0px;
+        gap: 0;
+        border-radius: 8px 0 0 0;
+        background-color: black;
+        margin: 20px;
+
+
+    }
+
+    section.main_section .choose_plan .about_choose_plan {
+        max-width: 108px;
+        max-height: 84px;
+        top: 208px;
+        left: 0;
+        gap: 0;
+        margin-right: 470px;
+        background-color: #FFFFFF;
+        background-image: linear-gradient(90deg, #FFFFFF, #FFFFFFA3);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+
+
+    }
+
+    section.main_section .choose_plan .about_choose_plan p {
+
+        background-color: black;
+        background-image: linear-gradient(90deg, white, #FFFFFFA3);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+
+
+    }
+
+    section.main_section .choose_plan .text_plan {
+        font-size: 40px;
+        line-height: 44px;
+
+    }
+
+    /*main section line 20*/
+
+    section.main_section .line_20_img {
+        width: 1198px;
+        top: 200px;
+        left: 120px;
+        gap: 0;
+        margin-top: 40px;
+
+
+    }
+
+    /*main section choose user amount*/
+
+    section.main_section .choose_user_amount {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        max-width: 1169px;
+        height: 110px;
+        top: 60px;
+        left: 0px;
+        gap: 0;
+        border-radius: 8px 0 0 0;
+        background-color: black;
+        margin: 20px;
+
+
+    }
+
+    section.main_section .choose_user_amount .about_choose_user_amount {
+        max-width: 480px;
+        height: 44px;
+        top: 208px;
+        left: 0;
+        gap: 0;
+        background-color: #FFFFFF;
+        background-image: linear-gradient(90deg, #FFFFFF, #FFFFFFA3);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-right: 80px;
+
+
+    }
+
+    section.main_section .choose_user_amount .about_choose_user_amount p {
+
+        background-color: black;
+        background-image: linear-gradient(90deg, white, #FFFFFFA3);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+
+
+    }
+
+    section.main_section .choose_user_amount .text_user_amount {
+        font-size: 40px;
+        line-height: 44px;
+
+    }
+
+    section.main_section .choose_plan .select_dropdown .label_select_plan select option {
+        height: 57px;
+    }
+
+    section.main_section .choose_user_amount .range-with-question {
+    }
+
+    .question_over100 {
+        margin-top: 40px;
+        font-size: 10px;
+    }
+
+    /* range  */
+    .range-input {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 100%;
+        cursor: pointer;
+        outline: none;
+        border-radius: 15px;
+        height: 1px;
+        background: #ccc;
+    }
+
+    .range-input::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        height: 30px;
+        width: 30px;
+        background-color: black;
+        background-image: linear-gradient(90deg, #3274F9, #135BEB);
+        border-radius: 50%;
+        border: none;
+        transition: .2s ease-in-out;
+    }
+
+    .range-input::-moz-range-thumb {
+        height: 15px;
+        width: 15px;
+        background-color: black;
+        background-image: linear-gradient(90deg, #3274F9, #135BEB);
+        border-radius: 50%;
+        border: none;
+        transition: .2s ease-in-out;
+    }
+
+    .range-input::-webkit-slider-thumb:hover {
+        box-shadow: 0 0 0 10px rgba(50, 116, 249, 0.34)
+    }
+
+    .range-input:active::-webkit-slider-thumb {
+        box-shadow: 0 0 0 20px rgba(19, 91, 235, 0.42)
+    }
+
+    .range-input:focus::-webkit-slider-thumb {
+        box-shadow: 0 0 0 20px rgba(19, 91, 235, 0.42)
+    }
+
+    .range-input::-moz-range-thumb:hover {
+        box-shadow: 0 0 0 10px rgba(50, 116, 249, 0.34)
+    }
+
+    .range-input:active::-moz-range-thumb {
+        box-shadow: 0 0 0 13px rgba(19, 91, 235, 0.42)
+    }
+
+    .range-input:focus::-moz-range-thumb {
+        box-shadow: 0 0 0 13px rgba(19, 91, 235, 0.42)
+    }
+
+
+    /* range 3 */
+    .range-slider {
+        position: relative;
+        flex: 1;
+        margin-top: 30px;
+        width: 552px;
+
+    }
+
+    .sliderticks {
+        margin-top: 10px;
+        display: flex;
+        justify-content: space-between;
+        padding: 0 10px;
+    }
+
+    .sliderticks span {
+        display: flex;
+        justify-content: center;
+        width: 0px;
+        height: 0px;
+        background: black;
+        line-height: 20px;
+    }
+
+    /*=============
+    Aesthetics
+    =========================*/
+
+
+    .range {
+
+        display: flex;
+        align-items: center;
+        margin-bottom: 1rem;
+        margin-left: 0px;
+
+    }
+
+    .value4 {
+        text-align: center;
+        width: 50px;
+        font-size: 28px;
+        line-height: 40.6px;
+        background-color: black;
+        background-image: linear-gradient(90deg, #3274F9, #135BEB);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        border-radius: 5px;
+        font-weight: 500;
+        margin-top: 15px;
+    }
+
+
+    /*main section line 21*/
+
+    section.main_section .line_21_img {
+        width: 1198px;
+        top: 200px;
+        left: 120px;
+        gap: 0;
+        margin-top: 40px;
+
+
+    }
+
+    /*main section addons*/
+
+    section.main_section .addons_main {
+        display: flex;
+        flex-direction: row;
+        /*align-items: center;*/
+        max-width: 1169px;
+        max-height: 520px;
+        top: 60px;
+        left: 0;
+        gap: 0;
+        border-radius: 8px 0 0 0;
+        background-color: black;
+        margin-top: 20px;
+        margin-right: 40px;
+    }
+
+    section.main_section .addons_main .addons_about {
+        max-width: 220px;
+        max-height: 44px;
+        margin-right: 220px;
+        top: 0;
+        left: 0;
+        gap: 0;
+        background-color: #FFFFFF;
+        background-image: linear-gradient(90deg, #FFFFFF, #FFFFFFA3);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+
+
+    }
+
+    section.main_section .addons_main .addons_about p {
+        font-size: 40px;
+        line-height: 44px;
+        background-color: black;
+        background-image: linear-gradient(90deg, white, #FFFFFFA3);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+
+
+    }
+
+    .hidden_block {
+        height: 1px;
+        width: 1px;
+        visibility: hidden;
+
+
+    }
+
+    .hidden_plan {
+        height: 1px;
+        width: 1px;
+        visibility: hidden;
+    }
+
+    section.main_section .addons_main .addons_list {
+        max-width: 600px;
+        max-height: 501px;
+        top: 624px;
+        left: 597px;
+        gap: 0;
+        border-radius: 2px 0 0 0;
+        margin-left: 100px;
+    }
+
+    section.main_section .addons_main .addons_list .additions {
+        display: flex;
+        flex-direction: row;
+        width: 584px;
+        height: 55px;
+        top: 624px;
+        left: 597px;
+        gap: 0;
+        border-radius: 2px 0 0 0;
+        margin-bottom: 0;
+        margin-top: 0;
+        background-color: black;
+    }
+
+    section.main_section .addons_main .addons_list .additions:hover {
+        background-color: rgba(255, 255, 255, 0.07);
+    }
+
+
+    section.main_section .addons_main .addons_list .additions .custom-checkbox {
+        position: absolute;
+        z-index: -1;
+        opacity: 0;
+
+    }
+
+    .custom-checkbox + label {
+        display: inline-flex;
+        align-items: center;
+        user-select: none;
+        font-size: 18px;
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+
+    .custom-checkbox:hover::before {
+        background-color: rgba(88, 119, 199, 0.3);
+    }
+
+    .custom-checkbox + label::before {
+        content: '';
+        display: inline-block;
+        width: 1em;
+        height: 1em;
+        flex-shrink: 0;
+        flex-grow: 0;
+        border: 1px solid #5877C799;
+        border-radius: 0.25em;
+        margin-right: 0.5em;
+
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: 50% 50%;
+    }
+
+    .custom-checkbox:checked + label::before {
+        border-color: #0b76ef;
+        background-color: #0b76ef;
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3e%3c/svg%3e");
+    }
+
+    /* стили при наведении курсора на checkbox */
+    .custom-checkbox:not(:disabled):not(:checked) + label:hover::before {
+        border-color: #5877C799;
+        box-shadow: 0 0 0 10px rgba(88, 119, 199, 0.3)
+
+    }
+
+    /* стили для активного состояния чекбокса (при нажатии на него) */
+    .custom-checkbox:not(:disabled):active + label::before {
+        background-color: #b3d7ff;
+        border-color: #b3d7ff;
+    }
+
+    /* стили для чекбокса, находящегося в фокусе */
+    .custom-checkbox:focus + label::before {
+        box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    }
+
+    /* стили для чекбокса, находящегося в фокусе и не находящегося в состоянии checked */
+    .custom-checkbox:focus:not(:checked) + label::before {
+        border-color: #80bdff;
+    }
+
+    /* стили для чекбокса, находящегося в состоянии disabled */
+    .custom-checkbox:disabled + label::before {
+        background-color: #e9ecef;
+    }
+
+    section.main_section .addons_main .addons_list .additions .icon_info {
+        max-width: 18px;
+        max-height: 18px;
+    }
+
+    section.main_section .addons_main .addons_list .additions .check_add_on {
+        display: flex;
+        flex-direction: row;
+    }
+
+    section.main_section .addons_main .addons_list .additions .text_for_checkbox {
+        width: 212px;
+        max-height: 30px;
+        font-size: 18px;
+        margin-top: 15px;
+    }
+
+    section.main_section .addons_main .addons_list .additions .text_for_checkbox_cb {
+        width: 200px;
+        max-height: 30px;
+        font-size: 18px;
+        margin-top: 15px;
+        margin-right: 12px;
+    }
+
+    .text_price {
+        width: 126px;
+        height: 30px;
+        font-size: 24px;
+        line-height: 26.4px;
+        gap: 0;
+        margin-right: 0;
+        margin-top: 15px;
+
+    }
+
+    .text_price p {
+        background-color: black;
+        background-image: linear-gradient(90deg, #FFFFFF, #FFFFFFA3);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    section.main_section .addons_main .addons_list .additions .text_about_price {
+        width: 169px;
+        font-size: 10px;
+        line-height: 14px;
+        color: #FFFFFF80;
+        margin-left: 40px;
+        margin-top: 15px;
+    }
+
+    /*services*/
+
+    section.main_section .main_services {
+        display: flex;
+        flex-direction: row;
+        /*align-items: center;*/
+        max-width: 1169px;
+        max-height: 520px;
+        top: 60px;
+        left: 0;
+        gap: 0;
+        border-radius: 8px 0 0 0;
+        background-color: black;
+        margin-top: 20px;
+        margin-right: 0px;
+    }
+
+    section.main_section .main_services .services_about {
+        max-width: 258px;
+        max-height: 44px;
+        top: 0;
+        left: 0;
+        gap: 0;
+        background-color: #FFFFFF;
+        background-image: linear-gradient(90deg, #FFFFFF, #FFFFFFA3);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-top: 20px;
+        margin-right: 340px;
+
+
+    }
+
+    section.main_section .main_services .services_about p {
+        font-size: 40px;
+        line-height: 44px;
+        background-color: black;
+        background-image: linear-gradient(90deg, white, #FFFFFFA3);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+
+
+    }
+
+    section.main_section .main_services .services_list {
+        max-width: 584px;
+        max-height: 501px;
+        top: 624px;
+        left: 597px;
+        gap: 0;
+        border-radius: 2px 0 0 0;
+        margin-left: 0;
+    }
+
+    section.main_section .main_services .services_list .services {
+        display: flex;
+        flex-direction: row;
+        width: 584px;
+        height: 50px;
+        top: 624px;
+        left: 597px;
+        gap: 0;
+        border-radius: 2px 0 0 0;
+        margin-bottom: 32px;
+        margin-top: 33px;
+        background: black;
+    }
+
+    section.main_section .main_services .services_list .services:hover {
+        background-color: rgba(255, 255, 255, 0.07);
+    }
+
+    section.main_section .main_services .services_list .services .custom-checkbox {
+        position: absolute;
+        z-index: -1;
+        opacity: 0;
+
+    }
+
+    section.main_section .main_services .services_list .services .icon_info {
+        max-width: 18px;
+        max-height: 18px;
+    }
+
+    section.main_section .main_services .services_list .services .text_for_checkbox {
+        width: 212px;
+        max-height: 30px;
+        font-size: 18px;
+        margin-top: 14px;
+    }
+
+    section.main_section .main_services .services_list .services .text_about_price {
+        width: 169px;
+        font-size: 10px;
+        line-height: 14px;
+        color: #FFFFFF80;
+        margin-top: 10px;
+
+    }
+
+    section.main_section .main_services .services_list .services .text_price {
+        width: 160px;
+        height: 30px;
+        font-size: 24px;
+        line-height: 26.4px;
+        gap: 0;
+        margin-top: 10px;
+
+    }
+
+    /*billing price*/
+
+    section.main_section .bill_services {
+        display: flex;
+        flex-direction: row;
+        /*align-items: center;*/
+        /*max-width: 1064px;*/
+        max-width: 1199px;
+        max-height: 520px;
+        top: 60px;
+        left: 0;
+        gap: 0;
+        border-radius: 8px 0 0 0;
+        background-color: black;
+        margin-top: 20px;
+        margin-right: 40px;
+    }
+
+    section.main_section .bill_services .bill_about {
+        max-width: 340px;
+        max-height: 44px;
+        top: 0;
+        left: 0;
+        gap: 0;
+        background-color: #FFFFFF;
+        background-image: linear-gradient(90deg, #FFFFFF, #FFFFFFA3);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-top: 20px;
+        margin-left: 0;
+        margin-right: 200px;
+
+
+    }
+
+    section.main_section .bill_services .bill_about p {
+        font-size: 40px;
+        line-height: 44px;
+        background-color: black;
+        background-image: linear-gradient(90deg, white, #FFFFFFA3);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+
+
+    }
+
+    section.main_section .bill_services .bill_list {
+        max-width: 584px;
+        max-height: 501px;
+        top: 624px;
+        left: 597px;
+        gap: 0;
+        border-radius: 2px 0 0 0;
+        margin-right: 300px;
+        margin-top: 40px;
+    }
+
+    section.main_section .bill_services .bill_list .bill_one {
+        display: flex;
+        flex-direction: row;
+        max-width: 584px;
+        height: 40px;
+        top: 624px;
+        left: 597px;
+        gap: 0;
+        border-radius: 2px 0 0 0;
+        background: black;
+    }
+
+    section.main_section .bill_services .bill_list .bill_one:hover {
+        background-color: rgba(255, 255, 255, 0.07);
+    }
+
+    section.main_section .bill_services .bill_list .bill_one .custom-checkbox {
+        position: absolute;
+        z-index: -1;
+        opacity: 0;
+
+    }
+
+    section.main_section .bill_services .bill_list .bill_one .icon_info {
+        max-width: 18px;
+        max-height: 18px;
+    }
+
+    section.main_section .bill_services .bill_list .bill_one .text_for_radio {
+        max-width: 228px;
+        max-height: 30px;
+        font-size: 18px;
+        margin-top: 10px;
+    }
+
+
+    /* для элемента input c type="radio" */
+    .custom-radio {
+        position: absolute;
+        z-index: -1;
+        opacity: 0;
+
+
+    }
+
+    /* для элемента label связанного с .custom-radio */
+    .custom-radio + label {
+        display: inline-flex;
+        align-items: center;
+        user-select: none;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    /* создание в label псевдоэлемента  before со следующими стилями */
+    .custom-radio + label::before {
+        content: '';
+        display: inline-block;
+        width: 1em;
+        height: 1em;
+        flex-shrink: 0;
+        flex-grow: 0;
+        border: 1px solid #adb5bd;
+        border-radius: 50%;
+        margin-right: 0.5em;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: 50% 50%;
+    }
+
+    /* стили при наведении курсора на радио */
+    .custom-radio:not(:disabled):not(:checked) + label:hover::before {
+        border-color: #5877C799;
+        box-shadow: 0 0 0 10px rgba(88, 119, 199, 0.3)
+    }
+
+    /* стили для активной радиокнопки (при нажатии на неё) */
+    .custom-radio:not(:disabled):active + label::before {
+        background-color: #b3d7ff;
+        border-color: #b3d7ff;
+    }
+
+    /* стили для радиокнопки, находящейся в фокусе */
+    .custom-radio:focus + label::before {
+        box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    }
+
+    /* стили для радиокнопки, находящейся в фокусе и не находящейся в состоянии checked */
+    .custom-radio:focus:not(:checked) + label::before {
+        border-color: #80bdff;
+    }
+
+    /* стили для радиокнопки, находящейся в состоянии checked */
+    .custom-radio:checked + label::before {
+        border-color: #0b76ef;
+        background-color: #0b76ef;
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23fff'/%3e%3c/svg%3e");
+    }
+
+    /* стили для радиокнопки, находящейся в состоянии disabled */
+    .custom-radio:disabled + label::before {
+        background-color: #e9ecef;
+    }
+
+    /*result price panel*/
+
+    section.main_section .price_panel {
+        display: flex;
+        flex-direction: column;
+        max-width: 1199px;
+        height: 255px;
+        top: 20px;
+    }
+
+
+    section.main_section .price_panel .result_panel {
+        display: flex;
+        width: 1199px;
+        height: 142px;
+        top: 1549px;
+        left: 117px;
+        gap: 0;
+        border-radius: 24px 0 0 0;
+        background-image: url("../img/banner_img_x1.png");
+        margin-top: 70px;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+
+    section.main_section .price_panel .result_panel .price_panel_text_about {
+        margin-top: 40px;
+        margin-left: 30px;
+    }
+
+    section.main_section .price_panel .result_panel .price_panel_text_about .price_panel_about_label {
+        font-size: 40px;
+        font-weight: 500;
+        line-height: 44px;
+        letter-spacing: -0.02em;
+        text-align: center;
+
+    }
+
+    section.main_section .price_panel .result_panel .price_panel_prices {
+        margin-top: 30px;
+        margin-left: 300px;
+    }
+
+    section.main_section .price_panel .result_panel .price_panel_prices .price_in_year_label {
+        font-size: 24px;
+        font-weight: 500;
+        line-height: 26.4px;
+        letter-spacing: -0.02em;
+        text-align: center;
+
+    }
+
+    section.main_section .price_panel .result_panel .price_panel_prices .price_in_month {
+        margin-top: 10px;
+    }
+
+    section.main_section .price_panel .result_panel .price_panel_prices .price_in_month .price_in_month_label {
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 17.6px;
+        letter-spacing: -0.02em;
+        text-align: center;
+    }
+
+
+    section.main_section .price_panel .div_div_result_bottom .div_result_bottom {
+        position: relative;
+
+    }
+
+    section.main_section .price_panel .div_result_bottom {
+        position: absolute;
+        top: 80px;
+        left: 900px;
+        width: 230px;
+        height: 43px;
+    }
+
+    section.main_section .price_panel .div_result_bottom .result_bottom {
+        font-size: 16px;
+        line-height: 17.6px;
+        display: inline-block;
+        padding: 10px 15px;
+        background: linear-gradient(0deg, rgba(50, 116, 249, 1), rgba(19, 91, 235, 1));
+        color: #fff;
+        border-radius: 35px;
+        text-decoration: none;
+
+    }
+
+    section.main_section .price_panel .div_result_bottom .result_bottom:hover {
+        background: linear-gradient(150deg, rgba(1, 60, 163, 1) 0%, rgba(35, 90, 191, 1) 50%, rgba(57, 114, 213, 1) 50%, rgba(51, 106, 206, 1) 100%);
+    }
+
+    /*dropdown elements*/
+
+    /* Dropdown Button header */
+    .dropbtn_header {
+        background-color: black;
+        color: white;
+        /*padding: 8px;*/
+        font-size: 14px;
+        border: none;
+    }
+
+    /* The container <div> - needed to position the dropdown content */
+    .dropdown_header {
+        position: relative;
+        display: inline-block;
+    }
+
+    /* Dropdown Content (Hidden by Default) */
+    .dropdown-content_header {
+        display: none;
+        position: absolute;
+        background-color: black;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+    }
+
+    /* Links inside the dropdown */
+    .dropdown-content_header a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+
+    /* Change color of dropdown links on hover */
+    .dropdown-content_header a:hover {
+        background-color: #ddd;
+    }
+
+    /* Show the dropdown menu on hover */
+    .dropdown_header:hover .dropdown-content_header {
+        display: block;
+    }
+
+    /* Change the background color of the dropdown button when the dropdown content is shown */
+    .dropdown_header:hover .dropbtn_header {
+        background-color: black;
+    }
+
+    /* The container must be positioned relative: */
+    .custom-select {
+        position: relative;
+        width: 557px;
+        height: 25px;
+        gap: 0;
+        /*border-radius: 8px;*/
+        /*padding: 15px;*/
+        color: #ffffff;
+        padding-right: 30px !important;
+        font-size: 18px !important;
+        line-height: 26.1px;
+
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        appearance: none;
+        border: 1px solid transparent;
+        border-radius: 8px;
+        background: linear-gradient(0, #121212, #121212),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.28), rgba(255, 255, 255, 0));
+        background-clip: padding-box, border-box;
+        background-origin: padding-box, border-box;
+        margin-top: 20px;
+    }
+
+    .custom-select select {
+        display: none; /*hide original SELECT element: */
+    }
+
+    .select-selected {
+        margin-top: 5px;
+        background-color: #121212;
+    }
+
+    /* Style the arrow inside the select element: */
+    .select-selected:after {
+        position: absolute;
+        content: "";
+        top: 14px;
+        right: 10px;
+        width: 0;
+        height: 0;
+        border: 6px solid transparent;
+        border-color: #fff transparent transparent transparent;
+    }
+
+    /* Point the arrow upwards when the select box is open (active): */
+    .select-selected.select-arrow-active:after {
+        border-color: transparent transparent #fff transparent;
+        top: 7px;
+    }
+
+    /* style the items (options), including the selected item: */
+    .select-items div, .select-selected {
+        color: #ffffff;
+        padding: 8px 16px;
+        border: 1px solid transparent;
+        border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+        cursor: pointer;
+    }
+
+    /* Style items (options): */
+    .select-items {
+        position: absolute;
+        background-color: black;
+        top: 100%;
+        left: 0;
+        right: 0;
+        z-index: 99;
+    }
+
+    /* Hide the items when the select box is closed: */
+    .select-hide {
+        display: none;
+    }
+
+    .select-items div:hover, .same-as-selected {
+        background-color: #222222;
+    }
+
+
+    /*footer*/
+    footer {
+        max-width: 100%;
+        max-height: 100%;
+        gap: 0;
+        border-radius: 32px 32px 0 0;
+        background-color: black;
+    }
+
+    footer .footer-img {
+        max-width: 1700px;
+        height: 1500px;
+        background-image: url("../img/footer_img.png");
+        border-radius: 32px 32px 0 0;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        margin-top: -370px;
+    }
+
+
+</style>
+<section class="main_section">
     <div class="second_line_img">
         <img class="second_line" src="{% static 'img/Line_12.png' %}" alt="logo"
              srcset="{% static 'img/Line_12x2.png' %} 2x">

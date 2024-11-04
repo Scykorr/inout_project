@@ -347,6 +347,25 @@ class AddUsersPage(Page):
     ]
 
 
+class PaymentPage(Page):
+    ordering = models.PositiveSmallIntegerField(default=0, verbose_name='Сортировка')
+    show_main_menu = models.BooleanField(default=True, verbose_name='Отображать в главном меню')
+
+    page_block = StreamField([
+        ('price_block', PriceBlock()),
+    ], use_json_field=True, blank=True, verbose_name='Блоки на странице')
+
+    content_panels = Page.content_panels + [
+        FieldPanel('ordering'),
+        FieldPanel('page_block'),
+    ]
+
+    search_fields = Page.search_fields + [
+        # index.SearchField('content'),
+        index.SearchField('page_block'),
+    ]
+
+
 class ReviewPage(Page):
     ordering = models.PositiveSmallIntegerField(default=0, verbose_name='Сортировка')
     show_main_menu = models.BooleanField(default=True, verbose_name='Отображать в главном меню')

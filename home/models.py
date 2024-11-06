@@ -328,6 +328,7 @@ class AddOnsPage(Page):
         index.SearchField('page_block'),
     ]
 
+
 class AddUsersPage(Page):
     ordering = models.PositiveSmallIntegerField(default=0, verbose_name='Сортировка')
     show_main_menu = models.BooleanField(default=True, verbose_name='Отображать в главном меню')
@@ -365,6 +366,7 @@ class PaymentPage(Page):
         index.SearchField('page_block'),
     ]
 
+
 class AcceptPaymentPage(Page):
     ordering = models.PositiveSmallIntegerField(default=0, verbose_name='Сортировка')
     show_main_menu = models.BooleanField(default=True, verbose_name='Отображать в главном меню')
@@ -383,6 +385,7 @@ class AcceptPaymentPage(Page):
         index.SearchField('page_block'),
     ]
 
+
 class UnsuccessPaymentPage(Page):
     ordering = models.PositiveSmallIntegerField(default=0, verbose_name='Сортировка')
     show_main_menu = models.BooleanField(default=True, verbose_name='Отображать в главном меню')
@@ -400,6 +403,119 @@ class UnsuccessPaymentPage(Page):
         # index.SearchField('content'),
         index.SearchField('page_block'),
     ]
+
+class BillingPage(Page):
+    ordering = models.PositiveSmallIntegerField(default=0, verbose_name='Сортировка')
+    show_main_menu = models.BooleanField(default=True, verbose_name='Отображать в главном меню')
+
+    page_block = StreamField([
+        ('price_block', PriceBlock()),
+    ], use_json_field=True, blank=True, verbose_name='Блоки на странице')
+
+    content_panels = Page.content_panels + [
+        FieldPanel('ordering'),
+        FieldPanel('page_block'),
+    ]
+
+    search_fields = Page.search_fields + [
+        # index.SearchField('content'),
+        index.SearchField('page_block'),
+    ]
+
+
+class HelpPage(Page):
+    ordering = models.PositiveSmallIntegerField(default=0, verbose_name='Сортировка')
+    show_main_menu = models.BooleanField(default=True, verbose_name='Отображать в главном меню')
+
+    page_block = StreamField([
+        ('price_block', PriceBlock()),
+    ], use_json_field=True, blank=True, verbose_name='Блоки на странице')
+
+    content_panels = Page.content_panels + [
+        FieldPanel('ordering'),
+        FieldPanel('page_block'),
+    ]
+
+    search_fields = Page.search_fields + [
+        # index.SearchField('content'),
+        index.SearchField('page_block'),
+    ]
+
+
+class InvoicesPage(Page):
+    ordering = models.PositiveSmallIntegerField(default=0, verbose_name='Сортировка')
+    show_main_menu = models.BooleanField(default=True, verbose_name='Отображать в главном меню')
+
+    page_block = StreamField([
+        ('price_block', PriceBlock()),
+    ], use_json_field=True, blank=True, verbose_name='Блоки на странице')
+
+    content_panels = Page.content_panels + [
+        FieldPanel('ordering'),
+        FieldPanel('page_block'),
+    ]
+
+    search_fields = Page.search_fields + [
+        # index.SearchField('content'),
+        index.SearchField('page_block'),
+    ]
+
+class OverviewPage(Page):
+    ordering = models.PositiveSmallIntegerField(default=0, verbose_name='Сортировка')
+    show_main_menu = models.BooleanField(default=True, verbose_name='Отображать в главном меню')
+
+    page_block = StreamField([
+        ('price_block', PriceBlock()),
+    ], use_json_field=True, blank=True, verbose_name='Блоки на странице')
+
+    content_panels = Page.content_panels + [
+        FieldPanel('ordering'),
+        FieldPanel('page_block'),
+    ]
+
+    search_fields = Page.search_fields + [
+        # index.SearchField('content'),
+        index.SearchField('page_block'),
+    ]
+
+
+class ProductDetailsPage(Page):
+    ordering = models.PositiveSmallIntegerField(default=0, verbose_name='Сортировка')
+    show_main_menu = models.BooleanField(default=True, verbose_name='Отображать в главном меню')
+
+    page_block = StreamField([
+        ('price_block', PriceBlock()),
+    ], use_json_field=True, blank=True, verbose_name='Блоки на странице')
+
+    content_panels = Page.content_panels + [
+        FieldPanel('ordering'),
+        FieldPanel('page_block'),
+    ]
+
+    search_fields = Page.search_fields + [
+        # index.SearchField('content'),
+        index.SearchField('page_block'),
+    ]
+
+
+class UsersPage(Page):
+    ordering = models.PositiveSmallIntegerField(default=0, verbose_name='Сортировка')
+    show_main_menu = models.BooleanField(default=True, verbose_name='Отображать в главном меню')
+
+    page_block = StreamField([
+        ('price_block', PriceBlock()),
+    ], use_json_field=True, blank=True, verbose_name='Блоки на странице')
+
+    content_panels = Page.content_panels + [
+        FieldPanel('ordering'),
+        FieldPanel('page_block'),
+    ]
+
+    search_fields = Page.search_fields + [
+        # index.SearchField('content'),
+        index.SearchField('page_block'),
+    ]
+
 
 class ReviewPage(Page):
     ordering = models.PositiveSmallIntegerField(default=0, verbose_name='Сортировка')
@@ -574,4 +690,3 @@ class AddOns(Page):
 
     class Meta:
         verbose_name = 'Страница дополнительных модулей '
-

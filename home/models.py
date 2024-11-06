@@ -442,7 +442,7 @@ class HelpPage(Page):
     ]
 
 
-class InvoicesPage(Page):
+class InvoicesNewPage(Page):
     ordering = models.PositiveSmallIntegerField(default=0, verbose_name='Сортировка')
     show_main_menu = models.BooleanField(default=True, verbose_name='Отображать в главном меню')
 

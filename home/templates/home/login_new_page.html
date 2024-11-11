@@ -38,7 +38,7 @@
                     {% endfor %}
                 </div>
                 {% endif %}
-                <button type="submit" class="btn" href="{% url 'login' %}">Продолжить</button>
+                <button type="submit" class="btn" href="obzor-klientskoj-zony/">Продолжить</button>
 
                 <div class="register-link">
                     <a href="https://domen-test.ru/price/">Нет клиентской зоны</a>
@@ -60,20 +60,20 @@
         errorMessage.style.display = 'none'; // Скрыть сообщение об ошибке
 
         // Простейшая проверка
-        if (email.value === '' || password.value === '') {
-            // Установка красной обводки для пустых полей
-            if (email.value === '') email.classList.add('error');
-            if (password.value === '') password.classList.add('error');
-
-            // Показать сообщение об ошибке
-            errorMessage.style.display = 'block';
-            return;
-        }
-
-        // Здесь можно добавить код для дальнейшей проверки email и пароля
-
-        // Для примера просто показываем сообщение об ошибке
-        errorMessage.style.display = 'block'; // Отобразить сообщение об ошибке
+        // if (email.value === '' || password.value === '') {
+        //     // Установка красной обводки для пустых полей
+        //     if (email.value === '') email.classList.add('error');
+        //     if (password.value === '') password.classList.add('error');
+        //
+        //     // Показать сообщение об ошибке
+        //     errorMessage.style.display = 'block';
+        //     return;
+        // }
+        //
+        // // Здесь можно добавить код для дальнейшей проверки email и пароля
+        //
+        // // Для примера просто показываем сообщение об ошибке
+        // errorMessage.style.display = 'block'; // Отобразить сообщение об ошибке
     }
 </script>
 {% endblock content %}

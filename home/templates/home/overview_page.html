@@ -3,5 +3,347 @@
 
 
 {% block content %}
+    <div class="container">
+        <!-- Sidebar (navigation bar) -->
+        <div class="sidebar" id="sidebar">
+            <div class="logo">
+                <img src="{% static 'img/half logo.svg' %}" alt="Логотип" class="logo-image">
+                <span class="logo-text">Клиентская зона</span>
+            </div>
 
+            <ul class="menu">
+                <li>
+                    <img src="{% static 'img/overview.svg' %}" alt="Обзор" width="20" height="20">
+                    <a href="{% url 'client_zone:overview' %}">Обзор</a>
+                </li>
+                <li>
+                    <img src="{% static 'img/info.svg' %}" alt="Информация о Продукте" width="20" height="20">
+                    <a href="{% url 'client_zone:product-details' %}">Информация о продукте</a>
+
+                </li>
+                <li>
+                    <img src="{% static 'img/invoises.svg' %}" alt="Счета и КП" width="20" height="20">
+                    <a href="{% url 'client_zone:invoices' %}">Счета и кп</a>
+
+                </li>
+                <li>
+                    <img src="{% static 'img/details.svg' %}" alt="Детали выставления счета" width="20" height="20">
+                    <a href="{% url 'client_zone:billing' %}">Детали выставления счёта</a>
+
+                </li>
+                <li>
+                    <img src="{% static 'img/users.svg' %}" alt="Пользователи" width="20" height="20">
+                    <a href="{% url 'client_zone:users' %}">Пользователи</a>
+
+                </li>
+                <li>
+                    <img src="{% static 'img/help.svg' %}" alt="Центр поддержки" width="20" height="20">
+                    <a href="{% url 'client_zone:help' %}">Центр поддержки</a>
+
+                </li>
+            </ul>
+            <div class="sidebar-footer">
+                <img src="{% static 'img/logo.svg' %}" alt="Логотип">
+            </div>
+        </div>
+        <!-- Main Content -->
+        <div class="main-content">
+            <header>
+                <div class="block-help">
+                    <div class="menu-toggle" id="menuToggle">
+                        <div class="hamburger">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                    </div>
+                    <h2 class="logo-title">Детали выставления счета</h2>
+                </div>
+                <div class="user-info">
+                    <span class="user-name">Test User</span>
+                    <img class="account-icon" src="{% static 'img/account.svg' %}" alt="Account Icon">
+                    <button class="logout" id="logout-button">
+                        <img src="{% static 'img/leave.svg' %}" alt="Logout Icon">
+                    </button>
+                </div>
+            </header>
+
+            <!-- User Info Section -->
+            <section class="user-details">
+                <div class="info-block">
+                    <h2>{{ organization.name }}</h2>
+                    <p class="info-label">Адрес</p>
+                    <p class="info-value">{{ organization.address }}</p>
+                    <p class="info-label">ИНН</p>
+                    <p class="info-value">{{ organization.inn }}</p>
+                    <p class="info-label">EMAIL</p>
+                    <p class="info-value">{{ organization.email }}</p>
+                    <button id="info-button" class="info-button">Изменить платежный адрес</button>
+                </div>
+
+                <div class="invoices-container">
+                    <div class="invoices-header"><img src="{% static 'css/invoice-logo.svg' %}" alt="Логотип" class="invoice-logo" />Счета и коммерческие предложения</div>
+                    <div class="invoices-block">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Дата создания</th>
+                                    <th>Сумма</th>
+                                    <th>Предмет КП</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for invoice in invoices %}
+                                <tr>
+                                    <td>{{ invoice.date_created }}</td>
+                                    <td>{{ invoice.amount }} руб.</td>
+                                    <td>{{ invoice.subject }}</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                        <button href="{% url 'client_zone:invoices' %}" id="view-invoices" class="view-invoices">Смотреть все счета</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contract Details Section -->
+            <section class="contract-details">
+                <div class="contact-details">
+                    <div class="contact-text">{{ contract.project_name }} для {{ contract.user_count }} пользователей.<br>
+                    <span class="contact-date">Оплачено до {{ contract.paid_until }}</span>
+                    </div>
+                <button id="details-button" class="details-button">Детали выставления счета</button>
+                </div>
+            </section>
+
+            <!-- Info Section -->
+            <section class="info-section">
+                <div class="info-box-container">
+                    <div class="info-box-header">
+                        <h3 class="h3-title">
+                        <img src="{% static 'css/regular.svg' %}" alt="Иконка" class="icon">
+                        Регулярные платежи</h3>
+                    </div>
+                    <div class="info-box">
+                        <p class="p-help">Нет регулярных платежей</p>
+                        <button id="manage-recurring-payments" class="manage-recurring-payments">Управление рекуррентными платежами</button>
+                    </div>
+                </div>
+
+                <div class="info-box-container">
+                    <div class="info-box-header">
+                        <h3 class="h3-title">
+                         <img src="{% static 'css/people.svg' %}" alt="Иконка" class="icon">
+                     Пользователи</h3>
+                    </div>
+                    <div class="info-box">
+                        <p class="p-help">Управление доступом пользователей в клиентской зоне</p>
+                        <button id="manage-users" class="manage-users">Управление пользователями</button>
+                    </div>
+                </div>
+
+                <div class="info-box-container">
+                    <div class="info-box-header">
+                        <h3 class="h3-title">
+                         <img src="{% static 'css/micro.svg' %}" alt="Иконка" class="icon">
+                     Нужна помощь?</h3>
+                    </div>
+                    <!--<div class="need-help">-->
+                    <div class="info-box">
+                        <p class="p-help">Документация, FAQ и портал службы поддержки для решения любых вопросов</p>
+                        <div class="need-help-buttons">
+                            <button id="create-ticket">Создать тикет</button>
+                            <button id="visit-support-center">Подробнее</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    <div id="profile-popup" class="profile-popup">
+    <div class="profile-popup-content">
+        <span class="close-btn" id="closeProfilePopup">&times;</span>
+        <h2>Редактировать профиль</h2>
+        <form>
+            <div class="form-container"> <!-- Новый контейнер для обеих частей -->
+                <div class="form-left">
+                    <label for="full-name">Полное имя</label>
+                    <input type="text" id="full-name" value="quantumteam">
+
+                    <label for="email">Почта</label>
+                    <input type="email" id="email" value="quantumteam">
+
+                    <label for="password">Пароль</label>
+                    <input type="password" id="password" value="quantumteam">
+
+                    <label for="confirm-password">Подтверждение пароля</label>
+                    <input type="password" id="confirm-password" value="quantumteam">
+                </div>
+
+                <div class="form-right">
+                    <h3>Уведомления на почту</h3>
+                    <div class="toggle-group">
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider round"></span>
+                        </label>
+                        <label>Все пункты</label>
+                    </div>
+                    <div class="toggle-group">
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider round"></span>
+                        </label>
+                        <label>Новости о продукте</label>
+                    </div>
+                    <div class="toggle-group">
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider round"></span>
+                        </label>
+                        <label>Обновления ПО</label>
+                    </div>
+                    <div class="toggle-group">
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider round"></span>
+                        </label>
+                        <label>Срок действия контракта</label>
+                    </div>
+                    <div class="toggle-group">
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider round"></span>
+                        </label>
+                        <label>Счета и коммерческие предложения</label>
+                    </div>
+                </div>
+            </div>
+
+            <button type="submit">Сохранить</button> <!-- Кнопка перенесена под обе формы -->
+        </form>
+    </div>
+</div>
+<div id="new-ticket-popup" class="new-ticket-popup">
+    <div class="new-ticket-popup-content">
+        <span class="close-btn" id="closeRequiretsPopup">&times;</span>
+        <h2>Создать новый саппорт тикет</h2>
+        <!-- Форма для реквизитов компании -->
+        <form>
+            <input type="text" id="subject*" placeholder="Предмет*">
+            <input type="text" id="question" placeholder="Что беспокоит?*">
+            <input type="text" id="answer" placeholder="Что бы вы хотели, чтобы происходило?*">
+            <input type="text" id="file" placeholder="Прикрепить URL (ссылки).">
+            <div class="file-upload-wrapper">
+                <button type="button" id="custom-file-button">
+                <img src="{% static 'css/paperclip.svg' %}" alt="icon" class="icon">Прикрепить файл
+                </button>
+                <input type="file" id="file-upload" style="display: none;">
+            </div>
+            <button type="submit">Отправить заявку</button>
+        </form>
+    </div>
+</div>
+<script>
+    // Обработчики кнопок для переходов по страницам
+
+// Обработчики кнопок для переходов по страницам
+document.getElementById("info-button").addEventListener("click", function() {
+    window.location.href = "/obzor-klientskoj-zony/"; // Используйте имя URL для страницы
+});
+
+document.getElementById("view-invoices").addEventListener("click", function() {
+    window.location.href = "informaciya-o-produkte/"; // Используйте имя URL для страницы
+});
+
+document.getElementById("details-button").addEventListener("click", function() {
+    window.location.href = "scheta-i-kp/"; // Используйте имя URL для страницы
+});
+
+document.getElementById("manage-recurring-payments").addEventListener("click", function() {
+    window.location.href = "detali-vystavleniya-scheta/"; // Используйте имя URL для страницы
+});
+
+document.getElementById("manage-users").addEventListener("click", function() {
+    window.location.href = "polzovateli/"; // Используйте имя URL для страницы
+});
+
+document.getElementById("visit-support-center").addEventListener("click", function() {
+    window.location.href = "centr-podderzhki/"; // Используйте имя URL для страницы
+});
+
+
+
+    // Toggle Sidebar и смещение контента
+    document.getElementById("menuToggle").addEventListener("click", function() {
+        const sidebar = document.getElementById("sidebar");
+        const mainContent = document.querySelector(".main-content");
+
+        // Переключаем класс hidden у sidebar
+        sidebar.classList.toggle("hidden");
+
+        // Если sidebar скрыт, смещаем основной контент
+        if (sidebar.classList.contains("hidden")) {
+            mainContent.classList.add("shifted");
+        } else {
+            mainContent.classList.remove("shifted");
+        }
+    });
+
+
+// Функция для открытия попапа
+function openPopup(triggerSelector, popupId) {
+    const trigger = document.querySelector(triggerSelector);
+    const popup = document.getElementById(popupId);
+
+    if (trigger && popup) {
+        trigger.addEventListener('click', () => {
+            popup.style.display = 'flex'; // flex для центрирования
+        });
+
+        // Закрытие попапа при нажатии на крестик
+        const closeBtn = popup.querySelector('.close-btn');
+        if (closeBtn) {
+            closeBtn.addEventListener('click', () => {
+                popup.style.display = 'none';
+            });
+        }
+
+        // Закрытие попапа при клике вне его контента
+        window.addEventListener('click', (event) => {
+            if (event.target === popup) {
+                popup.style.display = 'none';
+            }
+        });
+    }
+}
+
+// Открытие попапов
+openPopup('.account-icon', 'profile-popup');
+openPopup('#create-ticket', 'new-ticket-popup');
+
+    document.getElementById('logout-button').addEventListener('click', function() {
+        // Отправляем запрос на выход
+        fetch('/logout/', { // Замените '/logout/' на ваш URL для выхода
+            method: 'POST', // Используйте 'POST' или 'GET' в зависимости от вашего сервера
+            headers: {
+                'X-CSRFToken': '{{ csrf_token }}' // Добавьте CSRF-токен, если используете Django
+            }
+        })
+        .then(response => {
+            if (response.ok) {
+                // Если выход успешен, перенаправляем на страницу авторизации
+                window.location.href = '/accounts/login/'; // Замените '/login/' на ваш URL для страницы авторизации
+            } else {
+                // Обработка ошибок, если необходимо
+                alert('Ошибка при выходе. Попробуйте еще раз.');
+            }
+        })
+        .catch(error => {
+            console.error('Ошибка:', error);
+            alert('Ошибка при выходе. Попробуйте еще раз.');
+        });
+    });
+</script>
 {% endblock content %}
